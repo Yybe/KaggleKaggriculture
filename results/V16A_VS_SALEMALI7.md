@@ -168,3 +168,40 @@ value; the clone gate keeps non-clone behavior identical to V15.5).
 - Traces: `%TEMP%\opencode\clean_v16fix_A.txt`, `clean_v16fix_B.txt`, `pin2_out.txt`
 - Runner: `tools/diag_bench_seeds.py` (seed-list variant of `diag_bench.py`)
 - Ledger: `RESEARCH_PLAYBOOK_V23_TO_V26.md` §2 — H8 row added
+
+---
+
+## 7. Engine Version Discovery & Re-Verification (2026-08-09, kaggle-environments 1.32.6)
+
+Per `notebooks/dariushafshar-agent-tuned-for-a-dead-game.ipynb`: the scoring engine
+is **1.32.6**, which changed the town-demand model mid-competition. We were on
+**1.32.5** (one release behind; Kaggle default image ships 1.29.3 — seven behind).
+
+Changes (1.32.5 → 1.32.6): `townCenterSellInterval` default 12→24; town-centre
+multiplier schedule (1x→2x→4x) **deleted** (flat 1x); shops sampled **with
+replacement** (was without; `MAX_SHOP_INSTANCES = 8`). Net: town centre consumes
+1×/day per product all season (was up to 8×/day late); melon demand fell ~88%.
+Our earlier `interval=24` tests on 1.32.5 did NOT capture the multiplier/shop
+changes — they were re-run on the real engine.
+
+**Re-verification on 1.32.6 (interval=24, engine default), all 16W/0L:**
+
+| Opponent | Games | Mean Δ | Min | Max |
+|---|---|---|---|---|
+| kathimunishwar (ground truth) — gate | 16 | +2,003 | +484 | +3,238 |
+| kathimunishwar — N=100 fresh seeds | 200 | +1,665 | +92 | +3,385 |
+| V15.5 (old champion) | 16 | +1,134 | +380 | +2,135 |
+| V15 | 16 | +1,754 | +450 | +2,780 |
+| V14 | 16 | +1,886 | +438 | +3,263 |
+| V26 | 16 | +3,039 | +1,496 | +3,992 |
+
+Verdict: **all gates still PASS on the real scoring engine**; reconstruction
+fidelity preserved (16/16 ties vs ground truth on 1.32.6). Absolute scores ~33%
+lower (avg ~88-89K vs ~133K) — town centre drains less — but V16a's relative
+dominance is unchanged. Evidence files:
+`results/v16a_vs_kathimunishwar_engine1326_gate24.txt`,
+`results/v16a_vs_kathimunishwar_engine1326_conf100.txt`,
+`results/v16a_vs_v155_engine1326_reg24.txt`,
+`results/v16a_vs_v15_engine1326.txt`, `results/v16a_vs_v14_engine1326.txt`,
+`results/v16a_vs_v26_engine1326.txt`,
+`results/recon_vs_groundtruth_engine1326_16ties.txt`.

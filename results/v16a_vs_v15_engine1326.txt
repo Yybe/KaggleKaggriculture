@@ -1,0 +1,25 @@
+
+============================================================================
+DIAG BENCH SEED-LIST: submission.py vs kaggle_champion_v15.py (interval=24)
+Seeds: 8 x 2 seats = 16 games | Ok: 16 | Errs: 0 | Time: 30.7s
+  submission.py: 16 W (100.0%), 0 L, 0 T | seed-level: 8W/0L/0T
+  Mean Delta: +1754 | Median: +1932 | Min: +450 | Max: +2780
+  submission.py Avg: 89003 | kaggle_champion_v15.py Avg: 87249
+  -- per-game (seed, swap, a, b, delta) --
+    seed=1000000 swap=0  a=  95045  b=  92940  d= +2105
+    seed=1000000 swap=1  a=  95045  b=  92940  d= +2105
+    seed=2000000 swap=0  a=  64185  b=  62170  d= +2015
+    seed=2000000 swap=1  a=  64185  b=  62170  d= +2015
+    seed=3330000 swap=0  a=  45594  b=  44513  d= +1081
+    seed=3330000 swap=1  a=  45594  b=  44513  d= +1081
+    seed=5000000 swap=0  a=  59263  b=  57954  d= +1309
+    seed=5000000 swap=1  a=  59263  b=  57954  d= +1309
+    seed=6000000 swap=0  a= 103438  b= 101589  d= +1849
+    seed=6000000 swap=1  a= 103438  b= 101589  d= +1849
+    seed=7770000 swap=0  a= 137930  b= 137480  d=  +450
+    seed=7770000 swap=1  a= 137930  b= 137480  d=  +450
+    seed=8000000 swap=0  a= 126485  b= 124042  d= +2443
+    seed=8000000 swap=1  a= 126485  b= 124042  d= +2443
+    seed=9000000 swap=0  a=  80084  b=  77304  d= +2780
+    seed=9000000 swap=1  a=  80084  b=  77304  d= +2780
+============================================================================

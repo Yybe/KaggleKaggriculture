@@ -1,0 +1,25 @@
+
+============================================================================
+DIAG BENCH SEED-LIST: salemali7_3000score.py vs kathimunishwar_replay_agent.py (interval=24)
+Seeds: 8 x 2 seats = 16 games | Ok: 16 | Errs: 0 | Time: 29.3s
+  salemali7_3000score.py: 0 W (0.0%), 0 L, 16 T | seed-level: 0W/0L/8T
+  Mean Delta: +0 | Median: +0 | Min: +0 | Max: +0
+  salemali7_3000score.py Avg: 88421 | kathimunishwar_replay_agent.py Avg: 88421
+  -- per-game (seed, swap, a, b, delta) --
+    seed=1000000 swap=0  a=  94423  b=  94423  d=    +0
+    seed=1000000 swap=1  a=  94423  b=  94423  d=    +0
+    seed=2000000 swap=0  a=  63465  b=  63465  d=    +0
+    seed=2000000 swap=1  a=  63465  b=  63465  d=    +0
+    seed=3330000 swap=0  a=  45232  b=  45232  d=    +0
+    seed=3330000 swap=1  a=  45232  b=  45232  d=    +0
+    seed=5000000 swap=0  a=  58789  b=  58789  d=    +0
+    seed=5000000 swap=1  a=  58789  b=  58789  d=    +0
+    seed=6000000 swap=0  a= 102708  b= 102708  d=    +0
+    seed=6000000 swap=1  a= 102708  b= 102708  d=    +0
+    seed=7770000 swap=0  a= 137952  b= 137952  d=    +0
+    seed=7770000 swap=1  a= 137952  b= 137952  d=    +0
+    seed=8000000 swap=0  a= 125587  b= 125587  d=    +0
+    seed=8000000 swap=1  a= 125587  b= 125587  d=    +0
+    seed=9000000 swap=0  a=  79215  b=  79215  d=    +0
+    seed=9000000 swap=1  a=  79215  b=  79215  d=    +0
+============================================================================

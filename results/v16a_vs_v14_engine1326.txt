@@ -1,0 +1,25 @@
+
+============================================================================
+DIAG BENCH SEED-LIST: submission.py vs kaggle_boat84_v14.py (interval=24)
+Seeds: 8 x 2 seats = 16 games | Ok: 16 | Errs: 0 | Time: 30.0s
+  submission.py: 16 W (100.0%), 0 L, 0 T | seed-level: 8W/0L/0T
+  Mean Delta: +1886 | Median: +2030 | Min: +438 | Max: +3263
+  submission.py Avg: 89171 | kaggle_boat84_v14.py Avg: 87285
+  -- per-game (seed, swap, a, b, delta) --
+    seed=1000000 swap=0  a=  95261  b=  93056  d= +2205
+    seed=1000000 swap=1  a=  95261  b=  93056  d= +2205
+    seed=2000000 swap=0  a=  64211  b=  62148  d= +2063
+    seed=2000000 swap=1  a=  64211  b=  62148  d= +2063
+    seed=3330000 swap=0  a=  45672  b=  44544  d= +1128
+    seed=3330000 swap=1  a=  45672  b=  44544  d= +1128
+    seed=5000000 swap=0  a=  59364  b=  57982  d= +1382
+    seed=5000000 swap=1  a=  59364  b=  57982  d= +1382
+    seed=6000000 swap=0  a= 103593  b= 101597  d= +1996
+    seed=6000000 swap=1  a= 103593  b= 101597  d= +1996
+    seed=7770000 swap=0  a= 138064  b= 137626  d=  +438
+    seed=7770000 swap=1  a= 138064  b= 137626  d=  +438
+    seed=8000000 swap=0  a= 126652  b= 124041  d= +2611
+    seed=8000000 swap=1  a= 126652  b= 124041  d= +2611
+    seed=9000000 swap=0  a=  80549  b=  77286  d= +3263
+    seed=9000000 swap=1  a=  80549  b=  77286  d= +3263
+============================================================================

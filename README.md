@@ -136,6 +136,44 @@ The pulled kernel is the REAL source of the salemali7 strategy. Checks:
   gate vs the reconstruction. V16a's edge is real, not an artifact of our
   reconstruction.
 
+### ⚠️ Engine version discovery (2026-08-09): scoring runs kaggle-environments 1.32.6
+
+`kaggle kernels pull dariushafshar/agent-tuned-for-a-dead-game` →
+`notebooks/dariushafshar-agent-tuned-for-a-dead-game.ipynb` revealed the scoring
+engine is **1.32.6**, which changed the town-demand model **mid-competition**
+(Kaggle's default image ships 1.29.3 — seven releases behind; we were on 1.32.5,
+one behind):
+
+| Change | 1.32.5 (what we tested on) | 1.32.6 (what scoring runs) |
+|---|---|---|
+| `townCenterSellInterval` default | 12 turns (2 ticks/day) | **24 turns (1 tick/day)** |
+| town-centre multiplier | 1x → 2x from day 10 → 4x from day 20 | **flat 1x, schedule deleted** |
+| shop unlocks | 8 distinct, sampled without replacement | **sampled with replacement**, capped `MAX_SHOP_INSTANCES = 8` |
+
+Consequences: town centre consumes every product once/day all season (was up to
+8×/day late); only ~5.25 distinct shops expected per game; **melon demand fell
+~88%** (no shop buys it — its only buyer was the town centre). Our earlier
+"rebalance" tests only set `interval=24` on the old engine — they did NOT
+simulate the deleted multiplier schedule or with-replacement shops.
+
+**Full re-verification on the real 1.32.6 engine (interval=24, all 16W/0L):**
+
+| Opponent | Games | W/L | Mean Δ | Min | Max | vs old-engine numbers |
+|---|---|---|---|---|---|---|
+| kathimunishwar (ground truth) gate | 16 | 16W/0L | +2,003 | +484 | +3,238 | was +2,361 |
+| kathimunishwar N=100 fresh seeds | 200 | 100W/0L | +1,665 | +92 | +3,385 | was +2,325 |
+| V15.5 (old champion) | 16 | 16W/0L | +1,134 | +380 | +2,135 | was +1,594 |
+| V15 | 16 | 16W/0L | +1,754 | +450 | +2,780 | was +2,074 |
+| V14 | 16 | 16W/0L | +1,886 | +438 | +3,263 | was +2,368 |
+| V26 | 16 | 16W/0L | +3,039 | +1,496 | +3,992 | was +3,451 |
+
+All gates still PASS on the real scoring engine; reconstruction fidelity preserved
+(16/16 ties vs ground truth on 1.32.6 too). Absolute scores dropped ~33% (avg
+~88-89K vs ~133K) because the town centre drains less — but **relative dominance
+is unchanged**. Note: absolute price thresholds / reserve prices calibrated on
+1.32.5 may need scaling down (per the kernel's advice) — melon acreage is the
+biggest single number to re-check in any future tuning.
+
 Side experiments preserved (not promoted): `kaggle_v155_t90/t120/t150/t180.py`
 (price-threshold capselllate variants), `kaggle_v14_tweaked.py`,
 `kaggle_v14_v26style.py`, `kaggle_v26_aggr_evidence.py`, `seb_route_v1.py`,
