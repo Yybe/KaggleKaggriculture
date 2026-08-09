@@ -1,0 +1,19 @@
+TOTAL_LINES=198
+0017 | V15.5 = V15 + _recovery_sell pass:
+0038 | __version__ = "V15_5_Recovery"
+0051 | _RECOVERY_START = 570     # Step 570 (Day 23.75) - first observed recovery window (598)
+0052 | _RECOVERY_STOP = 716      # Terminal liquidation takes over from here
+0053 | _RECOVERY_CHUNK = 12      # Max surplus units sold per item per step (opponent used 11-13)
+0054 | _RECOVERY_GATES = {       # Only sell surplus when the CURRENT price is at/above gate
+0059 | _RECOVERY_PRIORITY = ("STRAWBERRY", "MILK", "WOOL")
+0084 | def _idle_fill(obs, action, step):
+0111 | def _capselllate_topup(obs, action, step):
+0136 | def _recovery_sell(obs, action, step):
+0142 |     This pass sells up to _RECOVERY_CHUNK units of surplus high-value shed
+0146 |     if step < _RECOVERY_START or step >= _RECOVERY_STOP:
+0158 |     for item in _RECOVERY_PRIORITY:
+0166 |         if price < _RECOVERY_GATES.get(item, 0):
+0168 |         chunk = min(surplus, _RECOVERY_CHUNK)
+0175 | def agent(obs, configuration=None):
+0184 |         action = _recovery_sell(obs, action, step)
+0196 | def _kaggle_submission_entrypoint(obs, configuration=None):

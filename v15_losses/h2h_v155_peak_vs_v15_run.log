@@ -1,0 +1,50 @@
+﻿
+============================================================================
+DIAG BENCH: kaggle_v155_recovery.py vs kaggle_champion_v15.py
+Games: 40 (20 seeds x 2 seats) | Ok: 40 | Errs: 0 | Time: 60.1s
+  kaggle_v155_recovery.py: 40 W (100.0%), 0 L, 0 T
+  Mean Delta: +492 | Median: +553 | Min: +147 | Max: +645
+  kaggle_v155_recovery.py Avg: 127648 | kaggle_champion_v15.py Avg: 127155
+  -- per-game (seed, swap, a, b, delta) --
+    seed=  2000 swap=0  a= 119162  b= 118609  d=  +553
+    seed=  2000 swap=1  a= 119162  b= 118609  d=  +553
+    seed=  2073 swap=0  a= 124637  b= 124246  d=  +391
+    seed=  2073 swap=1  a= 124637  b= 124246  d=  +391
+    seed=  2146 swap=0  a= 126190  b= 125545  d=  +645
+    seed=  2146 swap=1  a= 126190  b= 125545  d=  +645
+    seed=  2219 swap=0  a= 132703  b= 132058  d=  +645
+    seed=  2219 swap=1  a= 132703  b= 132058  d=  +645
+    seed=  2292 swap=0  a= 118216  b= 117663  d=  +553
+    seed=  2292 swap=1  a= 118216  b= 117663  d=  +553
+    seed=  2365 swap=0  a= 111527  b= 110974  d=  +553
+    seed=  2365 swap=1  a= 111527  b= 110974  d=  +553
+    seed=  2438 swap=0  a= 125705  b= 125152  d=  +553
+    seed=  2438 swap=1  a= 125705  b= 125152  d=  +553
+    seed=  2511 swap=0  a= 129076  b= 128523  d=  +553
+    seed=  2511 swap=1  a= 129076  b= 128523  d=  +553
+    seed=  2584 swap=0  a= 140897  b= 140344  d=  +553
+    seed=  2584 swap=1  a= 140897  b= 140344  d=  +553
+    seed=  2657 swap=0  a= 130502  b= 129949  d=  +553
+    seed=  2657 swap=1  a= 130502  b= 129949  d=  +553
+    seed=  2730 swap=0  a= 139462  b= 139289  d=  +173
+    seed=  2730 swap=1  a= 139462  b= 139289  d=  +173
+    seed=  2803 swap=0  a= 135393  b= 135002  d=  +391
+    seed=  2803 swap=1  a= 135393  b= 135002  d=  +391
+    seed=  2876 swap=0  a= 127332  b= 126779  d=  +553
+    seed=  2876 swap=1  a= 127332  b= 126779  d=  +553
+    seed=  2949 swap=0  a= 145518  b= 145371  d=  +147
+    seed=  2949 swap=1  a= 145518  b= 145371  d=  +147
+    seed=  3022 swap=0  a= 130280  b= 129727  d=  +553
+    seed=  3022 swap=1  a= 130280  b= 129727  d=  +553
+    seed=  3095 swap=0  a= 140897  b= 140252  d=  +645
+    seed=  3095 swap=1  a= 140897  b= 140252  d=  +645
+    seed=  3168 swap=0  a=  97029  b=  96476  d=  +553
+    seed=  3168 swap=1  a=  97029  b=  96476  d=  +553
+    seed=  3241 swap=0  a= 113319  b= 112766  d=  +553
+    seed=  3241 swap=1  a= 113319  b= 112766  d=  +553
+    seed=  3314 swap=0  a= 153917  b= 153744  d=  +173
+    seed=  3314 swap=1  a= 153917  b= 153744  d=  +173
+    seed=  3387 swap=0  a= 111188  b= 110635  d=  +553
+    seed=  3387 swap=1  a= 111188  b= 110635  d=  +553
+============================================================================
+

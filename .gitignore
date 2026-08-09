@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Kaggle replay JSONs are ~32MB each - downloadable from Kaggle, not for git
+v15_losses/*_replay.json
+# stderr noise captures from H2H runs (use the .txt evidence files instead)
+v15_losses/*_console.log
+# SEB's live game replays (~28MB each) - re-downloadable from Kaggle
+replays_seb/*.json
+# Official Kaggle starter notebook (23MB, embedded outputs) - re-downloadable
+Kaggriculture/kaggriculture-getting-started.ipynb
+
+# Transient benchmark output (run/err logs) - regenerable via tools/diag_bench.py
+logs/
+
+# Local tool state
+.omo/

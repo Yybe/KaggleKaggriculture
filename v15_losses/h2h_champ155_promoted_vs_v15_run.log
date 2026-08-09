@@ -1,0 +1,30 @@
+﻿
+============================================================================
+DIAG BENCH: kaggle_champion_v155.py vs kaggle_champion_v15.py
+Games: 20 (10 seeds x 2 seats) | Ok: 20 | Errs: 0 | Time: 40.6s
+  kaggle_champion_v155.py: 20 W (100.0%), 0 L, 0 T
+  Mean Delta: +555 | Median: +553 | Min: +391 | Max: +645
+  kaggle_champion_v155.py Avg: 125862 | kaggle_champion_v15.py Avg: 125306
+  -- per-game (seed, swap, a, b, delta) --
+    seed=  2000 swap=0  a= 119162  b= 118609  d=  +553
+    seed=  2000 swap=1  a= 119162  b= 118609  d=  +553
+    seed=  2073 swap=0  a= 124637  b= 124246  d=  +391
+    seed=  2073 swap=1  a= 124637  b= 124246  d=  +391
+    seed=  2146 swap=0  a= 126190  b= 125545  d=  +645
+    seed=  2146 swap=1  a= 126190  b= 125545  d=  +645
+    seed=  2219 swap=0  a= 132703  b= 132058  d=  +645
+    seed=  2219 swap=1  a= 132703  b= 132058  d=  +645
+    seed=  2292 swap=0  a= 118216  b= 117663  d=  +553
+    seed=  2292 swap=1  a= 118216  b= 117663  d=  +553
+    seed=  2365 swap=0  a= 111527  b= 110974  d=  +553
+    seed=  2365 swap=1  a= 111527  b= 110974  d=  +553
+    seed=  2438 swap=0  a= 125705  b= 125152  d=  +553
+    seed=  2438 swap=1  a= 125705  b= 125152  d=  +553
+    seed=  2511 swap=0  a= 129076  b= 128523  d=  +553
+    seed=  2511 swap=1  a= 129076  b= 128523  d=  +553
+    seed=  2584 swap=0  a= 140897  b= 140344  d=  +553
+    seed=  2584 swap=1  a= 140897  b= 140344  d=  +553
+    seed=  2657 swap=0  a= 130502  b= 129949  d=  +553
+    seed=  2657 swap=1  a= 130502  b= 129949  d=  +553
+============================================================================
+

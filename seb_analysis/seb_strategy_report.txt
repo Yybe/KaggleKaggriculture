@@ -1,0 +1,111 @@
+=========================================
+      SEB STRATEGY DEEP ANALYSIS         
+=========================================
+
+=== 1. KEY STRATEGY METRICS ===
+Games Analyzed: 25
+Win/Loss/Tie: 23 / 2 / 0
+Win Rate: 92.0%
+Avg Final Bank: 85913.48
+Avg Margin over Opponent: 25882.04
+Total Wheat Sold: 1891
+Total Wheat Fed (Actions): 0
+
+=== 2. LAND EXPANSION ===
+Total quadrant unlock events detected: 75
+Average Unlock Step: 178.0 (Approx Day 7.4)
+
+Notable Unlock Batches (Market Orders happening simultaneously with BUY_LAND):
+  Game: 90851845.json | Day: 4 | Step: 118 | Other Orders in Batch: [['SELL', 'FERTILIZER', 5], ['SELL', 'WHEAT', 12]]
+  Game: 90851845.json | Day: 6 | Step: 159 | Other Orders in Batch: [['SELL', 'WOOL', 6], ['SELL', 'FERTILIZER', 2]]
+  Game: 90851845.json | Day: 10 | Step: 257 | Other Orders in Batch: [['SELL', 'MELON', 6], ['SELL', 'FERTILIZER', 3], ['BUY_PRODUCT', 'WHEAT', 1]]
+  Game: 90861135.json | Day: 4 | Step: 118 | Other Orders in Batch: [['SELL', 'FERTILIZER', 5], ['SELL', 'WHEAT', 12]]
+  Game: 90861135.json | Day: 6 | Step: 156 | Other Orders in Batch: [['SELL', 'WOOL', 6], ['SELL', 'FERTILIZER', 2], ['BUY_PRODUCT', 'WHEAT', 1]]
+  Game: 90861135.json | Day: 10 | Step: 252 | Other Orders in Batch: [['SELL', 'MELON', 12]]
+  Game: 90861234.json | Day: 4 | Step: 118 | Other Orders in Batch: [['SELL', 'FERTILIZER', 5], ['SELL', 'WHEAT', 12]]
+  Game: 90861234.json | Day: 6 | Step: 150 | Other Orders in Batch: [['SELL', 'WOOL', 12], ['BUY_PRODUCT', 'WHEAT', 2]]
+  Game: 90861234.json | Day: 10 | Step: 254 | Other Orders in Batch: [['SELL', 'MELON', 12], ['BUY_PRODUCT', 'WHEAT', 3]]
+  Game: 90866275.json | Day: 4 | Step: 118 | Other Orders in Batch: [['SELL', 'FERTILIZER', 5], ['SELL', 'WHEAT', 12]]
+
+=== 3. MARKET ORDERS ANALYSIS ===
+Total Market Order Frequencies:
+  HIRE: 7588
+  SELL: 6247
+  BUY_PRODUCT: 6206
+  BUY_SEED: 722
+  BUY_ANIMAL: 331
+  BUY_LAND: 75
+
+Total Seeds Bought (across all games):
+  MELON: 537 seeds
+  WHEAT: 564 seeds
+  STRAWBERRY: 1056 seeds
+
+Total Animals Bought (across all games):
+  COW: 217 animals
+  SHEEP: 290 animals
+
+Total Products Sold (across all games):
+  FERTILIZER: 7571 units (Avg 2.9 per order)
+  WHEAT: 1891 units (Avg 10.6 per order)
+  WOOL: 4607 units (Avg 5.2 per order)
+  MILK: 5199 units (Avg 5.2 per order)
+  MELON: 3192 units (Avg 8.9 per order)
+  STRAWBERRY: 7510 units (Avg 6.3 per order)
+
+=== 4. FARMER & HANDS ACTIONS ===
+--- Farmer Action Frequencies ---
+  WEST: 2417 (13.4%)
+  NORTH: 2358 (13.1%)
+  SOUTH: 2265 (12.6%)
+  PASS: 2016 (11.2%)
+  EAST: 1853 (10.3%)
+  FEED: 1593 (8.8%)
+  WATER: 1152 (6.4%)
+  COLLECT_FERTILIZER: 989 (5.5%)
+  CARE: 841 (4.7%)
+  HARVEST: 800 (4.4%)
+  PICKUP: 732 (4.1%)
+  DROP: 552 (3.1%)
+  PLACE: 155 (0.9%)
+  FERTILIZE: 122 (0.7%)
+  PLANT: 104 (0.6%)
+  BUILD_PASTURE: 51 (0.3%)
+
+--- Hands Action Frequencies ---
+  NORTH: 25005 (14.5%)
+  PASS: 24280 (14.1%)
+  WEST: 24191 (14.0%)
+  SOUTH: 21631 (12.5%)
+  EAST: 18524 (10.7%)
+  WATER: 14753 (8.6%)
+  COLLECT_FERTILIZER: 8489 (4.9%)
+  FEED: 8063 (4.7%)
+  HARVEST: 7520 (4.4%)
+  CARE: 7014 (4.1%)
+  DROP: 4233 (2.5%)
+  PICKUP: 4159 (2.4%)
+  PLANT: 2049 (1.2%)
+  FERTILIZE: 1783 (1.0%)
+  BUILD_PASTURE: 456 (0.3%)
+  PLACE: 352 (0.2%)
+
+=== 5. PRODUCTION FLOW ===
+Harvested Items (Based on HARVEST actions):
+  UNKNOWN: 8320
+
+=== 6. SHED INVENTORY (Sample from first game) ===
+  Day 5: {'CARROT': 0, 'COW': 0, 'EGG': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'MELON': 0, 'MILK': 0, 'SHEEP': 0, 'STRAWBERRY': 0, 'TOMATO': 0, 'WHEAT': 2, 'WOOL': 0}
+  Day 10: {'CARROT': 0, 'COW': 0, 'EGG': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'MELON': 0, 'MILK': 0, 'SHEEP': 0, 'STRAWBERRY': 0, 'TOMATO': 0, 'WHEAT': 9, 'WOOL': 1}
+  Day 15: {'CARROT': 0, 'COW': 0, 'EGG': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'MELON': 0, 'MILK': 0, 'SHEEP': 0, 'STRAWBERRY': 0, 'TOMATO': 0, 'WHEAT': 17, 'WOOL': 0}
+  Day 20: {'CARROT': 0, 'COW': 0, 'EGG': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'MELON': 10, 'MILK': 0, 'SHEEP': 0, 'STRAWBERRY': 0, 'TOMATO': 0, 'WHEAT': 13, 'WOOL': 6}
+  Day 25: {'CARROT': 0, 'COW': 0, 'EGG': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'MELON': 0, 'MILK': 10, 'SHEEP': 0, 'STRAWBERRY': 0, 'TOMATO': 0, 'WHEAT': 19, 'WOOL': 0}
+  Day 29: {'CARROT': 0, 'COW': 0, 'EGG': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'MELON': 0, 'MILK': 0, 'SHEEP': 0, 'STRAWBERRY': 0, 'TOMATO': 0, 'WHEAT': 0, 'WOOL': 0}
+
+=== 7. DAILY FARM COMPOSITION (Sample from first game) ===
+  Day 0: Hands=7, Quads=['NW'], Tiles={'LOCKED': 75}
+  Day 5: Hands=7, Quads=['NW', 'NE'], Tiles={'LOCKED': 50}
+  Day 10: Hands=12, Quads=['NW', 'NE', 'SW', 'SE'], Tiles={}
+  Day 15: Hands=12, Quads=['NW', 'NE', 'SW', 'SE'], Tiles={}
+  Day 20: Hands=12, Quads=['NW', 'NE', 'SW', 'SE'], Tiles={}
+  Day 25: Hands=12, Quads=['NW', 'NE', 'SW', 'SE'], Tiles={}

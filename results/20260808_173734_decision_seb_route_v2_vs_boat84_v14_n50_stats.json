@@ -1,0 +1,32 @@
+{
+  "n": 50,
+  "ok": 50,
+  "errors": 0,
+  "wins_a": 1,
+  "wins_b": 49,
+  "ties": 0,
+  "decisive": 50,
+  "rate_a": 0.02,
+  "rate_b": 0.98,
+  "ci_a": [
+    0.0035391680889764604,
+    0.10495686471836953
+  ],
+  "ci_b": [
+    0.8950431352816304,
+    0.9964608319110235
+  ],
+  "avg_a": 108766.88,
+  "avg_b": 121142.62,
+  "med_a": 111472.0,
+  "med_b": 127028.5,
+  "wall_s": 97.38786260000052,
+  "games_per_s": 0.5134110007667396,
+  "errors_detail": [],
+  "spec_a": "seb_route_v2",
+  "spec_b": "boat84_v14",
+  "tag": "decision_seb_route_v2_vs_boat84_v14_n50",
+  "ts": "20260808_173734",
+  "gate_verdict": "PROMOTE",
+  "gate_reason": "B over 50 decisive games (rate=0.980, basis: non-overlapping CIs, A CI=(0.004,0.105) B CI=(0.895,0.996))"
+}

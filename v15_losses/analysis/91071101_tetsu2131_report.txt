@@ -1,0 +1,51 @@
+==============================================================================
+SEED 1184765148 | tetsu2131 117228 vs Shivam_2212 116259
+==============================================================================
+
+--- V15(ME): Shivam_2212 ---
+  reward: 116259
+  max hands: 14 | land buys: 2 @ [169, 265]
+  seeds: {'WHEAT': 18, 'MELON': 2, 'STRAWBERRY': 2}
+  animals: {'COW': 5, 'SHEEP': 3}
+  product buys: {'WHEAT': 165}
+  sells: {'WHEAT': 305, 'FERTILIZER': 212, 'WOOL': 148, 'MILK': 221, 'MELON': 144, 'STRAWBERRY': 328}
+  sells by day: {0: {'WHEAT': 2}, 2: {'FERTILIZER': 4}, 3: {'FERTILIZER': 4}, 4: {'FERTILIZER': 4}, 5: {'WHEAT': 25, 'FERTILIZER': 4}, 6: {'FERTILIZER': 4}, 7: {'WOOL': 10, 'FERTILIZER': 4, 'WHEAT': 2}, 8: {'FERTILIZER': 4}, 9: {'MILK': 8, 'WHEAT': 17, 'FERTILIZER': 6}, 10: {'WOOL': 8, 'WHEAT': 22, 'MILK': 4, 'MELON': 60}, 11: {'WHEAT': 4, 'MELON': 12, 'FERTILIZER': 14}, 12: {'FERTILIZER': 8}, 13: {'FERTILIZER': 14, 'WOOL': 8, 'WHEAT': 7}, 14: {'FERTILIZER': 14, 'WHEAT': 6, 'MILK': 12}, 15: {'MILK': 7, 'FERTILIZER': 9}, 16: {'MILK': 12, 'WOOL': 8}, 17: {'MILK': 11, 'WHEAT': 7, 'FERTILIZER': 14, 'STRAWBERRY': 14}, 18: {'MILK': 19, 'FERTILIZER': 18, 'WOOL': 24, 'STRAWBERRY': 6, 'WHEAT': 3}, 19: {'STRAWBERRY': 22, 'WOOL': 8, 'WHEAT': 4, 'MILK': 15}, 20: {'STRAWBERRY': 34, 'MILK': 13, 'MELON': 24, 'WOOL': 4}, 21: {'MILK': 10, 'WOOL': 12, 'MELON': 24, 'WHEAT': 6, 'FERTILIZER': 10, 'STRAWBERRY': 30}, 22: {'MILK': 9, 'STRAWBERRY': 4, 'WOOL': 4, 'MELON': 24, 'WHEAT': 6}, 23: {'MILK': 19, 'STRAWBERRY': 47, 'WHEAT': 2, 'FERTILIZER': 14, 'WOOL': 8}, 24: {'STRAWBERRY': 63, 'MILK': 19, 'FERTILIZER': 14, 'WOOL': 4, 'WHEAT': 3}, 25: {'WHEAT': 26, 'WOOL': 10, 'FERTILIZER': 4, 'STRAWBERRY': 23, 'MILK': 3}, 26: {'STRAWBERRY': 19, 'MILK': 16, 'WHEAT': 15, 'WOOL': 4}, 27: {'STRAWBERRY': 42, 'WOOL': 18, 'WHEAT': 5, 'FERTILIZER': 20, 'MILK': 16}, 28: {'WHEAT': 34, 'MILK': 3, 'FERTILIZER': 8}, 29: {'MILK': 25, 'FERTILIZER': 17, 'WHEAT': 109, 'WOOL': 18, 'STRAWBERRY': 24}}
+  farmer top: [('PASS', 172), ('CARE', 76), ('WEST', 75), ('COLLECT_FERTILIZER', 73), ('FEED', 67), ('NORTH', 59), ('SOUTH', 55), ('WATER', 51)]
+  farmer PASS: 172/720 (23.9%)
+  hands top: [('WATER', 879), ('WEST', 848), ('PASS', 833), ('NORTH', 790), ('EAST', 617), ('SOUTH', 458)]
+  water/fertilize farmer turns: 51
+  shed snapshots:
+    step   0 money     3000 shed {}
+    step 120 money      693 shed {'FERTILIZER': 4, 'WHEAT': 30}
+    step 240 money     2031 shed {'COW': 1, 'FERTILIZER': 7, 'MILK': 4, 'WHEAT': 11, 'WOOL': 8}
+    step 360 money    15295 shed {'FERTILIZER': 14, 'MILK': 6, 'WHEAT': 15}
+    step 480 money    40948 shed {'FERTILIZER': 24, 'MILK': 6, 'STRAWBERRY': 34, 'WHEAT': 15}
+    step 600 money    79054 shed {'FERTILIZER': 8, 'STRAWBERRY': 24, 'WHEAT': 42, 'WOOL': 10}
+    step 719 money   116259 shed {}
+    quadrants 1 @ step 0 (day 0)
+    quadrants 2 @ step 169 (day 7)
+    quadrants 3 @ step 265 (day 11)
+
+--- OPPONENT: tetsu2131 ---
+  reward: 117228
+  max hands: 14 | land buys: 2 @ [169, 265]
+  seeds: {'WHEAT': 18, 'MELON': 2, 'STRAWBERRY': 2}
+  animals: {'COW': 5, 'SHEEP': 3}
+  product buys: {'WHEAT': 165}
+  sells: {'WHEAT': 305, 'FERTILIZER': 212, 'WOOL': 148, 'MILK': 214, 'MELON': 144, 'STRAWBERRY': 320}
+  sells by day: {0: {'WHEAT': 2}, 2: {'FERTILIZER': 4}, 3: {'FERTILIZER': 4}, 4: {'FERTILIZER': 4}, 5: {'WHEAT': 25, 'FERTILIZER': 4}, 6: {'FERTILIZER': 4}, 7: {'WOOL': 10, 'FERTILIZER': 4, 'WHEAT': 2}, 8: {'FERTILIZER': 4}, 9: {'MILK': 8, 'WHEAT': 17, 'FERTILIZER': 6}, 10: {'MILK': 4, 'WOOL': 8, 'WHEAT': 22, 'MELON': 60}, 11: {'WHEAT': 4, 'MELON': 12, 'FERTILIZER': 14}, 12: {'FERTILIZER': 8}, 13: {'FERTILIZER': 14, 'WOOL': 8, 'WHEAT': 7}, 14: {'MILK': 12, 'FERTILIZER': 14, 'WHEAT': 6}, 15: {'MILK': 7, 'FERTILIZER': 9}, 16: {'MILK': 12, 'WOOL': 8}, 17: {'MILK': 12, 'WHEAT': 7, 'FERTILIZER': 14, 'STRAWBERRY': 14}, 18: {'FERTILIZER': 18, 'WOOL': 24, 'MILK': 18, 'STRAWBERRY': 6, 'WHEAT': 3}, 19: {'STRAWBERRY': 22, 'WOOL': 8, 'WHEAT': 4, 'MILK': 15}, 20: {'STRAWBERRY': 34, 'MILK': 12, 'MELON': 24, 'WOOL': 4}, 21: {'MILK': 9, 'WOOL': 12, 'MELON': 24, 'WHEAT': 6, 'FERTILIZER': 10, 'STRAWBERRY': 30}, 22: {'MILK': 9, 'STRAWBERRY': 4, 'WOOL': 4, 'MELON': 24, 'WHEAT': 6}, 23: {'MILK': 18, 'STRAWBERRY': 46, 'WHEAT': 2, 'FERTILIZER': 14, 'WOOL': 8}, 24: {'STRAWBERRY': 61, 'MILK': 18, 'FERTILIZER': 14, 'WOOL': 4, 'WHEAT': 3}, 25: {'STRAWBERRY': 38, 'WHEAT': 26, 'WOOL': 10, 'FERTILIZER': 4, 'MILK': 3}, 26: {'MILK': 15, 'WHEAT': 15, 'WOOL': 4, 'STRAWBERRY': 8}, 27: {'WOOL': 18, 'WHEAT': 5, 'FERTILIZER': 20, 'MILK': 15, 'STRAWBERRY': 32}, 28: {'WHEAT': 34, 'MILK': 3, 'FERTILIZER': 8}, 29: {'MILK': 24, 'FERTILIZER': 17, 'WHEAT': 109, 'WOOL': 18, 'STRAWBERRY': 25}}
+  farmer top: [('PASS', 172), ('CARE', 76), ('WEST', 75), ('COLLECT_FERTILIZER', 73), ('FEED', 67), ('NORTH', 59), ('SOUTH', 55), ('WATER', 51)]
+  farmer PASS: 172/720 (23.9%)
+  hands top: [('WATER', 874), ('WEST', 848), ('PASS', 839), ('NORTH', 790), ('EAST', 617), ('SOUTH', 458)]
+  water/fertilize farmer turns: 51
+  shed snapshots:
+    step   0 money     3000 shed {}
+    step 120 money      693 shed {'FERTILIZER': 4, 'WHEAT': 30}
+    step 240 money     2659 shed {'COW': 1, 'FERTILIZER': 7, 'WHEAT': 11, 'WOOL': 8}
+    step 360 money    15577 shed {'FERTILIZER': 14, 'MILK': 6, 'WHEAT': 15}
+    step 480 money    41230 shed {'FERTILIZER': 24, 'MILK': 6, 'STRAWBERRY': 34, 'WHEAT': 15}
+    step 600 money    79933 shed {'FERTILIZER': 8, 'STRAWBERRY': 22, 'WHEAT': 42, 'WOOL': 10}
+    step 719 money   117228 shed {}
+    quadrants 1 @ step 0 (day 0)
+    quadrants 2 @ step 169 (day 7)
+    quadrants 3 @ step 265 (day 11)

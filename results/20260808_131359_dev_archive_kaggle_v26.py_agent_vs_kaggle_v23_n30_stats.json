@@ -1,0 +1,32 @@
+{
+  "n": 30,
+  "ok": 30,
+  "errors": 0,
+  "wins_a": 30,
+  "wins_b": 0,
+  "ties": 0,
+  "decisive": 30,
+  "rate_a": 1.0,
+  "rate_b": 0.0,
+  "ci_a": [
+    0.8864829086095221,
+    1.0
+  ],
+  "ci_b": [
+    0.0,
+    0.113517091390478
+  ],
+  "avg_a": 122450.86666666667,
+  "avg_b": 121902.93333333333,
+  "med_a": 119922.0,
+  "med_b": 119450.5,
+  "wall_s": 51.979316500001005,
+  "games_per_s": 0.5771526449371341,
+  "errors_detail": [],
+  "spec_a": "archive/kaggle_v26.py:agent",
+  "spec_b": "kaggle_v23",
+  "tag": "dev_archive_kaggle_v26.py_agent_vs_kaggle_v23_n30",
+  "ts": "20260808_131359",
+  "gate_verdict": "PROMOTE",
+  "gate_reason": "A over 30 decisive games (rate=1.000, basis: non-overlapping CIs, A CI=(0.886,1.000) B CI=(0.000,0.114))"
+}

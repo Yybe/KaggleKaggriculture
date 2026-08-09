@@ -1,0 +1,79 @@
+0001 | """Probe: run ONE H2H game (seed 2000) V15.5 vs V15 and dump late-game steps.
+0002 | 
+0003 | For each step 470-719: both players' FULL market order lists (position order),
+0004 | market prices for key items, sheds, money. Reveals exactly where recovery_sell
+0005 | changes behavior vs plain V15.
+0006 | """
+0007 | import io
+0008 | import os
+0009 | import sys
+0010 | import importlib.util
+0011 | 
+0012 | sys.path.insert(0, os.path.abspath("agents"))
+0013 | sys.path.insert(0, os.path.abspath("Kaggriculture"))
+0014 | 
+0015 | OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "probe_v155_h2h.log")
+0016 | LOG = io.StringIO()
+0017 | 
+0018 | 
+0019 | def logp(msg):
+0020 |     LOG.write(msg + "\n")
+0021 | 
+0022 | 
+0023 | def _load(path, name):
+0024 |     spec = importlib.util.spec_from_file_location(name, path)
+0025 |     mod = importlib.util.module_from_spec(spec)
+0026 |     spec.loader.exec_module(mod)
+0027 |     return mod
+0028 | 
+0029 | 
+0030 | def main():
+0031 |     mod_a = _load(os.path.abspath("agents/kaggle_v155_recovery.py"), "mod_a")
+0032 |     mod_b = _load(os.path.abspath("agents/kaggle_champion_v15.py"), "mod_b")
+0033 |     from kaggle_environments import make
+0034 | 
+0035 |     env = make("kaggriculture", configuration={"episodeSteps": 720, "seed": 2000}, debug=False)
+0036 |     env.run([mod_a.agent, mod_b.agent])
+0037 |     steps = env.steps
+0038 |     logp("total steps: %d" % len(steps))
+0039 |     final0 = steps[-1][0].reward
+0040 |     final1 = steps[-1][1].reward
+0041 |     logp("final reward: P0(v155)=%s P1(v15)=%s delta=%s" % (final0, final1, (float(final0) - float(final1))))
+0042 | 
+0043 |     prev0 = {}
+0044 |     prev1 = {}
+0045 |     for si in range(470, len(steps)):
+0046 |         s = steps[si]
+0047 |         o0 = s[0].observation
+0048 |         o1 = s[1].observation
+0049 |         a0 = s[0].get("action")
+0050 |         a1 = s[1].get("action")
+0051 |         m0 = a0.get("market", []) if isinstance(a0, dict) else []
+0052 |         m1 = a1.get("market", []) if isinstance(a1, dict) else []
+0053 |         p0 = o0.get("market", {}).get("prices", {}) if o0 else {}
+0054 |         inv0 = o0.get("market", {}).get("inventory", {}) if o0 else {}
+0055 |         shed0 = o0.get("private", {}).get("shed", {}) if o0 else {}
+0056 |         shed1 = o1.get("private", {}).get("shed", {}) if o1 else {}
+0057 |         mon0 = o0.get("farms", [{}])[0].get("money") if o0 and o0.get("farms") else None
+0058 |         mon1 = o1.get("farms", [{}])[1].get("money") if o1 and o1.get("farms") else None
+0059 | 
+0060 |         # detect v155 recovery orders: SELL STR/MILK/WOOL not in tape... just log all
+0061 |         line = "step %d | P0 mkt=%s | P1 mkt=%s" % (si, m0, m1)
+0062 |         line += " | STR px=%.0f inv=%.0f | MILK px=%.0f | WOOL px=%.0f | WHEAT px=%.0f | FERT px=%.0f" % (
+0063 |             p0.get("STRAWBERRY", 0), inv0.get("STRAWBERRY", 0),
+0064 |             p0.get("MILK", 0), p0.get("WOOL", 0), p0.get("WHEAT", 0), p0.get("FERTILIZER", 0))
+0065 |         line += " | shed0 STR=%s MILK=%s WOOL=%s WHEAT=%s" % (
+0066 |             shed0.get("STRAWBERRY", 0), shed0.get("MILK", 0), shed0.get("WOOL", 0), shed0.get("WHEAT", 0))
+0067 |         line += " | shed1 STR=%s MILK=%s WOOL=%s" % (
+0068 |             shed1.get("STRAWBERRY", 0), shed1.get("MILK", 0), shed1.get("WOOL", 0))
+0069 |         line += " | $0=%s $1=%s" % (mon0, mon1)
+0070 |         logp(line)
+0071 | 
+0072 |     with open(OUT, "w", encoding="utf-8") as f:
+0073 |         f.write(LOG.getvalue())
+0074 |     print("probe written to %s" % OUT)
+0075 | 
+0076 | 
+0077 | if __name__ == "__main__":
+0078 |     main()
+0079 | 

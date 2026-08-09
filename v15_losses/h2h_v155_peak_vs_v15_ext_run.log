@@ -1,0 +1,90 @@
+﻿
+============================================================================
+DIAG BENCH: kaggle_v155_recovery.py vs kaggle_champion_v15.py (offset=40)
+Games: 80 (40 seeds x 2 seats) | Ok: 80 | Errs: 0 | Time: 124.5s
+  kaggle_v155_recovery.py: 80 W (100.0%), 0 L, 0 T
+  Mean Delta: +472 | Median: +553 | Min: +118 | Max: +645
+  kaggle_v155_recovery.py Avg: 127571 | kaggle_champion_v15.py Avg: 127098
+  -- per-game (seed, swap, a, b, delta) --
+    seed=  4920 swap=0  a= 146204  b= 146057  d=  +147
+    seed=  4920 swap=1  a= 146204  b= 146057  d=  +147
+    seed=  4993 swap=0  a= 125572  b= 125019  d=  +553
+    seed=  4993 swap=1  a= 125572  b= 125019  d=  +553
+    seed=  5066 swap=0  a= 114299  b= 113746  d=  +553
+    seed=  5066 swap=1  a= 114299  b= 113746  d=  +553
+    seed=  5139 swap=0  a= 133479  b= 133088  d=  +391
+    seed=  5139 swap=1  a= 133479  b= 133088  d=  +391
+    seed=  5212 swap=0  a= 110394  b= 109841  d=  +553
+    seed=  5212 swap=1  a= 110394  b= 109841  d=  +553
+    seed=  5285 swap=0  a= 121932  b= 121379  d=  +553
+    seed=  5285 swap=1  a= 121932  b= 121379  d=  +553
+    seed=  5358 swap=0  a= 144263  b= 144048  d=  +215
+    seed=  5358 swap=1  a= 144263  b= 144048  d=  +215
+    seed=  5431 swap=0  a= 116141  b= 115588  d=  +553
+    seed=  5431 swap=1  a= 116141  b= 115588  d=  +553
+    seed=  5504 swap=0  a= 154809  b= 154691  d=  +118
+    seed=  5504 swap=1  a= 154809  b= 154691  d=  +118
+    seed=  5577 swap=0  a= 141427  b= 140782  d=  +645
+    seed=  5577 swap=1  a= 141427  b= 140782  d=  +645
+    seed=  5650 swap=0  a= 128645  b= 128092  d=  +553
+    seed=  5650 swap=1  a= 128645  b= 128092  d=  +553
+    seed=  5723 swap=0  a= 128293  b= 127740  d=  +553
+    seed=  5723 swap=1  a= 128293  b= 127740  d=  +553
+    seed=  5796 swap=0  a= 140948  b= 140395  d=  +553
+    seed=  5796 swap=1  a= 140948  b= 140395  d=  +553
+    seed=  5869 swap=0  a= 107625  b= 107072  d=  +553
+    seed=  5869 swap=1  a= 107625  b= 107072  d=  +553
+    seed=  5942 swap=0  a= 142622  b= 142069  d=  +553
+    seed=  5942 swap=1  a= 142622  b= 142069  d=  +553
+    seed=  6015 swap=0  a= 140217  b= 140044  d=  +173
+    seed=  6015 swap=1  a= 140217  b= 140044  d=  +173
+    seed=  6088 swap=0  a= 132184  b= 131631  d=  +553
+    seed=  6088 swap=1  a= 132184  b= 131631  d=  +553
+    seed=  6161 swap=0  a= 142773  b= 142220  d=  +553
+    seed=  6161 swap=1  a= 142773  b= 142220  d=  +553
+    seed=  6234 swap=0  a= 106886  b= 106333  d=  +553
+    seed=  6234 swap=1  a= 106886  b= 106333  d=  +553
+    seed=  6307 swap=0  a= 102088  b= 101535  d=  +553
+    seed=  6307 swap=1  a= 102088  b= 101535  d=  +553
+    seed=  6380 swap=0  a= 128275  b= 128102  d=  +173
+    seed=  6380 swap=1  a= 128275  b= 128102  d=  +173
+    seed=  6453 swap=0  a= 108711  b= 108158  d=  +553
+    seed=  6453 swap=1  a= 108711  b= 108158  d=  +553
+    seed=  6526 swap=0  a= 108354  b= 107801  d=  +553
+    seed=  6526 swap=1  a= 108354  b= 107801  d=  +553
+    seed=  6599 swap=0  a= 134650  b= 134097  d=  +553
+    seed=  6599 swap=1  a= 134650  b= 134097  d=  +553
+    seed=  6672 swap=0  a= 135118  b= 134727  d=  +391
+    seed=  6672 swap=1  a= 135118  b= 134727  d=  +391
+    seed=  6745 swap=0  a= 117078  b= 116525  d=  +553
+    seed=  6745 swap=1  a= 117078  b= 116525  d=  +553
+    seed=  6818 swap=0  a= 145551  b= 145160  d=  +391
+    seed=  6818 swap=1  a= 145551  b= 145160  d=  +391
+    seed=  6891 swap=0  a= 109280  b= 108727  d=  +553
+    seed=  6891 swap=1  a= 109280  b= 108727  d=  +553
+    seed=  6964 swap=0  a= 129158  b= 128943  d=  +215
+    seed=  6964 swap=1  a= 129158  b= 128943  d=  +215
+    seed=  7037 swap=0  a= 147894  b= 147503  d=  +391
+    seed=  7037 swap=1  a= 147894  b= 147503  d=  +391
+    seed=  7110 swap=0  a= 117596  b= 117043  d=  +553
+    seed=  7110 swap=1  a= 117596  b= 117043  d=  +553
+    seed=  7183 swap=0  a= 115662  b= 115109  d=  +553
+    seed=  7183 swap=1  a= 115662  b= 115109  d=  +553
+    seed=  7256 swap=0  a= 140249  b= 139604  d=  +645
+    seed=  7256 swap=1  a= 140249  b= 139604  d=  +645
+    seed=  7329 swap=0  a=  89132  b=  88579  d=  +553
+    seed=  7329 swap=1  a=  89132  b=  88579  d=  +553
+    seed=  7402 swap=0  a= 141070  b= 140517  d=  +553
+    seed=  7402 swap=1  a= 141070  b= 140517  d=  +553
+    seed=  7475 swap=0  a= 107145  b= 106592  d=  +553
+    seed=  7475 swap=1  a= 107145  b= 106592  d=  +553
+    seed=  7548 swap=0  a= 155499  b= 155108  d=  +391
+    seed=  7548 swap=1  a= 155499  b= 155108  d=  +391
+    seed=  7621 swap=0  a=  95937  b=  95292  d=  +645
+    seed=  7621 swap=1  a=  95937  b=  95292  d=  +645
+    seed=  7694 swap=0  a= 149171  b= 149041  d=  +130
+    seed=  7694 swap=1  a= 149171  b= 149041  d=  +130
+    seed=  7767 swap=0  a= 146495  b= 145942  d=  +553
+    seed=  7767 swap=1  a= 146495  b= 145942  d=  +553
+============================================================================
+

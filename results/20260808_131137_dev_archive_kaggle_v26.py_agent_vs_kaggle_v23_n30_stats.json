@@ -1,0 +1,36 @@
+{
+  "n": 30,
+  "ok": 0,
+  "errors": 30,
+  "wins_a": 0,
+  "wins_b": 0,
+  "ties": 0,
+  "decisive": 0,
+  "rate_a": 0.5,
+  "rate_b": 0.5,
+  "ci_a": [
+    0.0,
+    1.0
+  ],
+  "ci_b": [
+    0.0,
+    1.0
+  ],
+  "avg_a": null,
+  "avg_b": null,
+  "med_a": null,
+  "med_b": null,
+  "wall_s": 3.2386625000035565,
+  "games_per_s": 9.263083140020628,
+  "errors_detail": [
+    "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\xxshi\\\\Desktop\\\\farmmasterV2\\\\archive\\\\kaggle_v23.py'",
+    "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\xxshi\\\\Desktop\\\\farmmasterV2\\\\archive\\\\kaggle_v23.py'",
+    "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\xxshi\\\\Desktop\\\\farmmasterV2\\\\archive\\\\kaggle_v23.py'"
+  ],
+  "spec_a": "archive/kaggle_v26.py:agent",
+  "spec_b": "kaggle_v23",
+  "tag": "dev_archive_kaggle_v26.py_agent_vs_kaggle_v23_n30",
+  "ts": "20260808_131137",
+  "gate_verdict": "HOLD",
+  "gate_reason": "only 0 valid games (< 20) \u2014 sample too small"
+}

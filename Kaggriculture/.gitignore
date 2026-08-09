@@ -1,0 +1,18 @@
+# Replay data (636MB) - gitignored, keep local
+kaggriculture top replays/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Tooling dirs
+.codegraph/
+.omo/
+
+# Debug scratch
+_out.txt
+
+# Debug logs
+*.log
+_dbg_*_out.txt

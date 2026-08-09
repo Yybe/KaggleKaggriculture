@@ -1,0 +1,25 @@
+
+============================================================================
+DIAG BENCH: kaggle_boat84_v14.py vs kaggle_boat84_v14.py
+Games: 16 (8 seeds x 2 seats) | Ok: 16 | Errs: 0 | Time: 31.1s
+  kaggle_boat84_v14.py: 0 W (0.0%), 0 L, 16 T
+  Mean Delta: +0 | Median: +0 | Min: +0 | Max: +0
+  kaggle_boat84_v14.py Avg: 124099 | kaggle_boat84_v14.py Avg: 124099
+  -- per-game (seed, swap, a, b, delta) --
+    seed=  2000 swap=0  a= 119680  b= 119680  d=    +0
+    seed=  2000 swap=1  a= 119680  b= 119680  d=    +0
+    seed=  2073 swap=0  a= 125364  b= 125364  d=    +0
+    seed=  2073 swap=1  a= 125364  b= 125364  d=    +0
+    seed=  2146 swap=0  a= 127314  b= 127314  d=    +0
+    seed=  2146 swap=1  a= 127314  b= 127314  d=    +0
+    seed=  2219 swap=0  a= 133836  b= 133836  d=    +0
+    seed=  2219 swap=1  a= 133836  b= 133836  d=    +0
+    seed=  2292 swap=0  a= 118559  b= 118559  d=    +0
+    seed=  2292 swap=1  a= 118559  b= 118559  d=    +0
+    seed=  2365 swap=0  a= 112797  b= 112797  d=    +0
+    seed=  2365 swap=1  a= 112797  b= 112797  d=    +0
+    seed=  2438 swap=0  a= 125970  b= 125970  d=    +0
+    seed=  2438 swap=1  a= 125970  b= 125970  d=    +0
+    seed=  2511 swap=0  a= 129271  b= 129271  d=    +0
+    seed=  2511 swap=1  a= 129271  b= 129271  d=    +0
+============================================================================

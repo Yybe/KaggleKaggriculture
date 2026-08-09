@@ -1,0 +1,32 @@
+{
+  "n": 50,
+  "ok": 50,
+  "errors": 0,
+  "wins_a": 0,
+  "wins_b": 50,
+  "ties": 0,
+  "decisive": 50,
+  "rate_a": 0.0,
+  "rate_b": 1.0,
+  "ci_a": [
+    0.0,
+    0.07135003417431873
+  ],
+  "ci_b": [
+    0.9286499658256813,
+    1.0
+  ],
+  "avg_a": 121034.06,
+  "avg_b": 125400.38,
+  "med_a": 120940.5,
+  "med_b": 124625.0,
+  "wall_s": 64.77587309999944,
+  "games_per_s": 0.7718923359444526,
+  "errors_detail": [],
+  "spec_a": "kaggle_v26",
+  "spec_b": "boat84_v14",
+  "tag": "dev_kaggle_v26_vs_boat84_v14_n50",
+  "ts": "20260808_125630",
+  "gate_verdict": "PROMOTE",
+  "gate_reason": "B over 50 decisive games (rate=1.000, basis: non-overlapping CIs, A CI=(0.000,0.071) B CI=(0.929,1.000))"
+}
