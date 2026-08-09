@@ -1,0 +1,227 @@
+step  item         qty
+    1  WHEAT        1
+    3  WHEAT        1
+   48  FERTILIZER   4
+   72  FERTILIZER   4
+   96  FERTILIZER   4
+  120  WHEAT        25
+  120  FERTILIZER   4
+  144  FERTILIZER   4
+  168  WOOL         10
+  168  FERTILIZER   4
+  169  WHEAT        2
+  192  FERTILIZER   4
+  216  MILK         7
+  216  WHEAT        17
+  216  FERTILIZER   6
+  217  MILK         1
+  240  WOOL         8
+  240  WHEAT        3
+  241  MILK         4
+  249  WHEAT        1
+  251  WHEAT        1
+  252  WHEAT        1
+  253  WHEAT        1
+  254  WHEAT        1
+  255  WHEAT        2
+  256  MELON        12
+  256  WHEAT        1
+  257  WHEAT        2
+  258  MELON        24
+  258  WHEAT        1
+  259  MELON        12
+  259  WHEAT        3
+  260  WHEAT        1
+  261  MELON        12
+  261  WHEAT        3
+  262  WHEAT        1
+  263  WHEAT        3
+  264  MELON        12
+  264  WHEAT        1
+  266  FERTILIZER   14
+  289  FERTILIZER   8
+  312  WOOL         8
+  312  FERTILIZER   14
+  312  WHEAT        7
+  336  FERTILIZER   14
+  336  WHEAT        6
+  337  MILK         12
+  360  MILK         6
+  360  FERTILIZER   9
+  361  MILK         1
+  384  WOOL         8
+  384  MILK         11
+  385  MILK         1
+  408  MILK         10
+  408  WHEAT        7
+  409  FERTILIZER   14
+  409  MILK         1
+  424  STRAWBERRY   4
+  430  STRAWBERRY   10
+  432  WOOL         24
+  432  FERTILIZER   14
+  432  STRAWBERRY   4
+  432  WHEAT        3
+  432  MILK         5
+  433  MILK         2
+  433  STRAWBERRY   2
+  451  MILK         9
+  451  FERTILIZER   3
+  452  MILK         3
+  452  FERTILIZER   1
+  456  STRAWBERRY   14
+  456  WHEAT        4
+  456  WOOL         8
+  457  MILK         3
+  457  STRAWBERRY   3
+  470  STRAWBERRY   5
+  472  MILK         6
+  474  MILK         6
+  480  STRAWBERRY   34
+  480  MILK         5
+  481  MILK         1
+  498  MELON        12
+  499  MELON        12
+  502  MILK         6
+  502  WOOL         4
+  504  MELON        24
+  504  WOOL         12
+  504  WHEAT        6
+  504  MILK         4
+  505  FERTILIZER   10
+  505  MILK         2
+  516  STRAWBERRY   4
+  519  STRAWBERRY   6
+  523  STRAWBERRY   8
+  525  MILK         3
+  525  STRAWBERRY   2
+  526  STRAWBERRY   10
+  528  MILK         9
+  528  STRAWBERRY   4
+  528  MELON        24
+  528  WOOL         4
+  528  WHEAT        6
+  552  MILK         10
+  552  STRAWBERRY   9
+  552  WHEAT        2
+  553  FERTILIZER   14
+  553  MILK         2
+  553  STRAWBERRY   4
+  563  WOOL         4
+  563  MILK         3
+  565  STRAWBERRY   6
+  569  MILK         3
+  569  WOOL         4
+  570  STRAWBERRY   18
+  571  STRAWBERRY   3
+  574  STRAWBERRY   6
+  575  STRAWBERRY   31
+  576  MILK         3
+  576  FERTILIZER   9
+  576  WOOL         4
+  577  STRAWBERRY   8
+  577  MILK         3
+  592  MILK         6
+  594  MILK         6
+  594  FERTILIZER   5
+  596  WHEAT        3
+  599  STRAWBERRY   22
+  600  WOOL         10
+  600  WHEAT        26
+  600  FERTILIZER   4
+  601  STRAWBERRY   4
+  615  STRAWBERRY   10
+  615  MILK         3
+  622  STRAWBERRY   6
+  624  MILK         7
+  624  WHEAT        15
+  624  STRAWBERRY   18
+  625  MILK         2
+  646  MILK         6
+  646  WOOL         4
+  648  STRAWBERRY   8
+  648  WOOL         14
+  648  WHEAT        5
+  649  FERTILIZER   14
+  649  MILK         3
+  650  STRAWBERRY   1
+  662  MILK         6
+  662  WOOL         4
+  662  FERTILIZER   1
+  665  MILK         3
+  665  FERTILIZER   3
+  666  STRAWBERRY   27
+  667  FERTILIZER   2
+  667  MILK         3
+  670  STRAWBERRY   4
+  672  WHEAT        34
+  672  MILK         3
+  672  FERTILIZER   8
+  696  MILK         10
+  696  FERTILIZER   14
+  696  WHEAT        48
+  697  MILK         2
+  714  WOOL         4
+  714  WHEAT        8
+  715  MILK         3
+  715  WOOL         4
+  715  WHEAT        16
+  716  MILK         7
+  716  WOOL         10
+  716  WHEAT        18
+  717  MILK         2
+  717  WHEAT        11
+  718  FERTILIZER   3
+  718  WHEAT        8
+
+--- per-step aggregated (step with >1 sells) ---
+  120: [('WHEAT', 25), ('FERTILIZER', 4)]
+  168: [('WOOL', 10), ('FERTILIZER', 4)]
+  216: [('MILK', 7), ('WHEAT', 17), ('FERTILIZER', 6)]
+  240: [('WOOL', 8), ('WHEAT', 3)]
+  256: [('MELON', 12), ('WHEAT', 1)]
+  258: [('MELON', 24), ('WHEAT', 1)]
+  259: [('MELON', 12), ('WHEAT', 3)]
+  261: [('MELON', 12), ('WHEAT', 3)]
+  264: [('MELON', 12), ('WHEAT', 1)]
+  312: [('WOOL', 8), ('FERTILIZER', 14), ('WHEAT', 7)]
+  336: [('FERTILIZER', 14), ('WHEAT', 6)]
+  360: [('MILK', 6), ('FERTILIZER', 9)]
+  384: [('WOOL', 8), ('MILK', 11)]
+  408: [('MILK', 10), ('WHEAT', 7)]
+  409: [('FERTILIZER', 14), ('MILK', 1)]
+  432: [('WOOL', 24), ('FERTILIZER', 14), ('STRAWBERRY', 4), ('WHEAT', 3), ('MILK', 5)]
+  433: [('MILK', 2), ('STRAWBERRY', 2)]
+  451: [('MILK', 9), ('FERTILIZER', 3)]
+  452: [('MILK', 3), ('FERTILIZER', 1)]
+  456: [('STRAWBERRY', 14), ('WHEAT', 4), ('WOOL', 8)]
+  457: [('MILK', 3), ('STRAWBERRY', 3)]
+  480: [('STRAWBERRY', 34), ('MILK', 5)]
+  502: [('MILK', 6), ('WOOL', 4)]
+  504: [('MELON', 24), ('WOOL', 12), ('WHEAT', 6), ('MILK', 4)]
+  505: [('FERTILIZER', 10), ('MILK', 2)]
+  525: [('MILK', 3), ('STRAWBERRY', 2)]
+  528: [('MILK', 9), ('STRAWBERRY', 4), ('MELON', 24), ('WOOL', 4), ('WHEAT', 6)]
+  552: [('MILK', 10), ('STRAWBERRY', 9), ('WHEAT', 2)]
+  553: [('FERTILIZER', 14), ('MILK', 2), ('STRAWBERRY', 4)]
+  563: [('WOOL', 4), ('MILK', 3)]
+  569: [('MILK', 3), ('WOOL', 4)]
+  576: [('MILK', 3), ('FERTILIZER', 9), ('WOOL', 4)]
+  577: [('STRAWBERRY', 8), ('MILK', 3)]
+  594: [('MILK', 6), ('FERTILIZER', 5)]
+  600: [('WOOL', 10), ('WHEAT', 26), ('FERTILIZER', 4)]
+  615: [('STRAWBERRY', 10), ('MILK', 3)]
+  624: [('MILK', 7), ('WHEAT', 15), ('STRAWBERRY', 18)]
+  646: [('MILK', 6), ('WOOL', 4)]
+  648: [('STRAWBERRY', 8), ('WOOL', 14), ('WHEAT', 5)]
+  649: [('FERTILIZER', 14), ('MILK', 3)]
+  662: [('MILK', 6), ('WOOL', 4), ('FERTILIZER', 1)]
+  665: [('MILK', 3), ('FERTILIZER', 3)]
+  667: [('FERTILIZER', 2), ('MILK', 3)]
+  672: [('WHEAT', 34), ('MILK', 3), ('FERTILIZER', 8)]
+  696: [('MILK', 10), ('FERTILIZER', 14), ('WHEAT', 48)]
+  714: [('WOOL', 4), ('WHEAT', 8)]
+  715: [('MILK', 3), ('WOOL', 4), ('WHEAT', 16)]
+  716: [('MILK', 7), ('WOOL', 10), ('WHEAT', 18)]
+  717: [('MILK', 2), ('WHEAT', 11)]
+  718: [('FERTILIZER', 3), ('WHEAT', 8)]

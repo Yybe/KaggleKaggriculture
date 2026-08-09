@@ -1,7 +1,7 @@
 # Kaggriculture Agent — KaggleKaggriculture
 
 Competition agent for **Kaggriculture** (Kaggle `kaggle-environments`). Current
-champion: **V15.5 "Dead-Inventory Recovery"** (`agents/kaggle_champion_v155.py`,
+champion: **V16a "Counter-Preemption"** (`agents/kaggle_v16a_counterpreempt.py`,
 bundled as `submission.py`). Fully self-contained single-file agents, zero
 runtime dependencies.
 
@@ -76,7 +76,7 @@ Ablations (from `results/DIAGNOSIS_V15_VS_V14.md`, deterministic engine, V14 mir
 - `kaggle_v15_no_idlefill.py` (V14 + capselllate only) vs V14: **78W/22L/0T, Mean +196** — capselllate = 100% of V15's effect.
 - The 22 losses are razor-thin (−4…−59) blind price-timing bets: capselllate sold surplus into crashed markets (px 1-24) while V14 held for recovery (px 47-85).
 
-### Era 4 — V15.5: the current champion (local, fully verified)
+### Era 4 — V15.5: the previous champion (local, fully verified)
 
 | Ver | Nickname | The idea | Result |
 |---|---|---|---|
@@ -94,6 +94,35 @@ Ablations (from `results/DIAGNOSIS_V15_VS_V14.md`, deterministic engine, V14 mir
 | V14 baseline (V15's edge was +196) | 40 | 40W/0L | +669 | +225 | +1004 |
 | previous champion_v155 (momentum-gate) | 40 | 40W/0L | +632 | +145 | +998 |
 | **Total vs V15** | **120** | **120W/0L** | +492/+472 | +118 | +645 |
+
+### Era 5 — V16a: the current champion (local, fully verified)
+
+| Ver | Nickname | The idea | Result |
+|---|---|---|---|
+| V16a v1 | counter-preempt (broken) | V15.5 brain + h=(4,3,2,1) preemption pass | **Hidden `NameError: _PREEMPT`** (undefined, line 127) — counter crashed exactly when clone gate passed + future premium SELL within 4 steps → PASS fallback → farm divergence → SAL swept (−54,400). Traced via `pinpoint_v16_exc3.py` (agent twin writing tracebacks to file) |
+| **V16a (champion)** | **Counter-Preemption** | **V15.5 brain + `_counter_preempt` h=(4,3,2,1)** (fire BEFORE opponent's h=3 shift, land at T−4). Volume-neutral repay at due step; clone-gated (≤6) → vs non-clones behaves exactly like V15.5 | **See scorecard below** |
+
+### V16a verified scorecard (deterministic engine, no noise floor)
+
+| Opponent | Regime | Games | W/L | Mean Δ | Min | Max |
+|---|---|---|---|---|---|---|
+| salemali7 | legacy (interval=12) | 16 (8 seeds × 2) | 16W/0L | +2,361 | +738 | +3,100 |
+| salemali7 | legacy, N=100 fresh seeds | 200 | 100W/0L | +2,325 | +675 | +3,211 |
+| V15.5 (old champion) | legacy | 16 | 16W/0L | +1,594 | +540 | +2,133 |
+| V15 | legacy | 16 | 16W/0L | +2,074 | +670 | +2,728 |
+| V14 | legacy | 16 | 16W/0L | +2,368 | +741 | +3,205 |
+| V26 | legacy | 16 | 16W/0L | +3,451 | +2,575 | +5,465 |
+| salemali7 | rebalance (interval=24) | 16 | 16W/0L | +2,646 | +1,399 | +3,474 |
+| V15.5 | rebalance (interval=24) | 16 | 16W/0L | +1,619 | +868 | +2,371 |
+
+Root-cause story: the gate pre-registered V16a vs salemali7 on the frozen 8-seed
+family (≥6/8 + positive mean). The FIRST attempt failed on the 1-seed diagnostic
+(0W/4L, Δ −46,776) — the counter crashed on a `NameError` (`_PREEMPT` never
+defined; `for item in _PREMIUM:` is the fix at line 127), 4-step PASS fallback
+diverged the farm, SAL swept. After the one-line fix: gate **PASS**, N=100 clean,
+no ladder regression, rebalance closed. Mechanism evidence (seed 2000): cd
+{0:693,1:26}, V16a fires 45× at T−4 vs SAL 39× at T−3. Full forensics + trace:
+`results/V16A_VS_SALEMALI7.md`, `results/V16_WEAKNESS_ANALYSIS.md`.
 
 Side experiments preserved (not promoted): `kaggle_v155_t90/t120/t150/t180.py`
 (price-threshold capselllate variants), `kaggle_v14_tweaked.py`,
@@ -151,10 +180,12 @@ opponents front-load STR at position 0. Full story: `results/V15_TO_V155.md`.
 ## Layout
 
 ```
-submission.py                  <- V15.5 champion bundle — THE SUBMISSION
-build_v15_submission.py        <- rebuilds submission.py (champion + V14 inline)
+submission.py                  <- V16a champion bundle — THE SUBMISSION
+build_v16_submission.py        <- rebuilds submission.py (V16a + V14 inline)
+build_v15_submission.py        <- legacy builder (V15.5, kept for reference)
 agents/                        <- all agent code (current + every preserved variant)
-  kaggle_champion_v155.py      <- V15.5 champion (current, imports V14)
+  kaggle_v16a_counterpreempt.py<- V16a champion (current, imports V14)
+  kaggle_champion_v155.py      <- V15.5 champion (previous, archived as archive_main_v155.py)
   kaggle_v155_recovery.py      <- V15.5 candidate (identical body)
   kaggle_champion_v155_momentum_gate.py  <- old V15.5 (backup)
   kaggle_champion_v15.py       <- V15 champion (baseline)
@@ -196,8 +227,8 @@ python tools\diag_bench.py agents\kaggle_champion_v155.py agents\kaggle_champion
 python v15_losses\diag_bench_offset.py agents\kaggle_champion_v155.py agents\kaggle_champion_v15.py 40 out_ext.txt 40
 
 # Rebuild + verify + submit
-python build_v15_submission.py
-python tools\diag_bench.py submission.py agents\kaggle_champion_v15.py 10 smoke.txt --swap-both
+python build_v16_submission.py
+python tools\diag_bench_seeds.py submission.py agents\kaggle_champion_v155.py "1000000,9000000,3330000,7770000,5000000,6000000,8000000,2000000" smoke.txt
 kaggle competitions submit -c kaggriculture -f submission.py -m "message"
 ```
 

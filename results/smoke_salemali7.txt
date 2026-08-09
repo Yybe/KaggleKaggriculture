@@ -1,0 +1,18 @@
+
+============================================================================
+DIAG BENCH: kaggle_champion_v155.py vs salemali7_3000score.py
+Games: 4 (2 seeds x 2 seats) | Ok: 4 | Errs: 0 | Time: 12.3s
+  kaggle_champion_v155.py: 0 W (0.0%), 4 L, 0 T
+  Mean Delta: -1313 | Median: -1313 | Min: -1675 | Max: -951
+  kaggle_champion_v155.py Avg: 121017 | salemali7_3000score.py Avg: 122330
+  -- per-game (seed, swap, a, b, delta) --
+    seed=  2000 swap=0  a= 117838  b= 119513  d= -1675
+    seed=  2000 swap=1  a= 117838  b= 119513  d= -1675
+    seed=  2073 swap=0  a= 124196  b= 125147  d=  -951
+    seed=  2073 swap=1  a= 124196  b= 125147  d=  -951
+  -- LOSES (a < b), most-negative first:
+    seed=  2000 swap=0  a= 117838  b= 119513  d= -1675
+    seed=  2000 swap=1  a= 117838  b= 119513  d= -1675
+    seed=  2073 swap=0  a= 124196  b= 125147  d=  -951
+    seed=  2073 swap=1  a= 124196  b= 125147  d=  -951
+============================================================================

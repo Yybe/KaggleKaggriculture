@@ -1,0 +1,9 @@
+THEFT MAP SUMMARY (real events only; first row per due-cascade)
+mechanism: agents/salemali7_3000score.py _preempt_shift (lines 236-290)
+theft_map_seed2000_cf.txt | SEED 2000  champ_first=True  reward: champ=117838.0 sal=119513.0 | events=15 shifted=124 value=+5304
+theft_map_seed2000_sf.txt | SEED 2000  champ_first=False  reward: champ=117838.0 sal=119513.0 | events=15 shifted=124 value=+5304
+theft_map_seed2073_cf.txt | SEED 2073  champ_first=True  reward: champ=124196.0 sal=125147.0 | events=15 shifted=124 value=+3360
+theft_map_seed2073_sf.txt | SEED 2073  champ_first=False  reward: champ=124196.0 sal=125147.0 | events=15 shifted=124 value=+3360
+theft_map_seed2146_cf.txt | SEED 2146  champ_first=True  reward: champ=125496.0 sal=126893.0 | events=15 shifted=124 value=+4625
+theft_map_seed2146_sf.txt | SEED 2146  champ_first=False  reward: champ=125496.0 sal=126893.0 | events=15 shifted=124 value=+4625
+GLOBAL | events=90 shifted=744 value=+26578

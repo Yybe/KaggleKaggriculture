@@ -78,6 +78,7 @@
 | H5 | Extra late units depress the SHARED curve → asymmetric win | capselllate (+2, ≥456, high-value only) | H2H 8/8 vs v23 | **CONFIRMED — champion** |
 | H6 | Mirror deltas predict promotion | mirror vs H2H comparisons | mirrors misled; H2H is truth | **rule: H2H decides** |
 | H7 | v24 guard set improves v23 | v24 H2H (3 seeds) | 2 losses + 1 tie | **REJECTED/archived** |
+| H8 | Deeper counter-preemption (h=(4,3,2,1), fire BEFORE opponent's h=3 shift at T−3) beats salemali7's own preemption | V16a = V15.5 brain + `_counter_preempt` (V15.5 agent() + counter line); gate: rulebook frozen 8-seed family, ≥6/8 + positive mean, N=100 | Root cause found & fixed: `NameError: _PREEMPT` (undefined) at line 127 crashed the counter → 4-step PASS fallback → SAL swept (Δ −54,400). After fix `for item in _PREMIUM:`: gate **8W/0L, mean Δ +2,361** (min +738); N=100 fresh seeds **100W/0L, mean Δ +2,325**; regression vs V15.5 **8W/0L, mean Δ +1,594**. Counter fires 45× vs SAL 39×, lands T−4 one step before SAL's T−3. Ladder: vs V15 **8W/0L +2,074**, vs V14 **8W/0L +2,368**, vs V26 **8W/0L +3,451**. Rebalance (`interval=24`): vs SAL **8W/0L +2,646**, vs V15.5 **8W/0L +1,619** | **CONFIRMED — gate passed, ladder clean, rebalance closed; promoted to incumbent** |
 
 ---
 

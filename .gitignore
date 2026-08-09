@@ -16,3 +16,9 @@ logs/
 
 # Local tool state
 .omo/
+
+# Unrelated desktop app database (FreeBuff) - not part of the project
+.freebuff/
+
+# V16a-era opponent replay dumps (~32MB each) - re-downloadable from Kaggle
+results/replays/*.json
