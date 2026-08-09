@@ -1,0 +1,25 @@
+
+============================================================================
+DIAG BENCH SEED-LIST: submission.py vs kathimunishwar_replay_agent.py (interval=12)
+Seeds: 8 x 2 seats = 16 games | Ok: 16 | Errs: 0 | Time: 29.3s
+  submission.py: 16 W (100.0%), 0 L, 0 T | seed-level: 8W/0L/0T
+  Mean Delta: +2361 | Median: +2708 | Min: +738 | Max: +3100
+  submission.py Avg: 133397 | kathimunishwar_replay_agent.py Avg: 131036
+  -- per-game (seed, swap, a, b, delta) --
+    seed=1000000 swap=0  a= 123593  b= 120876  d= +2717
+    seed=1000000 swap=1  a= 123593  b= 120876  d= +2717
+    seed=2000000 swap=0  a= 132385  b= 129799  d= +2586
+    seed=2000000 swap=1  a= 132385  b= 129799  d= +2586
+    seed=3330000 swap=0  a= 121115  b= 118015  d= +3100
+    seed=3330000 swap=1  a= 121115  b= 118015  d= +3100
+    seed=5000000 swap=0  a= 115361  b= 112466  d= +2895
+    seed=5000000 swap=1  a= 115361  b= 112466  d= +2895
+    seed=6000000 swap=0  a= 146500  b= 143800  d= +2700
+    seed=6000000 swap=1  a= 146500  b= 143800  d= +2700
+    seed=7770000 swap=0  a= 160258  b= 159520  d=  +738
+    seed=7770000 swap=1  a= 160258  b= 159520  d=  +738
+    seed=8000000 swap=0  a= 136737  b= 133680  d= +3057
+    seed=8000000 swap=1  a= 136737  b= 133680  d= +3057
+    seed=9000000 swap=0  a= 131226  b= 130129  d= +1097
+    seed=9000000 swap=1  a= 131226  b= 130129  d= +1097
+============================================================================

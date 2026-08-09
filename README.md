@@ -124,6 +124,18 @@ no ladder regression, rebalance closed. Mechanism evidence (seed 2000): cd
 {0:693,1:26}, V16a fires 45× at T−4 vs SAL 39× at T−3. Full forensics + trace:
 `results/V16A_VS_SALEMALI7.md`, `results/V16_WEAKNESS_ANALYSIS.md`.
 
+**Ground-truth validation (2026-08-09)**: opponent kernel pulled
+(`kaggle kernels pull kathimunishwar/kaggriculture-replay-agent` →
+`notebooks/kathimunishwar-replay-agent.ipynb`, agent extracted to
+`agents/kathimunishwar_replay_agent.py`, `__version__ = "adaptive-preempt-3x2x1"`).
+The pulled kernel is the REAL source of the salemali7 strategy. Checks:
+- Reconstruction fidelity: `agents/salemali7_3000score.py` (replay-derived) vs
+  ground-truth kernel agent = **16/16 exact ties, Mean Δ +0** (all 8 seeds × 2 seats).
+- Gate re-run vs ground truth: submission.py (V16a) vs kernel agent =
+  **16W/0L, Mean Δ +2,361** (min +738, max +3,100) — **identical** to the
+  gate vs the reconstruction. V16a's edge is real, not an artifact of our
+  reconstruction.
+
 Side experiments preserved (not promoted): `kaggle_v155_t90/t120/t150/t180.py`
 (price-threshold capselllate variants), `kaggle_v14_tweaked.py`,
 `kaggle_v14_v26style.py`, `kaggle_v26_aggr_evidence.py`, `seb_route_v1.py`,
@@ -186,6 +198,8 @@ build_v15_submission.py        <- legacy builder (V15.5, kept for reference)
 agents/                        <- all agent code (current + every preserved variant)
   kaggle_v16a_counterpreempt.py<- V16a champion (current, imports V14)
   kaggle_champion_v155.py      <- V15.5 champion (previous, archived as archive_main_v155.py)
+  kathimunishwar_replay_agent.py <- ground-truth opponent kernel agent (adaptive-preempt-3x2x1)
+  salemali7_3000score.py       <- replay-derived reconstruction of the same strategy (16/16 ties vs truth)
   kaggle_v155_recovery.py      <- V15.5 candidate (identical body)
   kaggle_champion_v155_momentum_gate.py  <- old V15.5 (backup)
   kaggle_champion_v15.py       <- V15 champion (baseline)
