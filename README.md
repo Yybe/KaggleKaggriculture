@@ -226,20 +226,26 @@ preserved at `agents/submission_v16a_backup_20260810.py`.
 
 | Opponent | Regime | Games | W/L/T | Mean Δ | Min | Max |
 |---|---|---|---|---|---|---|
-| V17 (previous champion) | gate (8 seeds × 2) | 16 | 1W/1L/14T | +0 | −1,431 | +1,431 |
+| V17 (previous champion) | gate (8 seeds × 2) | 16 | 7W/1L/8T | +2 | −1,431 | +1,431 |
 | V17 | losing seeds (2 × 2) | 4 | 1W/1L/2T | +0 | −41 | +41 |
-| V17 | fresh (20 seeds × 2) | 40 | 5W/5L/30T | +0 | −1,493 | +1,493 |
+| V17 | fresh (20 seeds × 2) | 40 | 11W/5L/24T | +2 | −1,493 | +1,493 |
 | th1 (THUNDER-clone) | gate (8 seeds × 2) | 16 | 16W/0L/0T | +69,864 | +54,219 | +93,622 |
 | th1 | fresh (20 seeds × 2) | 40 | 40W/0L/0T | +78,606 | +38,177 | +111,470 |
-| th2 (THUNDER-clone) | gate | 16 | 16W/0L/0T | +44,194 | — | — |
-| th2 | fresh | 40 | 40W/0L/0T | +36,518 | +17,457 | +64,615 |
+| th2 (THUNDER-clone) | gate (8 seeds × 2) | 16 | 16W/0L/0T | +38,544 | +23,266 | +61,200 |
+| th2 | fresh (20 seeds × 2) | 40 | 40W/0L/0T | +36,518 | +17,457 | +64,615 |
 
-> **V18 vs V17 is a wash by design** (44/60 exact ties): the anti-THUNDER
-> interceptors only fire against THUNDER-type opponents, so against V17 (not a
-> THUNDER clone) V18 plays identically and only the seat-symmetric ±1431/±1493
-> runs differ. **V18's edge is entirely vs THUNDER clones (40W/0L, mean ~+78K)**.
-> Raw logs: `results/v18_final_benchmark.json`, `WybeV2/h2h_v18_vs_v17_gate.txt`,
-> `WybeV2/h2h_v18_vs_v17_fresh.txt`.
+> **V18 vs V17 is near-neutral, not a loss** (34/60 exact ties, mean +2,
+> **seed-level undefeated: 7W/0L/23T across all 30 unique seeds**; the
+> seat-level losses are all seat-symmetric mirror flips of ±41…±1,493, e.g. seed
+> 1212121/179190 — wins one seat by the same amount it loses the other). The
+> anti-THUNDER interceptors only fire against THUNDER-type opponents, so vs V17
+> (not a THUNDER clone) V18 plays nearly identically. **V18's edge is entirely vs
+> THUNDER clones (gate+fresh: 112W/0L, mean ~+78K th1 / ~+37K th2)**. Note: seed
+> 1M exposes a small wrapper-vs-inline divergence (opp-type classification), both
+> within ±1,431 of each other and both crushing THUNDER identically. Raw logs:
+> `WybeV2/h2h_v18_vs_v17_gate.txt`, `WybeV2/h2h_v18_vs_v17_fresh.txt`,
+> `results/v18_final_benchmark.json` (JSON `v17_apex` rows = inline-vs-wrapper
+> sanity; real vs-v17 numbers are the diag logs).
 
 ---
 
