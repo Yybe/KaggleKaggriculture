@@ -1,0 +1,27 @@
+
+============================================================================
+DIAG BENCH SEED-LIST: v17_apex.py vs main.py (interval=24)
+Seeds: 8 x 2 seats = 16 games | Ok: 16 | Errs: 0 | Time: 33.0s
+  v17_apex.py: 15 W (93.8%), 1 L, 0 T | seed-level: 8W/0L/0T
+  Mean Delta: +3587 | Median: +213 | Min: -1216 | Max: +10065
+  v17_apex.py Avg: 81187 | main.py Avg: 77600
+  -- per-game (seed, swap, a, b, delta) --
+    seed=1000000 swap=0  a=  71383  b=  72599  d= -1216
+    seed=1000000 swap=1  a=  72814  b=  71168  d= +1646
+    seed=2000000 swap=0  a=  79627  b=  71697  d= +7930
+    seed=2000000 swap=1  a=  79627  b=  71697  d= +7930
+    seed=3330000 swap=0  a=  87104  b=  77471  d= +9633
+    seed=3330000 swap=1  a=  87104  b=  77471  d= +9633
+    seed=5000000 swap=0  a=  69881  b=  59816  d=+10065
+    seed=5000000 swap=1  a=  69881  b=  59816  d=+10065
+    seed=6000000 swap=0  a=  41412  b=  41199  d=  +213
+    seed=6000000 swap=1  a=  41412  b=  41199  d=  +213
+    seed=7770000 swap=0  a=  88957  b=  88744  d=  +213
+    seed=7770000 swap=1  a=  88957  b=  88744  d=  +213
+    seed=8000000 swap=0  a=  99609  b=  99396  d=  +213
+    seed=8000000 swap=1  a=  99609  b=  99396  d=  +213
+    seed=9000000 swap=0  a= 110805  b= 110592  d=  +213
+    seed=9000000 swap=1  a= 110805  b= 110592  d=  +213
+  -- LOSES (a < b), most-negative first:
+    seed=1000000 swap=0  a=  71383  b=  72599  d= -1216
+============================================================================

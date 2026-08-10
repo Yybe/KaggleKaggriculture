@@ -22,3 +22,12 @@ logs/
 
 # V16a-era opponent replay dumps (~32MB each) - re-downloadable from Kaggle
 results/replays/*.json
+
+# Local Python virtualenv (rank_env) - never commit venvs
+WybeV2/rank_env/
+
+# V17-era Kaggle replay dumps (~30MB each) - re-downloadable from Kaggle
+replays_new/
+
+# Transient error capture from a failed inline python -c run
+notebook_full.txt

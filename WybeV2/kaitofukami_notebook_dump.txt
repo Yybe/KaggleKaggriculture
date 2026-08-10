@@ -1,0 +1,353 @@
+
+==================== cell 0 (markdown, len 877) ====================
+# 25/27 Strict-Future | v27 Midgame Meta Reset
+
+**The dominant opening did not fail. Its stale continuation did.**
+
+| Frozen evaluation | v27 | previous v26 | Seat 0 | Seat 1 |
+|---|---:|---:|---:|---:|
+| current inner | **28/30** | 16/30 | 12/13 | 16/17 |
+| development outer | **29/30** | 14/30 | **16/16** | 13/14 |
+| captured after policy freeze | **25/27** | 14/27 | 16/17 | 9/10 |
+| actual three v26 losses, counterfactual | **3/3** | 0/3 observed | **3/3** | — |
+
+`25/27` is a local strict-future counterfactual result, **not an
+official Public-LB score**. Recorded opponents replay their public
+actions and cannot react to our changed policy.
+
+```text
+same low-entropy HIRE4 opening
+    ↓
+replace the stale continuation from step 161 onward
+    ↓
+one coherent 719-step route in both seats
+    + actor-local WEED repair
+    + existing-SELL-slot price-impact ordering
+```
+==================== cell 1 (markdown, len 1130) ====================
+## Machine-readable attribution and contribution card
+
+```yaml
+notebook_history: Kaito v22 → v26 (this same public Notebook)
+observable_route_source:
+  team: Ezzzzzekki
+  submission: 55390428
+  episode: 91493566
+  seat: 0
+  action_sha256: 9080682756f5b9fc0f2cae25efdffa69474d40883f693b49f58be2c1893ae5d2
+new_contribution:
+  - separate rating warm-up from strategic decay
+  - audit all three real v26 losses at action level
+  - measure the current six-family Top-30 opening distribution
+  - reject a higher-inner-score seat router that failed 2/3 real losses
+  - freeze one coherent midgame reset before a globally later gate
+runtime_route: same complete route in both seats
+runtime_identity_fields: []
+runtime_opponent_private_fields: []
+mid_game_route_splice: false
+ordinary_sell_create_delete_resize: false
+```
+
+The 719-action backbone is credited as Ezzzzzekki's observable
+public replay behavior. It is not claimed as hidden-source recovery
+or as a newly invented production schedule. The contribution here is
+the diagnosis, time-separated selection, rejected-branch evidence,
+sparse controller, and exact production artifact.
+==================== cell 2 (markdown, len 1030) ====================
+## 1. Was v26 actually losing more?
+
+Not in its observed public record. At the frozen audit:
+
+| Submission | Wins | Latest 20 | Mean margin | Close-loss share |
+|---|---:|---:|---:|---:|
+| v26 | **87/90** | **20/20** | +18,415 | 100% |
+| v25 | 66/93 | 4/20 | +6,598 | 15% |
+
+All three v26 losses were seat 0 and close:
+
+```text
+episode 91375701 | Arda Ceylan   | -3,868
+episode 91397548 | lemon13418    | -3,465
+episode 91412066 | Hajime Tamura |   -747
+```
+
+So a lower displayed rating did not mean v26 had a worse win rate.
+Each new submission started from the competition's low initial rating,
+and rating gains depend on the two ratings rather than coin margin.
+The [official evaluation](https://www.kaggle.com/competitions/kaggriculture/overview/evaluation)
+explains rating-aware matchmaking and win/loss/tie scoring.
+
+But the user's concern still exposed a real issue: against the **new
+current opponent distribution**, frozen v26 won only
+14/27. Live history and current
+counterfactual robustness answer different questions.
+==================== cell 3 (markdown, len 1169) ====================
+## 2. The Top-30 opening has almost collapsed to one prior
+
+Modal Day-0 public signatures across the frozen Top-30 were:
+
+| Opening signature | Teams | Interpretation |
+|---|---:|---|
+| 1 COW, 4 SHEEP, 5/5 seed, WHEAT 5, **HIRE4** | **14** | post-v26 basin |
+| same assets, **HIRE5** | **12** | v25 basin |
+| HealthStone HIRE3 | 1 | private continuation |
+| Seb 2 COW / wheat-heavy HIRE7 | 1 | counter family |
+| five-sheep carrot branch | 1 | rare alternative |
+| old v23 opening | 1 | nearly displaced |
+
+**26/30 teams now share the same 1-COW/4-SHEEP core.** An opening
+classifier therefore has little information value. The next edge has
+moved into continuation timing, labor paths, production mix, and
+market execution after the common opening.
+
+This is consistent with population-level observations in
+[Two Private Bots Beating Kaggriculture Meta](https://www.kaggle.com/code/revanthtambisetty/two-private-bots-beating-kaggriculture-meta)
+and [What the Top Farms Do — a Live Meta](https://www.kaggle.com/code/cjlcjlcjl/kaggriculture-what-the-top-farms-do-a-live-meta):
+a public opening can become a prior while different continuations
+retain the real rating edge.
+==================== cell 4 (code, len 783) ====================
+import pandas as pd
+import matplotlib.pyplot as plt
+
+comparison = pd.DataFrame([
+    ["v26 current inner", 16, 30],
+    ["v27 current inner", 28, 30],
+    ["v26 development outer", 14, 30],
+    ["v27 development outer", 29, 30],
+    ["v26 strict future", 14, 27],
+    ["v27 strict future", 25, 27],
+], columns=["policy / split", "wins", "games"])
+comparison["win rate"] = comparison.wins / comparison.games
+display(comparison)
+ax = comparison.plot.barh(
+    x="policy / split", y="win rate", legend=False,
+    figsize=(9, 4.2),
+    color=["#94a3b8", "#0ea5e9", "#94a3b8", "#14b8a6", "#94a3b8", "#22c55e"],
+)
+ax.axvline(0.5, color="#64748b", linestyle="--", linewidth=1)
+ax.set(xlabel="Counterfactual win rate", ylabel="", xlim=(0, 1))
+ax.grid(axis="x", alpha=0.25)
+plt.tight_layout()
+==================== cell 5 (markdown, len 843) ====================
+## 3. Same opening, different continuation
+
+The old v26 seat-0 route and the selected v27 route have the same
+HIRE4 Day-0 queue. Their first market difference appears only at
+**step 161** and their first
+farmer/hands difference at **step 170**.
+Across all 719 steps their actor-plus-market distance is
+**634**.
+
+Planned route totals illustrate the shift without pretending they
+are a causal decomposition:
+
+| Planned quantity | v26 seat 0 | v27 |
+|---|---:|---:|
+| purchased WHEAT | 380 | 360 |
+| sold MILK | 218 | 241 |
+| sold FERTILIZER | 245 | 235 |
+| SELL orders | 171 | 168 |
+
+The selected route purchases less wheat, schedules more milk sale,
+and changes hundreds of labor/market turns after the shared prefix.
+This is a **coherent continuation reset**, not a late splice into a
+farm whose inventory assumptions came from another policy.
+==================== cell 6 (markdown, len 756) ====================
+## 4. Why the tempting seat portfolio was rejected
+
+The first inner screen favored a seat router:
+
+| Candidate | Inner | Outer | Actual v26 losses | Outer mean margin |
+|---|---:|---:|---:|---:|
+| fixed Ezz route | 28/30 | **29/30** | **3/3** | **+9,591** |
+| Nikita fixed route | 28/30 | 28/30 | 1/3 | +8,804 |
+| Nikita seat 0 + Ezz seat 1 | 29/30 | 29/30 | 1/3 | +9,212 |
+
+The router gained one inner win but solved only one of the three real
+failures. Fixed Ezz solved all three, tied the router on outer wins,
+and had the higher outer margin. v27 therefore removes the seat
+branch instead of adding another expert.
+
+This directly corrects v26's local optimum: **seat-specific validation
+performance was mistaken for a generally useful seat mechanism**.
+==================== cell 7 (markdown, len 1026) ====================
+## 5. The sparse controller still earns its place
+
+Route-only control versus official price-impact SELL-slot ordering:
+
+| Split | route only | + sparse SELL ordering | Mean-margin gain |
+|---|---:|---:|---:|
+| inner | 28/30 | 28/30 | +1,115 |
+| outer | 28/30 | **29/30** | +819 |
+
+Most gain comes from the current route, but the market layer adds
+one outer win and improves margin without changing production:
+
+- ordinary turns create, delete, or resize no SELL;
+- SELLs move only among already existing SELL indices;
+- BUY, HIRE, seed, animal, land, farmer, and hand plans stay fixed;
+- observed actor-local WEED is repaired with bounded replay;
+- no opponent name, team ID, submission ID, Notebook, or private
+  opponent inventory enters runtime.
+
+[Structured Economic Policy](https://www.kaggle.com/code/pilkwang/kaggriculture-structured-economic-policy)
+remains useful context for reserve-aware control. Here the promoted
+intervention is narrower because larger market-maker branches did not
+survive previous fresh panels.
+==================== cell 8 (markdown, len 1052) ====================
+## 6. Chronological protocol
+
+```text
+snapshot A at 2026-08-10 01:28 UTC
+  70 unique public episodes, then-current Top-30
+  oldest listed trace → route donor
+  next trace          → 30-case inner screen
+  newest trace        → 30-case development outer
+
+freeze at 2026-08-10T01:53:37Z
+  route episode 91493566
+  route hash 9080682756f5b9fc...
+  global cutoff EpisodeId 91496460
+
+snapshot B after freeze
+  33 globally later physical episodes available
+  maximum unique team/seat matching → 27 cases
+  frozen v27: 25/27
+  unchanged v26 control: 14/27
+```
+
+The outer split helped choose the architecture, so it is explicitly
+called **development outer**. Only the later `EpisodeId >
+91496460` slice is the one-time
+strict-future promotion gate.
+
+This follows the panel warning in
+[Beating Your Own Best Agent Is The Wrong Test](https://www.kaggle.com/code/dariushafshar/beating-your-own-best-agent-is-the-wrong-test)
+and the paired-seat framing in
+[Kaggriculture Rank Your Agent](https://www.kaggle.com/code/raykkretzschmar/kaggriculture-rank-your-agent).
+==================== cell 9 (markdown, len 778) ====================
+## 7. Two strict-future losses remain
+
+```text
+episode 91498290 | Nikita Lugovoy |
+candidate seat 1 | -312
+
+episode 91500868 | Jince |
+candidate seat 0 | -834
+```
+
+Both are sub-1,000-coin losses, but they still count as full losses.
+The sample also contains only one wheat-heavy counter case. Therefore
+`25/27` is not evidence that every private adaptive branch is solved.
+
+[Breaking the Tie](https://www.kaggle.com/code/andrewsokolovsky/kaggriculture-breaking-the-tie)
+and [Adaptive Queue](https://www.kaggle.com/code/blacklions/kaggriculture-v20-adaptive-queue-public-experiment)
+motivate queue-level responses to convergent agents. This release
+does not promote a micro-seed permutation: only the complete route
+and conservative order layer cleared the multi-team chronology.
+==================== cell 10 (markdown, len 909) ====================
+## 8. Exact artifact and citation boundary
+
+The production file is **20,813 bytes**, contains one
+719-action route used in both seats, and depends only on the Python
+standard library.
+
+SHA-256: `f48c21166eac68d1b05a401f04f94a2eb6154e65415af64893672365ff33c7b8`
+
+Research and generated artifact matched on **5,760
+/ 5,760 actions** from four full public
+observation streams.
+
+If you fork this work, please retain:
+
+- Ezzzzzekki as the observable complete-route source;
+- this Notebook for the current-meta audit, fixed-vs-seat-router
+  ablation, chronological protocol, WEED repair, and SELL-slot layer;
+- your changed mechanism and independent future window separately.
+
+[Source replay episode 91493566](https://www.kaggle.com/competitions/kaggriculture/episodes/91493566)
+
+The cell below reconstructs the exact submitted bytes, verifies the
+hash and archive, imports the artifact, and smoke-tests both seats.
+==================== cell 11 (code, len 19120) ====================
+import base64
+import hashlib
+import importlib.util
+from pathlib import Path
+import tarfile
+import zlib
+
+WORK = Path("/kaggle/working")
+if not WORK.exists():
+    WORK = Path.cwd()
+MAIN_PATH = WORK / "main.py"
+ARCHIVE_PATH = WORK / "submission.tar.gz"
+
+_AGENT_B85_PARTS = [
+    'c-pnRXSbqC6Da(Beua+Vf{yb5=3_*}EGTAYjR**eA{iCaZ@(CDyJzNvyWaKg4{o3<byam$SGD-',
+    '{>(?EU^l+B0^RgM)@+RZiii;()<vluY@TNylbWf96E_IQ!B-',
+    '7IQ?_a)@6m#V<c*Zn5mce@znfGwYiocQY2%;HLWXblZ7AuLIM^`M9cYr0HGx>#w5lmk9m@D2>t5bOFi=y(fC@(!M&)s<51{TUzlo',
+    '^LqUr{4b$fN3_qJQ^LmTZa+h`{p;mf<#zd|O784UZ&l#T#i;`ND9fqDLf!V<gWA$IA|k%80s$kry6CU-0^k)m@?pe-',
+    'I7xcH6^SEsr57&SY5IqX>e?iH!8c;mYwIajQBsJ*s3mqlzUj96nEFIpXbQ&%zNxUVQhEs_Ll0c`7cPPtmkJqN5zyQP1N0m#<&Hes',
+    'L%%y6IsVgHOcVJ5Et;_j+w8vU|N{%$0k6ltlK+moIb+ucFw5MzMaKBzm6Q9pSsAFbe~?!F*rvoU&CNs~Nz9%Xc;vzdc;=z!#76_x',
+    'SujTtwew$^7IZOU=c3Hmd_Za0*>g1dFp~xIgXfk5vR}nK6bQ_Im3`q(N(hPdSnr-VoPk3fL4g)M2-',
+    'Pix|c%;7efYo%Bu}X&XG9QnGfULtg&>JXi(A{M^{-',
+    'TYBH*Fn_?g&0Wt#atSxLi4~NM;&34wtt*pe+dn27vwmX0HLM0Ta|~2J%>$E~ANOrxYgxFQ3#XFFi}`4Km}5;l-VvLcapK9w=E-',
+    'UTB(A$fjjzvV39av6timm{rdRTn_N6247m-$@KQE?6cp+4-',
+    'vtV~Mi3ug#TFt!k2F7oLT%uW1R`%?;=niwMm>Mk9R%B@rT$53MY7)G%>B4UNWR;C7%7w<F(LDe%>9aA`>PDqL@bkPm$!#M~sJhj)',
+    'S}lSI=(@K`1f=q6if+Uq!1MWlmQHN?hb9Hk%s4h}%W6Ll4v)wzEwoSPbn+0ZRTF1|4P;e4%SRcdlboIFp)Sb{(MZ4A#~LwaLR7uo',
+    'Co6E~oi#efEW)>;-',
+    'Z(bv0<m^%dtT7zY5`?ur{=80x?&+qrCSTtR?0$GG;>BogGIW9b?Is~9FPnk2S`{IIyAjn^_+;|=MFO%ou`Xc25qkL18SvNi_x&u^',
+    'rvFNWp>6hmmN3~gNuz|ouh;wg2cSdiceOdDLpb9>&0qbPVNh+moFlj@cBd!E*6cYlF1X;MCY|?5rKq6V^@j_`Tefys|9B}S6Cse<',
+    'yt5(5lV8^EE-a5$DKEp+L(uN$STjJpeBc}oy}1Jc-qCOE~)ZzWDb_s{t%vC*XQ&^0IK9VF`X`|G+P+XPm=<fJD=wM%BHeHRt+2O?',
+    'KMan3Xq-',
+    'L`0P9bCl<SKex9pu+QK0;iBY9wXAt3<UUieJZ;gHJ$*Ne%Cy2qC!wnFMkQ$JYhZRSYz1=u^jpGwQPx^`AferAROOY$O0v5#ZJT6k',
+    '%O1jc$_oC^(73iGiRN-',
+    '`<)8;WslQ;^p#aPqeu>n%1J6)=qW3M1u9Zj0iv0gmyOJ%*Bh0+KSa)$QidV^WhbU2xqPU^Er$K?}~)q*zV=~`@^cAqJYXn_jFz3t',
+    '3dO7%`6PK{dYRWnVrxK61yuP%UX-`5T(4bn^p!F@$s&`rf^Tp@*?ACIX*L7Wk}{8-&>8-wxa;@{4V7}CgEFakI0hDnFTMd-',
+    '<Dtu>W$5zw#{lP!$FEAGkwUKd%uyj;ar3?MhU?fIgtgtmU)GJk;@O<+?#A(L6r9^usju^bh_^;m4er>&3Q%DT}ED<N;j9&I`+IGh',
+    't|W-',
+    'oY6@1=9azVwLNQRTsM!w!v}tdapdT(rCA+^FB{9<Jr__2eV37nP|bt~GWLIQq0Ur<W&_bUSF7VF8iw)B)Pp2Q&wT&HUmpGP>HnS&',
+    '`VVRyl<>9K6ZC=5fx36PAx#pkx$pmXT^S56zNV-GYoglyU4P%J`lTkC$_5EX2b5yqVkf5*MaFiOsJQIC;&S;BlPW6U%&&BRlz}1j',
+    'zfgl3pWVVjp6bD;3GhPgcFoY6pf|S((gi=xpwIilJE>DUML<7_+Lh(80N2Y&r;aJDRswCH4|e(wiZe<Y@E=5=$1CT^Fv{_&$s*8$',
+    'G(QHj~FZD3wN?p?qqd7Wp{TM3)+(Y}gfJmdao$-|Un1W_Q@Q=5&9--',
+    ')eX#alBUGmp=5Es!moclkC>XBfkJ=l~|2KxKlRN+>bRkCg<P<o6fn6JDf~_({Mo7+GCpRQHd3CRkU<zWe=8ZYUP_shgfjZKn0Gfi',
+    'K$v|7>c46vdRLN79Vde&s$9Oatm>g2<OLWH&*t}2F#!|0Y_-NE;>2cYYT>}FHls)P_BT7XOTuE7l<BJrajUweLdX`>hm$G6G1sQU',
+    'orJ?bA7g`Jl?QaJ+kWVPBzy|2c&A2Uqxo=#x)ek`4T+{Lfl!D(mS(<wtc}RVs^1kp|5mzc{CSYNJg)V#0x<Z%8k;xPsfO!wwAcP-',
+    'A){hSf8m9;a#7q&YUbUJ9p_qZwnN>#Th&TtO{llG36YlE8dLD=fH7clO#$#XYZ9oFirJh74-',
+    '^plj&im^@+Jp_S#C0V}KJ{nA+AHJHafMx-QsY$STB_cBf2DNH7CaMKi0VYonFO(RC`e0KqLZ_LIj>Oo~2PNytRErmI0gMQ)zlBho',
+    '$}8;_iP*;vwCjwbU&4&(i@-pNP%tE4yTmwT&;+B)^KgPng8K7kB1E7Yq|r8t-6seq2-?j%O}d?PrzP8nTaR7cxdd?c(?$-',
+    'GW;mmWNm3VVvkN=f)^)z2tSZtY!uy3DIonOzx414~`FJ%aZevuum)F8nOQ6S*U81S@bG&KMH3Cyv=L=0>}=xlLY`Kw_2Lb*gn6#k',
+    '};DW7Ef42|6B+wnz%|Y0^LByXjfJx*Up;;w0SUTuHOR_2^Qcoi{;x?Cthgb~fBqwaqRQ4GhxlG#3Ws=op;U_iLjtnDbal?1f+vGs',
+    'tO`nQkU}G$07$?%a<kE2DwUPAb5SuGQMsPvIp~*_D+jm3*@5>S-',
+    '>tRYtvH+!_I?Lx2JI2Ue>@#AZ>ev9)RK(2Nu8b{q{jTjG?Y)OX|J_H<okw!&msDeP)7<kXlPdx7?>K8)o$<i)p-',
+    '!R7j;)9{ygbaEV&o~)vAvDHb%VI9X0s*NzMk}hqcf?4aq>-}`Qq>5w?R~g(gE0%-',
+    '+R6aPDLA$?VGGzc!+sks))eoaGkld)28*x8TI?+}d55<y@7VoxWXD$cYDpbIPdb&1DE9sHVW7nxq%`P)7(#)1rb^xJz_Q+Qdqf&-',
+    'Pz0?MPYL$aad(#ZVPSp43R}=sI7)s7#gWQ2iO$x)bH#NUTYCh~bYGeC;gv5&D&{-',
+    'Ykc}9zAr>wRGReZ1!+4gn@!m83WwoGn$U0)AMc)i;QL%*1S;C7n_pR5*0NRBSX_!`1=I0$B!6T7Rl#(tX%2nIrE>3ubRPV+1<=|i',
+    'K6&$0r+Y`)0gnWW-M8yK|?os?V}SE(t@#AnJzvN?TK#Y5;`Y9eL(igo!;SZ?5_DUEcZ-',
+    'H7ZJge91kUXd`aq5?4<oa#FyLC6#|2{u**UsflKlR7~I@f{P(_64)va<rxlupqKug?iAiRm=|3xu{jEUYA$Z*&T0v$-',
+    'PSxTXK`x^4J<3i;OUDkN9IrMMM*+&HV@K&|g)M!aTUk4i-',
+    'hqJY`wA90;#krS!5!DviA=uEIXL+s<~^#ift%2U6F(39T*i+!c~SbZvS4)QGd6toluPR37D4!CGaq$*z#XA?^n^OF@~ZVCE3ol;)',
+    '!lfgjFOG|h>XPHVZe$ohq(F40o01&y#!aWP(TVy-',
+    'd04y(nYdZ>iCX{%;LPb!6b0R<v<3wIOU!49eY6dQ&iiiuGAr8d}3#*JE81e_`WPgUzuY?X))Gl8^RTv6#pKq&}4do!6)%to#|9_i',
+    '|*PmO!2k%6_5-grpwL4zy?Ix&*n8%a>0D!XaBl8zTRw%CZ54uSnClx=4RtJ5@GIS(>2a5*;0!-Q1V#ZA@-',
+    'k(t_LKx)Hm)g^zzXg+zaVxWm8dH}BFL<w3hBl;{U%3WmG>KE+nI@+!I1f0lr3PUe;;6$%~NVKw*(RvE4M<p+)3|obOC03QfF;yQ$',
+    '_q#)|u-',
+    'rpQwCLNs0@aAOLLh9;iDo&%Fk@@S`}u8#3h$NjhH>J~rcs|~TS>$l*yt3|pQfpKP5?IBO~4;)qv2XIRcUsPtf*xRLJ@&il~XNEWb',
+    'Ht+ezjj))cP)Q92-<B#tHCx9>>!`3e>8F!%^MRQ=RvzUMLAKQ>EZ^&`DoxbT_FI{LntEMHO?2n1NjNSfW?-',
+    'V2#8RT=|*|n3%6sIfiTgJxZwMzU1|;#Ts78kb5bUE=W-mr$KceEo4L9Elam!=*YL*!0j#`ECrC%da!+&6A-',
+    'pof7dB3utB%oO*NV5fNE(=8Yb37??zq?Lh~BSwj#0=uIICLqEYb=GkY^La|++W@vwzr(P~XsNZYs~!9=2g7p9rhD1(^U6M)r%<T*',
+    '#7ZV{qR#Xhzw9Fu^)9bM>pG7|}Vqo7X?rNZ-4iq0lhQE8=XR==UnV#Rz>FO*o?FY3anzpn#@eVu%HVH^<FkO|F{vwdm@uJR^zh-',
+    'V<!Amna|o-',
+    'rZ8cbxd5=%pMQz}tYajV7r6CI~_~0$u50m(0)v`bmHrAL}?*IyIJ55|O56^4t%kkYX)%_Ty$DkB56Wm(6;QMg|W8{Q?s8D@BZ7Xk',
+    'JY^hDxbUDA~w|u(lDG8#^ngX+B^mid|sr4X<$AjhG=Z6&hmHA%b_ZbOb6cL;L)xp;SP$P1y-8?XPW8oYh_f`x6q~d41D1E=#k-',
+    '#MfYVOK(pdS?x1h2;%ufqAQsig!SA>=mDY>07e6}5d)PeyBcMohJuWI<rt8dO%unaIp-',
+    '$(o_*FELtzN`PKWV!UV>WfX1LHu`qz8b(lSz5WOn|8%#HlPS*1{IE)%<QBbXX9+G;l<o~&l@+$!g`(4dq~qe6en_O{(!5}Pm`(&%',
+    'MEUAWTsodCWR@wK9rxi4lwLBI}YW{HYuUOQSYF4yQpF-',
+    ')b9S~(tUl@<&!+iZ`KSfQc7?tECJ*&Fn1usg&;(0**kQaj(U#rRq=AC}V=(a1<>wEW663$#U&EtlaV);SIFw%O;xnXOU4gDbIUCn',
+    'TCK4<dnUS;q`#1L93y#o3F693SFfEH$M0NpFty0z)y-I#kJ3gYWFc06C1e%S@!^_qMLXS-!jLi7{G8lW9TlzSed-',
+    '(dc@sxsYAhZ_k0)d=~JExs6SQe8Jh&Rzon0n|q6xF6LvEDN<<-dbJKl`C_9H&&P-fU-',
+    'v_m;#v*%+UG*3gN%fFYaLz-v2JbRoyA+Joj(S&Qf*X;CV(i^<`S_^3JS#=zU-9t*L^W-Jix&m1nw{0bvoH-',
+    'ALfbJL7erUtcX0WCY-onAl*bM!5;}gIePocQ_#L{I0E
+... [truncated, total 19120] ...

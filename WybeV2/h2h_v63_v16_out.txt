@@ -1,0 +1,20 @@
+﻿=== VersionWybe H2H Simulator ===
+Matchup: VersionWybe (Seat 0) vs V16 (Seat 1)
+Games: 8 | Steps: 720
+============================================================
+[Game 1/8] Seed=1000000... VersionWybe=22,706.0 vs V16=172,053.0 | margin=-149,347.0 | B | 8.19s
+[Game 2/8] Seed=1000017... VersionWybe=20,888.0 vs V16=155,639.0 | margin=-134,751.0 | B | 8.01s
+[Game 3/8] Seed=1000034... VersionWybe=20,807.0 vs V16=105,365.0 | margin=-84,558.0 | B | 7.98s
+[Game 4/8] Seed=1000051... VersionWybe=22,223.0 vs V16=191,675.0 | margin=-169,452.0 | B | 8.12s
+[Game 5/8] Seed=1000068... VersionWybe=22,354.0 vs V16=166,339.0 | margin=-143,985.0 | B | 7.98s
+[Game 6/8] Seed=1000085... VersionWybe=25,721.0 vs V16=163,004.0 | margin=-137,283.0 | B | 8.24s
+[Game 7/8] Seed=1000102... VersionWybe=20,375.0 vs V16=161,031.0 | margin=-140,656.0 | B | 8.26s
+[Game 8/8] Seed=1000119... VersionWybe=8,914.0 vs V16=121,549.0 | margin=-112,635.0 | B | 8.18s
+
+============================================================
+RESULTS (8 games, 66.8s total)
+============================================================
+VersionWybe: 0W / 8L / 0T = 0% win rate
+Avg score: VersionWybe=20,498  V16=154,582
+Avg margin: -134,083
+============================================================

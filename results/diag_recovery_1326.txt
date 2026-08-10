@@ -1,0 +1,48 @@
+--- seed 2000 seat0: V16a=107,990  opp=106,102  delta=+1,888 ---
+    engine kaggle-environments 1.32.6
+    FIRE    step 705 STRAWBERRY  qty 12 @ px 168  (gate 60)
+    FIRE    step 706 STRAWBERRY  qty 12 @ px 158  (gate 60)
+    window price peaks (steps 700-716): STR=168  OK  MIL=7  <gate 110  WOO=185  <gate 200
+    terminal dump @None: 
+    end-of-game shed leftover: 
+
+--- seed 2000 seat1: V16a=107,990  opp=106,102  delta=+1,888 ---
+    engine kaggle-environments 1.32.6
+    FIRE    step 705 STRAWBERRY  qty 12 @ px 168  (gate 60)
+    FIRE    step 706 STRAWBERRY  qty 12 @ px 158  (gate 60)
+    window price peaks (steps 700-716): STR=168  OK  MIL=7  <gate 110  WOO=185  <gate 200
+    terminal dump @None: 
+    end-of-game shed leftover: 
+
+--- seed 1000000 seat0: V16a=95,324  opp=92,557  delta=+2,767 ---
+    engine kaggle-environments 1.32.6
+    FIRE    step 705 STRAWBERRY  qty 12 @ px  91  (gate 60)
+    FIRE    step 706 STRAWBERRY  qty 12 @ px  68  (gate 60)
+    window price peaks (steps 700-716): STR=91  OK  MIL=225  OK  WOO=5  <gate 200
+    terminal dump @None: 
+    end-of-game shed leftover: 
+
+--- seed 1000000 seat1: V16a=95,324  opp=92,557  delta=+2,767 ---
+    engine kaggle-environments 1.32.6
+    FIRE    step 705 STRAWBERRY  qty 12 @ px  91  (gate 60)
+    FIRE    step 706 STRAWBERRY  qty 12 @ px  68  (gate 60)
+    window price peaks (steps 700-716): STR=91  OK  MIL=225  OK  WOO=5  <gate 200
+    terminal dump @None: 
+    end-of-game shed leftover: 
+
+--- seed 7770000 seat0: V16a=138,014  opp=137,530  delta=+484 ---
+    engine kaggle-environments 1.32.6
+    FIRE    step 705 STRAWBERRY  qty 12 @ px 246  (gate 60)
+    FIRE    step 706 STRAWBERRY  qty 12 @ px 242  (gate 60)
+    window price peaks (steps 700-716): STR=246  OK  MIL=265  OK  WOO=5  <gate 200
+    terminal dump @None: 
+    end-of-game shed leftover: 
+
+--- seed 7770000 seat1: V16a=138,014  opp=137,530  delta=+484 ---
+    engine kaggle-environments 1.32.6
+    FIRE    step 705 STRAWBERRY  qty 12 @ px 246  (gate 60)
+    FIRE    step 706 STRAWBERRY  qty 12 @ px 242  (gate 60)
+    window price peaks (steps 700-716): STR=246  OK  MIL=265  OK  WOO=5  <gate 200
+    terminal dump @None: 
+    end-of-game shed leftover: 
+

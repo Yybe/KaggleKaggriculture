@@ -1,0 +1,25 @@
+
+============================================================================
+DIAG BENCH SEED-LIST: submission.py vs main.py (interval=24)
+Seeds: 8 x 2 seats = 16 games | Ok: 16 | Errs: 0 | Time: 30.6s
+  submission.py: 16 W (100.0%), 0 L, 0 T | seed-level: 8W/0L/0T
+  Mean Delta: +2003 | Median: +2057 | Min: +484 | Max: +3238
+  submission.py Avg: 89129 | main.py Avg: 87127
+  -- per-game (seed, swap, a, b, delta) --
+    seed=1000000 swap=0  a=  95324  b=  92557  d= +2767
+    seed=1000000 swap=1  a=  95324  b=  92557  d= +2767
+    seed=2000000 swap=0  a=  64142  b=  62116  d= +2026
+    seed=2000000 swap=1  a=  64142  b=  62116  d= +2026
+    seed=3330000 swap=0  a=  45627  b=  44528  d= +1099
+    seed=3330000 swap=1  a=  45627  b=  44528  d= +1099
+    seed=5000000 swap=0  a=  59355  b=  57990  d= +1365
+    seed=5000000 swap=1  a=  59355  b=  57990  d= +1365
+    seed=6000000 swap=0  a= 103562  b= 101474  d= +2088
+    seed=6000000 swap=1  a= 103562  b= 101474  d= +2088
+    seed=7770000 swap=0  a= 138014  b= 137530  d=  +484
+    seed=7770000 swap=1  a= 138014  b= 137530  d=  +484
+    seed=8000000 swap=0  a= 126708  b= 123754  d= +2954
+    seed=8000000 swap=1  a= 126708  b= 123754  d= +2954
+    seed=9000000 swap=0  a=  80303  b=  77065  d= +3238
+    seed=9000000 swap=1  a=  80303  b=  77065  d= +3238
+============================================================================

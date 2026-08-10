@@ -1,0 +1,109 @@
+======================================================================
+HEALTHSTONE OPENING ANALYSIS (Step 1 market orders)
+======================================================================
+
+Analyzed 30 HealthStone games, step 1 market orders:
+  Hires: min=3 max=3 avg=3.0
+  Seed orders (first 5 games):
+    Game 0: seeds=[('MELON', 5), ('WHEAT', 5)], animals=[('SHEEP', 4), ('COW', 1)]
+    Game 1: seeds=[('MELON', 5), ('WHEAT', 5)], animals=[('SHEEP', 4), ('COW', 1)]
+    Game 2: seeds=[('MELON', 5), ('WHEAT', 5)], animals=[('SHEEP', 4), ('COW', 1)]
+    Game 3: seeds=[('MELON', 5), ('WHEAT', 5)], animals=[('SHEEP', 4), ('COW', 1)]
+    Game 4: seeds=[('MELON', 5), ('WHEAT', 5)], animals=[('SHEEP', 4), ('COW', 1)]
+
+  Step 1 Seed frequency: {'MELON': 30, 'WHEAT': 30}
+    MELON: avg qty=5.0, range=[5,5]
+    WHEAT: avg qty=5.0, range=[5,5]
+  Step 1 Animal frequency: {'SHEEP': 30, 'COW': 30}
+    SHEEP: avg qty=4.0, range=[4,4]
+    COW: avg qty=1.0, range=[1,1]
+
+======================================================================
+SEB OPENING ANALYSIS (Step 1 market orders)
+======================================================================
+
+Analyzed 30 Seb games:
+  Hires: min=7 max=7 avg=7.0
+  Step 1 Seed frequency: {'MELON': 30, 'WHEAT': 30}
+    MELON: avg qty=3.0, range=[3,3]
+    WHEAT: avg qty=12.0, range=[12,12]
+  Step 1 Animal frequency: {'COW': 30}
+    COW: avg qty=2.0, range=[2,2]
+
+======================================================================
+HEALTHSTONE FULL OPENING (Steps 0-72, first 3 days)
+======================================================================
+
+Best HealthStone game: ep=91090369 reward=143231.0 margin=-7302.0
+  Step   0 (D0:H00) F=['PASS']
+  Step   1 (D0:H01) F=['BUILD_PASTURE'] M=[['HIRE'], ['HIRE'], ['HIRE'], ['BUY_ANIMAL', 'SHEEP', 4], ['BUY_ANIMAL', 'COW', 1], ['BUY_SEED', 'MELON', 5], ['BUY_SEED', 'WHEAT', 5]]
+  Step   2 (D0:H02) F=['PICKUP', 'SHEEP', 1] H=['WEST', 'NORTH', 'WEST'] M=[['BUY_SEED', 'CARROT', 1]]
+  Step   3 (D0:H03) F=['PLACE', 'SHEEP'] H=['PICKUP', 'PICKUP', 'NORTH']
+  Step   4 (D0:H04) F=['NORTH'] H=['WEST', 'NORTH', 'WEST'] M=[['BUY_PRODUCT', 'WHEAT', 2]]
+  Step   5 (D0:H05) F=['BUILD_PASTURE'] H=['BUILD_PASTURE', 'NORTH', 'NORTH']
+  Step   6 (D0:H06) F=['SOUTH'] H=['EAST', 'SOUTH', 'PLANT']
+  Step   7 (D0:H07) F=['PICKUP', 'SHEEP', 1] H=['NORTH', 'PLACE', 'WATER']
+  Step   8 (D0:H08) F=['WEST'] H=['WEST', 'NORTH', 'NORTH'] M=[['BUY_PRODUCT', 'WHEAT', 2]]
+  Step   9 (D0:H09) F=['PLACE', 'SHEEP'] H=['SOUTH', 'PLANT', 'PLANT']
+  Step  10 (D0:H10) F=['WEST'] H=['EAST', 'WATER', 'WATER']
+
+======================================================================
+SELL PATTERNS BY PRODUCT (avg qty per game)
+======================================================================
+
+HEALTHSTONE sell breakdown (total across 30 games):
+  CARROT         : early=    0  mid=   27  late=    0  total=   27  avg/game=1
+  FERTILIZER     : early= 1259  mid= 3139  late= 3373  total= 7771  avg/game=259
+  MELON          : early=    0  mid= 1068  late= 1245  total= 2313  avg/game=77
+  MILK           : early=  180  mid= 2300  late= 3140  total= 5620  avg/game=187
+  STRAWBERRY     : early=    0  mid= 2056  late= 5263  total= 7319  avg/game=244
+  WHEAT          : early=  580  mid= 2148  late=10158  total=12886  avg/game=430
+  WOOL           : early=  872  mid= 1604  late= 1404  total= 3880  avg/game=129
+
+SEB sell breakdown (total across 30 games):
+  FERTILIZER     : early= 1583  mid= 3335  late= 4273  total= 9191  avg/game=306
+  MELON          : early=    0  mid= 2477  late= 1243  total= 3720  avg/game=124
+  MILK           : early=  480  mid= 2730  late= 3219  total= 6429  avg/game=214
+  STRAWBERRY     : early=    0  mid= 2219  late= 6572  total= 8791  avg/game=293
+  WHEAT          : early= 1464  mid=   67  late=  791  total= 2322  avg/game=77
+  WOOL           : early=  509  mid= 1703  late= 2956  total= 5168  avg/game=172
+
+======================================================================
+BUY PATTERNS BY PRODUCT
+======================================================================
+
+HEALTHSTONE buy breakdown (total across 30 games):
+  WHEAT          : early=  840  mid= 3101  late= 5245  total= 9186  avg/game=306
+
+SEB buy breakdown (total across 30 games):
+  WHEAT          : early=  805  mid= 2882  late= 7452  total=11139  avg/game=371
+
+======================================================================
+FARMER ACTION ON STEP 1
+======================================================================
+  healthstone: {'BUILD_PASTURE': 30}
+  seb: {'BUILD_PASTURE': 30}
+
+======================================================================
+HEAD-TO-HEAD: SEB vs HEALTHSTONE
+======================================================================
+
+Seb vs HealthStone (7 games):
+  ep=91202523 Seb=91,257 vs HS=100,970 margin=-9,713 LOSS
+  ep=91184077 Seb=43,188 vs HS=58,392 margin=-15,204 LOSS
+  ep=91156834 Seb=73,913 vs HS=88,504 margin=-14,591 LOSS
+  ep=91145304 Seb=7,721 vs HS=44,735 margin=-37,014 LOSS
+  ep=91115668 Seb=66,416 vs HS=73,362 margin=-6,946 LOSS
+  ep=91016957 Seb=38,817 vs HS=58,336 margin=-19,519 LOSS
+  ep=91192902 Seb=102,575 vs HS=83,543 margin=+19,032 WIN
+
+Seb wins: 1/7 = 14%
+
+HealthStone vs Seb (2 games):
+  ep=91192901 HS=67,962 vs Seb=62,852 margin=+5,110 WIN
+  ep=91094680 HS=98,475 vs Seb=85,606 margin=+12,869 WIN
+
+HS wins vs Seb: 2/2 = 100%
+
+
+DONE.

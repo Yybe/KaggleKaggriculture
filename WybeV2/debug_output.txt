@@ -1,0 +1,290 @@
+
+=== OBS step=0 ===
+  step: 0
+  day: 0
+  hour: 0
+  player: 0
+  money: 3000.0
+  farmer_pos: [4, 4]
+  num_hands: 0
+  hands_pos: []
+  hires_today: 0
+  unlocked_quads: ['NW']
+  num_tiles: 10
+  private_keys: ['shed', 'seeds', 'inventories']
+  shed: {'WHEAT': 0, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0, 'EGG': 0, 'MILK': 0, 'WOOL': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'COW': 0, 'SHEEP': 0}
+  seeds: {'WHEAT': 0, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0}
+  market_keys: ['inventory', 'prices']
+  prices: {'WHEAT': 25, 'CARROT': 35, 'TOMATO': 60, 'STRAWBERRY': 120, 'MELON': 250, 'EGG': 50, 'MILK': 160, 'WOOL': 200, 'FERTILIZER': 100}
+  tile_sample: [[None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED']]
+  ACTION farmer=['BUILD_PASTURE']
+  ACTION hands=[]
+  ACTION market=[['HIRE'], ['HIRE'], ['HIRE'], ['BUY_ANIMAL', 'SHEEP', 4], ['BUY_ANIMAL', 'COW', 1], ['BUY_SEED', 'MELON', 5], ['BUY_SEED', 'WHEAT', 5]]
+
+=== OBS step=1 ===
+  step: 1
+  day: 0
+  hour: 1
+  player: 0
+  money: 146.0
+  farmer_pos: [4, 4]
+  num_hands: 3
+  hands_pos: [[5, 4], [4, 5], [5, 5]]
+  hires_today: 3
+  unlocked_quads: ['NW']
+  num_tiles: 10
+  private_keys: ['shed', 'seeds', 'inventories']
+  shed: {'WHEAT': 0, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0, 'EGG': 0, 'MILK': 0, 'WOOL': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'COW': 1, 'SHEEP': 4}
+  seeds: {'WHEAT': 5, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 5}
+  market_keys: ['inventory', 'prices']
+  prices: {'WHEAT': 26, 'CARROT': 36, 'TOMATO': 60, 'STRAWBERRY': 128, 'MELON': 256, 'EGG': 50, 'MILK': 169, 'WOOL': 206, 'FERTILIZER': 100}
+  tile_sample: [[None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED']]
+  ACTION farmer=['PICKUP', 'SHEEP', 1]
+  ACTION hands=[['PLANT', 'WHEAT'], ['PLANT', 'WHEAT'], ['PLANT', 'WHEAT']]
+  ACTION market=[]
+
+=== OBS step=2 ===
+  step: 2
+  day: 0
+  hour: 2
+  player: 0
+  money: 146.0
+  farmer_pos: [4, 4]
+  num_hands: 3
+  hands_pos: [[5, 4], [4, 5], [5, 5]]
+  hires_today: 3
+  unlocked_quads: ['NW']
+  num_tiles: 10
+  private_keys: ['shed', 'seeds', 'inventories']
+  shed: {'WHEAT': 0, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0, 'EGG': 0, 'MILK': 0, 'WOOL': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'COW': 1, 'SHEEP': 3}
+  seeds: {'WHEAT': 5, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 5}
+  market_keys: ['inventory', 'prices']
+  prices: {'WHEAT': 26, 'CARROT': 36, 'TOMATO': 60, 'STRAWBERRY': 128, 'MELON': 256, 'EGG': 50, 'MILK': 169, 'WOOL': 206, 'FERTILIZER': 100}
+  tile_sample: [[None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED']]
+  ACTION farmer=['PICKUP', 'SHEEP', 1]
+  ACTION hands=[['PLANT', 'WHEAT'], ['PLANT', 'WHEAT'], ['PLANT', 'WHEAT']]
+  ACTION market=[]
+
+=== OBS step=3 ===
+  step: 3
+  day: 0
+  hour: 3
+  player: 0
+  money: 146.0
+  farmer_pos: [4, 4]
+  num_hands: 3
+  hands_pos: [[5, 4], [4, 5], [5, 5]]
+  hires_today: 3
+  unlocked_quads: ['NW']
+  num_tiles: 10
+  private_keys: ['shed', 'seeds', 'inventories']
+  shed: {'WHEAT': 0, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0, 'EGG': 0, 'MILK': 0, 'WOOL': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'COW': 1, 'SHEEP': 2}
+  seeds: {'WHEAT': 5, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 5}
+  market_keys: ['inventory', 'prices']
+  prices: {'WHEAT': 26, 'CARROT': 36, 'TOMATO': 60, 'STRAWBERRY': 128, 'MELON': 256, 'EGG': 50, 'MILK': 169, 'WOOL': 206, 'FERTILIZER': 100}
+  tile_sample: [[None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED']]
+  ACTION farmer=['PICKUP', 'SHEEP', 1]
+  ACTION hands=[['PLANT', 'WHEAT'], ['PLANT', 'WHEAT'], ['PLANT', 'WHEAT']]
+  ACTION market=[]
+
+=== OBS step=4 ===
+  step: 4
+  day: 0
+  hour: 4
+  player: 0
+  money: 146.0
+  farmer_pos: [4, 4]
+  num_hands: 3
+  hands_pos: [[5, 4], [4, 5], [5, 5]]
+  hires_today: 3
+  unlocked_quads: ['NW']
+  num_tiles: 10
+  private_keys: ['shed', 'seeds', 'inventories']
+  shed: {'WHEAT': 0, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0, 'EGG': 0, 'MILK': 0, 'WOOL': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'COW': 1, 'SHEEP': 1}
+  seeds: {'WHEAT': 5, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 5}
+  market_keys: ['inventory', 'prices']
+  prices: {'WHEAT': 26, 'CARROT': 36, 'TOMATO': 60, 'STRAWBERRY': 128, 'MELON': 256, 'EGG': 50, 'MILK': 169, 'WOOL': 206, 'FERTILIZER': 100}
+  tile_sample: [[None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED']]
+  ACTION farmer=['PICKUP', 'SHEEP', 1]
+  ACTION hands=[['PLANT', 'WHEAT'], ['PLANT', 'WHEAT'], ['PLANT', 'WHEAT']]
+  ACTION market=[]
+
+=== OBS step=5 ===
+  step: 5
+  day: 0
+  hour: 5
+  player: 0
+  money: 146.0
+  farmer_pos: [4, 4]
+  num_hands: 3
+  hands_pos: [[5, 4], [4, 5], [5, 5]]
+  hires_today: 3
+  unlocked_quads: ['NW']
+  num_tiles: 10
+  private_keys: ['shed', 'seeds', 'inventories']
+  shed: {'WHEAT': 0, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0, 'EGG': 0, 'MILK': 0, 'WOOL': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'COW': 1, 'SHEEP': 0}
+  seeds: {'WHEAT': 5, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 5}
+  market_keys: ['inventory', 'prices']
+  prices: {'WHEAT': 26, 'CARROT': 36, 'TOMATO': 60, 'STRAWBERRY': 128, 'MELON': 256, 'EGG': 50, 'MILK': 169, 'WOOL': 206, 'FERTILIZER': 100}
+  tile_sample: [[None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED']]
+  ACTION farmer=['PICKUP', 'COW', 1]
+  ACTION hands=[['PLANT', 'WHEAT'], ['PLANT', 'WHEAT'], ['PLANT', 'WHEAT']]
+  ACTION market=[]
+
+=== OBS step=24 ===
+  step: 24
+  day: 1
+  hour: 0
+  player: 0
+  money: 96.0
+  farmer_pos: [4, 4]
+  num_hands: 0
+  hands_pos: []
+  hires_today: 0
+  unlocked_quads: ['NW']
+  num_tiles: 10
+  private_keys: ['shed', 'seeds', 'inventories']
+  shed: {'WHEAT': 0, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0, 'EGG': 0, 'MILK': 0, 'WOOL': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'COW': 1, 'SHEEP': 4}
+  seeds: {'WHEAT': 9, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 5}
+  market_keys: ['inventory', 'prices']
+  prices: {'WHEAT': 26, 'CARROT': 36, 'TOMATO': 60, 'STRAWBERRY': 128, 'MELON': 256, 'EGG': 50, 'MILK': 169, 'WOOL': 206, 'FERTILIZER': 100}
+  tile_sample: [[None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [{'kind': 'WEED'}, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED']]
+  ACTION farmer=['PICKUP', 'SHEEP', 1]
+  ACTION hands=[]
+  ACTION market=[]
+
+=== OBS step=48 ===
+  step: 48
+  day: 2
+  hour: 0
+  player: 0
+  money: 96.0
+  farmer_pos: [4, 4]
+  num_hands: 0
+  hands_pos: []
+  hires_today: 0
+  unlocked_quads: ['NW']
+  num_tiles: 10
+  private_keys: ['shed', 'seeds', 'inventories']
+  shed: {'WHEAT': 0, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0, 'EGG': 0, 'MILK': 0, 'WOOL': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'COW': 1, 'SHEEP': 4}
+  seeds: {'WHEAT': 9, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 5}
+  market_keys: ['inventory', 'prices']
+  prices: {'WHEAT': 26, 'CARROT': 36, 'TOMATO': 60, 'STRAWBERRY': 132, 'MELON': 260, 'EGG': 50, 'MILK': 172, 'WOOL': 209, 'FERTILIZER': 100}
+  tile_sample: [[None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [{'kind': 'WEED'}, None, None, {'kind': 'WEED'}, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED']]
+  ACTION farmer=['PICKUP', 'SHEEP', 1]
+  ACTION hands=[]
+  ACTION market=[]
+
+=== OBS step=72 ===
+  step: 72
+  day: 3
+  hour: 0
+  player: 0
+  money: 96.0
+  farmer_pos: [4, 4]
+  num_hands: 0
+  hands_pos: []
+  hires_today: 0
+  unlocked_quads: ['NW']
+  num_tiles: 10
+  private_keys: ['shed', 'seeds', 'inventories']
+  shed: {'WHEAT': 0, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0, 'EGG': 0, 'MILK': 0, 'WOOL': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'COW': 1, 'SHEEP': 4}
+  seeds: {'WHEAT': 9, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 5}
+  market_keys: ['inventory', 'prices']
+  prices: {'WHEAT': 27, 'CARROT': 37, 'TOMATO': 60, 'STRAWBERRY': 135, 'MELON': 262, 'EGG': 50, 'MILK': 175, 'WOOL': 212, 'FERTILIZER': 100}
+  tile_sample: [[None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [{'kind': 'WEED'}, None, None, {'kind': 'WEED'}, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED']]
+  ACTION farmer=['PICKUP', 'SHEEP', 1]
+  ACTION hands=[]
+  ACTION market=[]
+
+=== OBS step=100 ===
+  step: 100
+  day: 4
+  hour: 4
+  player: 0
+  money: 96.0
+  farmer_pos: [4, 4]
+  num_hands: 0
+  hands_pos: []
+  hires_today: 0
+  unlocked_quads: ['NW']
+  num_tiles: 10
+  private_keys: ['shed', 'seeds', 'inventories']
+  shed: {'WHEAT': 0, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0, 'EGG': 0, 'MILK': 0, 'WOOL': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'COW': 1, 'SHEEP': 0}
+  seeds: {'WHEAT': 9, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 5}
+  market_keys: ['inventory', 'prices']
+  prices: {'WHEAT': 27, 'CARROT': 37, 'TOMATO': 61, 'STRAWBERRY': 149, 'MELON': 266, 'EGG': 50, 'MILK': 190, 'WOOL': 215, 'FERTILIZER': 100}
+  tile_sample: [[None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [{'kind': 'WEED'}, None, None, {'kind': 'WEED'}, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED']]
+  ACTION farmer=['PICKUP', 'COW', 1]
+  ACTION hands=[]
+  ACTION market=[]
+
+=== OBS step=200 ===
+  step: 200
+  day: 8
+  hour: 8
+  player: 0
+  money: 96.0
+  farmer_pos: [4, 3]
+  num_hands: 0
+  hands_pos: []
+  hires_today: 0
+  unlocked_quads: ['NW']
+  num_tiles: 10
+  private_keys: ['shed', 'seeds', 'inventories']
+  shed: {'WHEAT': 0, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0, 'EGG': 0, 'MILK': 0, 'WOOL': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'COW': 0, 'SHEEP': 0}
+  seeds: {'WHEAT': 9, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 5}
+  market_keys: ['inventory', 'prices']
+  prices: {'WHEAT': 30, 'CARROT': 38, 'TOMATO': 61, 'STRAWBERRY': 182, 'MELON': 270, 'EGG': 51, 'MILK': 224, 'WOOL': 220, 'FERTILIZER': 100}
+  tile_sample: [[None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [{'kind': 'WEED'}, None, None, {'kind': 'WEED'}, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, {'kind': 'WEED'}, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED']]
+  ACTION farmer=['PLANT', 'WHEAT']
+  ACTION hands=[]
+  ACTION market=[]
+
+=== OBS step=480 ===
+  step: 480
+  day: 20
+  hour: 0
+  player: 0
+  money: 96.0
+  farmer_pos: [4, 4]
+  num_hands: 0
+  hands_pos: []
+  hires_today: 0
+  unlocked_quads: ['NW']
+  num_tiles: 10
+  private_keys: ['shed', 'seeds', 'inventories']
+  shed: {'WHEAT': 0, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0, 'EGG': 0, 'MILK': 0, 'WOOL': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'COW': 1, 'SHEEP': 4}
+  seeds: {'WHEAT': 9, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 5}
+  market_keys: ['inventory', 'prices']
+  prices: {'WHEAT': 40, 'CARROT': 38, 'TOMATO': 62, 'STRAWBERRY': 262, 'MELON': 277, 'EGG': 56, 'MILK': 306, 'WOOL': 226, 'FERTILIZER': 100}
+  tile_sample: [[None, None, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [{'kind': 'WEED'}, {'kind': 'WEED'}, None, {'kind': 'WEED'}, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, {'kind': 'WEED'}, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED']]
+  ACTION farmer=['PICKUP', 'SHEEP', 1]
+  ACTION hands=[]
+  ACTION market=[]
+
+=== OBS step=700 ===
+  step: 700
+  day: 29
+  hour: 4
+  player: 0
+  money: 96.0
+  farmer_pos: [4, 4]
+  num_hands: 0
+  hands_pos: []
+  hires_today: 0
+  unlocked_quads: ['NW']
+  num_tiles: 10
+  private_keys: ['shed', 'seeds', 'inventories']
+  shed: {'WHEAT': 0, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0, 'EGG': 0, 'MILK': 0, 'WOOL': 0, 'FERTILIZER': 0, 'GOOSE': 0, 'COW': 1, 'SHEEP': 0}
+  seeds: {'WHEAT': 9, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 5}
+  market_keys: ['inventory', 'prices']
+  prices: {'WHEAT': 46, 'CARROT': 39, 'TOMATO': 64, 'STRAWBERRY': 310, 'MELON': 280, 'EGG': 63, 'MILK': 357, 'WOOL': 245, 'FERTILIZER': 100}
+  tile_sample: [[None, {'kind': 'WEED'}, None, None, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [{'kind': 'WEED'}, {'kind': 'WEED'}, None, {'kind': 'WEED'}, None, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED'], [None, None, None, None, {'kind': 'WEED'}, 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED', 'LOCKED']]
+  ACTION farmer=['PICKUP', 'COW', 1]
+  ACTION hands=[]
+  ACTION market=[]
+
+
+FINAL: VersionWybe=96.0 vs PASS=3000.0
+Status: VW=DONE PASS=DONE

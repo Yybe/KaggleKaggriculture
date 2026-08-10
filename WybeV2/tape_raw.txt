@@ -1,0 +1,13 @@
+﻿len 719
+HIRE orders total: 263
+step0: {"farmer": ["PASS"], "hands": [], "market": [["HIRE"], ["HIRE"], ["HIRE"], ["HIRE"], ["HIRE"], ["BUY_ANIMAL", "COW", 2], ["BUY_ANIMAL", "SHEEP", 2], ["BUY_SEED", "WHEAT", 7], ["BUY_SEED", "MELON", 12], ["BUY_PRODUCT", "WHEAT", 5]]}
+step1: {"farmer": ["PICKUP", "SHEEP", 1], "hands": [["WEST"], ["NORTH"], ["WEST"], ["WEST"], ["WEST"]], "market": [["SELL", "WHEAT", 1]]}
+step24: {"farmer": ["PASS"], "hands": [], "market": []}
+step25: {"farmer": ["PICKUP", "WHEAT", 1], "hands": [], "market": []}
+step48: {"farmer": ["PASS"], "hands": [], "market": [["SELL", "FERTILIZER", 4], ["HIRE"], ["HIRE"], ["BUY_PRODUCT", "WHEAT", 5]]}
+step120: {"farmer": ["PASS"], "hands": [], "market": [["SELL", "WHEAT", 25], ["SELL", "FERTILIZER", 4], ["HIRE"], ["BUY_SEED", "WHEAT", 1]]}
+step168: {"farmer": ["PASS"], "hands": [], "market": [["SELL", "WOOL", 10], ["SELL", "FERTILIZER", 4], ["BUY_LAND"], ["HIRE"], ["HIRE"], ["HIRE"], ["BUY_ANIMAL", "COW", 2], ["BUY_SEED", "STRAWBERRY", 19], ["BUY_PRODUCT", "WHEAT", 2]]}
+step240: {"farmer": ["PASS"], "hands": [], "market": [["SELL", "WOOL", 8], ["SELL", "WHEAT", 3], ["HIRE"], ["HIRE"], ["HIRE"], ["HIRE"], ["HIRE"], ["HIRE"], ["HIRE"], ["HIRE"]]}
+step480: {"farmer": ["PASS"], "hands": [], "market": [["SELL", "STRAWBERRY", 34], ["SELL", "MILK", 5], ["HIRE"], ["HIRE"], ["HIRE"], ["HIRE"], ["HIRE"], ["HIRE"], ["HIRE"]]}
+step700: {"farmer": ["EAST"], "hands": [["SOUTH"], ["WEST"], ["WEST"], ["EAST"], ["NORTH"], ["WEST"], ["EAST"], ["EAST"], ["WEST"], ["WEST"], ["NORTH"]], "market": []}
+step718: {"farmer": ["DROP"], "hands": [["DROP"], ["PASS"], ["WEST"], ["NORTH"], ["EAST"], ["SOUTH"], ["DROP"], ["EAST"], ["PASS"], ["PASS"], ["DROP"]], "market": [["SELL", "FERTILIZER", 3], ["SELL", "WHEAT", 8]]}

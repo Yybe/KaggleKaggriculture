@@ -1,0 +1,35 @@
+S  0 D0H00 $   3,000 hands=0 farmer=[4, 4] plants=0 weeds=0 pastures=0 animals=0 empty=25 shed={} seeds={}
+  -> F=['WEST'] H=[] M=[['HIRE'], ['HIRE'], ['HIRE'], ['BUY_SEED', 'WHEAT', 22]]
+S  1 D0H01 $   2,776 hands=3 farmer=[3, 4] plants=0 weeds=0 pastures=0 animals=0 empty=25 shed={} seeds={'WHEAT': 22}
+  -> F=['PLANT', 'WHEAT'] H=[['NORTH'], ['WEST'], ['NORTH']] M=[]
+S  2 D0H02 $   2,776 hands=3 farmer=[3, 4] plants=1 weeds=0 pastures=0 animals=0 empty=24 shed={} seeds={'WHEAT': 21}
+  -> F=['WATER'] H=[['PLANT', 'WHEAT'], ['NORTH'], ['WEST']] M=[]
+S  3 D0H03 $   2,776 hands=3 farmer=[3, 4] plants=2 weeds=0 pastures=0 animals=0 empty=23 shed={} seeds={'WHEAT': 20}
+  -> F=['NORTH'] H=[['WATER'], ['NORTH'], ['NORTH']] M=[]
+S 23 D0H23 $   2,586 hands=3 farmer=[0, 0] plants=21 weeds=0 pastures=0 animals=0 empty=4 shed={} seeds={'WHEAT': 20}
+  -> F=['EAST'] H=[['EAST'], ['EAST'], ['PASS']] M=[]
+S 24 D1H00 $   2,586 hands=0 farmer=[4, 4] plants=21 weeds=0 pastures=0 animals=0 empty=4 shed={} seeds={'WHEAT': 20}
+  -> F=['NORTH'] H=[] M=[['HIRE'], ['HIRE'], ['HIRE']]
+S 25 D1H01 $   2,582 hands=3 farmer=[4, 3] plants=21 weeds=0 pastures=0 animals=0 empty=4 shed={} seeds={'WHEAT': 20}
+  -> F=['WATER'] H=[['NORTH'], ['WEST'], ['NORTH']] M=[]
+S 47 D1H23 $   2,552 hands=3 farmer=[4, 0] plants=24 weeds=0 pastures=0 animals=0 empty=1 shed={} seeds={'WHEAT': 20}
+  -> F=['PASS'] H=[['PASS'], ['PASS'], ['PASS']] M=[]
+S 48 D2H00 $   2,552 hands=0 farmer=[4, 4] plants=24 weeds=0 pastures=0 animals=0 empty=1 shed={} seeds={'WHEAT': 20}
+  -> F=['NORTH'] H=[] M=[['HIRE'], ['HIRE'], ['HIRE']]
+S 72 D3H00 $   2,548 hands=0 farmer=[4, 4] plants=24 weeds=0 pastures=0 animals=0 empty=1 shed={} seeds={'WHEAT': 20}
+  -> F=['NORTH'] H=[] M=[['HIRE'], ['HIRE'], ['HIRE']]
+S 96 D4H00 $   2,544 hands=0 farmer=[4, 4] plants=24 weeds=0 pastures=0 animals=0 empty=1 shed={} seeds={'WHEAT': 20}
+  -> F=['NORTH'] H=[] M=[['HIRE'], ['HIRE'], ['HIRE']]
+S120 D5H00 $   2,350 hands=0 farmer=[4, 4] plants=24 weeds=0 pastures=0 animals=0 empty=1 shed={'WHEAT': 57} seeds={'WHEAT': 20}
+  -> F=['NORTH'] H=[] M=[['SELL', 'WHEAT', 57], ['HIRE'], ['HIRE'], ['HIRE'], ['HIRE']]
+S200 D8H08 $   2,540 hands=4 farmer=[4, 1] plants=37 weeds=1 pastures=0 animals=0 empty=12 shed={} seeds={'WHEAT': 22, 'CARROT': 5}
+  -> F=['PLANT', 'WHEAT'] H=[['EAST'], ['WEST'], ['WATER'], ['WATER']] M=[]
+S480 D20H00 $   2,230 hands=0 farmer=[4, 4] plants=46 weeds=2 pastures=0 animals=0 empty=2 shed={'WHEAT': 9} seeds={'WHEAT': 21, 'CARROT': 5, 'STRAWBERRY': 16}
+  -> F=['NORTH'] H=[] M=[['SELL', 'WHEAT', 9], ['HIRE'], ['HIRE'], ['HIRE'], ['HIRE'], ['HIRE'], ['HIRE'], ['HIRE'], ['BUY_SEED', 'WHEAT', 1]]
+S700 D29H04 $  12,531 hands=8 farmer=[6, 2] plants=1 weeds=3 pastures=0 animals=0 empty=96 shed={} seeds={'WHEAT': 52, 'CARROT': 5, 'STRAWBERRY': 28}
+  -> F=['EAST'] H=[['SOUTH'], ['SOUTH'], ['WEST'], ['PASS'], ['PASS'], ['PASS'], ['PASS'], ['PASS']] M=[]
+S718 D29H22 $  12,531 hands=8 farmer=[2, 7] plants=0 weeds=1 pastures=0 animals=0 empty=99 shed={} seeds={'WHEAT': 52, 'CARROT': 5, 'STRAWBERRY': 28}
+  -> F=['WEST'] H=[['PASS'], ['PASS'], ['PASS'], ['PASS'], ['PASS'], ['PASS'], ['PASS'], ['PASS']] M=[]
+
+FINAL: VersionWybe=12,531 vs PASS=3,000 (target: >3000)
+Status: DONE vs DONE

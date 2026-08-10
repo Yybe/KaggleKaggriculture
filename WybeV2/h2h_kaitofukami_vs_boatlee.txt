@@ -1,0 +1,41 @@
+
+============================================================================
+DIAG BENCH SEED-LIST: main.py vs main.py (interval=24)
+Seeds: 8 x 2 seats = 16 games | Ok: 16 | Errs: 0 | Time: 76.5s
+  main.py: 1 W (6.2%), 15 L, 0 T | seed-level: 0W/8L/0T
+  Mean Delta: -3613 | Median: -239 | Min: -10091 | Max: +1190
+  main.py Avg: 77586 | main.py Avg: 81199
+  -- per-game (seed, swap, a, b, delta) --
+    seed=1000000 swap=0  a=  71154  b=  72826  d= -1672
+    seed=1000000 swap=1  a=  72585  b=  71395  d= +1190
+    seed=2000000 swap=0  a=  71683  b=  79639  d= -7956
+    seed=2000000 swap=1  a=  71683  b=  79639  d= -7956
+    seed=3330000 swap=0  a=  77457  b=  87116  d= -9659
+    seed=3330000 swap=1  a=  77457  b=  87116  d= -9659
+    seed=5000000 swap=0  a=  59802  b=  69893  d=-10091
+    seed=5000000 swap=1  a=  59802  b=  69893  d=-10091
+    seed=6000000 swap=0  a=  41185  b=  41424  d=  -239
+    seed=6000000 swap=1  a=  41185  b=  41424  d=  -239
+    seed=7770000 swap=0  a=  88730  b=  88969  d=  -239
+    seed=7770000 swap=1  a=  88730  b=  88969  d=  -239
+    seed=8000000 swap=0  a=  99382  b=  99621  d=  -239
+    seed=8000000 swap=1  a=  99382  b=  99621  d=  -239
+    seed=9000000 swap=0  a= 110578  b= 110817  d=  -239
+    seed=9000000 swap=1  a= 110578  b= 110817  d=  -239
+  -- LOSES (a < b), most-negative first:
+    seed=5000000 swap=0  a=  59802  b=  69893  d=-10091
+    seed=5000000 swap=1  a=  59802  b=  69893  d=-10091
+    seed=3330000 swap=0  a=  77457  b=  87116  d= -9659
+    seed=3330000 swap=1  a=  77457  b=  87116  d= -9659
+    seed=2000000 swap=0  a=  71683  b=  79639  d= -7956
+    seed=2000000 swap=1  a=  71683  b=  79639  d= -7956
+    seed=1000000 swap=0  a=  71154  b=  72826  d= -1672
+    seed=9000000 swap=0  a= 110578  b= 110817  d=  -239
+    seed=9000000 swap=1  a= 110578  b= 110817  d=  -239
+    seed=7770000 swap=0  a=  88730  b=  88969  d=  -239
+    seed=7770000 swap=1  a=  88730  b=  88969  d=  -239
+    seed=6000000 swap=0  a=  41185  b=  41424  d=  -239
+    seed=6000000 swap=1  a=  41185  b=  41424  d=  -239
+    seed=8000000 swap=0  a=  99382  b=  99621  d=  -239
+    seed=8000000 swap=1  a=  99382  b=  99621  d=  -239
+============================================================================

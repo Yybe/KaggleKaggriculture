@@ -1,0 +1,390 @@
+﻿python : OpenSpiel exception: Unknown game 'universal_poker'. Available games are:
+At line:1 char:1
++ python instrument_v16.py 2>&1 | Out-File -Encoding utf8 inst_v16_out. ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (OpenSpiel excep...able games are::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+OpenSpiel exception: Unknown game 'repeated_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+=== V16 SELLS (solo vs PASS) seed=1M ===
+  STRAWBERRY   qty=  328  revenue=    83,672
+  MILK         qty=  221  revenue=    48,060
+  MELON        qty=  144  revenue=    31,296
+  WOOL         qty=  148  revenue=    25,028
+  FERTILIZER   qty=  212  revenue=    16,920
+  WHEAT        qty=  305  revenue=    13,427
+  TOTAL revenue(approx): 218403
+  FINAL cash: 170600.0
+
+=== BY DAY ===
+  D 0: WHEAT:2
+  D 2: FERTILIZER:4
+  D 3: FERTILIZER:4
+  D 4: FERTILIZER:4
+  D 5: WHEAT:25, FERTILIZER:4
+  D 6: FERTILIZER:4
+  D 7: WOOL:10, FERTILIZER:4, WHEAT:2
+  D 8: FERTILIZER:4
+  D 9: WHEAT:17, MILK:8, FERTILIZER:6
+  D10: MELON:60, WHEAT:25, WOOL:8, MILK:4
+  D11: FERTILIZER:14, MELON:12, WHEAT:1
+  D12: FERTILIZER:8
+  D13: FERTILIZER:14, WOOL:8, WHEAT:7
+  D14: FERTILIZER:14, MILK:12, WHEAT:6
+  D15: FERTILIZER:9, MILK:7
+  D16: MILK:12, WOOL:8
+  D17: FERTILIZER:14, STRAWBERRY:14, MILK:11, WHEAT:7
+  D18: WOOL:24, MILK:19, FERTILIZER:18, STRAWBERRY:6, WHEAT:3
+  D19: STRAWBERRY:22, MILK:15, WOOL:8, WHEAT:4
+  D20: STRAWBERRY:34, MELON:24, MILK:13, WOOL:4
+  D21: STRAWBERRY:30, MELON:24, WOOL:12, MILK:10, FERTILIZER:10, WHEAT:6
+  D22: MELON:24, MILK:9, WHEAT:6, WOOL:4, STRAWBERRY:4
+  D23: STRAWBERRY:78, MILK:19, FERTILIZER:14, WOOL:8, WHEAT:2
+  D24: STRAWBERRY:32, MILK:19, FERTILIZER:14, WOOL:4, WHEAT:3
+  D25: WHEAT:26, STRAWBERRY:23, WOOL:10, FERTILIZER:4, MILK:3
+  D26: STRAWBERRY:19, MILK:16, WHEAT:15, WOOL:4
+  D27: STRAWBERRY:42, FERTILIZER:20, WOOL:18, MILK:16, WHEAT:5
+  D28: WHEAT:34, FERTILIZER:8, MILK:3
+  D29: WHEAT:109, MILK:25, STRAWBERRY:24, WOOL:18, FERTILIZER:17
+
+=== PRICE SNAPSHOTS (S240=day10 S480=day20 S600=day25 S696=day29 S719) ===
+  S  0 cash=     3,000 prices={'WHEAT': 25, 'CARROT': 35, 'TOMATO': 60, 'STRAWBERRY': 120, 'MELON': 250, 'EGG': 50, 'MILK': 160, 'WOOL': 200, 'FERTILIZER': 100}
+  S240 cash=     2,131 prices={'WHEAT': 34, 'CARROT': 38, 'TOMATO': 61, 'STRAWBERRY': 184, 'MELON': 271, 'EGG': 55, 'MILK': 172, 'WOOL': 200, 'FERTILIZER': 93}
+  S480 cash=    47,325 prices={'WHEAT': 44, 'CARROT': 38, 'TOMATO': 62, 'STRAWBERRY': 249, 'MELON': 223, 'EGG': 66, 'MILK': 202, 'WOOL': 77, 'FERTILIZER': 75}
+  S600 cash=   111,510 prices={'WHEAT': 48, 'CARROT': 39, 'TOMATO': 63, 'STRAWBERRY': 251, 'MELON': 108, 'EGG': 72, 'MILK': 226, 'WOOL': 169, 'FERTILIZER': 67}
+  S696 cash=   148,374 prices={'WHEAT': 49, 'CARROT': 39, 'TOMATO': 63, 'STRAWBERRY': 269, 'MELON': 118, 'EGG': 77, 'MILK': 256, 'WOOL': 199, 'FERTILIZER': 61}
+  S719 cash=   170,600 prices={'WHEAT': 47, 'CARROT': 39, 'TOMATO': 64, 'STRAWBERRY': 272, 'MELON': 120, 'EGG': 78, 'MILK': 256, 'WOOL': 196, 'FERTILIZER': 58}

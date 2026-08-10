@@ -1,0 +1,60 @@
+﻿D 0E $   2,586 plants=21({'WHEAT': 21}) weeds=0 empty=4 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 20, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0}
+    actions={'EAST': 5, 'NORTH': 17, 'PASS': 1, 'PLANT': 21, 'SOUTH': 11, 'WATER': 21, 'WEST': 17, '_M': 16}
+D 1E $   2,552 plants=24({'WHEAT': 24}) weeds=0 empty=1 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 20, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0}
+    actions={'EAST': 8, 'NORTH': 12, 'PASS': 21, 'PLANT': 3, 'SOUTH': 7, 'WATER': 24, 'WEST': 18, '_M': 5}
+D 2E $   2,548 plants=24({'WHEAT': 24}) weeds=0 empty=1 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 20, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0}
+    actions={'EAST': 2, 'NORTH': 11, 'PASS': 30, 'SOUTH': 9, 'WATER': 24, 'WEST': 17, '_M': 3}
+D 3E $   2,544 plants=24({'WHEAT': 24}) weeds=0 empty=1 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 20, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0}
+    actions={'EAST': 2, 'NORTH': 11, 'PASS': 30, 'SOUTH': 9, 'WATER': 24, 'WEST': 17, '_M': 3}
+D 4E $   2,357 plants=23({'WHEAT': 23}) weeds=0 empty=2 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 20, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0}
+    actions={'HARVEST': 19, 'NORTH': 18, 'PASS': 2, 'PLANT': 18, 'WATER': 40, 'WEST': 19, '_M': 11}
+D 5E $   4,088 plants=24({'WHEAT': 24}) weeds=0 empty=1 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 20, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0}
+    actions={'DIG': 2, 'EAST': 1, 'HARVEST': 3, 'NORTH': 16, 'PASS': 39, 'PLANT': 6, 'WATER': 27, 'WEST': 22, '_M': 10}
+D 6E $   3,175 plants=35({'WHEAT': 35}) weeds=0 empty=15 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 26, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0}
+    actions={'EAST': 35, 'NORTH': 12, 'PLANT': 12, 'WATER': 35, 'WEST': 22, '_M': 14}
+D 7E $   3,138 plants=38({'WHEAT': 38}) weeds=0 empty=12 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 25, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0}
+    actions={'DIG': 1, 'EAST': 38, 'NORTH': 12, 'PLANT': 4, 'WATER': 38, 'WEST': 23, '_M': 6}
+D 8E $   2,916 plants=38({'WHEAT': 38}) weeds=1 empty=11 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 28, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0}
+    actions={'EAST': 16, 'HARVEST': 17, 'NORTH': 16, 'PLANT': 17, 'WATER': 47, 'WEST': 26, '_M': 18}
+D 9E $   4,295 plants=37({'WHEAT': 37}) weeds=2 empty=11 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 28, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 0, 'MELON': 0}
+    actions={'EAST': 41, 'HARVEST': 6, 'NORTH': 16, 'PLANT': 6, 'WATER': 39, 'WEST': 31, '_M': 11}
+D10E $   3,727 plants=37({'WHEAT': 37}) weeds=2 empty=11 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 28, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 10, 'MELON': 0}
+    actions={'DIG': 2, 'EAST': 40, 'HARVEST': 4, 'NORTH': 16, 'PLANT': 8, 'WATER': 40, 'WEST': 29, '_M': 15}
+D11E $   3,971 plants=36({'WHEAT': 36}) weeds=4 empty=10 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 28, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 10, 'MELON': 0}
+    actions={'DIG': 7, 'EAST': 45, 'NORTH': 16, 'PLANT': 8, 'SOUTH': 1, 'WATER': 35, 'WEST': 27, '_M': 12}
+D12E $   2,781 plants=35({'WHEAT': 24, 'STRAWBERRY': 11}) weeds=7 empty=8 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 28, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 10, 'MELON': 0}
+    actions={'DIG': 2, 'EAST': 33, 'HARVEST': 16, 'NORTH': 19, 'PLANT': 16, 'WATER': 47, 'WEST': 29, '_M': 18}
+D13E $   4,005 plants=38({'WHEAT': 27, 'STRAWBERRY': 11}) weeds=3 empty=9 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 28, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 10, 'MELON': 0}
+    actions={'DIG': 4, 'EAST': 48, 'HARVEST': 6, 'NORTH': 19, 'PLANT': 10, 'SOUTH': 1, 'WATER': 42, 'WEST': 32, '_M': 13}
+D14E $   1,399 plants=49({'WHEAT': 34, 'STRAWBERRY': 15}) weeds=2 empty=24 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 45, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 14, 'MELON': 0}
+    actions={'DIG': 1, 'EAST': 33, 'HARVEST': 4, 'NORTH': 15, 'PLANT': 18, 'SOUTH': 11, 'WATER': 49, 'WEST': 31, '_M': 22}
+D15E $   1,635 plants=50({'WHEAT': 35, 'STRAWBERRY': 15}) weeds=6 empty=19 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 43, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 14, 'MELON': 0}
+    actions={'DIG': 1, 'EAST': 38, 'HARVEST': 4, 'NORTH': 15, 'PLANT': 9, 'SOUTH': 11, 'WATER': 51, 'WEST': 33, '_M': 14}
+D16E $   1,808 plants=53({'WHEAT': 38, 'STRAWBERRY': 15}) weeds=7 empty=15 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 44, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 14, 'MELON': 0}
+    actions={'DIG': 3, 'EAST': 36, 'HARVEST': 5, 'NORTH': 21, 'PLANT': 12, 'SOUTH': 20, 'WATER': 54, 'WEST': 34, '_M': 17}
+D17E $   2,105 plants=54({'WHEAT': 39, 'STRAWBERRY': 15}) weeds=8 empty=13 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 43, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 14, 'MELON': 0}
+    actions={'DIG': 1, 'EAST': 41, 'HARVEST': 7, 'NORTH': 25, 'PLANT': 9, 'SOUTH': 8, 'WATER': 59, 'WEST': 35, '_M': 16}
+D18E $   2,540 plants=54({'WHEAT': 39, 'STRAWBERRY': 15}) weeds=7 empty=14 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 45, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 14, 'MELON': 0}
+    actions={'DIG': 2, 'EAST': 34, 'HARVEST': 10, 'NORTH': 18, 'PLANT': 11, 'SOUTH': 12, 'WATER': 63, 'WEST': 35, '_M': 16}
+D19E $   3,284 plants=54({'WHEAT': 39, 'STRAWBERRY': 15}) weeds=7 empty=14 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 45, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 14, 'MELON': 0}
+    actions={'DIG': 3, 'EAST': 40, 'HARVEST': 5, 'NORTH': 18, 'PLANT': 7, 'SOUTH': 19, 'WATER': 58, 'WEST': 35, '_M': 14}
+D20E $   3,537 plants=50({'WHEAT': 35, 'STRAWBERRY': 15}) weeds=10 empty=15 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 45, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 14, 'MELON': 0}
+    actions={'DIG': 2, 'EAST': 33, 'HARVEST': 11, 'NORTH': 19, 'PLANT': 13, 'SOUTH': 16, 'WATER': 56, 'WEST': 35, '_M': 18}
+D21E $   4,289 plants=52({'WHEAT': 37, 'STRAWBERRY': 15}) weeds=10 empty=13 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 44, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 14, 'MELON': 0}
+    actions={'DIG': 2, 'EAST': 37, 'HARVEST': 7, 'NORTH': 23, 'PLANT': 10, 'SOUTH': 13, 'WATER': 57, 'WEST': 36, '_M': 17}
+D22E $   4,716 plants=50({'WHEAT': 35, 'STRAWBERRY': 15}) weeds=11 empty=14 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 44, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 14, 'MELON': 0}
+    actions={'DIG': 2, 'EAST': 28, 'HARVEST': 20, 'NORTH': 16, 'PLANT': 12, 'SOUTH': 15, 'WATER': 57, 'WEST': 35, '_M': 18}
+D23E $   8,225 plants=51({'WHEAT': 36, 'STRAWBERRY': 15}) weeds=11 empty=13 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 44, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 14, 'MELON': 0}
+    actions={'DIG': 5, 'EAST': 36, 'HARVEST': 4, 'NORTH': 15, 'PLANT': 7, 'SOUTH': 12, 'WATER': 51, 'WEST': 32, '_M': 17}
+D24E $   8,432 plants=50({'WHEAT': 35, 'STRAWBERRY': 15}) weeds=10 empty=15 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 45, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 14, 'MELON': 0}
+    actions={'DIG': 1, 'EAST': 30, 'HARVEST': 21, 'NORTH': 22, 'PLANT': 8, 'SOUTH': 16, 'WATER': 53, 'WEST': 34, '_M': 14}
+D25E $  12,819 plants=45({'WHEAT': 30, 'STRAWBERRY': 15}) weeds=16 empty=14 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 45, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 14, 'MELON': 0}
+    actions={'DIG': 3, 'EAST': 27, 'HARVEST': 8, 'NORTH': 17, 'PLANT': 11, 'SOUTH': 3, 'WATER': 44, 'WEST': 26, '_M': 18}
+D26E $  13,340 plants=47({'WHEAT': 32, 'STRAWBERRY': 15}) weeds=14 empty=14 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 44, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 14, 'MELON': 0}
+    actions={'DIG': 4, 'EAST': 33, 'HARVEST': 19, 'NORTH': 18, 'PLANT': 10, 'SOUTH': 16, 'WATER': 50, 'WEST': 35, '_M': 16}
+D27E $  17,539 plants=38({'WHEAT': 23, 'STRAWBERRY': 15}) weeds=15 empty=22 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 45, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 14, 'MELON': 0}
+    actions={'DIG': 9, 'EAST': 36, 'HARVEST': 5, 'NORTH': 15, 'SOUTH': 10, 'WATER': 36, 'WEST': 28, '_M': 11}
+D28E $  18,117 plants=15({'STRAWBERRY': 15}) weeds=4 empty=56 shedW=0 shedSTR=0 shedTOT=0 seeds={'WHEAT': 45, 'CARROT': 0, 'TOMATO': 0, 'STRAWBERRY': 14, 'MELON': 0}
+    actions={'DIG': 10, 'EAST': 30, 'HARVEST': 36, 'NORTH': 29, 'PASS': 3, 'SOUTH': 22, 'WATER': 14, 'WEST': 41, '_M': 9}
+
+FINAL: VersionWybe=22,822 vs PASS=3,000
