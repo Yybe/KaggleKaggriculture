@@ -1,0 +1,28 @@
+Testing 1 match with CandidateV18Agent...
+Match Result: Candidate=32140.0, TH1=34828.0, Delta=  -2688, Error=None
+
+Testing on losing seed 1176492926 vs TH1...
+Losing Seed Result vs TH1: Candidate=41466.0, TH1=37327.0 (Delta=  +4139)
+
+Testing on losing seed 1176492926 vs TH2...
+Losing Seed Result vs TH2: Candidate=39202.0, TH2=70198.0 (Delta= -30996)
+
+Running full 8-seed gate vs TH1...
+  Seed    1000000 (swap=False): Candidate=  32140 vs TH1=  34828 | Delta=  -2688
+  Seed    1000000 (swap=True): Candidate=  33037 vs TH1=  33949 | Delta=   -912
+  Seed    2000000 (swap=False): Candidate=  40151 vs TH1=  40380 | Delta=   -229
+  Seed    2000000 (swap=True): Candidate=  40151 vs TH1=  40380 | Delta=   -229
+  Seed    3330000 (swap=False): Candidate=  48763 vs TH1=  52343 | Delta=  -3580
+  Seed    3330000 (swap=True): Candidate=  48763 vs TH1=  52343 | Delta=  -3580
+  Seed    5000000 (swap=False): Candidate=  29408 vs TH1=  29102 | Delta=   +306
+  Seed    5000000 (swap=True): Candidate=  29408 vs TH1=  29102 | Delta=   +306
+  Seed    6000000 (swap=False): Candidate=  39004 vs TH1=  39250 | Delta=   -246
+  Seed    6000000 (swap=True): Candidate=  39004 vs TH1=  39250 | Delta=   -246
+  Seed    7770000 (swap=False): Candidate=  35738 vs TH1=  37646 | Delta=  -1908
+  Seed    7770000 (swap=True): Candidate=  35738 vs TH1=  37646 | Delta=  -1908
+  Seed    8000000 (swap=False): Candidate=  50467 vs TH1=  52608 | Delta=  -2141
+  Seed    8000000 (swap=True): Candidate=  50467 vs TH1=  52608 | Delta=  -2141
+  Seed    9000000 (swap=False): Candidate=  50574 vs TH1=  52243 | Delta=  -1669
+  Seed    9000000 (swap=True): Candidate=  50574 vs TH1=  52243 | Delta=  -1669
+
+8-Seed Gate vs TH1: 2W/14L/0T (12.5%) | Mean Delta: -1408.4

@@ -661,12 +661,175 @@ def _rc3_market_relay(obs, action, step, configuration):
     return _rank_sell_slots(obs, action, configuration)
 
 
-def agent(obs):
+# --- V18 Apex: Anti-Thunder Interceptors & Recovery Selling ---
+_V18_STATE = {
+    0: {"last_step": -1, "wool_intercepted": 0, "wool_repaid": False, "milk_intercepted": 0, "milk_repaid": False},
+    1: {"last_step": -1, "wool_intercepted": 0, "wool_repaid": False, "milk_intercepted": 0, "milk_repaid": False},
+}
+
+_V18_RECOVERY_GATES = {
+    "STRAWBERRY": 60,
+    "MILK": 110,
+    "WOOL": 200,
+}
+
+
+def _v18_state(obs, step):
+    seat = _seat(obs)
+    st = _V18_STATE[seat]
+    if step == 0 or step < int(st.get("last_step", -1)):
+        st = {
+            "last_step": step,
+            "wool_intercepted": 0,
+            "wool_repaid": False,
+            "milk_intercepted": 0,
+            "milk_repaid": False,
+        }
+        _V18_STATE[seat] = st
+    st["last_step"] = step
+    return st
+
+
+def _v18_anti_thunder_intercept(obs, action, step, st, actions):
+    market = [list(order) for order in (action.get("market") or [])]
+    private = _get(obs, "private", {}) or {}
+    shed = dict(_get(private, "shed", {}) or {})
+    
+    # 1. WOOL Intercept at step 663 (preempting THUNDER step 664 & 667 dumps)
+    if step == 663 and st["wool_intercepted"] == 0:
+        avail_wool = int(_get(shed, "WOOL", 0) or 0)
+        qty = min(16, avail_wool)
+        if qty > 0 and len(market) < 10:
+            market.insert(0, ["SELL", "WOOL", qty])
+            st["wool_intercepted"] = qty
+
+    # Repay WOOL at step 672
+    if step == 672 and st["wool_intercepted"] > 0 and not st["wool_repaid"]:
+        repay = st["wool_intercepted"]
+        new_m = []
+        for ord in market:
+            if len(ord) >= 3 and ord[0] == "SELL" and ord[1] == "WOOL" and repay > 0:
+                cur = int(ord[2])
+                red = min(cur, repay)
+                cur -= red
+                repay -= red
+                if cur > 0:
+                    new_m.append([ord[0], ord[1], cur])
+            else:
+                new_m.append(ord)
+        market = new_m
+        st["wool_repaid"] = True
+
+    # 2. MILK Intercept at step 666
+    if step == 666 and st["milk_intercepted"] == 0:
+        avail_milk = int(_get(shed, "MILK", 0) or 0)
+        qty = min(9, avail_milk)
+        if qty > 0 and len(market) < 10:
+            market.insert(0, ["SELL", "MILK", qty])
+            st["milk_intercepted"] = qty
+
+    # Repay MILK at step 672
+    if step == 672 and st["milk_intercepted"] > 0 and not st["milk_repaid"]:
+        repay = st["milk_intercepted"]
+        new_m = []
+        for ord in market:
+            if len(ord) >= 3 and ord[0] == "SELL" and ord[1] == "MILK" and repay > 0:
+                cur = int(ord[2])
+                red = min(cur, repay)
+                cur -= red
+                repay -= red
+                if cur > 0:
+                    new_m.append([ord[0], ord[1], cur])
+            else:
+                new_m.append(ord)
+        market = new_m
+        st["milk_repaid"] = True
+
+    action["market"] = market[:10]
+    return action
+
+
+def _v18_recovery_sell(obs, action, step, actions):
+    if not (705 <= step <= 716):
+        return action
+    market = [list(order) for order in (action.get("market") or [])]
+    if len(market) >= 10:
+        return action
+        
+    private = _get(obs, "private", {}) or {}
+    shed = dict(_get(private, "shed", {}) or {})
+    mkt_info = _get(obs, "market", {}) or {}
+    prices = _get(mkt_info, "prices", {}) or {}
+    
+    for item in ("STRAWBERRY", "MILK", "WOOL"):
+        gate = _V18_RECOVERY_GATES.get(item, 0)
+        cur_px = int(_get(prices, item, 0) or 0)
+        if cur_px >= gate:
+            avail = int(_get(shed, item, 0) or 0)
+            future_planned = 0
+            for fut_s in range(step, len(actions)):
+                for raw in (actions[fut_s].get("market") or []):
+                    if len(raw) >= 3 and raw[0] == "SELL" and raw[1] == item:
+                        future_planned += int(raw[2])
+            dead = max(0, avail - future_planned)
+            if dead > 0 and len(market) < 10:
+                sell_qty = min(12, dead)
+                market.insert(0, ["SELL", item, sell_qty])
+                
+    action["market"] = market[:10]
+    return action
+
+
+def _v18_capselllate(obs, action, step, bump_cap=1):
+    if step < 456:
+        return action
+    market = [list(order) for order in (action.get("market") or [])]
+    private = _get(obs, "private", {}) or {}
+    shed = dict(_get(private, "shed", {}) or {})
+    
+    new_m = []
+    for ord in market:
+        if len(ord) >= 3 and ord[0] == "SELL" and ord[1] in ("STRAWBERRY", "MILK", "WOOL"):
+            item = ord[1]
+            qty = int(ord[2])
+            avail = int(_get(shed, item, 0) or 0)
+            if avail > qty:
+                ord = [ord[0], ord[1], qty + min(bump_cap, avail - qty)]
+        new_m.append(ord)
+    action["market"] = new_m[:10]
+    return action
+
+
+def agent(obs, configuration=None):
     try:
-        configuration = _V16_OFFICIAL_CONFIGURATION
-        step = min(max(0, int(_get(obs, "step", 0) or 0)), len(_REBALANCE_ACTIONS) - 1)
-        action = _v16_agent_impl(obs, configuration)
-        action = _rc3_market_relay(obs, action, step, configuration)
+        cfg = configuration or _V16_OFFICIAL_CONFIGURATION
+        actions = (
+            _REBALANCE_ACTIONS
+            if _regime(cfg) == "rebalance"
+            else _LEGACY_ACTIONS
+        )
+        step = min(max(0, int(_get(obs, "step", 0) or 0)), len(actions) - 1)
+        st = _v18_state(obs, step)
+        
+        # 1. Base action with weed repair and livestock controls
+        action = _weed_repair_action(obs, _copy_action(actions[step]), actions, step)
+        action = _v16_convert_livestock(action, obs, step)
+        action = _v16_wool_controller(action, obs, step)
+        
+        # 2. Boatlee 5-turn fertilizer counter-relay
+        action = _rc3_market_relay(obs, action, step, cfg)
+        
+        # 3. Anti-Thunder Wool & Milk Interception
+        action = _v18_anti_thunder_intercept(obs, action, step, st, actions)
+        
+        # 4. Dead-Inventory Recovery Selling (steps 705 to 716)
+        action = _v18_recovery_sell(obs, action, step, actions)
+        
+        # 5. Capselllate
+        action = _v18_capselllate(obs, action, step, bump_cap=1)
+        
+        # 6. Rank market orders by price impact and align hands
+        action = _rank_sell_slots(obs, action, cfg)
         return _align_hands(action, obs)
     except Exception:
         farm = _farm(obs, _seat(obs))

@@ -1,0 +1,622 @@
+{
+  "salemali7_3k": {
+    "games": 16,
+    "wins": 16,
+    "losses": 0,
+    "ties": 0,
+    "win_rate": 100.0,
+    "mean_v18": 88408.0,
+    "mean_opp": 74040.5,
+    "mean_delta": 14367.5,
+    "matches": [
+      {
+        "seed": 3330000,
+        "swap": false,
+        "score_v18": 59131.0,
+        "score_opp": 41644.0,
+        "delta": 17487.0
+      },
+      {
+        "seed": 5000000,
+        "swap": false,
+        "score_v18": 75906.0,
+        "score_opp": 64507.0,
+        "delta": 11399.0
+      },
+      {
+        "seed": 1000000,
+        "swap": false,
+        "score_v18": 94572.0,
+        "score_opp": 84245.0,
+        "delta": 10327.0
+      },
+      {
+        "seed": 2000000,
+        "swap": true,
+        "score_v18": 86402.0,
+        "score_opp": 76259.0,
+        "delta": 10143.0
+      },
+      {
+        "seed": 7770000,
+        "swap": false,
+        "score_v18": 100334.0,
+        "score_opp": 82129.0,
+        "delta": 18205.0
+      },
+      {
+        "seed": 2000000,
+        "swap": false,
+        "score_v18": 86402.0,
+        "score_opp": 76259.0,
+        "delta": 10143.0
+      },
+      {
+        "seed": 9000000,
+        "swap": false,
+        "score_v18": 113575.0,
+        "score_opp": 97024.0,
+        "delta": 16551.0
+      },
+      {
+        "seed": 9000000,
+        "swap": true,
+        "score_v18": 113575.0,
+        "score_opp": 97024.0,
+        "delta": 16551.0
+      },
+      {
+        "seed": 7770000,
+        "swap": true,
+        "score_v18": 100334.0,
+        "score_opp": 82129.0,
+        "delta": 18205.0
+      },
+      {
+        "seed": 8000000,
+        "swap": true,
+        "score_v18": 122759.0,
+        "score_opp": 109677.0,
+        "delta": 13082.0
+      },
+      {
+        "seed": 1000000,
+        "swap": true,
+        "score_v18": 94716.0,
+        "score_opp": 84243.0,
+        "delta": 10473.0
+      },
+      {
+        "seed": 8000000,
+        "swap": false,
+        "score_v18": 122759.0,
+        "score_opp": 109677.0,
+        "delta": 13082.0
+      },
+      {
+        "seed": 6000000,
+        "swap": false,
+        "score_v18": 54513.0,
+        "score_opp": 36840.0,
+        "delta": 17673.0
+      },
+      {
+        "seed": 6000000,
+        "swap": true,
+        "score_v18": 54513.0,
+        "score_opp": 36840.0,
+        "delta": 17673.0
+      },
+      {
+        "seed": 5000000,
+        "swap": true,
+        "score_v18": 75906.0,
+        "score_opp": 64507.0,
+        "delta": 11399.0
+      },
+      {
+        "seed": 3330000,
+        "swap": true,
+        "score_v18": 59131.0,
+        "score_opp": 41644.0,
+        "delta": 17487.0
+      }
+    ]
+  },
+  "v155_champion": {
+    "games": 16,
+    "wins": 16,
+    "losses": 0,
+    "ties": 0,
+    "win_rate": 100.0,
+    "mean_v18": 88328.375,
+    "mean_opp": 73593.0,
+    "mean_delta": 14735.375,
+    "matches": [
+      {
+        "seed": 1000000,
+        "swap": false,
+        "score_v18": 94483.0,
+        "score_opp": 83894.0,
+        "delta": 10589.0
+      },
+      {
+        "seed": 2000000,
+        "swap": false,
+        "score_v18": 85901.0,
+        "score_opp": 75263.0,
+        "delta": 10638.0
+      },
+      {
+        "seed": 2000000,
+        "swap": true,
+        "score_v18": 85901.0,
+        "score_opp": 75263.0,
+        "delta": 10638.0
+      },
+      {
+        "seed": 3330000,
+        "swap": false,
+        "score_v18": 59177.0,
+        "score_opp": 41443.0,
+        "delta": 17734.0
+      },
+      {
+        "seed": 3330000,
+        "swap": true,
+        "score_v18": 59177.0,
+        "score_opp": 41443.0,
+        "delta": 17734.0
+      },
+      {
+        "seed": 5000000,
+        "swap": true,
+        "score_v18": 75946.0,
+        "score_opp": 64255.0,
+        "delta": 11691.0
+      },
+      {
+        "seed": 6000000,
+        "swap": false,
+        "score_v18": 54498.0,
+        "score_opp": 36876.0,
+        "delta": 17622.0
+      },
+      {
+        "seed": 1000000,
+        "swap": true,
+        "score_v18": 94627.0,
+        "score_opp": 83892.0,
+        "delta": 10735.0
+      },
+      {
+        "seed": 6000000,
+        "swap": true,
+        "score_v18": 54498.0,
+        "score_opp": 36876.0,
+        "delta": 17622.0
+      },
+      {
+        "seed": 7770000,
+        "swap": false,
+        "score_v18": 100400.0,
+        "score_opp": 81605.0,
+        "delta": 18795.0
+      },
+      {
+        "seed": 7770000,
+        "swap": true,
+        "score_v18": 100400.0,
+        "score_opp": 81605.0,
+        "delta": 18795.0
+      },
+      {
+        "seed": 5000000,
+        "swap": false,
+        "score_v18": 75946.0,
+        "score_opp": 64255.0,
+        "delta": 11691.0
+      },
+      {
+        "seed": 9000000,
+        "swap": false,
+        "score_v18": 113577.0,
+        "score_opp": 96406.0,
+        "delta": 17171.0
+      },
+      {
+        "seed": 8000000,
+        "swap": false,
+        "score_v18": 122573.0,
+        "score_opp": 109003.0,
+        "delta": 13570.0
+      },
+      {
+        "seed": 9000000,
+        "swap": true,
+        "score_v18": 113577.0,
+        "score_opp": 96406.0,
+        "delta": 17171.0
+      },
+      {
+        "seed": 8000000,
+        "swap": true,
+        "score_v18": 122573.0,
+        "score_opp": 109003.0,
+        "delta": 13570.0
+      }
+    ]
+  },
+  "v16a_salem": {
+    "games": 16,
+    "wins": 16,
+    "losses": 0,
+    "ties": 0,
+    "win_rate": 100.0,
+    "mean_v18": 88328.375,
+    "mean_opp": 73593.0,
+    "mean_delta": 14735.375,
+    "matches": [
+      {
+        "seed": 1000000,
+        "swap": false,
+        "score_v18": 94483.0,
+        "score_opp": 83894.0,
+        "delta": 10589.0
+      },
+      {
+        "seed": 1000000,
+        "swap": true,
+        "score_v18": 94627.0,
+        "score_opp": 83892.0,
+        "delta": 10735.0
+      },
+      {
+        "seed": 2000000,
+        "swap": false,
+        "score_v18": 85901.0,
+        "score_opp": 75263.0,
+        "delta": 10638.0
+      },
+      {
+        "seed": 2000000,
+        "swap": true,
+        "score_v18": 85901.0,
+        "score_opp": 75263.0,
+        "delta": 10638.0
+      },
+      {
+        "seed": 3330000,
+        "swap": false,
+        "score_v18": 59177.0,
+        "score_opp": 41443.0,
+        "delta": 17734.0
+      },
+      {
+        "seed": 3330000,
+        "swap": true,
+        "score_v18": 59177.0,
+        "score_opp": 41443.0,
+        "delta": 17734.0
+      },
+      {
+        "seed": 5000000,
+        "swap": true,
+        "score_v18": 75946.0,
+        "score_opp": 64255.0,
+        "delta": 11691.0
+      },
+      {
+        "seed": 5000000,
+        "swap": false,
+        "score_v18": 75946.0,
+        "score_opp": 64255.0,
+        "delta": 11691.0
+      },
+      {
+        "seed": 6000000,
+        "swap": true,
+        "score_v18": 54498.0,
+        "score_opp": 36876.0,
+        "delta": 17622.0
+      },
+      {
+        "seed": 9000000,
+        "swap": true,
+        "score_v18": 113577.0,
+        "score_opp": 96406.0,
+        "delta": 17171.0
+      },
+      {
+        "seed": 8000000,
+        "swap": true,
+        "score_v18": 122573.0,
+        "score_opp": 109003.0,
+        "delta": 13570.0
+      },
+      {
+        "seed": 7770000,
+        "swap": true,
+        "score_v18": 100400.0,
+        "score_opp": 81605.0,
+        "delta": 18795.0
+      },
+      {
+        "seed": 6000000,
+        "swap": false,
+        "score_v18": 54498.0,
+        "score_opp": 36876.0,
+        "delta": 17622.0
+      },
+      {
+        "seed": 7770000,
+        "swap": false,
+        "score_v18": 100400.0,
+        "score_opp": 81605.0,
+        "delta": 18795.0
+      },
+      {
+        "seed": 8000000,
+        "swap": false,
+        "score_v18": 122573.0,
+        "score_opp": 109003.0,
+        "delta": 13570.0
+      },
+      {
+        "seed": 9000000,
+        "swap": false,
+        "score_v18": 113577.0,
+        "score_opp": 96406.0,
+        "delta": 17171.0
+      }
+    ]
+  },
+  "v17_apex": {
+    "games": 16,
+    "wins": 16,
+    "losses": 0,
+    "ties": 0,
+    "win_rate": 100.0,
+    "mean_v18": 88328.375,
+    "mean_opp": 73593.0,
+    "mean_delta": 14735.375,
+    "matches": [
+      {
+        "seed": 1000000,
+        "swap": false,
+        "score_v18": 94483.0,
+        "score_opp": 83894.0,
+        "delta": 10589.0
+      },
+      {
+        "seed": 1000000,
+        "swap": true,
+        "score_v18": 94627.0,
+        "score_opp": 83892.0,
+        "delta": 10735.0
+      },
+      {
+        "seed": 3330000,
+        "swap": true,
+        "score_v18": 59177.0,
+        "score_opp": 41443.0,
+        "delta": 17734.0
+      },
+      {
+        "seed": 7770000,
+        "swap": true,
+        "score_v18": 100400.0,
+        "score_opp": 81605.0,
+        "delta": 18795.0
+      },
+      {
+        "seed": 8000000,
+        "swap": false,
+        "score_v18": 122573.0,
+        "score_opp": 109003.0,
+        "delta": 13570.0
+      },
+      {
+        "seed": 2000000,
+        "swap": true,
+        "score_v18": 85901.0,
+        "score_opp": 75263.0,
+        "delta": 10638.0
+      },
+      {
+        "seed": 5000000,
+        "swap": false,
+        "score_v18": 75946.0,
+        "score_opp": 64255.0,
+        "delta": 11691.0
+      },
+      {
+        "seed": 8000000,
+        "swap": true,
+        "score_v18": 122573.0,
+        "score_opp": 109003.0,
+        "delta": 13570.0
+      },
+      {
+        "seed": 5000000,
+        "swap": true,
+        "score_v18": 75946.0,
+        "score_opp": 64255.0,
+        "delta": 11691.0
+      },
+      {
+        "seed": 7770000,
+        "swap": false,
+        "score_v18": 100400.0,
+        "score_opp": 81605.0,
+        "delta": 18795.0
+      },
+      {
+        "seed": 9000000,
+        "swap": false,
+        "score_v18": 113577.0,
+        "score_opp": 96406.0,
+        "delta": 17171.0
+      },
+      {
+        "seed": 9000000,
+        "swap": true,
+        "score_v18": 113577.0,
+        "score_opp": 96406.0,
+        "delta": 17171.0
+      },
+      {
+        "seed": 3330000,
+        "swap": false,
+        "score_v18": 59177.0,
+        "score_opp": 41443.0,
+        "delta": 17734.0
+      },
+      {
+        "seed": 2000000,
+        "swap": false,
+        "score_v18": 85901.0,
+        "score_opp": 75263.0,
+        "delta": 10638.0
+      },
+      {
+        "seed": 6000000,
+        "swap": false,
+        "score_v18": 54498.0,
+        "score_opp": 36876.0,
+        "delta": 17622.0
+      },
+      {
+        "seed": 6000000,
+        "swap": true,
+        "score_v18": 54498.0,
+        "score_opp": 36876.0,
+        "delta": 17622.0
+      }
+    ]
+  },
+  "v23_kaito": {
+    "games": 16,
+    "wins": 16,
+    "losses": 0,
+    "ties": 0,
+    "win_rate": 100.0,
+    "mean_v18": 88319.25,
+    "mean_opp": 70891.0,
+    "mean_delta": 17428.25,
+    "matches": [
+      {
+        "seed": 1000000,
+        "swap": false,
+        "score_v18": 93483.0,
+        "score_opp": 80807.0,
+        "delta": 12676.0
+      },
+      {
+        "seed": 2000000,
+        "swap": true,
+        "score_v18": 84318.0,
+        "score_opp": 69985.0,
+        "delta": 14333.0
+      },
+      {
+        "seed": 3330000,
+        "swap": true,
+        "score_v18": 59903.0,
+        "score_opp": 39508.0,
+        "delta": 20395.0
+      },
+      {
+        "seed": 1000000,
+        "swap": true,
+        "score_v18": 93627.0,
+        "score_opp": 80807.0,
+        "delta": 12820.0
+      },
+      {
+        "seed": 5000000,
+        "swap": true,
+        "score_v18": 76859.0,
+        "score_opp": 62160.0,
+        "delta": 14699.0
+      },
+      {
+        "seed": 5000000,
+        "swap": false,
+        "score_v18": 76859.0,
+        "score_opp": 62160.0,
+        "delta": 14699.0
+      },
+      {
+        "seed": 7770000,
+        "swap": true,
+        "score_v18": 100614.0,
+        "score_opp": 79820.0,
+        "delta": 20794.0
+      },
+      {
+        "seed": 7770000,
+        "swap": false,
+        "score_v18": 100614.0,
+        "score_opp": 79820.0,
+        "delta": 20794.0
+      },
+      {
+        "seed": 8000000,
+        "swap": false,
+        "score_v18": 122428.0,
+        "score_opp": 105532.0,
+        "delta": 16896.0
+      },
+      {
+        "seed": 3330000,
+        "swap": false,
+        "score_v18": 59903.0,
+        "score_opp": 39508.0,
+        "delta": 20395.0
+      },
+      {
+        "seed": 8000000,
+        "swap": true,
+        "score_v18": 122428.0,
+        "score_opp": 105532.0,
+        "delta": 16896.0
+      },
+      {
+        "seed": 9000000,
+        "swap": true,
+        "score_v18": 113981.0,
+        "score_opp": 93683.0,
+        "delta": 20298.0
+      },
+      {
+        "seed": 6000000,
+        "swap": true,
+        "score_v18": 54896.0,
+        "score_opp": 35633.0,
+        "delta": 19263.0
+      },
+      {
+        "seed": 2000000,
+        "swap": false,
+        "score_v18": 84318.0,
+        "score_opp": 69985.0,
+        "delta": 14333.0
+      },
+      {
+        "seed": 6000000,
+        "swap": false,
+        "score_v18": 54896.0,
+        "score_opp": 35633.0,
+        "delta": 19263.0
+      },
+      {
+        "seed": 9000000,
+        "swap": false,
+        "score_v18": 113981.0,
+        "score_opp": 93683.0,
+        "delta": 20298.0
+      }
+    ]
+  }
+}

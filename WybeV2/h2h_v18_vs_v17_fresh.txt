@@ -1,0 +1,55 @@
+
+============================================================================
+DIAG BENCH SEED-LIST: v18_apex.py vs v17_apex.py (interval=24)
+Seeds: 20 x 2 seats = 40 games | Ok: 40 | Errs: 0 | Time: 82.5s
+  v18_apex.py: 11 W (27.5%), 5 L, 24 T | seed-level: 4W/0L/16T
+  Mean Delta: +2 | Median: +0 | Min: -1493 | Max: +1493
+  v18_apex.py Avg: 95417 | v17_apex.py Avg: 95415
+  -- per-game (seed, swap, a, b, delta) --
+    seed= 100000 swap=0  a= 100394  b= 100362  d=   +32
+    seed= 100000 swap=1  a= 100394  b= 100362  d=   +32
+    seed= 107919 swap=0  a=  66604  b=  66604  d=    +0
+    seed= 107919 swap=1  a=  66604  b=  66604  d=    +0
+    seed= 115838 swap=0  a= 103882  b= 103882  d=    +0
+    seed= 115838 swap=1  a= 103882  b= 103882  d=    +0
+    seed= 123757 swap=0  a=  57036  b=  57036  d=    +0
+    seed= 123757 swap=1  a=  57036  b=  57036  d=    +0
+    seed= 131676 swap=0  a=  80337  b=  81596  d= -1259
+    seed= 131676 swap=1  a=  81596  b=  80337  d= +1259
+    seed= 139595 swap=0  a= 128770  b= 128770  d=    +0
+    seed= 139595 swap=1  a= 128770  b= 128770  d=    +0
+    seed= 147514 swap=0  a=  65914  b=  65914  d=    +0
+    seed= 147514 swap=1  a=  65914  b=  65914  d=    +0
+    seed= 155433 swap=0  a=  97378  b=  97378  d=    +0
+    seed= 155433 swap=1  a=  97378  b=  97378  d=    +0
+    seed= 163352 swap=0  a=  59636  b=  59636  d=    +0
+    seed= 163352 swap=1  a=  59636  b=  59636  d=    +0
+    seed= 171271 swap=0  a=  93313  b=  93312  d=    +1
+    seed= 171271 swap=1  a=  93313  b=  93312  d=    +1
+    seed= 179190 swap=0  a= 133077  b= 134570  d= -1493
+    seed= 179190 swap=1  a= 134570  b= 133077  d= +1493
+    seed= 187109 swap=0  a= 128893  b= 128893  d=    +0
+    seed= 187109 swap=1  a= 128893  b= 128893  d=    +0
+    seed= 195028 swap=0  a=  66345  b=  66308  d=   +37
+    seed= 195028 swap=1  a=  66308  b=  66345  d=   -37
+    seed= 202947 swap=0  a= 132353  b= 132353  d=    +0
+    seed= 202947 swap=1  a= 132353  b= 132353  d=    +0
+    seed= 210866 swap=0  a= 102767  b= 102644  d=  +123
+    seed= 210866 swap=1  a= 102645  b= 102766  d=  -121
+    seed= 218785 swap=0  a=  70429  b=  70733  d=  -304
+    seed= 218785 swap=1  a=  70733  b=  70429  d=  +304
+    seed= 226704 swap=0  a=  74170  b=  74170  d=    +0
+    seed= 226704 swap=1  a=  74170  b=  74170  d=    +0
+    seed= 234623 swap=0  a= 103552  b= 103544  d=    +8
+    seed= 234623 swap=1  a= 103552  b= 103544  d=    +8
+    seed= 242542 swap=0  a=  97907  b=  97907  d=    +0
+    seed= 242542 swap=1  a=  97907  b=  97907  d=    +0
+    seed= 250461 swap=0  a= 144130  b= 144130  d=    +0
+    seed= 250461 swap=1  a= 144130  b= 144130  d=    +0
+  -- LOSES (a < b), most-negative first:
+    seed= 179190 swap=0  a= 133077  b= 134570  d= -1493
+    seed= 131676 swap=0  a=  80337  b=  81596  d= -1259
+    seed= 218785 swap=0  a=  70429  b=  70733  d=  -304
+    seed= 210866 swap=1  a= 102645  b= 102766  d=  -121
+    seed= 195028 swap=1  a=  66308  b=  66345  d=   -37
+============================================================================

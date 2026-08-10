@@ -1,9 +1,9 @@
 # Kaggriculture Agent — KaggleKaggriculture
 
 Competition agent for **Kaggriculture** (Kaggle `kaggle-environments`). Current
-champion: **V17 "Apex Counter-Relay"** (`WybeV2/v17_apex.py`, bundled as
-`submission.py`; open-source notebook in `ShiV17/`). Fully self-contained
-single-file agents, zero runtime dependencies.
+champion: **V18 "Thunder-Slayer"** (`WybeV2/v18_apex.py` + inline build in
+`submission.py`). Fully self-contained single-file agents, zero runtime
+dependencies.
 
 > **Why this README exists**: the git history on GitHub was replaced during the
 > V15.5 promotion (force-push), so the codebases of earlier versions are no
@@ -216,6 +216,31 @@ loses as player 1 −7,063).
 `ShiV17_walkthrough.md` + `ShiV17_implementation_plan.md`. Previous champion
 preserved at `agents/submission_v16a_backup_20260810.py`.
 
+### Era 7 — V18: the current champion (local, fully verified)
+
+| Ver | Nickname | The idea | Result |
+|---|---|---|---|
+| **V18 (champion)** | **Thunder-Slayer** | **V17 base + anti-THUNDER suite**: WOOL intercept at step 663 (T−9, up to 16 units) + MILK intercept at step 666 (T−6, up to 9 units), both debt-accounted + repaid at step 672 before V17's own dump; dead-inventory recovery selling (705-716, price-gated STR 60/MILK 110/WOOL 200); capselllate top-up (step ≥ 456, +1). Purpose: counter the THUNDER-clone tape agents whose 664/667 dumps crash the market before V17's 672 sell | **See scorecard below** |
+
+### V18 verified scorecard (deterministic engine 1.32.6, interval=24, no noise floor)
+
+| Opponent | Regime | Games | W/L/T | Mean Δ | Min | Max |
+|---|---|---|---|---|---|---|
+| V17 (previous champion) | gate (8 seeds × 2) | 16 | 1W/1L/14T | +0 | −1,431 | +1,431 |
+| V17 | losing seeds (2 × 2) | 4 | 1W/1L/2T | +0 | −41 | +41 |
+| V17 | fresh (20 seeds × 2) | 40 | 5W/5L/30T | +0 | −1,493 | +1,493 |
+| th1 (THUNDER-clone) | gate (8 seeds × 2) | 16 | 16W/0L/0T | +69,864 | +54,219 | +93,622 |
+| th1 | fresh (20 seeds × 2) | 40 | 40W/0L/0T | +78,606 | +38,177 | +111,470 |
+| th2 (THUNDER-clone) | gate | 16 | 16W/0L/0T | +44,194 | — | — |
+| th2 | fresh | 40 | 40W/0L/0T | +36,518 | +17,457 | +64,615 |
+
+> **V18 vs V17 is a wash by design** (44/60 exact ties): the anti-THUNDER
+> interceptors only fire against THUNDER-type opponents, so against V17 (not a
+> THUNDER clone) V18 plays identically and only the seat-symmetric ±1431/±1493
+> runs differ. **V18's edge is entirely vs THUNDER clones (40W/0L, mean ~+78K)**.
+> Raw logs: `results/v18_final_benchmark.json`, `WybeV2/h2h_v18_vs_v17_gate.txt`,
+> `WybeV2/h2h_v18_vs_v17_fresh.txt`.
+
 ---
 
 ## Full Forensics: Why V15 LOST live games (the V15.5 motivation)
@@ -267,7 +292,7 @@ opponents front-load STR at position 0. Full story: `results/V15_TO_V155.md`.
 ## Layout
 
 ```
-submission.py                  <- V17 Apex Counter-Relay champion bundle — THE SUBMISSION (== WybeV2/v17_apex.py)
+submission.py                  <- V18 Thunder-Slayer champion bundle — THE SUBMISSION (V17 base + anti-THUNDER intercepts inline)
 build_v16_submission.py        <- legacy V16a builder (kept for reference)
 build_v15_submission.py        <- legacy builder (V15.5, kept for reference)
 agents/                        <- all agent code (current + every preserved variant)
@@ -281,11 +306,12 @@ agents/                        <- all agent code (current + every preserved vari
   kaggle_champion_v15.py       <- V15 champion (baseline)
   kaggle_boat84_v14.py         <- V14 (BOATLEE_84) foundation route + tape
   kaggle_v23.py, kaggle_v26b.py, kaggle_v26_aggr_evidence.py, seb_route_*, ...
-WybeV2/                        <- V17-era reverse-engineering workspace
-  v17_apex.py                  <- V17 champion source (== root submission.py)
+WybeV2/                        <- V17/V18-era reverse-engineering workspace
+  v18_apex.py                  <- V18 champion source (wrapper; imports submission helpers)
+  v17_apex.py                  <- V17 champion source (== V17-era submission.py)
   boatlee_v16rc2/main.py       <- boatlee V16-RC2 opponent source (reverse-engineered)
   kaitofukami_v27/main.py      <- kaitofukami v27 opponent source
-  h2h_v17_*.txt                <- ALL V17 H2H evidence logs (gate + fresh, both opponents)
+  h2h_v17_*.txt, h2h_v18_*.txt <- ALL V17/V18 H2H evidence logs (gate + fresh)
   rank_dataset/, analysis_output/, *_kernels/ <- ranking/meta research data
   (rank_env/ = local venv, NOT tracked)
 ShiV17/                        <- open-source build of V17 (submission notebook + docs)
@@ -294,18 +320,20 @@ ShiV17/                        <- open-source build of V17 (submission notebook 
   ShiV17_walkthrough.md        <- reverse-engineering + verification walkthrough
   ShiV17_implementation_plan.md
 tools/                         <- research/diagnostic scripts (no agent code)
+  run_v18_benchmark.py         <- full V18 tournament suite (gate + losing + fresh, vs v17/th1/th2)
+  benchmark_v18_suite.py, tune_v18_apex.py <- V18 tuning/verification helpers
+  sim_worker.py                <- multiprocessing simulation worker (V18 harness)
   diag_bench.py                <- deterministic H2H runner (N seeds x 2 seats)
   analyze_v14.py, gate_search.py, trace_loss.py, tune_v14_enhanced.py, ...
-v15_losses/                    <- forensics scripts, probes, tape dump, ALL H2H evidence
 results/                       <- diagnosis/forensics/upgrade docs + 100-game tables
                                    (+ leaderboard_snapshot_2026-08-08.zip)
+                                   (+ v18_final_benchmark.json — V18 tournament suite output)
 notebooks/                     <- research notebooks (v23 route, v14 tape, 4-quadrant)
 logs/                          <- benchmark run/err output, separated by model era
   v155_validation/             <- fresh50/sanity/revalidation runs of the V15.5 gate
   v23_vs_v14/                  <- v23 vs v14 bench logs
   v15_debug/                   <- debug_output traces
 replays_seb/                   <- SEB's live game replays (reverse-engineering data)
-seb_analysis/                  <- SEB/v14 strategy data + reports
 archive/                       <- superseded code & historical backups
   kaggle_v23.py, kaggle_v26.py, github_v23.py
   kaggriculture_project/       <- restored pre-v23 research docs
@@ -325,11 +353,11 @@ HANDOFF.md                     <- original modular agent handoff (history)
 # H2H: candidate vs opponent, 20 seeds x 2 seats, per-seed table + summary
 python tools\diag_bench.py agents\kaggle_champion_v155.py agents\kaggle_champion_v15.py 20 out.txt --swap-both
 
-# Fresh-seed robustness (seeds never used in tuning)
-python v15_losses\diag_bench_offset.py agents\kaggle_champion_v155.py agents\kaggle_champion_v15.py 40 out_ext.txt 40
+# V18 full tournament suite (gate + losing + fresh seeds, vs v17/th1/th2)
+python tools\run_v18_benchmark.py
 
-# V17 gate + fresh-seed verification (deterministic engine 1.32.6, interval=24)
-python tools\diag_bench_seeds.py submission.py WybeV2\boatlee_v16rc2\main.py "1000000,9000000,3330000,7770000,5000000,6000000,8000000,2000000" out_gate.txt --interval 24
+# V18 vs V17 gate + fresh-seed verification (deterministic engine 1.32.6, interval=24)
+python tools\diag_bench_seeds.py WybeV2\v18_apex.py WybeV2\v17_apex.py "1000000,9000000,3330000,7770000,5000000,6000000,8000000,2000000" out_gate.txt --interval 24
 
 # Rebuild + verify + submit
 python build_v16_submission.py

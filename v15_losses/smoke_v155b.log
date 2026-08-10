@@ -1,5 +1,0 @@
-v155 version='V15_5_Recovery'
-v15 version='V15_Champion'
-future tape sells after step 672: STR=0 MILK=27 WOOL=18
-dead at 672 with shed STR=24: 24 (expect 24)
-has agent=True _kaggle=True
