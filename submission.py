@@ -1,7 +1,7 @@
-"""V17 Apex Counter-Relay for Kaggriculture.
+"""V18 APEXX: THUNDER, V17, and V18 Killer Agent.
 
-A high-output production core with a guarded, debt-accounted,
-three-turn FERTILIZER market relay for near-mirror farms.
+A high-output production core with adaptive counter-preemption,
+dynamic dead-inventory recovery selling, and guarded market relay.
 """
 import base64
 import copy
@@ -661,16 +661,18 @@ def _rc3_market_relay(obs, action, step, configuration):
     return _rank_sell_slots(obs, action, configuration)
 
 
-# --- V18 Apex: Anti-Thunder Interceptors & Recovery Selling ---
+# --- V18 APEXX: Anti-Thunder Interceptors & Dynamic Recovery Selling ---
 _V18_STATE = {
-    0: {"last_step": -1, "wool_intercepted": 0, "wool_repaid": False, "milk_intercepted": 0, "milk_repaid": False},
-    1: {"last_step": -1, "wool_intercepted": 0, "wool_repaid": False, "milk_intercepted": 0, "milk_repaid": False},
+    0: {"last_step": -1, "wool_intercepted": 0, "wool_repaid": False, "milk_intercepted": 0, "milk_repaid": False, "melon_preempted": False},
+    1: {"last_step": -1, "wool_intercepted": 0, "wool_repaid": False, "milk_intercepted": 0, "milk_repaid": False, "melon_preempted": False},
 }
 
 _V18_RECOVERY_GATES = {
     "STRAWBERRY": 60,
     "MILK": 110,
-    "WOOL": 200,
+    "WOOL": 180,
+    "CARROT": 30,
+    "WHEAT": 20,
 }
 
 
@@ -684,6 +686,7 @@ def _v18_state(obs, step):
             "wool_repaid": False,
             "milk_intercepted": 0,
             "milk_repaid": False,
+            "melon_preempted": False,
         }
         _V18_STATE[seat] = st
     st["last_step"] = step
@@ -695,6 +698,14 @@ def _v18_anti_thunder_intercept(obs, action, step, st, actions):
     private = _get(obs, "private", {}) or {}
     shed = dict(_get(private, "shed", {}) or {})
     
+    # 0. MELON Preemption at step 239 (Preempting THUNDER step 240 MELON dump)
+    if step == 239 and not st["melon_preempted"]:
+        avail_melon = int(_get(shed, "MELON", 0) or 0)
+        qty = min(6, avail_melon)
+        if qty > 0 and len(market) < 10:
+            market.insert(0, ["SELL", "MELON", qty])
+            st["melon_preempted"] = True
+
     # 1. WOOL Intercept at step 663 (preempting THUNDER step 664 & 667 dumps)
     if step == 663 and st["wool_intercepted"] == 0:
         avail_wool = int(_get(shed, "WOOL", 0) or 0)
@@ -750,7 +761,7 @@ def _v18_anti_thunder_intercept(obs, action, step, st, actions):
 
 
 def _v18_recovery_sell(obs, action, step, actions):
-    if not (705 <= step <= 716):
+    if not (648 <= step <= 716):
         return action
     market = [list(order) for order in (action.get("market") or [])]
     if len(market) >= 10:
@@ -761,7 +772,7 @@ def _v18_recovery_sell(obs, action, step, actions):
     mkt_info = _get(obs, "market", {}) or {}
     prices = _get(mkt_info, "prices", {}) or {}
     
-    for item in ("STRAWBERRY", "MILK", "WOOL"):
+    for item in ("STRAWBERRY", "MILK", "WOOL", "CARROT", "WHEAT"):
         gate = _V18_RECOVERY_GATES.get(item, 0)
         cur_px = int(_get(prices, item, 0) or 0)
         if cur_px >= gate:
@@ -822,7 +833,7 @@ def agent(obs, configuration=None):
         # 3. Anti-Thunder Wool & Milk Interception
         action = _v18_anti_thunder_intercept(obs, action, step, st, actions)
         
-        # 4. Dead-Inventory Recovery Selling (steps 705 to 716)
+        # 4. Dead-Inventory Recovery Selling (steps 648 to 716)
         action = _v18_recovery_sell(obs, action, step, actions)
         
         # 5. Capselllate

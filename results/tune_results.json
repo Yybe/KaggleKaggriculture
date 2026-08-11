@@ -1,0 +1,696 @@
+[
+  {
+    "idx": 1,
+    "cfg": {
+      "route_name": "v17",
+      "wool_intercept_step": 662,
+      "wool_intercept_qty": 8,
+      "milk_intercept_step": 666,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 69783.5,
+    "wr_th2": "16/16",
+    "md_th2": 40843.3125,
+    "total_wr": 100.0,
+    "total_md": 55313.40625
+  },
+  {
+    "idx": 2,
+    "cfg": {
+      "route_name": "v17",
+      "wool_intercept_step": 662,
+      "wool_intercept_qty": 8,
+      "milk_intercept_step": 667,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 69783.5,
+    "wr_th2": "16/16",
+    "md_th2": 40843.3125,
+    "total_wr": 100.0,
+    "total_md": 55313.40625
+  },
+  {
+    "idx": 3,
+    "cfg": {
+      "route_name": "v17",
+      "wool_intercept_step": 662,
+      "wool_intercept_qty": 16,
+      "milk_intercept_step": 666,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 69783.5,
+    "wr_th2": "16/16",
+    "md_th2": 40843.3125,
+    "total_wr": 100.0,
+    "total_md": 55313.40625
+  },
+  {
+    "idx": 4,
+    "cfg": {
+      "route_name": "v17",
+      "wool_intercept_step": 662,
+      "wool_intercept_qty": 16,
+      "milk_intercept_step": 667,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 69783.5,
+    "wr_th2": "16/16",
+    "md_th2": 40843.3125,
+    "total_wr": 100.0,
+    "total_md": 55313.40625
+  },
+  {
+    "idx": 5,
+    "cfg": {
+      "route_name": "v17",
+      "wool_intercept_step": 663,
+      "wool_intercept_qty": 8,
+      "milk_intercept_step": 666,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 69783.5,
+    "wr_th2": "16/16",
+    "md_th2": 40843.3125,
+    "total_wr": 100.0,
+    "total_md": 55313.40625
+  },
+  {
+    "idx": 6,
+    "cfg": {
+      "route_name": "v17",
+      "wool_intercept_step": 663,
+      "wool_intercept_qty": 8,
+      "milk_intercept_step": 667,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 69783.5,
+    "wr_th2": "16/16",
+    "md_th2": 40843.3125,
+    "total_wr": 100.0,
+    "total_md": 55313.40625
+  },
+  {
+    "idx": 7,
+    "cfg": {
+      "route_name": "v17",
+      "wool_intercept_step": 663,
+      "wool_intercept_qty": 16,
+      "milk_intercept_step": 666,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 69783.5,
+    "wr_th2": "16/16",
+    "md_th2": 40843.3125,
+    "total_wr": 100.0,
+    "total_md": 55313.40625
+  },
+  {
+    "idx": 8,
+    "cfg": {
+      "route_name": "v17",
+      "wool_intercept_step": 663,
+      "wool_intercept_qty": 16,
+      "milk_intercept_step": 667,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 69783.5,
+    "wr_th2": "16/16",
+    "md_th2": 40843.3125,
+    "total_wr": 100.0,
+    "total_md": 55313.40625
+  },
+  {
+    "idx": 9,
+    "cfg": {
+      "route_name": "v17",
+      "wool_intercept_step": 664,
+      "wool_intercept_qty": 8,
+      "milk_intercept_step": 666,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 69783.5,
+    "wr_th2": "16/16",
+    "md_th2": 40843.3125,
+    "total_wr": 100.0,
+    "total_md": 55313.40625
+  },
+  {
+    "idx": 10,
+    "cfg": {
+      "route_name": "v17",
+      "wool_intercept_step": 664,
+      "wool_intercept_qty": 8,
+      "milk_intercept_step": 667,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 69783.5,
+    "wr_th2": "16/16",
+    "md_th2": 40843.3125,
+    "total_wr": 100.0,
+    "total_md": 55313.40625
+  },
+  {
+    "idx": 11,
+    "cfg": {
+      "route_name": "v17",
+      "wool_intercept_step": 664,
+      "wool_intercept_qty": 16,
+      "milk_intercept_step": 666,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 69783.5,
+    "wr_th2": "16/16",
+    "md_th2": 40843.3125,
+    "total_wr": 100.0,
+    "total_md": 55313.40625
+  },
+  {
+    "idx": 12,
+    "cfg": {
+      "route_name": "v17",
+      "wool_intercept_step": 664,
+      "wool_intercept_qty": 16,
+      "milk_intercept_step": 667,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 69783.5,
+    "wr_th2": "16/16",
+    "md_th2": 40843.3125,
+    "total_wr": 100.0,
+    "total_md": 55313.40625
+  },
+  {
+    "idx": 0,
+    "cfg": "v17_baseline",
+    "wr_th1": "16/16",
+    "md_th1": 65666.875,
+    "wr_th2": "16/16",
+    "md_th2": 37099.9375,
+    "total_wr": 100.0,
+    "total_md": 51383.40625
+  },
+  {
+    "idx": 25,
+    "cfg": {
+      "route_name": "th2",
+      "wool_intercept_step": 662,
+      "wool_intercept_qty": 8,
+      "milk_intercept_step": 666,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 29814.0,
+    "wr_th2": "8/16",
+    "md_th2": 1200.125,
+    "total_wr": 75.0,
+    "total_md": 15507.0625
+  },
+  {
+    "idx": 26,
+    "cfg": {
+      "route_name": "th2",
+      "wool_intercept_step": 662,
+      "wool_intercept_qty": 8,
+      "milk_intercept_step": 667,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 29814.0,
+    "wr_th2": "8/16",
+    "md_th2": 1200.125,
+    "total_wr": 75.0,
+    "total_md": 15507.0625
+  },
+  {
+    "idx": 27,
+    "cfg": {
+      "route_name": "th2",
+      "wool_intercept_step": 662,
+      "wool_intercept_qty": 16,
+      "milk_intercept_step": 666,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 29814.0,
+    "wr_th2": "8/16",
+    "md_th2": 1200.125,
+    "total_wr": 75.0,
+    "total_md": 15507.0625
+  },
+  {
+    "idx": 28,
+    "cfg": {
+      "route_name": "th2",
+      "wool_intercept_step": 662,
+      "wool_intercept_qty": 16,
+      "milk_intercept_step": 667,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 29814.0,
+    "wr_th2": "8/16",
+    "md_th2": 1200.125,
+    "total_wr": 75.0,
+    "total_md": 15507.0625
+  },
+  {
+    "idx": 29,
+    "cfg": {
+      "route_name": "th2",
+      "wool_intercept_step": 663,
+      "wool_intercept_qty": 8,
+      "milk_intercept_step": 666,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 29814.0,
+    "wr_th2": "8/16",
+    "md_th2": 1200.125,
+    "total_wr": 75.0,
+    "total_md": 15507.0625
+  },
+  {
+    "idx": 30,
+    "cfg": {
+      "route_name": "th2",
+      "wool_intercept_step": 663,
+      "wool_intercept_qty": 8,
+      "milk_intercept_step": 667,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 29814.0,
+    "wr_th2": "8/16",
+    "md_th2": 1200.125,
+    "total_wr": 75.0,
+    "total_md": 15507.0625
+  },
+  {
+    "idx": 31,
+    "cfg": {
+      "route_name": "th2",
+      "wool_intercept_step": 663,
+      "wool_intercept_qty": 16,
+      "milk_intercept_step": 666,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 29814.0,
+    "wr_th2": "8/16",
+    "md_th2": 1200.125,
+    "total_wr": 75.0,
+    "total_md": 15507.0625
+  },
+  {
+    "idx": 32,
+    "cfg": {
+      "route_name": "th2",
+      "wool_intercept_step": 663,
+      "wool_intercept_qty": 16,
+      "milk_intercept_step": 667,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 29814.0,
+    "wr_th2": "8/16",
+    "md_th2": 1200.125,
+    "total_wr": 75.0,
+    "total_md": 15507.0625
+  },
+  {
+    "idx": 33,
+    "cfg": {
+      "route_name": "th2",
+      "wool_intercept_step": 664,
+      "wool_intercept_qty": 8,
+      "milk_intercept_step": 666,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 29814.0,
+    "wr_th2": "8/16",
+    "md_th2": 1200.125,
+    "total_wr": 75.0,
+    "total_md": 15507.0625
+  },
+  {
+    "idx": 34,
+    "cfg": {
+      "route_name": "th2",
+      "wool_intercept_step": 664,
+      "wool_intercept_qty": 8,
+      "milk_intercept_step": 667,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 29814.0,
+    "wr_th2": "8/16",
+    "md_th2": 1200.125,
+    "total_wr": 75.0,
+    "total_md": 15507.0625
+  },
+  {
+    "idx": 35,
+    "cfg": {
+      "route_name": "th2",
+      "wool_intercept_step": 664,
+      "wool_intercept_qty": 16,
+      "milk_intercept_step": 666,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 29814.0,
+    "wr_th2": "8/16",
+    "md_th2": 1200.125,
+    "total_wr": 75.0,
+    "total_md": 15507.0625
+  },
+  {
+    "idx": 36,
+    "cfg": {
+      "route_name": "th2",
+      "wool_intercept_step": 664,
+      "wool_intercept_qty": 16,
+      "milk_intercept_step": 667,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "16/16",
+    "md_th1": 29814.0,
+    "wr_th2": "8/16",
+    "md_th2": 1200.125,
+    "total_wr": 75.0,
+    "total_md": 15507.0625
+  },
+  {
+    "idx": 13,
+    "cfg": {
+      "route_name": "th1",
+      "wool_intercept_step": 662,
+      "wool_intercept_qty": 8,
+      "milk_intercept_step": 666,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "2/16",
+    "md_th1": -1408.375,
+    "wr_th2": "0/16",
+    "md_th2": -30666.0625,
+    "total_wr": 6.25,
+    "total_md": -16037.21875
+  },
+  {
+    "idx": 14,
+    "cfg": {
+      "route_name": "th1",
+      "wool_intercept_step": 662,
+      "wool_intercept_qty": 8,
+      "milk_intercept_step": 667,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "2/16",
+    "md_th1": -1408.375,
+    "wr_th2": "0/16",
+    "md_th2": -30666.0625,
+    "total_wr": 6.25,
+    "total_md": -16037.21875
+  },
+  {
+    "idx": 15,
+    "cfg": {
+      "route_name": "th1",
+      "wool_intercept_step": 662,
+      "wool_intercept_qty": 16,
+      "milk_intercept_step": 666,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "2/16",
+    "md_th1": -1408.375,
+    "wr_th2": "0/16",
+    "md_th2": -30666.0625,
+    "total_wr": 6.25,
+    "total_md": -16037.21875
+  },
+  {
+    "idx": 16,
+    "cfg": {
+      "route_name": "th1",
+      "wool_intercept_step": 662,
+      "wool_intercept_qty": 16,
+      "milk_intercept_step": 667,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "2/16",
+    "md_th1": -1408.375,
+    "wr_th2": "0/16",
+    "md_th2": -30666.0625,
+    "total_wr": 6.25,
+    "total_md": -16037.21875
+  },
+  {
+    "idx": 17,
+    "cfg": {
+      "route_name": "th1",
+      "wool_intercept_step": 663,
+      "wool_intercept_qty": 8,
+      "milk_intercept_step": 666,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "2/16",
+    "md_th1": -1408.375,
+    "wr_th2": "0/16",
+    "md_th2": -30666.0625,
+    "total_wr": 6.25,
+    "total_md": -16037.21875
+  },
+  {
+    "idx": 18,
+    "cfg": {
+      "route_name": "th1",
+      "wool_intercept_step": 663,
+      "wool_intercept_qty": 8,
+      "milk_intercept_step": 667,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "2/16",
+    "md_th1": -1408.375,
+    "wr_th2": "0/16",
+    "md_th2": -30666.0625,
+    "total_wr": 6.25,
+    "total_md": -16037.21875
+  },
+  {
+    "idx": 19,
+    "cfg": {
+      "route_name": "th1",
+      "wool_intercept_step": 663,
+      "wool_intercept_qty": 16,
+      "milk_intercept_step": 666,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "2/16",
+    "md_th1": -1408.375,
+    "wr_th2": "0/16",
+    "md_th2": -30666.0625,
+    "total_wr": 6.25,
+    "total_md": -16037.21875
+  },
+  {
+    "idx": 20,
+    "cfg": {
+      "route_name": "th1",
+      "wool_intercept_step": 663,
+      "wool_intercept_qty": 16,
+      "milk_intercept_step": 667,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "2/16",
+    "md_th1": -1408.375,
+    "wr_th2": "0/16",
+    "md_th2": -30666.0625,
+    "total_wr": 6.25,
+    "total_md": -16037.21875
+  },
+  {
+    "idx": 21,
+    "cfg": {
+      "route_name": "th1",
+      "wool_intercept_step": 664,
+      "wool_intercept_qty": 8,
+      "milk_intercept_step": 666,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "2/16",
+    "md_th1": -1408.375,
+    "wr_th2": "0/16",
+    "md_th2": -30666.0625,
+    "total_wr": 6.25,
+    "total_md": -16037.21875
+  },
+  {
+    "idx": 22,
+    "cfg": {
+      "route_name": "th1",
+      "wool_intercept_step": 664,
+      "wool_intercept_qty": 8,
+      "milk_intercept_step": 667,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "2/16",
+    "md_th1": -1408.375,
+    "wr_th2": "0/16",
+    "md_th2": -30666.0625,
+    "total_wr": 6.25,
+    "total_md": -16037.21875
+  },
+  {
+    "idx": 23,
+    "cfg": {
+      "route_name": "th1",
+      "wool_intercept_step": 664,
+      "wool_intercept_qty": 16,
+      "milk_intercept_step": 666,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "2/16",
+    "md_th1": -1408.375,
+    "wr_th2": "0/16",
+    "md_th2": -30666.0625,
+    "total_wr": 6.25,
+    "total_md": -16037.21875
+  },
+  {
+    "idx": 24,
+    "cfg": {
+      "route_name": "th1",
+      "wool_intercept_step": 664,
+      "wool_intercept_qty": 16,
+      "milk_intercept_step": 667,
+      "milk_intercept_qty": 9,
+      "enable_boatlee_relay": true,
+      "enable_recovery": true,
+      "bump_cap": 1
+    },
+    "wr_th1": "2/16",
+    "md_th1": -1408.375,
+    "wr_th2": "0/16",
+    "md_th2": -30666.0625,
+    "total_wr": 6.25,
+    "total_md": -16037.21875
+  }
+]

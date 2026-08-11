@@ -1,0 +1,144 @@
+{
+  "seeds": [
+    314159,
+    2718281,
+    1414213,
+    1732050,
+    2236067,
+    2645751,
+    3162277,
+    3245553,
+    3316624,
+    3464101,
+    3588989,
+    3660254,
+    2426406,
+    2469507,
+    2549509,
+    2641391,
+    2745995,
+    2871778
+  ],
+  "summary": {
+    "boat84_v14": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 12875.722222222223,
+      "min_delta": 7286.0,
+      "max_delta": 18879.0
+    },
+    "champ_v15": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 13056.5,
+      "min_delta": 7351.0,
+      "max_delta": 19014.0
+    },
+    "salemali7_3k": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 12875.722222222223,
+      "min_delta": 7286.0,
+      "max_delta": 18879.0
+    },
+    "v14_tweaked": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 12792.555555555555,
+      "min_delta": 7108.0,
+      "max_delta": 18214.0
+    },
+    "v14_v26style": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 13167.944444444445,
+      "min_delta": 7398.0,
+      "max_delta": 19059.0
+    },
+    "v155_champion": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 13522.611111111111,
+      "min_delta": 7471.0,
+      "max_delta": 19567.0
+    },
+    "v16a_counter": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 13522.611111111111,
+      "min_delta": 7471.0,
+      "max_delta": 19567.0
+    },
+    "v17_apex": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 13522.611111111111,
+      "min_delta": 7471.0,
+      "max_delta": 19567.0
+    },
+    "v22_romanrozen": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 15695.777777777777,
+      "min_delta": 6180.0,
+      "max_delta": 21907.0
+    },
+    "v23_kaito": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 16884.333333333332,
+      "min_delta": 10915.0,
+      "max_delta": 23060.0
+    },
+    "v26_aggr": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 17989.88888888889,
+      "min_delta": 12225.0,
+      "max_delta": 24182.0
+    },
+    "v26b": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 16884.333333333332,
+      "min_delta": 10915.0,
+      "max_delta": 23060.0
+    }
+  }
+}
