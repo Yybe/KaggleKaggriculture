@@ -485,7 +485,7 @@ def _adaptive_market(action, obs, step):
     state["last_shops"] = shops
     return action
 
-def agent(obs):
+def _champ_agent(obs):
     try:
         fallback = int(_get(obs, "day", 0) or 0) * 24 + int(_get(obs, "hour", 0) or 0)
         step = min(max(0, int(_get(obs, "step", fallback) if _get(obs, "step", None) is not None else fallback)), len(_ACTIONS) - 1)
@@ -502,3 +502,158 @@ def agent(obs):
             "hands": [["PASS"] for _ in (_get(farm, "hands", []) or [])],
             "market": [],
         }
+
+
+# ============================================================================
+# UVM-2: Universal Market Layer on the v4 champion (perfect-balanced build).
+#
+# ONE mechanism: price-state-aware pacing of the premium trio (STRAWBERRY,
+# MILK, WOOL), both directions, strictly bounded:
+#   - Deep-glut defer (price < 40% of base): hold back up to 6 scheduled units
+#     per item instead of selling into a crash created by a front-runner or a
+#     reactive opponent. Units stay in the shed; the tape's own later sells or
+#     re-injection still move them. Overflow-safe (shed < 84, total pending
+#     <= 10, S/M/W only - never WHEAT/FERT/MELON per rulebook G5).
+#   - Scarcity re-inject (price >= 80% of base): sell held units into the
+#     premium the deferral was protecting.
+#   - Terminal flush (step >= 696): everything pending is sold regardless.
+#   - Near-mirror guard: in mirror games both players see the same prices and
+#     run the same tape, so pacing is symmetric noise with no upside - defer
+#     is disabled when the champion's own near-mirror latch fires. Re-inject
+#     and flush stay active in all states (they only ever add sells).
+# Inert in normal states; active exactly in the pathological scenarios where
+# mid-board agents create extreme shared-curve states. Regime-agnostic.
+# ============================================================================
+_UML_ITEMS = ("STRAWBERRY", "MILK", "WOOL")
+_UML_BASE = {"STRAWBERRY": 120.0, "MILK": 160.0, "WOOL": 200.0}
+_UML_DEFER_RATIO = 0.40
+_UML_REINJECT_RATIO = 0.80
+_UML_DEFER_CAP = 6
+_UML_PENDING_CAP = 10
+_UML_SHED_GATE = 84
+_UML_FLUSH_STEP = 696
+_UML_LATCH_STEP = 289
+_UML_STATE = {0: {"last_step": -1, "pending": {}, "near_mirror": None},
+              1: {"last_step": -1, "pending": {}, "near_mirror": None}}
+
+
+def _uml_state(obs, step):
+    seat = _seat(obs)
+    state = _UML_STATE[seat]
+    if step == 0 or step < int(state.get("last_step", -1)):
+        state = {"last_step": step, "pending": {}, "near_mirror": None}
+        _UML_STATE[seat] = state
+    state["last_step"] = step
+    if state.get("near_mirror") is None and step >= _UML_LATCH_STEP:
+        try:
+            state["near_mirror"] = bool(_am_near_mirror(obs))
+        except Exception:
+            state["near_mirror"] = False
+    return state
+
+
+def _uml_existing_sell(action, item):
+    return sum(
+        max(0, int(order[2] or 0))
+        for order in (action.get("market") or [])
+        if isinstance(order, (list, tuple)) and len(order) >= 3
+        and order[0] == "SELL" and order[1] == item
+    )
+
+
+def _uml_reduce_sell(action, item, reduce_by):
+    remaining = int(reduce_by)
+    market = []
+    for raw in (action.get("market") or []):
+        order = list(raw)
+        if (
+            remaining > 0
+            and isinstance(order, list) and len(order) >= 3
+            and order[0] == "SELL" and order[1] == item
+        ):
+            qty = max(0, int(order[2] or 0))
+            cut = min(qty, remaining)
+            qty -= cut
+            remaining -= cut
+            if qty <= 0:
+                continue
+            order[2] = qty
+        market.append(order)
+    action["market"] = market
+    return int(reduce_by) - remaining
+
+
+def _uml_add_sell(action, item, quantity):
+    if quantity <= 0:
+        return action
+    market = [list(order) for order in (action.get("market") or [])]
+    for order in market:
+        if len(order) >= 3 and order[0] == "SELL" and order[1] == item:
+            order[2] = max(0, int(order[2] or 0)) + int(quantity)
+            action["market"] = market
+            return action
+    if len(market) < 10:
+        market.append(["SELL", item, int(quantity)])
+        action["market"] = market
+    return action
+
+
+def _universal_market(action, obs, step):
+    state = _uml_state(obs, step)
+    market_info = _get(obs, "market", {}) or {}
+    prices = _get(market_info, "prices", {}) or {}
+    private = _get(obs, "private", {}) or {}
+    shed = _get(private, "shed", {}) or {}
+    shed_total = sum(max(0, int(v or 0)) for v in shed.values())
+    pending = state.setdefault("pending", {})
+
+    flush = step >= _UML_FLUSH_STEP
+    defer_allowed = (not state.get("near_mirror", False)) and step >= _UML_LATCH_STEP
+    total_pending = sum(int(v or 0) for v in pending.values())
+
+    for item in _UML_ITEMS:
+        stock = max(0, int(_get(shed, item, 0) or 0))
+        held = max(0, int(pending.get(item, 0) or 0))
+        if held > 0 and stock == 0:
+            pending[item] = 0  # units already left the shed via tape sells
+            held = 0
+        ratio = float(_get(prices, item, 0) or 0) / _UML_BASE[item]
+
+        if held > 0 and (flush or ratio >= _UML_REINJECT_RATIO):
+            inject = min(held, stock)
+            if inject > 0:
+                action = _uml_add_sell(action, item, inject)
+                held -= inject
+            pending[item] = held
+        elif held == 0 and defer_allowed and not flush and ratio < _UML_DEFER_RATIO and shed_total < _UML_SHED_GATE:
+            scheduled = min(_uml_existing_sell(action, item), stock)
+            room = _UML_PENDING_CAP - total_pending
+            defer = min(scheduled, _UML_DEFER_CAP, max(0, room))
+            if defer > 0:
+                cut = _uml_reduce_sell(action, item, defer)
+                if cut > 0:
+                    pending[item] = int(pending.get(item, 0) or 0) + cut
+                    total_pending += cut
+    return action
+
+
+def agent(obs, configuration=None):
+    try:
+        action = _champ_agent(obs)
+        step = int(_get(obs, "step", int(_get(obs, "day", 0) or 0) * 24 + int(_get(obs, "hour", 0) or 0)) or 0)
+        try:
+            action = _universal_market(action, obs, step)
+        except Exception:
+            pass
+        return _align_hands(action, obs)
+    except Exception:
+        farm = _farm(obs, _seat(obs))
+        return {
+            "farmer": ["PASS"],
+            "hands": [["PASS"] for _ in (_get(farm, "hands", []) or [])],
+            "market": [],
+        }
+
+
+def _kaggle_submission_entrypoint(obs, configuration=None):
+    return agent(obs, configuration)
