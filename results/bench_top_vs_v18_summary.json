@@ -1,0 +1,62 @@
+{
+  "boatlee_v21": {
+    "games": 36,
+    "wins": 25,
+    "losses": 11,
+    "ties": 0,
+    "win_rate": 69.44444444444444,
+    "mean_delta": 2468.3055555555557,
+    "min": -8151.0,
+    "max": 14035.0
+  },
+  "boatlee_v29": {
+    "games": 36,
+    "wins": 36,
+    "losses": 0,
+    "ties": 0,
+    "win_rate": 100.0,
+    "mean_delta": 27240.88888888889,
+    "min": 17103.0,
+    "max": 43767.0
+  },
+  "lynnsakurai_v4": {
+    "games": 36,
+    "wins": 36,
+    "losses": 0,
+    "ties": 0,
+    "win_rate": 100.0,
+    "mean_delta": 27240.88888888889,
+    "min": 17103.0,
+    "max": 43767.0
+  },
+  "pilkwang_kaitofukami_fork": {
+    "games": 36,
+    "wins": 36,
+    "losses": 0,
+    "ties": 0,
+    "win_rate": 100.0,
+    "mean_delta": 18467.166666666668,
+    "min": 4444.0,
+    "max": 35335.0
+  },
+  "salemali7_2900": {
+    "games": 36,
+    "wins": 36,
+    "losses": 0,
+    "ties": 0,
+    "win_rate": 100.0,
+    "mean_delta": 17790.666666666668,
+    "min": 7435.0,
+    "max": 28723.0
+  },
+  "tetsutani_adaptive": {
+    "games": 36,
+    "wins": 26,
+    "losses": 10,
+    "ties": 0,
+    "win_rate": 72.22222222222221,
+    "mean_delta": 4658.361111111111,
+    "min": -7543.0,
+    "max": 16730.0
+  }
+}
