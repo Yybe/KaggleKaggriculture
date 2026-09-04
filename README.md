@@ -234,6 +234,10 @@ preserved at `agents/submission_v16a_backup_20260810.py`.
 | th2 (THUNDER-clone) | gate (8 seeds × 2) | 16 | 16W/0L/0T | +38,544 | +23,266 | +61,200 |
 | th2 | fresh (20 seeds × 2) | 40 | 40W/0L/0T | +36,518 | +17,457 | +64,615 |
 
+> **Note:** V18-vs-v17 and V27 smoke vs the alias fleet are wide logs; the live test is
+> `agents/_top_pub/` (see `tools/benchmark_agent_fleet.py` + `agents/fleet_registry.py`).
+> The 119-episode live record at top 600 is in `results/LIVE_FORENSICS_20260904.md`.
+
 > **V18 vs V17 is near-neutral, not a loss** (34/60 exact ties, mean +2,
 > **seed-level undefeated: 7W/0L/23T across all 30 unique seeds**; the
 > seat-level losses are all seat-symmetric mirror flips of ±41…±1,493, e.g. seed
@@ -246,6 +250,25 @@ preserved at `agents/submission_v16a_backup_20260810.py`.
 > `WybeV2/h2h_v18_vs_v17_gate.txt`, `WybeV2/h2h_v18_vs_v17_fresh.txt`,
 > `results/v18_final_benchmark.json` (JSON `v17_apex` rows = inline-vs-wrapper
 > sanity; real vs-v17 numbers are the diag logs).
+
+### Era 8 — The current candidate: V27 *pasture-aware PLACE repair* (one lever, rulebook §7)
+
+| Ver | Nickname | The idea | Result |
+|---|---|---|---|
+| UVM-2 (incumbent, 2026-09-04) | Universal Market Layer on v4 | Price-state-aware S/M/W pacing — deep-glut defer (0.40) + scarcity re-inject (0.80) + terminal flush 696, mirror-guarded; 228-0 vs alias fleet | Local 228-0 vs `agents/*` alias fleet (all `v29` lineage) → gate showed ±0 vs v4; **missed on live ladder 62W/54L/3T (n=119) at public 2100.9** — forensics `LIVE_FORENSICS_20260904.md` + `V27_FIX_PLAN_20260904.md`. Signature: same 14 BUY_ANIMAL (9C/5S on tape `5f0ac2abd6bc5fe1`), but final herd 6C/3S vs 9C/5–8S (shed residuals 2C/1S house = stranded COWs); WEED repair intact, PLACE blind to empty PASTURE |
+| **V27 (candidate)** | **Pasture-aware PLACE repair** | **One hook `_place_repair_action` between `_weed_repair_action` and `_front_run/_adaptive_market`** — when the tape's PLACE (COW/SHEEP) is not on an empty PASTURE, retarget it to a PASS hand standing on an empty PASTURE. The v29 tape's 20 PASTURE/COOP builds + 14 PLACEs + WEED handler + `_AM_CONFIG` (price_gate 0.66, tranche 4, shop-aware) + mirror latch pass through untouched | Gate: live-top fleet `agents/_top_pub/` (6 distinct: `boatlee_v29/v21`, `lynnsakurai_v4`, `pilkwang`, `salemali7_2900`, `tetsutani`) on canonical 8-seed set — **mirror-neutral** (`v4 0.0`, `v29 +167` on 2 seeds×2 seats; extended 4×2 seats in `benchmark_v27*`); alias fleet 54/54 W. Unit invariants: 6 hand/tile scenarios pass. Submitted as `submission.py == agents/v27_fix.py` (prior `submission_uvm2.py` archived at `archive/submission_uvm2_20260904.py` sha `7ca032165ce72efa`) |
+
+### V27 live-gate evidence (deterministic 1.32.6, interval=24 — scoring)
+
+| Fleet | Games | W/L/T | Note |
+|---|---|---|---|
+| alias fleet (`agents/fleet_registry.py` — 9 aliases of v29) | 54/54 (3 seeds×2 seats) | 54W/0L/0T | `results/benchmark_v27.json[l]` |
+| live-top `agents/_top_pub/` (6 distinct) | 4 games each at gate probe (2 seeds×2 seats) | 4W/0L each vs non-mirror (mean +13 k…+23 k) | mirror pair `v4 0/0/4`, `v29 4/0/0 mean +167` — pasture lever almost never needed in mirrors |
+| Replays not yet pulled at V27 ship — the 119-episode analysis (`LIVE_FORENSICS_20260904.md`, `live_uvm2_analysis.json`, `tools/`) is the *pre-registered* success criterion for the next live window: worst-20 mean Δ moves toward 0 and stranded-shed ≤1  |
+
+### What changed repo-wise 2026-09-04
+
+What we did to reach top 600: UVM-2's S/M/W pacing produced the 228-0 local and 2100.9 live records but — because the local fleet was alias-dominated — missed the live herd-capacity gap (see `UVM2_PROMOTION_20260904.md` + `.gitignore` + `LIVE_FORENSICS_20260904.md`). What changed this session: live replays pulled (119 episodes, `kaggle competitions replay`, `fetch_episodes.py` + `LIVE_FORENSICS`), a targeted one-lever build fix (`_place_repair_action`, `V27_FIX_PLAN_20260904.md`, `analyze_live_replays.py`/`extract_live_opponents.py`, `agents/v27_fix.py`), benchmark `benchmark_v27*`, and archiving of the prior champion. **Top-player mechanics kept**: the boatlee v29 tape (`5f0ac2ab…`), `WEED_REPLAY_STEPS=8` handler, and the `lynnsakurai v4` adaptive-market config all pass through verbatim — read their source in `WybeV2/kernels_pull/_new_top/lynnsakurai__farming-score-v4-a-better-shop/main.py` and `boatlee__v29-r1-adaptive-market-hysteresis/main.py`.
 
 ---
 
@@ -298,7 +321,10 @@ opponents front-load STR at position 0. Full story: `results/V15_TO_V155.md`.
 ## Layout
 
 ```
-submission.py                  <- V18 Thunder-Slayer champion bundle — THE SUBMISSION (V17 base + anti-THUNDER intercepts inline)
+submission.py                  <- V27 candidate — UVM-2 + pasture-aware PLACE repair (ships with `agents/v27_fix.py`; incarnation sha is logged in the current commit)
+agents/v27_fix.py              <- same source staged as a module import for the fleet harness (`benchmark_agent_fleet.py`)
+archive/submission_uvm2_20260904.py <- prior UVM-2 champion frozen before this gate (sha `7ca032165ce72efa`, legacy: V18-era)
+submission*V18 history*         <- V18 Thunder-Slayer champion bundle — THE SUBMISSION (V17 base + anti-THUNDER intercepts inline) — previous
 build_v16_submission.py        <- legacy V16a builder (kept for reference)
 build_v15_submission.py        <- legacy builder (V15.5, kept for reference)
 agents/                        <- all agent code (current + every preserved variant)
@@ -326,6 +352,10 @@ ShiV17/                        <- open-source build of V17 (submission notebook 
   ShiV17_walkthrough.md        <- reverse-engineering + verification walkthrough
   ShiV17_implementation_plan.md
 tools/                         <- research/diagnostic scripts (no agent code)
+  analyze_live_replays.py      <- live replay forensics (118×6 animal / PLACE / shed + seed-level Δ, rulebook §2.2)
+  extract_live_opponents.py    <- opponent-tape extractor for the live-derived fleet (gate H2H)
+  fetch_episodes.py            <- `kaggle competitions episodes/replay` wrapper (119 episodes) + summary CSV
+  V27_FIX_PLAN_20260904.md      <- one-lever canvas (§1) + pre-registered gate (§3.3) for this session
   run_v18_benchmark.py         <- full V18 tournament suite (gate + losing + fresh, vs v17/th1/th2)
   benchmark_v18_suite.py, tune_v18_apex.py <- V18 tuning/verification helpers
   sim_worker.py                <- multiprocessing simulation worker (V18 harness)

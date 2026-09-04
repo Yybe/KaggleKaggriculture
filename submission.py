@@ -121,6 +121,73 @@ def _weed_repair_action(obs, action, step):
     return _align_hands(action, obs)
 
 
+_SHED_TILES = ((4, 4), (5, 4), (4, 5), (5, 5))
+
+
+def _place_repair_action(obs, action, step):
+    try:
+        private = _get(obs, "private", {}) or {}
+        shed = _get(private, "shed", {}) or {}
+        seat = _seat(obs)
+        farm = _farm(obs, seat)
+        farmer_pos = _get(farm, "farmer")
+        hands_pos = list(_get(farm, "hands", []) or [])
+        unit_actions = [action.get("farmer", ["PASS"]), *list(action.get("hands") or [])]
+        n_units = 1 + len(hands_pos)
+        if len(unit_actions) < n_units:
+            unit_actions.extend([["PASS"] for _ in range(n_units - len(unit_actions))])
+        positions = [farmer_pos, *hands_pos]
+
+        empty_pastures = []
+        for y, row in enumerate(_get(farm, "tiles", []) or []):
+            for x, tile in enumerate(row or []):
+                if isinstance(tile, dict) and tile.get("kind") == "PASTURE" and not tile.get("animal"):
+                    empty_pastures.append((x, y))
+        if not empty_pastures:
+            return action
+        if not any(max(0, int(_get(shed, a, 0) or 0)) > 0 for a in ("COW", "SHEEP")):
+            return action
+
+        for idx, intended in enumerate(list(unit_actions)):
+            if not isinstance(intended, list) or not intended or intended[0] != "PLACE":
+                continue
+            animal = intended[1] if len(intended) >= 2 else None
+            if animal not in ("COW", "SHEEP"):
+                continue
+            if max(0, int(_get(shed, animal, 0) or 0)) <= 0:
+                continue
+            pos = positions[idx] if idx < len(positions) else None
+            tile = _tile_at(farm, pos) if pos is not None else "LOCKED"
+            if isinstance(tile, dict) and tile.get("kind") == "PASTURE" and not tile.get("animal"):
+                empty_pastures = [p for p in empty_pastures if p != (int(pos[0]), int(pos[1]))]
+                continue
+            target_idx = None
+            for cand_idx, cand_pos in enumerate(positions):
+                if cand_idx >= len(unit_actions):
+                    continue
+                if not isinstance(cand_pos, (list, tuple)) or len(cand_pos) < 2:
+                    continue
+                try:
+                    cand_xy = (int(cand_pos[0]), int(cand_pos[1]))
+                except Exception:  # noqa: BLE001
+                    continue
+                if cand_xy in empty_pastures and unit_actions[cand_idx] == ["PASS"]:
+                    target_idx = cand_idx
+                    break
+            if target_idx is None:
+                continue
+            pasture = (int(positions[target_idx][0]), int(positions[target_idx][1]))  # type: ignore[index]
+            unit_actions[target_idx] = list(intended)
+            unit_actions[idx] = ["PASS"]
+            empty_pastures = [p for p in empty_pastures if p != pasture]
+
+        action["farmer"] = unit_actions[0] if unit_actions else ["PASS"]
+        action["hands"] = unit_actions[1:n_units]
+        return _align_hands(action, obs)
+    except Exception:  # noqa: BLE001
+        return action
+
+
 def _fr_state(obs, step):
     seat = _seat(obs)
     state = _FR_STATE[seat]
@@ -490,6 +557,7 @@ def _champ_agent(obs):
         fallback = int(_get(obs, "day", 0) or 0) * 24 + int(_get(obs, "hour", 0) or 0)
         step = min(max(0, int(_get(obs, "step", fallback) if _get(obs, "step", None) is not None else fallback)), len(_ACTIONS) - 1)
         action = _weed_repair_action(obs, _copy_action(_ACTIONS[step]), step)
+        action = _place_repair_action(obs, action, step)
         state = _fr_state(obs, step)
         action = _repay(action, state, step)
         action = _front_run(action, obs, state, step)

@@ -28,6 +28,9 @@ WybeV2/rank_env/
 
 # V17-era Kaggle replay dumps (~30MB each) - re-downloadable from Kaggle
 replays_new/
+# UVM-2-era live episode replays (~32MB each, 119 episodes, 3.5GB) - via kaggle competitions replay
+results/live_uvm2_episodes/
+results/live_lists/
 
 # Transient error capture from a failed inline python -c run
 notebook_full.txt
