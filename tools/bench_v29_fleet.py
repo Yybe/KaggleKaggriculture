@@ -23,7 +23,7 @@ TOP_MODELS = [
     ("pilkwang", "agents._top_pub.pilkwang_kaitofukami_fork"),
 ]
 
-CAND = ("v32_shopforge", "agents/v32_shopforge.py")
+CAND = ("v33_shields", "agents/v33_shields.py")
 
 
 def play(args):

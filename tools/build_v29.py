@@ -300,10 +300,10 @@ def _drip_split(action, state, step, herd):
         helpers = helpers.replace("def _feedcut(action, observation):",
                                   "def _feedcut(action, observation):\n    return action", 1)
 
-    if shields:
-        helpers = helpers + chr(10) + SHIELDS_SRC + chr(10)
     if not drip:
         helpers = helpers[:helpers.find("def _drip_emit")]
+    if shields:
+        helpers = helpers + chr(10) + SHIELDS_SRC + chr(10)
 
     new_src = new_src.replace("def agent(observation, configuration=None):", helpers + "\ndef agent(observation, configuration=None):", 1)
 

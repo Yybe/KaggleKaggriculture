@@ -20,7 +20,7 @@ FRESH_SEEDS = [314159, 2718281, 1414213, 1732050, 2236067, 2645751, 3162277, 324
                2641391, 2745995, 2871778]
 
 CANDIDATES = [
-    ("v32_shopforge", "agents/v32_shopforge.py"),
+    ("v33_shields", "agents/v33_shields.py"),
 ]
 
 BASELINE = ("v28b", "agents/v28_herdswap.py")
