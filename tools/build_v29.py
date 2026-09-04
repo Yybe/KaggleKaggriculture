@@ -74,6 +74,7 @@ def main():
     no_sweep = False
     no_feedcut = False
     drip = None
+    shields = False
     args = sys.argv[1:]
     if "--ratio" in args:
         ratio = float(args[args.index("--ratio") + 1])
@@ -85,10 +86,13 @@ def main():
         no_feedcut = True
     if "--drip" in args:
         drip = args[args.index("--drip") + 1]
+    if "--shields" in args:
+        shields = True
     if "--out" in args:
         out_path = args[args.index("--out") + 1]
 
     src = open(SRC, encoding="utf-8").read()
+    SHIELDS_SRC = open("tools/shields_inc.py", encoding="utf-8").read()
     routes = decode_routes(src)
     assert len(routes) == 2 and all(len(t) == 719 for t in routes)
 
@@ -296,6 +300,8 @@ def _drip_split(action, state, step, herd):
         helpers = helpers.replace("def _feedcut(action, observation):",
                                   "def _feedcut(action, observation):\n    return action", 1)
 
+    if shields:
+        helpers = helpers + chr(10) + SHIELDS_SRC + chr(10)
     if not drip:
         helpers = helpers[:helpers.find("def _drip_emit")]
 
@@ -313,13 +319,17 @@ def _drip_split(action, state, step, herd):
         '        action = _drip_emit(action, state, step)\n'
         '        action = _drip_split(action, state, step, herd)\n' if drip else ''
     )
+    shield_chain = (
+        '        action = _shield_weed(action, observation, seat, state, step)\n'
+        '        action = _shield_market(action, observation, seat, step)\n' if shields else ''
+    )
     new_src = new_src.replace(
         'action = _copy_action(_ROUTES[route][step])\n        action = _budget_guard(action, observation, route, step)',
         'herd = int(state.get("herd", 0))\n'
         '        action = _copy_action(_ROUTES[route][herd][step])\n'
         '        action = _budget_guard(action, observation, route, herd, step)\n'
         '        action = _wool_gate(action, observation, herd)\n'
-        + drip_chain +
+        + drip_chain + shield_chain +
         '        action = _sweep(action, observation, seat, route, herd, step)\n'
         '        action = _feedcut(action, observation)',
         1,
@@ -346,7 +356,7 @@ def _drip_split(action, state, step, herd):
     import py_compile
     py_compile.compile(out_path, doraise=True)
     print("wrote", out_path, "ratio", ratio, "v28rule", v28rule, "no_sweep", no_sweep,
-          "no_feedcut", no_feedcut, "drip", drip)
+          "no_feedcut", no_feedcut, "drip", drip, "shields", shields)
 
 
 if __name__ == "__main__":
