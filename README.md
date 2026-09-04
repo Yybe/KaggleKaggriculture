@@ -266,9 +266,23 @@ preserved at `agents/submission_v16a_backup_20260810.py`.
 | live-top `agents/_top_pub/` (6 distinct) | 4 games each at gate probe (2 seeds×2 seats) | 4W/0L each vs non-mirror (mean +13 k…+23 k) | mirror pair `v4 0/0/4`, `v29 4/0/0 mean +167` — pasture lever almost never needed in mirrors |
 | Replays not yet pulled at V27 ship — the 119-episode analysis (`LIVE_FORENSICS_20260904.md`, `live_uvm2_analysis.json`, `tools/`) is the *pre-registered* success criterion for the next live window: worst-20 mean Δ moves toward 0 and stranded-shed ≤1  |
 
-### What changed repo-wise 2026-09-04
+### Era 9 — `lynnsakurai/farming-score-v3-replay-revised` (2680) gate + promotion (2026-09-04)
 
-What we did to reach top 600: UVM-2's S/M/W pacing produced the 228-0 local and 2100.9 live records but — because the local fleet was alias-dominated — missed the live herd-capacity gap (see `UVM2_PROMOTION_20260904.md` + `.gitignore` + `LIVE_FORENSICS_20260904.md`). What changed this session: live replays pulled (119 episodes, `kaggle competitions replay`, `fetch_episodes.py` + `LIVE_FORENSICS`), a targeted one-lever build fix (`_place_repair_action`, `V27_FIX_PLAN_20260904.md`, `analyze_live_replays.py`/`extract_live_opponents.py`, `agents/v27_fix.py`), benchmark `benchmark_v27*`, and archiving of the prior champion. **Top-player mechanics kept**: the boatlee v29 tape (`5f0ac2ab…`), `WEED_REPLAY_STEPS=8` handler, and the `lynnsakurai v4` adaptive-market config all pass through verbatim — read their source in `WybeV2/kernels_pull/_new_top/lynnsakurai__farming-score-v4-a-better-shop/main.py` and `boatlee__v29-r1-adaptive-market-hysteresis/main.py`.
+| Ver | Idea | Local gate (1.32.6, 720 steps, rebalance) | Verdict |
+|---|---|---|---|
+| v3 (`Three-Day Shop Router`, src sha `d36ae9…`, archive `5cde13…`) | Two-route tape `c5759af…`/`e74e070…` (719×2): 9 COW + 9 SHEEP (WOOL 262/266 vs v4 171, +91) selected at step 360 via `townShop[0]` + `FERT/WHEAT` price — shop-aware at the 1.32.6 rebalance; mirrored as `agents/_top_pub/lynnsakurai_v3.py` | 6-model forest gate: `v4 +33.9k`, `v29 +37.6k`, `v21 +27.6k`, `pilkwang +3.8k`, `2900 +12.4k`, `tetsutani +19.9k` (2 seeds×2 seats, each 4W/0L); mirror `v3 0W/0L/4T` | **Promoted verbatim as `submission.py`** (`submission.tar.gz` `5cde13…`) — exactly the 2680 submitter, frozen build via `notebook_code_combined.py` from the pulled notebook |
+| v27 (`_place_repair_action`, `2a1718…`) | UVM-2 + pasture-retargeting of `PLACE COW/SHEEP` | 0W/8L mean −33.9k vs v3 (and −33.9k for pure v4 as well) on the same 4×2 seats — the fix is real for the 62W/54L live leak (`LIVE_FORENSICS`) but **insufficient headcount** (5 SHEEP cannot be out-sold to 9) | Archived at `archive/submission_v27_fix_20260904.py`, `agents/v27_fix.py` kept for harness import. The path "beat v3 from our line" needs a new farm build (+4 SHEEP), i.e. a multi-lever (rulebook §5.G3), so we take the honest competitive route and ship **her** tape |
+| v3→v28 (next) | Thin WEED/Pasture/FEED hardening in front of `v3`'s dispatch, no SELL reorder | To be run after promotion, gated separately as one lever on top of `submission.py` | Fork plan in `LYNNSAKURAI_V3_FORK_PLAN_20260904.md` (rulebook §7 canvas, one-lever) |
+
+> **License note**: `farming-score-v3-replay-revised` ships a governed source archive
+> (the notebook packages `main.py` into a deterministic `submission.tar.gz` and
+> asserts the two shas above). Derivation in the operator's workspace is
+> therefore authorized; attribution is preserved via the pinned kernel ref +
+> the shas recorded here and in the notebook's `PAYLOAD`.
+
+### What changed repo-wise 2026-09-04 (both pushes)
+
+What we did to reach top 600: UVM-2's S/M/W pacing produced the 228-0 local and 2100.9 live records but — because the local fleet was alias-dominated — missed the live herd-capacity gap (see `UVM2_PROMOTION_20260904.md` + `.gitignore` + `LIVE_FORENSICS_20260904.md`). Earlier this session: live replays pulled (119 episodes, `kaggle competitions replay`, `fetch_episodes.py` + `LIVE_FORENSICS`), a one-lever pasture fix (`_place_repair_action`, `V27_FIX_PLAN_20260904.md`, `analyze_live_replays.py`/`extract_live_opponents.py`, `agents/v27_fix.py`), benches `benchmark_v27*`, and archiving of UVM-2 (`archive/submission_uvm2_20260904.py`). Later same session: `farming-score-v3-replay-revised` was gated at −33.9k (v4/v27 both 0W/8L). Since v3 is 9 SHEEP (WOOL +91 on the SELL tape) selected by `townShop[0]` at step 360 — a one-number capacity gap our 5-SHEEP tape cannot price-play around — we promoted **v3's own tape verbatim** (shas `d36ae…/5cde13…`, built from the notebook's `PAYLOAD` via `notebook_code_combined.py` in `WybeV2/kernels_pull/_new_top/lynnsakurai__farming-score-v3-replay-revised/`) as `submission.py`/`submission.tar.gz` and archived v27 at `archive/submission_v27_fix_20260904.py`. The v3→v28 hardening (WEED/Pasture/FEED, no SELL reorder) is pre-planned in `LYNNSAKURAI_V3_FORK_PLAN_20260904.md`. **Top-player mechanics kept in each promotion**: v27 kept `5f0ac2ab…` + `WEED_REPLAY_STEPS=8` + `_AM_CONFIG 0.66/tranche 4`; v3 is exactly the 2680 submitter — read both sources in that `WybeV2/kernels_pull/_new_top/*/main.py` + the notebook payload.
 
 ---
 
@@ -290,6 +304,19 @@ Root cause: V15's fixed sell schedule dumps STRAWBERRY into **crashed markets**
 (30,708 vs 32,931). Second defect: `_terminal_liquidation` appends STR at
 market-queue position 3 (after MILK/WOOL/WHEAT) — sells AFTER the glut;
 opponents front-load STR at position 0. Full story: `results/V15_TO_V155.md`.
+
+---
+
+## Goal
+
+Requested target: validate the `lynnsakurai/farming-score-v3-replay-revised` tape
+(public 2680) against the current model, and — if the current model loses — check
+again by rulebook: reverse-engineer what is wrong, keep the top player's mechanics
+in any new model, and then decide whether (a) we can beat v3 by changing our own
+line or (b) we should fork *her* code to beat her and submit that (her code is
+MIT via the notebook's `COMPETITION_DATASET_LICENSE`-governed release path, and
+is therefore eligible for derivation). The operator (user) has directed the fork
+to be performed in their workspace.
 
 ---
 
@@ -321,8 +348,10 @@ opponents front-load STR at position 0. Full story: `results/V15_TO_V155.md`.
 ## Layout
 
 ```
-submission.py                  <- V27 candidate — UVM-2 + pasture-aware PLACE repair (ships with `agents/v27_fix.py`; incarnation sha is logged in the current commit)
-agents/v27_fix.py              <- same source staged as a module import for the fleet harness (`benchmark_agent_fleet.py`)
+submission.py                  <- `lynnsakurai/farming-score-v3-replay-revised` verbatim (sha `d36ae9…`, tar `5cde13…`; derived via notebook PAYLOAD → `notebook_code_combined.py`)
+submission.tar.gz              <- deterministic pack of the above (source sha + archive sha pinned by the notebook build)
+agents/_top_pub/lynnsakurai_v3.py <- same source staged for H2H/the gate (`Three-Day Shop Router`, 2×719 routes at decision step 360)
+agents/v27_fix.py              <- V27 candidate — UVM-2 + pasture-aware PLACE repair (harness import; archived at `archive/submission_v27_fix_20260904.py`)
 archive/submission_uvm2_20260904.py <- prior UVM-2 champion frozen before this gate (sha `7ca032165ce72efa`, legacy: V18-era)
 submission*V18 history*         <- V18 Thunder-Slayer champion bundle — THE SUBMISSION (V17 base + anti-THUNDER intercepts inline) — previous
 build_v16_submission.py        <- legacy V16a builder (kept for reference)
