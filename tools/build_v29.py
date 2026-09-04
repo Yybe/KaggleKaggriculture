@@ -73,6 +73,7 @@ def main():
     v28rule = False
     no_sweep = False
     no_feedcut = False
+    drip = None
     args = sys.argv[1:]
     if "--ratio" in args:
         ratio = float(args[args.index("--ratio") + 1])
@@ -82,6 +83,8 @@ def main():
         no_sweep = True
     if "--no-feedcut" in args:
         no_feedcut = True
+    if "--drip" in args:
+        drip = args[args.index("--drip") + 1]
     if "--out" in args:
         out_path = args[args.index("--out") + 1]
 
@@ -114,17 +117,21 @@ def main():
         f"_SHEEP_YIELD = {SHEEP_YIELD}\n"
         f"_COW_YIELD = {COW_YIELD}\n"
         f"_RATIO = {ratio}\n"
-        '_MILK_SHOPS = ("PIZZA_SHOP", "ICE_CREAM_SHOP", "SMOOTHIE_SHOP")',
+        + (f"_DRIP_MIN_QTY = {int(drip.split(',')[0])}\n"
+           f"_DRIP_TRANCHES = {int(drip.split(',')[1])}\n"
+           "_DRIP_SPACING = 4\n"
+           "_DRIP_LATE_STEP = 700\n" if drip else "")
+        + '_MILK_SHOPS = ("PIZZA_SHOP", "ICE_CREAM_SHOP", "SMOOTHIE_SHOP")',
         1,
     )
     new_src = new_src.replace(
         '_STATE = {\n    0: {"last_step": -1, "route": 0},\n    1: {"last_step": -1, "route": 0},\n}',
-        '_STATE = {\n    0: {"last_step": -1, "route": 0, "herd": 0},\n    1: {"last_step": -1, "route": 0, "herd": 0},\n}',
+        '_STATE = {\n    0: {"last_step": -1, "route": 0, "herd": 0, "drip": []},\n    1: {"last_step": -1, "route": 0, "herd": 0, "drip": []},\n}',
         1,
     )
     new_src = new_src.replace(
         'state = {"last_step": -1, "route": 0}',
-        'state = {"last_step": -1, "route": 0, "herd": 0}',
+        'state = {"last_step": -1, "route": 0, "herd": 0, "drip": []}',
     )
 
     helpers = '''
@@ -225,6 +232,57 @@ def _wool_gate(action, observation, herd):
         action["market"] = kept
     return action
 
+
+def _drip_emit(action, state, step):
+    """Flush stashed drip tranches due at this step (wool-gated when herd=1
+    unless past _DRIP_LATE_STEP where dumping beats stranding)."""
+    if not state.get("drip"):
+        return action
+    orders = list(action.get("market") or [])
+    keep = []
+    for due, item, qty in state["drip"]:
+        if due > step:
+            keep.append((due, item, qty))
+            continue
+        if len(orders) >= 10:
+            keep.append((step + _DRIP_SPACING, item, qty))
+            continue
+        orders.append(["SELL", item, qty])
+    state["drip"] = keep
+    action["market"] = orders
+    return action
+
+
+def _drip_split(action, state, step, herd):
+    """Re-time big SELLs: qty >= _DRIP_MIN_QTY at steps >= 456 split into
+    _DRIP_TRANCHES spaced _DRIP_SPACING apart. Same total units; spreads the
+    per-unit lockstep price walk (live forensics: drip-sellers win the close
+    full-parity games). Tranches due > 719 collapse into the last step."""
+    queue = state.setdefault("drip", [])
+    orders = action.get("market") or []
+    out = []
+    for order in orders:
+        if (isinstance(order, list) and len(order) >= 3 and order[0] == "SELL"
+                and int(order[2] or 0) >= _DRIP_MIN_QTY and step >= 456):
+            qty = int(order[2])
+            k = _DRIP_TRANCHES
+            last_due = step + _DRIP_SPACING * (k - 1)
+            if last_due > 716:
+                out.append(order)
+                continue
+            small = qty // k
+            first = qty - small * (k - 1)
+            out.append(["SELL", order[1], first])
+            for i in range(1, k):
+                due = step + _DRIP_SPACING * i
+                if due > 719:
+                    due = 719
+                queue.append((due, order[1], small))
+        else:
+            out.append(order)
+    action["market"] = out
+    return action
+
 '''
     if v28rule:
         helpers = helpers.replace(
@@ -238,6 +296,9 @@ def _wool_gate(action, observation, herd):
         helpers = helpers.replace("def _feedcut(action, observation):",
                                   "def _feedcut(action, observation):\n    return action", 1)
 
+    if not drip:
+        helpers = helpers[:helpers.find("def _drip_emit")]
+
     new_src = new_src.replace("def agent(observation, configuration=None):", helpers + "\ndef agent(observation, configuration=None):", 1)
 
     new_src = new_src.replace(
@@ -248,12 +309,17 @@ def _wool_gate(action, observation, herd):
         '            state["route"] = _select_route(observation, seat)',
         1,
     )
+    drip_chain = (
+        '        action = _drip_emit(action, state, step)\n'
+        '        action = _drip_split(action, state, step, herd)\n' if drip else ''
+    )
     new_src = new_src.replace(
         'action = _copy_action(_ROUTES[route][step])\n        action = _budget_guard(action, observation, route, step)',
         'herd = int(state.get("herd", 0))\n'
         '        action = _copy_action(_ROUTES[route][herd][step])\n'
         '        action = _budget_guard(action, observation, route, herd, step)\n'
         '        action = _wool_gate(action, observation, herd)\n'
+        + drip_chain +
         '        action = _sweep(action, observation, seat, route, herd, step)\n'
         '        action = _feedcut(action, observation)',
         1,
@@ -279,7 +345,8 @@ def _wool_gate(action, observation, herd):
         fh.write(new_src)
     import py_compile
     py_compile.compile(out_path, doraise=True)
-    print("wrote", out_path, "ratio", ratio, "v28rule", v28rule, "no_sweep", no_sweep, "no_feedcut", no_feedcut)
+    print("wrote", out_path, "ratio", ratio, "v28rule", v28rule, "no_sweep", no_sweep,
+          "no_feedcut", no_feedcut, "drip", drip)
 
 
 if __name__ == "__main__":

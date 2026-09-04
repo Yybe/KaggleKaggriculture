@@ -20,8 +20,7 @@ FRESH_SEEDS = [314159, 2718281, 1414213, 1732050, 2236067, 2645751, 3162277, 324
                2641391, 2745995, 2871778]
 
 CANDIDATES = [
-    ("v29_milk0", "agents/v29_milk0.py"),
-    ("v29_control3_v28rule", "agents/v29_control3.py"),
+    ("v30_drip_20_3", "agents/v30_drip.py"),
 ]
 
 BASELINE = ("v28b", "agents/v28_herdswap.py")

@@ -23,12 +23,24 @@ _SEGMENT_TURNS = 72
 _HERD_DECISION_STEP = 145
 _YARN_CONVERT_THRESHOLD = 1
 _WOOL_GATE = 60
+_SWEEP_STEPS = (707, 712, 716, 718)
+_SWEEP_ITEMS = ('WOOL', 'MILK', 'WHEAT', 'FERTILIZER')
+_FEEDCUT_STEP = 456
+_FEEDCUT_WOOL = 12
+_FEEDCUT_MILK = 15
+_SHEEP_YIELD = 33
+_COW_YIELD = 36
+_RATIO = 0.6
+_DRIP_MIN_QTY = 20
+_DRIP_TRANCHES = 3
+_DRIP_SPACING = 4
+_DRIP_LATE_STEP = 700
 _MILK_SHOPS = ("PIZZA_SHOP", "ICE_CREAM_SHOP", "SMOOTHIE_SHOP")
 _DECISION_STEP = 360
 _TURNS = 719
 _STATE = {
-    0: {"last_step": -1, "route": 0, "herd": 0},
-    1: {"last_step": -1, "route": 0, "herd": 0},
+    0: {"last_step": -1, "route": 0, "herd": 0, "drip": []},
+    1: {"last_step": -1, "route": 0, "herd": 0, "drip": []},
 }
 
 
@@ -241,11 +253,95 @@ def _budget_guard(action, observation, route, herd, step):
 
 
 
+def _shop_counts(observation):
+    town = _get(observation, "town", {}) or {}
+    shops = list(_get(town, "unlocked_shops", []) or [])
+    yarn = sum(1 for name in shops if name == "YARN_STORE")
+    milk = sum(1 for name in shops if name in _MILK_SHOPS)
+    return yarn, milk
+
+
+def _prices(observation):
+    market = _get(observation, "market", {}) or {}
+    return _get(market, "prices", {}) or {}
+
+
+def _shed(observation, seat):
+    priv = _get(observation, "private", {}) or {}
+    return _get(priv, "shed", {}) or {}
+
+
+def _scheduled_after(route, herd, step, item):
+    total = 0
+    tape = _ROUTES[route][herd]
+    for s in range(step + 1, len(tape)):
+        for order in tape[s].get("market") or []:
+            if len(order) >= 3 and order[0] == "SELL" and order[1] == item:
+                total += int(order[2])
+    return total
+
+
+def _epoch_convert(observation, seat):
+    """v29 trigger (rule=milk0): convert whenever no milk shop seen by 145.
+
+    Rationale: shops drawn with replacement from an 8-type pool (1 yarn);
+    yarn is seen by step 145 in only ~14% of games but unlocks eventually in
+    ~57% (live 108-game study) — late yarn is uncatchable after the pipeline.
+    No-milk-shop + no-yarn-ever games are ~neutral (dead wool px 2-3 vs dead
+    milk px 1). Species-agnostic conversion.
+    """
+    _yarn, milk = _shop_counts(observation)
+    yarn, _milk = _shop_counts(observation)
+    return 1 if (yarn >= _YARN_CONVERT_THRESHOLD and _milk == 0) else 0
+
+
+
+def _sweep(action, observation, seat, route, herd, step):
+    if True:
+        return action
+    shed = _shed(observation, seat)
+    if not shed:
+        return action
+    orders = list(action.get("market") or [])
+    for item in _SWEEP_ITEMS:
+        have = int(shed.get(item, 0) or 0)
+        if have <= 0:
+            continue
+        surplus = have - _scheduled_after(route, herd, step, item)
+        if surplus <= 0:
+            continue
+        if len(orders) >= 10:
+            break
+        orders.append(["SELL", item, surplus])
+    if len(orders) != len(action.get("market") or []):
+        action["market"] = orders
+    return action
+
+
+def _feedcut(action, observation):
+    return action
+    prices = _prices(observation)
+    if (float(_get(prices, "WOOL", 0) or 0) >= _FEEDCUT_WOOL
+            or float(_get(prices, "MILK", 0) or 0) >= _FEEDCUT_MILK):
+        return action
+    for key in ("farmer", "hands"):
+        ops = action.get(key)
+        if not ops:
+            continue
+        if key == "farmer":
+            if ops[0] in ("FEED", "CARE"):
+                ops[0] = "PASS"
+        else:
+            for op in ops:
+                if op and op[0] in ("FEED", "CARE"):
+                    op[0] = "PASS"
+    return action
+
+
 def _wool_gate(action, observation, herd):
     if herd != 1:
         return action
-    market = _get(observation, "market", {}) or {}
-    prices = _get(market, "prices", {}) or {}
+    prices = _prices(observation)
     if float(_get(prices, "WOOL", 0) or 0) >= _WOOL_GATE:
         return action
     kept = [order for order in action.get("market") or []
@@ -256,12 +352,56 @@ def _wool_gate(action, observation, herd):
     return action
 
 
-def _shop_counts(observation):
-    town = _get(observation, "town", {}) or {}
-    shops = list(_get(town, "unlocked_shops", []) or [])
-    yarn = sum(1 for name in shops if name == "YARN_STORE")
-    milk = sum(1 for name in shops if name in _MILK_SHOPS)
-    return yarn, milk
+def _drip_emit(action, state, step):
+    """Flush stashed drip tranches due at this step (wool-gated when herd=1
+    unless past _DRIP_LATE_STEP where dumping beats stranding)."""
+    if not state.get("drip"):
+        return action
+    orders = list(action.get("market") or [])
+    keep = []
+    for due, item, qty in state["drip"]:
+        if due > step:
+            keep.append((due, item, qty))
+            continue
+        if len(orders) >= 10:
+            keep.append((step + _DRIP_SPACING, item, qty))
+            continue
+        orders.append(["SELL", item, qty])
+    state["drip"] = keep
+    action["market"] = orders
+    return action
+
+
+def _drip_split(action, state, step, herd):
+    """Re-time big SELLs: qty >= _DRIP_MIN_QTY at steps >= 456 split into
+    _DRIP_TRANCHES spaced _DRIP_SPACING apart. Same total units; spreads the
+    per-unit lockstep price walk (live forensics: drip-sellers win the close
+    full-parity games). Tranches due > 719 collapse into the last step."""
+    queue = state.setdefault("drip", [])
+    orders = action.get("market") or []
+    out = []
+    for order in orders:
+        if (isinstance(order, list) and len(order) >= 3 and order[0] == "SELL"
+                and int(order[2] or 0) >= _DRIP_MIN_QTY and step >= 456):
+            qty = int(order[2])
+            k = _DRIP_TRANCHES
+            last_due = step + _DRIP_SPACING * (k - 1)
+            if last_due > 716:
+                out.append(order)
+                continue
+            small = qty // k
+            first = qty - small * (k - 1)
+            out.append(["SELL", order[1], first])
+            for i in range(1, k):
+                due = step + _DRIP_SPACING * i
+                if due > 719:
+                    due = 719
+                queue.append((due, order[1], small))
+        else:
+            out.append(order)
+    action["market"] = out
+    return action
+
 
 def agent(observation, configuration=None):
     del configuration
@@ -270,7 +410,7 @@ def agent(observation, configuration=None):
         step = int(_get(observation, "step", 0) or 0)
         state = _STATE[seat]
         if step == 0 or step < int(state.get("last_step", -1)):
-            state = {"last_step": -1, "route": 0, "herd": 0}
+            state = {"last_step": -1, "route": 0, "herd": 0, "drip": []}
             _STATE[seat] = state
         if not 0 <= step < _TURNS:
             farm = _farm(observation, seat)
@@ -280,8 +420,7 @@ def agent(observation, configuration=None):
                 "market": [],
             }
         if step == _HERD_DECISION_STEP:
-            yarn, milk = _shop_counts(observation)
-            state["herd"] = 1 if (yarn >= _YARN_CONVERT_THRESHOLD and milk == 0) else 0
+            state["herd"] = _epoch_convert(observation, seat)
         if step == _DECISION_STEP:
             state["route"] = _select_route(observation, seat)
         route = int(state.get("route", 0))
@@ -289,6 +428,10 @@ def agent(observation, configuration=None):
         action = _copy_action(_ROUTES[route][herd][step])
         action = _budget_guard(action, observation, route, herd, step)
         action = _wool_gate(action, observation, herd)
+        action = _drip_emit(action, state, step)
+        action = _drip_split(action, state, step, herd)
+        action = _sweep(action, observation, seat, route, herd, step)
+        action = _feedcut(action, observation)
         state["last_step"] = step
         return action
     except Exception:
