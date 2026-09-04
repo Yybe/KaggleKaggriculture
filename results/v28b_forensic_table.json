@@ -1,0 +1,1886 @@
+[
+ {
+  "file": "episode-105567276",
+  "seed": 1659313263,
+  "our": 80295.0,
+  "opp": 91290.0,
+  "delta": -10995.0,
+  "wool_px_late": 251.9,
+  "milk_px_late": 4.2,
+  "wool_px_avg": 239.2,
+  "milk_px_avg": 88.2,
+  "straw_px_late": 16.7,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "WOOL": 64706,
+   "FERTILIZER": 14495,
+   "MELON": 13314,
+   "WHEAT": 12699,
+   "MILK": 9492,
+   "STRAWBERRY": 6294,
+   "CARROT": 602
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 10,
+   "COW": 5
+  },
+  "opp_rev": {
+   "WOOL": 70386,
+   "FERTILIZER": 15020,
+   "MELON": 13272,
+   "WHEAT": 12468,
+   "MILK": 7760,
+   "STRAWBERRY": 6209,
+   "CARROT": 756
+  },
+  "opp_wool_qty": 285,
+  "opp_milk_qty": 266,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 6
+ },
+ {
+  "file": "episode-105559294",
+  "seed": 1222758071,
+  "our": 86032.0,
+  "opp": 97005.0,
+  "delta": -10973.0,
+  "wool_px_late": 39.1,
+  "milk_px_late": 95.3,
+  "wool_px_avg": 172.4,
+  "milk_px_avg": 96.6,
+  "straw_px_late": 99.3,
+  "our_animals": {
+   "SHEEP": 12,
+   "COW": 4
+  },
+  "our_rev": {
+   "STRAWBERRY": 43483,
+   "WOOL": 40123,
+   "FERTILIZER": 15634,
+   "WHEAT": 15237,
+   "MELON": 13164,
+   "MILK": 6918,
+   "CARROT": 774
+  },
+  "our_wool_qty": 274,
+  "our_milk_qty": 126,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 19,
+  "opp_animals": {
+   "COW": 8,
+   "SHEEP": 6
+  },
+  "opp_rev": {
+   "STRAWBERRY": 40850,
+   "WOOL": 29564,
+   "WHEAT": 16495,
+   "FERTILIZER": 15373,
+   "MILK": 15301,
+   "MELON": 12840,
+   "CARROT": 715
+  },
+  "opp_wool_qty": 255,
+  "opp_milk_qty": 288,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "MILK": 52,
+   "WOOL": 43
+  },
+  "our_strand_value_latepx": 6636
+ },
+ {
+  "file": "episode-105548442",
+  "seed": 1070540268,
+  "our": 55271.0,
+  "opp": 63415.0,
+  "delta": -8144.0,
+  "wool_px_late": 35.4,
+  "milk_px_late": 62.6,
+  "wool_px_avg": 157.7,
+  "milk_px_avg": 80.9,
+  "straw_px_late": 62.0,
+  "our_animals": {
+   "SHEEP": 9,
+   "COW": 4
+  },
+  "our_rev": {
+   "WOOL": 27837,
+   "FERTILIZER": 14667,
+   "STRAWBERRY": 14091,
+   "MELON": 12990,
+   "WHEAT": 12756,
+   "MILK": 3696,
+   "CARROT": 955
+  },
+  "our_wool_qty": 216,
+  "our_milk_qty": 120,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 19,
+  "opp_animals": {
+   "SHEEP": 9,
+   "COW": 8
+  },
+  "opp_rev": {
+   "STRAWBERRY": 137014091,
+   "MELON": 120012990,
+   "CARROT": 70000955,
+   "EGG": 65000000,
+   "TOMATO": 64000000,
+   "WOOL": 49025699,
+   "FERTILIZER": 1014667,
+   "WHEAT": 12756,
+   "MILK": 9810
+  },
+  "opp_wool_qty": 1000266,
+  "opp_milk_qty": 333,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "MILK": 51,
+   "WOOL": 41
+  },
+  "our_strand_value_latepx": 4644
+ },
+ {
+  "file": "episode-105551242",
+  "seed": 965528917,
+  "our": 75520.0,
+  "opp": 81263.0,
+  "delta": -5743.0,
+  "wool_px_late": 29.6,
+  "milk_px_late": 1.1,
+  "wool_px_avg": 93.7,
+  "milk_px_avg": 65.7,
+  "straw_px_late": 102.6,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 54520,
+   "FERTILIZER": 15284,
+   "WHEAT": 14657,
+   "MELON": 13164,
+   "WOOL": 7105,
+   "MILK": 4062,
+   "CARROT": 2013
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "COW": 7,
+   "GOOSE": 2,
+   "SHEEP": 5
+  },
+  "opp_rev": {
+   "STRAWBERRY": 46145,
+   "WHEAT": 14737,
+   "FERTILIZER": 14165,
+   "MELON": 12840,
+   "WOOL": 5539,
+   "EGG": 3936,
+   "MILK": 3399,
+   "CARROT": 1781
+  },
+  "opp_wool_qty": 138,
+  "opp_milk_qty": 216,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {},
+  "our_strand_value_latepx": 0
+ },
+ {
+  "file": "episode-105569594",
+  "seed": 164191589,
+  "our": 64585.0,
+  "opp": 67512.0,
+  "delta": -2927.0,
+  "wool_px_late": 2.4,
+  "milk_px_late": 19.3,
+  "wool_px_avg": 87.8,
+  "milk_px_avg": 101.6,
+  "straw_px_late": 32.3,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 29921,
+   "FERTILIZER": 14407,
+   "WHEAT": 13807,
+   "MELON": 12990,
+   "MILK": 12105,
+   "WOOL": 4932,
+   "CARROT": 859
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "STRAWBERRY": 33748,
+   "FERTILIZER": 14407,
+   "WHEAT": 13807,
+   "MELON": 12990,
+   "MILK": 12926,
+   "WOOL": 4964,
+   "CARROT": 859
+  },
+  "opp_wool_qty": 294,
+  "opp_milk_qty": 428,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 4
+ },
+ {
+  "file": "episode-105563835",
+  "seed": 65855186,
+  "our": 84110.0,
+  "opp": 86894.0,
+  "delta": -2784.0,
+  "wool_px_late": 44.5,
+  "milk_px_late": 12.0,
+  "wool_px_avg": 95.6,
+  "milk_px_avg": 100.0,
+  "straw_px_late": 149.5,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 58778,
+   "FERTILIZER": 14238,
+   "WHEAT": 14188,
+   "MELON": 12990,
+   "MILK": 11427,
+   "WOOL": 6108,
+   "CARROT": 1519
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "STRAWBERRY": 69980,
+   "FERTILIZER": 15346,
+   "WHEAT": 14340,
+   "MELON": 12990,
+   "MILK": 11448,
+   "WOOL": 6400,
+   "CARROT": 1519
+  },
+  "opp_wool_qty": 268,
+  "opp_milk_qty": 333,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 4
+ },
+ {
+  "file": "episode-105558340",
+  "seed": 140922481,
+  "our": 106049.0,
+  "opp": 107602.0,
+  "delta": -1553.0,
+  "wool_px_late": 45.1,
+  "milk_px_late": 52.4,
+  "wool_px_avg": 102.0,
+  "milk_px_avg": 153.8,
+  "straw_px_late": 160.4,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 63387,
+   "MILK": 35793,
+   "FERTILIZER": 14407,
+   "MELON": 12990,
+   "WHEAT": 11477,
+   "WOOL": 7527,
+   "CARROT": 875
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "MILK": 181035793,
+   "FERTILIZER": 2014407,
+   "STRAWBERRY": 63387,
+   "MELON": 12990,
+   "WHEAT": 11477,
+   "WOOL": 7527,
+   "CARROT": 875
+  },
+  "opp_wool_qty": 262,
+  "opp_milk_qty": 4000330,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 4
+  },
+  "our_strand_value_latepx": 8
+ },
+ {
+  "file": "episode-105550753",
+  "seed": 846290032,
+  "our": 72857.0,
+  "opp": 74150.0,
+  "delta": -1293.0,
+  "wool_px_late": 2.5,
+  "milk_px_late": 12.5,
+  "wool_px_avg": 87.3,
+  "milk_px_avg": 68.3,
+  "straw_px_late": 151.2,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 55211,
+   "WHEAT": 14942,
+   "FERTILIZER": 14135,
+   "MELON": 12990,
+   "WOOL": 5131,
+   "MILK": 4041,
+   "CARROT": 847
+  },
+  "our_wool_qty": 266,
+  "our_milk_qty": 333,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "STRAWBERRY": 71407,
+   "WHEAT": 18954,
+   "FERTILIZER": 17047,
+   "MELON": 12990,
+   "WOOL": 4966,
+   "MILK": 4257,
+   "CARROT": 725
+  },
+  "opp_wool_qty": 296,
+  "opp_milk_qty": 389,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {},
+  "our_strand_value_latepx": 0
+ },
+ {
+  "file": "episode-105556556",
+  "seed": 818957180,
+  "our": 118264.0,
+  "opp": 119118.0,
+  "delta": -854.0,
+  "wool_px_late": 230.9,
+  "milk_px_late": 20.4,
+  "wool_px_avg": 215.6,
+  "milk_px_avg": 88.1,
+  "straw_px_late": 155.7,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 62074,
+   "WOOL": 57008,
+   "FERTILIZER": 14351,
+   "MELON": 12990,
+   "WHEAT": 11890,
+   "MILK": 9417,
+   "CARROT": 719
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 9,
+   "COW": 8
+  },
+  "opp_rev": {
+   "STRAWBERRY": 46860,
+   "WOOL": 46746,
+   "FERTILIZER": 14520,
+   "MELON": 12990,
+   "WHEAT": 12021,
+   "MILK": 8085,
+   "CARROT": 5031
+  },
+  "opp_wool_qty": 217,
+  "opp_milk_qty": 246,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 4
+ },
+ {
+  "file": "episode-105564628",
+  "seed": 730233980,
+  "our": 132297.0,
+  "opp": 132313.0,
+  "delta": -16.0,
+  "wool_px_late": 2.4,
+  "milk_px_late": 236.2,
+  "wool_px_avg": 87.8,
+  "milk_px_avg": 217.7,
+  "straw_px_late": 170.5,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "MILK": 74241,
+   "STRAWBERRY": 62383,
+   "WHEAT": 16025,
+   "FERTILIZER": 14407,
+   "MELON": 12990,
+   "WOOL": 4932,
+   "CARROT": 506
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "MILK": 74241,
+   "STRAWBERRY": 62383,
+   "WHEAT": 16025,
+   "FERTILIZER": 14409,
+   "MELON": 12990,
+   "WOOL": 4939,
+   "CARROT": 506
+  },
+  "opp_wool_qty": 269,
+  "opp_milk_qty": 330,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 4
+ },
+ {
+  "file": "episode-105557556",
+  "seed": 567803444,
+  "our": 108695.0,
+  "opp": 108708.0,
+  "delta": -13.0,
+  "wool_px_late": 65.0,
+  "milk_px_late": 52.4,
+  "wool_px_avg": 187.1,
+  "milk_px_avg": 151.1,
+  "straw_px_late": 33.5,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "WOOL": 39620,
+   "MILK": 35202,
+   "STRAWBERRY": 25682,
+   "FERTILIZER": 14407,
+   "WHEAT": 13624,
+   "MELON": 12990,
+   "CARROT": 651
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "MILK": 181035202,
+   "FERTILIZER": 2014407,
+   "WOOL": 39620,
+   "STRAWBERRY": 25682,
+   "WHEAT": 13624,
+   "MELON": 12990,
+   "CARROT": 651
+  },
+  "opp_wool_qty": 262,
+  "opp_milk_qty": 4000330,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 4
+ },
+ {
+  "file": "episode-105547533",
+  "seed": 858144681,
+  "our": 59094.0,
+  "opp": 59094.0,
+  "delta": 0.0,
+  "wool_px_late": 2.4,
+  "milk_px_late": 33.5,
+  "wool_px_avg": 87.9,
+  "milk_px_avg": 104.6,
+  "straw_px_late": 33.5,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 20008,
+   "WHEAT": 14756,
+   "FERTILIZER": 14407,
+   "MILK": 13311,
+   "MELON": 12990,
+   "WOOL": 4932,
+   "CARROT": 651
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "STRAWBERRY": 20008,
+   "WHEAT": 14756,
+   "FERTILIZER": 14407,
+   "MILK": 13311,
+   "MELON": 12990,
+   "WOOL": 4932,
+   "CARROT": 651
+  },
+  "opp_wool_qty": 262,
+  "opp_milk_qty": 330,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 4
+ },
+ {
+  "file": "episode-105552364",
+  "seed": 879670935,
+  "our": 81013.0,
+  "opp": 81013.0,
+  "delta": 0.0,
+  "wool_px_late": 136.1,
+  "milk_px_late": 21.1,
+  "wool_px_avg": 168.8,
+  "milk_px_avg": 73.4,
+  "straw_px_late": 33.5,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "WOOL": 30352,
+   "STRAWBERRY": 30040,
+   "FERTILIZER": 14407,
+   "WHEAT": 14155,
+   "MELON": 12990,
+   "MILK": 5268,
+   "CARROT": 506
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "WOOL": 30352,
+   "STRAWBERRY": 30040,
+   "FERTILIZER": 14407,
+   "WHEAT": 14155,
+   "MELON": 12990,
+   "MILK": 5268,
+   "CARROT": 506
+  },
+  "opp_wool_qty": 262,
+  "opp_milk_qty": 330,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 4
+ },
+ {
+  "file": "episode-105553018",
+  "seed": 1397257191,
+  "our": 56442.0,
+  "opp": 56442.0,
+  "delta": 0.0,
+  "wool_px_late": 2.4,
+  "milk_px_late": 65.7,
+  "wool_px_avg": 87.9,
+  "milk_px_avg": 82.9,
+  "straw_px_late": 33.5,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 22168,
+   "FERTILIZER": 14407,
+   "WHEAT": 14155,
+   "MELON": 12990,
+   "MILK": 9726,
+   "WOOL": 4932,
+   "CARROT": 770
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "STRAWBERRY": 22168,
+   "FERTILIZER": 14407,
+   "WHEAT": 14155,
+   "MELON": 12990,
+   "MILK": 9726,
+   "WOOL": 4932,
+   "CARROT": 770
+  },
+  "opp_wool_qty": 262,
+  "opp_milk_qty": 330,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 4
+ },
+ {
+  "file": "episode-105557271",
+  "seed": 573054764,
+  "our": 90493.0,
+  "opp": 90493.0,
+  "delta": 0.0,
+  "wool_px_late": 2.4,
+  "milk_px_late": 6.1,
+  "wool_px_avg": 87.9,
+  "milk_px_avg": 84.4,
+  "straw_px_late": 206.8,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 76794,
+   "WHEAT": 14553,
+   "FERTILIZER": 14407,
+   "MELON": 12990,
+   "MILK": 7683,
+   "WOOL": 4932,
+   "CARROT": 932
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "STRAWBERRY": 76794,
+   "WHEAT": 14553,
+   "FERTILIZER": 14407,
+   "MELON": 12990,
+   "MILK": 7683,
+   "WOOL": 4932,
+   "CARROT": 932
+  },
+  "opp_wool_qty": 262,
+  "opp_milk_qty": 330,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 4
+ },
+ {
+  "file": "episode-105557472",
+  "seed": 1363416620,
+  "our": 64246.0,
+  "opp": 64246.0,
+  "delta": 0.0,
+  "wool_px_late": 45.1,
+  "milk_px_late": 21.1,
+  "wool_px_avg": 154.5,
+  "milk_px_avg": 73.5,
+  "straw_px_late": 24.2,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "WOOL": 26025,
+   "STRAWBERRY": 16460,
+   "FERTILIZER": 14198,
+   "WHEAT": 13951,
+   "MELON": 12990,
+   "MILK": 5205,
+   "CARROT": 719
+  },
+  "our_wool_qty": 266,
+  "our_milk_qty": 333,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "WOOL": 26025,
+   "STRAWBERRY": 16460,
+   "FERTILIZER": 14198,
+   "WHEAT": 13951,
+   "MELON": 12990,
+   "MILK": 5205,
+   "CARROT": 719
+  },
+  "opp_wool_qty": 266,
+  "opp_milk_qty": 333,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {},
+  "our_strand_value_latepx": 0
+ },
+ {
+  "file": "episode-105565100",
+  "seed": 620438956,
+  "our": 68884.0,
+  "opp": 68884.0,
+  "delta": 0.0,
+  "wool_px_late": 45.1,
+  "milk_px_late": 33.5,
+  "wool_px_avg": 152.9,
+  "milk_px_avg": 91.6,
+  "straw_px_late": 24.2,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "WOOL": 23757,
+   "STRAWBERRY": 16462,
+   "FERTILIZER": 14407,
+   "WHEAT": 14055,
+   "MELON": 12990,
+   "MILK": 10005,
+   "CARROT": 901
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "WOOL": 23757,
+   "STRAWBERRY": 16462,
+   "FERTILIZER": 14407,
+   "WHEAT": 14055,
+   "MELON": 12990,
+   "MILK": 10005,
+   "CARROT": 901
+  },
+  "opp_wool_qty": 262,
+  "opp_milk_qty": 330,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 4
+ },
+ {
+  "file": "episode-105571326",
+  "seed": 924457819,
+  "our": 65816.0,
+  "opp": 65816.0,
+  "delta": 0.0,
+  "wool_px_late": 150.2,
+  "milk_px_late": 12.3,
+  "wool_px_avg": 127.1,
+  "milk_px_avg": 97.1,
+  "straw_px_late": 33.5,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 19238,
+   "WOOL": 18403,
+   "FERTILIZER": 14198,
+   "MELON": 12990,
+   "MILK": 12023,
+   "WHEAT": 10835,
+   "CARROT": 2100
+  },
+  "our_wool_qty": 266,
+  "our_milk_qty": 333,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "STRAWBERRY": 19238,
+   "WOOL": 18403,
+   "FERTILIZER": 14198,
+   "MELON": 12990,
+   "MILK": 12023,
+   "WHEAT": 10835,
+   "CARROT": 2100
+  },
+  "opp_wool_qty": 266,
+  "opp_milk_qty": 333,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {},
+  "our_strand_value_latepx": 0
+ },
+ {
+  "file": "episode-105571746",
+  "seed": 695514106,
+  "our": 115467.0,
+  "opp": 115467.0,
+  "delta": 0.0,
+  "wool_px_late": 65.0,
+  "milk_px_late": 21.1,
+  "wool_px_avg": 187.1,
+  "milk_px_avg": 101.1,
+  "straw_px_late": 182.4,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 66665,
+   "WOOL": 39620,
+   "WHEAT": 15171,
+   "FERTILIZER": 14407,
+   "MELON": 12990,
+   "MILK": 11853,
+   "CARROT": 777
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "STRAWBERRY": 66665,
+   "WOOL": 39620,
+   "WHEAT": 15171,
+   "FERTILIZER": 14407,
+   "MELON": 12990,
+   "MILK": 11853,
+   "CARROT": 777
+  },
+  "opp_wool_qty": 262,
+  "opp_milk_qty": 330,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 4
+ },
+ {
+  "file": "episode-105572639",
+  "seed": 525565838,
+  "our": 64801.0,
+  "opp": 64801.0,
+  "delta": 0.0,
+  "wool_px_late": 2.4,
+  "milk_px_late": 21.1,
+  "wool_px_avg": 87.9,
+  "milk_px_avg": 88.4,
+  "straw_px_late": 52.6,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 32571,
+   "WHEAT": 14645,
+   "FERTILIZER": 14407,
+   "MELON": 12990,
+   "MILK": 8727,
+   "WOOL": 4932,
+   "CARROT": 1013
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "STRAWBERRY": 32571,
+   "WHEAT": 14645,
+   "FERTILIZER": 14407,
+   "MELON": 12990,
+   "MILK": 8727,
+   "WOOL": 4932,
+   "CARROT": 1013
+  },
+  "opp_wool_qty": 262,
+  "opp_milk_qty": 330,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 4
+ },
+ {
+  "file": "episode-105566391",
+  "seed": 1124797085,
+  "our": 102075.0,
+  "opp": 101991.0,
+  "delta": 84.0,
+  "wool_px_late": 45.1,
+  "milk_px_late": 21.1,
+  "wool_px_avg": 105.6,
+  "milk_px_avg": 104.8,
+  "straw_px_late": 215.0,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 76986,
+   "WHEAT": 15617,
+   "FERTILIZER": 14407,
+   "MILK": 14112,
+   "MELON": 12990,
+   "WOOL": 7811,
+   "CARROT": 920
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "STRAWBERRY": 76986,
+   "WHEAT": 15617,
+   "FERTILIZER": 14409,
+   "MILK": 14112,
+   "MELON": 12990,
+   "WOOL": 7811,
+   "CARROT": 920
+  },
+  "opp_wool_qty": 262,
+  "opp_milk_qty": 330,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 4
+ },
+ {
+  "file": "episode-105567932",
+  "seed": 91221131,
+  "our": 34771.0,
+  "opp": 34607.0,
+  "delta": 164.0,
+  "wool_px_late": 35.4,
+  "milk_px_late": 6.1,
+  "wool_px_avg": 92.0,
+  "milk_px_avg": 69.2,
+  "straw_px_late": 7.9,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "FERTILIZER": 15132,
+   "WHEAT": 14246,
+   "MELON": 13164,
+   "WOOL": 6802,
+   "MILK": 4969,
+   "STRAWBERRY": 3676,
+   "CARROT": 1081
+  },
+  "our_wool_qty": 266,
+  "our_milk_qty": 333,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "COW": 9,
+   "SHEEP": 5
+  },
+  "opp_rev": {
+   "WHEAT": 15233,
+   "FERTILIZER": 14405,
+   "MELON": 12840,
+   "CARROT": 7528,
+   "WOOL": 5286,
+   "MILK": 3933,
+   "STRAWBERRY": 2784
+  },
+  "opp_wool_qty": 138,
+  "opp_milk_qty": 270,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {},
+  "our_strand_value_latepx": 0
+ },
+ {
+  "file": "episode-105549356",
+  "seed": 757044226,
+  "our": 121886.0,
+  "opp": 121522.0,
+  "delta": 364.0,
+  "wool_px_late": 34.9,
+  "milk_px_late": 151.9,
+  "wool_px_avg": 92.0,
+  "milk_px_avg": 186.5,
+  "straw_px_late": 155.0,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 61740,
+   "MILK": 58566,
+   "WHEAT": 15317,
+   "FERTILIZER": 15284,
+   "MELON": 13164,
+   "WOOL": 6794,
+   "CARROT": 524
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "COW": 9,
+   "SHEEP": 5
+  },
+  "opp_rev": {
+   "STRAWBERRY": 48502,
+   "MILK": 47152,
+   "WHEAT": 15910,
+   "FERTILIZER": 14367,
+   "MELON": 12840,
+   "WOOL": 5296,
+   "CARROT": 3250
+  },
+  "opp_wool_qty": 138,
+  "opp_milk_qty": 270,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {},
+  "our_strand_value_latepx": 0
+ },
+ {
+  "file": "episode-105553888",
+  "seed": 1853029482,
+  "our": 41156.0,
+  "opp": 40573.0,
+  "delta": 583.0,
+  "wool_px_late": 41.3,
+  "milk_px_late": 4.8,
+  "wool_px_avg": 100.0,
+  "milk_px_avg": 66.5,
+  "straw_px_late": 6.5,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "FERTILIZER": 14258,
+   "MELON": 12990,
+   "WHEAT": 10934,
+   "STRAWBERRY": 9992,
+   "WOOL": 7299,
+   "CARROT": 6168,
+   "MILK": 3735
+  },
+  "our_wool_qty": 266,
+  "our_milk_qty": 333,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "FERTILIZER": 14357,
+   "MELON": 12990,
+   "WHEAT": 11214,
+   "STRAWBERRY": 9748,
+   "WOOL": 7490,
+   "CARROT": 6168,
+   "MILK": 3726
+  },
+  "opp_wool_qty": 262,
+  "opp_milk_qty": 330,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {},
+  "our_strand_value_latepx": 0
+ },
+ {
+  "file": "episode-105562887",
+  "seed": 1408728647,
+  "our": 75368.0,
+  "opp": 74641.0,
+  "delta": 727.0,
+  "wool_px_late": 136.1,
+  "milk_px_late": 6.1,
+  "wool_px_avg": 121.5,
+  "milk_px_avg": 67.1,
+  "straw_px_late": 43.6,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 40629,
+   "WHEAT": 15939,
+   "FERTILIZER": 14407,
+   "WOOL": 14406,
+   "MELON": 12990,
+   "MILK": 3738,
+   "CARROT": 770
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "WOOL": 185014406,
+   "TOMATO": 126000000,
+   "MELON": 120012990,
+   "EGG": 78000000,
+   "STRAWBERRY": 70040629,
+   "CARROT": 56000770,
+   "FERTILIZER": 1014407,
+   "WHEAT": 15939,
+   "MILK": 3738
+  },
+  "opp_wool_qty": 1000262,
+  "opp_milk_qty": 330,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 4
+ },
+ {
+  "file": "episode-105561097",
+  "seed": 1290544061,
+  "our": 71660.0,
+  "opp": 70894.0,
+  "delta": 766.0,
+  "wool_px_late": 45.1,
+  "milk_px_late": 21.1,
+  "wool_px_avg": 152.9,
+  "milk_px_avg": 73.4,
+  "straw_px_late": 51.8,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 25637,
+   "WOOL": 23757,
+   "FERTILIZER": 14407,
+   "WHEAT": 13475,
+   "MELON": 12990,
+   "MILK": 5268,
+   "CARROT": 1023
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "STRAWBERRY": 25637,
+   "WOOL": 23757,
+   "FERTILIZER": 14407,
+   "WHEAT": 13475,
+   "MELON": 12990,
+   "MILK": 5268,
+   "CARROT": 1023
+  },
+  "opp_wool_qty": 262,
+  "opp_milk_qty": 330,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 4
+ },
+ {
+  "file": "episode-105565503",
+  "seed": 303986952,
+  "our": 66382.0,
+  "opp": 61887.0,
+  "delta": 4495.0,
+  "wool_px_late": 37.1,
+  "milk_px_late": 39.7,
+  "wool_px_avg": 98.1,
+  "milk_px_avg": 85.4,
+  "straw_px_late": 18.8,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 31460,
+   "FERTILIZER": 15272,
+   "MELON": 13164,
+   "WHEAT": 13149,
+   "MILK": 11218,
+   "WOOL": 7932,
+   "CARROT": 691
+  },
+  "our_wool_qty": 266,
+  "our_milk_qty": 333,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "COW": 9,
+   "SHEEP": 5
+  },
+  "opp_rev": {
+   "STRAWBERRY": 30486,
+   "WHEAT": 15532,
+   "FERTILIZER": 14337,
+   "MELON": 12840,
+   "MILK": 8297,
+   "WOOL": 6279,
+   "CARROT": 1137
+  },
+  "opp_wool_qty": 130,
+  "opp_milk_qty": 266,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {},
+  "our_strand_value_latepx": 0
+ },
+ {
+  "file": "episode-105546583",
+  "seed": 1130410973,
+  "our": 103660.0,
+  "opp": 98417.0,
+  "delta": 5243.0,
+  "wool_px_late": 2.4,
+  "milk_px_late": 69.7,
+  "wool_px_avg": 86.7,
+  "milk_px_avg": 99.5,
+  "straw_px_late": 239.5,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 83325,
+   "MILK": 17319,
+   "WHEAT": 15339,
+   "FERTILIZER": 14543,
+   "MELON": 12990,
+   "WOOL": 4770,
+   "CARROT": 775
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 8
+  },
+  "opp_rev": {
+   "STRAWBERRY": 92968,
+   "WHEAT": 15673,
+   "FERTILIZER": 14695,
+   "MELON": 12990,
+   "MILK": 12273,
+   "CARROT": 6031,
+   "WOOL": 4721
+  },
+  "opp_wool_qty": 209,
+  "opp_milk_qty": 246,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 5
+ },
+ {
+  "file": "episode-105554786",
+  "seed": 1731999036,
+  "our": 99136.0,
+  "opp": 86953.0,
+  "delta": 12183.0,
+  "wool_px_late": 233.1,
+  "milk_px_late": 19.1,
+  "wool_px_avg": 231.9,
+  "milk_px_avg": 72.1,
+  "straw_px_late": 49.7,
+  "our_animals": {
+   "SHEEP": 13,
+   "COW": 4
+  },
+  "our_rev": {
+   "WOOL": 109157,
+   "STRAWBERRY": 16733,
+   "FERTILIZER": 14407,
+   "WHEAT": 14222,
+   "MELON": 12990,
+   "MILK": 3696,
+   "CARROT": 767
+  },
+  "our_wool_qty": 466,
+  "our_milk_qty": 126,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 19,
+  "opp_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "opp_rev": {
+   "WOOL": 61379,
+   "STRAWBERRY": 17547,
+   "WHEAT": 14963,
+   "FERTILIZER": 14440,
+   "MELON": 12990,
+   "MILK": 5686,
+   "CARROT": 4952
+  },
+  "opp_wool_qty": 262,
+  "opp_milk_qty": 338,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "MILK": 58,
+   "WOOL": 6
+  },
+  "our_strand_value_latepx": 2506
+ },
+ {
+  "file": "episode-105539475",
+  "seed": 1554826175,
+  "our": 88313.0,
+  "opp": 75780.0,
+  "delta": 12533.0,
+  "wool_px_late": 241.6,
+  "milk_px_late": 8.9,
+  "wool_px_avg": 231.8,
+  "milk_px_avg": 74.6,
+  "straw_px_late": 26.6,
+  "our_animals": {
+   "SHEEP": 11,
+   "COW": 4
+  },
+  "our_rev": {
+   "WOOL": 114977,
+   "FERTILIZER": 16968,
+   "MELON": 15426,
+   "WHEAT": 13885,
+   "STRAWBERRY": 8802,
+   "MILK": 6061,
+   "CARROT": 625
+  },
+  "our_wool_qty": 479,
+  "our_milk_qty": 120,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 19,
+  "opp_animals": {
+   "SHEEP": 9,
+   "COW": 6
+  },
+  "opp_rev": {
+   "WOOL": 49573,
+   "WHEAT": 15264,
+   "FERTILIZER": 11575,
+   "MELON": 11316,
+   "STRAWBERRY": 5111,
+   "MILK": 3125,
+   "CARROT": 1878
+  },
+  "opp_wool_qty": 208,
+  "opp_milk_qty": 161,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "MILK": 58
+  },
+  "our_strand_value_latepx": 519
+ },
+ {
+  "file": "episode-105541262",
+  "seed": 1039023825,
+  "our": 77334.0,
+  "opp": 63240.0,
+  "delta": 14094.0,
+  "wool_px_late": 31.9,
+  "milk_px_late": 114.5,
+  "wool_px_avg": 88.2,
+  "milk_px_avg": 176.3,
+  "straw_px_late": 9.4,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "MILK": 48999,
+   "WHEAT": 16561,
+   "FERTILIZER": 15896,
+   "MELON": 15486,
+   "WOOL": 7938,
+   "STRAWBERRY": 5904,
+   "CARROT": 492
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "COW": 11,
+   "SHEEP": 4
+  },
+  "opp_rev": {
+   "MILK": 49703,
+   "FERTILIZER": 15414,
+   "WHEAT": 15211,
+   "MELON": 13931,
+   "WOOL": 9023,
+   "STRAWBERRY": 8780,
+   "CARROT": 1786
+  },
+  "opp_wool_qty": 179,
+  "opp_milk_qty": 335,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 1
+  },
+  "our_strand_value_latepx": 6
+ },
+ {
+  "file": "episode-105543927",
+  "seed": 1595853396,
+  "our": 127657.0,
+  "opp": 112389.0,
+  "delta": 15268.0,
+  "wool_px_late": 186.8,
+  "milk_px_late": 26.1,
+  "wool_px_avg": 202.6,
+  "milk_px_avg": 117.8,
+  "straw_px_late": 178.6,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 67475,
+   "WOOL": 51448,
+   "MILK": 20322,
+   "FERTILIZER": 15551,
+   "MELON": 12990,
+   "WHEAT": 12769,
+   "CARROT": 733
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "COW": 7,
+   "SHEEP": 6
+  },
+  "opp_rev": {
+   "STRAWBERRY": 53094,
+   "WOOL": 21093,
+   "WHEAT": 15977,
+   "MILK": 15381,
+   "FERTILIZER": 13446,
+   "MELON": 12990,
+   "CARROT": 1256
+  },
+  "opp_wool_qty": 109,
+  "opp_milk_qty": 214,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 14
+ },
+ {
+  "file": "episode-105530711",
+  "seed": 469675030,
+  "our": 98071.0,
+  "opp": 30481.0,
+  "delta": 67590.0,
+  "wool_px_late": 3.2,
+  "milk_px_late": 7.3,
+  "wool_px_avg": 90.7,
+  "milk_px_avg": 71.2,
+  "straw_px_late": 241.4,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 81718,
+   "FERTILIZER": 18108,
+   "WHEAT": 17520,
+   "MELON": 16692,
+   "WOOL": 5726,
+   "MILK": 5511,
+   "CARROT": 662
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 5,
+   "COW": 4
+  },
+  "opp_rev": {
+   "STRAWBERRY": 16410,
+   "WHEAT": 15894,
+   "MELON": 11870,
+   "FERTILIZER": 9179,
+   "WOOL": 4924,
+   "MILK": 2882,
+   "CARROT": 2856
+  },
+  "opp_wool_qty": 110,
+  "opp_milk_qty": 102,
+  "opp_last_wool_day": 28,
+  "opp_last_milk_day": 28,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 35
+ },
+ {
+  "file": "episode-105532463",
+  "seed": 1835457697,
+  "our": 127392.0,
+  "opp": 47161.0,
+  "delta": 80231.0,
+  "wool_px_late": 3.0,
+  "milk_px_late": 46.5,
+  "wool_px_avg": 102.7,
+  "milk_px_avg": 174.6,
+  "straw_px_late": 188.6,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 72289,
+   "MILK": 48156,
+   "FERTILIZER": 18817,
+   "WHEAT": 17123,
+   "MELON": 14448,
+   "WOOL": 8184,
+   "CARROT": 953
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "COW": 15,
+   "SHEEP": 1
+  },
+  "opp_rev": {
+   "MILK": 28193,
+   "STRAWBERRY": 19445,
+   "MELON": 13154,
+   "FERTILIZER": 9099,
+   "WHEAT": 8228,
+   "WOOL": 2708
+  },
+  "opp_wool_qty": 33,
+  "opp_milk_qty": 255,
+  "opp_last_wool_day": 28,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2,
+   "SHEEP": 1
+  },
+  "our_strand_value_latepx": 29
+ },
+ {
+  "file": "episode-105533344",
+  "seed": 779384347,
+  "our": 108367.0,
+  "opp": 1500.0,
+  "delta": 106867.0,
+  "wool_px_late": 3.2,
+  "milk_px_late": 7.8,
+  "wool_px_avg": 94.8,
+  "milk_px_avg": 102.1,
+  "straw_px_late": 265.5,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 85681,
+   "FERTILIZER": 17405,
+   "MELON": 17112,
+   "WHEAT": 16221,
+   "MILK": 14964,
+   "WOOL": 6970,
+   "CARROT": 843
+  },
+  "our_wool_qty": 266,
+  "our_milk_qty": 333,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "SHEEP": 4,
+   "COW": 6
+  },
+  "opp_rev": {
+   "FERTILIZER": 9434,
+   "MILK": 6588,
+   "WHEAT": 4415,
+   "WOOL": 4271,
+   "STRAWBERRY": 3758
+  },
+  "opp_wool_qty": 26,
+  "opp_milk_qty": 48,
+  "opp_last_wool_day": 14,
+  "opp_last_milk_day": 17,
+  "our_end_shed": {},
+  "our_strand_value_latepx": 0
+ },
+ {
+  "file": "episode-105531624",
+  "seed": 1519663159,
+  "our": 137639.0,
+  "opp": 30313.0,
+  "delta": 107326.0,
+  "wool_px_late": 167.3,
+  "milk_px_late": 4.8,
+  "wool_px_avg": 199.7,
+  "milk_px_avg": 97.0,
+  "straw_px_late": 248.3,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 84193,
+   "WOOL": 50328,
+   "WHEAT": 17940,
+   "MELON": 17112,
+   "FERTILIZER": 14714,
+   "MILK": 13149,
+   "CARROT": 788
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {
+   "COW": 8,
+   "SHEEP": 5,
+   "GOOSE": 2
+  },
+  "opp_rev": {
+   "WOOL": 22031,
+   "FERTILIZER": 15490,
+   "MILK": 8461,
+   "STRAWBERRY": 5614,
+   "EGG": 3404,
+   "MELON": 2514,
+   "WHEAT": 2176,
+   "CARROT": 345
+  },
+  "opp_wool_qty": 113,
+  "opp_milk_qty": 209,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2
+  },
+  "our_strand_value_latepx": 3
+ },
+ {
+  "file": "episode-105551839",
+  "seed": 103116946,
+  "our": 140979.0,
+  "opp": 2985.0,
+  "delta": 137994.0,
+  "wool_px_late": 239.9,
+  "milk_px_late": 23.8,
+  "wool_px_avg": 200.9,
+  "milk_px_avg": 103.7,
+  "straw_px_late": 212.5,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "STRAWBERRY": 75228,
+   "WOOL": 53525,
+   "FERTILIZER": 23422,
+   "MILK": 17988,
+   "MELON": 16872,
+   "WHEAT": 14777,
+   "CARROT": 731
+  },
+  "our_wool_qty": 266,
+  "our_milk_qty": 333,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {},
+  "opp_rev": {
+   "STRAWBERRY": 57762,
+   "WOOL": 27831,
+   "FERTILIZER": 21896,
+   "MILK": 17112,
+   "MELON": 16854,
+   "WHEAT": 16506,
+   "CARROT": 627
+  },
+  "opp_wool_qty": 138,
+  "opp_milk_qty": 270,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {},
+  "our_strand_value_latepx": 0
+ },
+ {
+  "file": "episode-105547121",
+  "seed": 1049394413,
+  "our": 170071.0,
+  "opp": 4.0,
+  "delta": 170067.0,
+  "wool_px_late": 146.2,
+  "milk_px_late": 267.6,
+  "wool_px_avg": 154.7,
+  "milk_px_avg": 231.0,
+  "straw_px_late": 189.8,
+  "our_animals": {
+   "SHEEP": 8,
+   "COW": 9
+  },
+  "our_rev": {
+   "MILK": 82686,
+   "STRAWBERRY": 68800,
+   "WOOL": 28328,
+   "FERTILIZER": 23874,
+   "MELON": 17112,
+   "WHEAT": 16349,
+   "CARROT": 621
+  },
+  "our_wool_qty": 262,
+  "our_milk_qty": 330,
+  "our_last_wool_day": 29,
+  "our_last_milk_day": 29,
+  "opp_animals": {},
+  "opp_rev": {
+   "MILK": 195637,
+   "STRAWBERRY": 152134,
+   "MELON": 133112,
+   "WOOL": 110950,
+   "FERTILIZER": 44028,
+   "WHEAT": 40314,
+   "CARROT": 23102
+  },
+  "opp_wool_qty": 717,
+  "opp_milk_qty": 740,
+  "opp_last_wool_day": 29,
+  "opp_last_milk_day": 29,
+  "our_end_shed": {
+   "FERTILIZER": 2,
+   "SHEEP": 1
+  },
+  "our_strand_value_latepx": 90
+ }
+]

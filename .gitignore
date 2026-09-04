@@ -34,3 +34,8 @@ results/live_lists/
 
 # Transient error capture from a failed inline python -c run
 notebook_full.txt
+
+# v29 session live replays (~1.1GB, re-downloadable from Kaggle CLI)
+results/v28b_loss_replays/
+results/v28b_contrast/
+results/live_v28b_episodes/
