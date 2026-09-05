@@ -1,0 +1,118 @@
+{
+  "candidate": "agents.v33_shields",
+  "label": "v33_shields",
+  "seeds": [
+    314159,
+    2718281,
+    1414213,
+    1732050,
+    2236067,
+    2645751,
+    3162277,
+    3245553,
+    3316624,
+    3464101,
+    3588989,
+    3660254,
+    2426406,
+    2469507,
+    2549509,
+    2641391,
+    2745995,
+    2871778
+  ],
+  "seed_pool": "FRESH_SEEDS (disjoint from original 8 gate)",
+  "opponents_arg": "all",
+  "summary": {
+    "champ_v15": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 31339.833333333332,
+      "min_delta": 19073.0,
+      "max_delta": 39536.0
+    },
+    "salemali7_3k": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 31229.333333333332,
+      "min_delta": 18861.0,
+      "max_delta": 39365.0
+    },
+    "v14_tweaked": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 31275.944444444445,
+      "min_delta": 19219.0,
+      "max_delta": 39285.0
+    },
+    "v14_v26style": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 31406.38888888889,
+      "min_delta": 19232.0,
+      "max_delta": 39529.0
+    },
+    "v17_apex": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 31414.38888888889,
+      "min_delta": 19174.0,
+      "max_delta": 39766.0
+    },
+    "v18_apexx": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 161085.80555555556,
+      "min_delta": 120547.0,
+      "max_delta": 194968.0
+    },
+    "v22_romanrozen": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 32147.833333333332,
+      "min_delta": 17549.0,
+      "max_delta": 40499.0
+    },
+    "v23_kaito": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 33694.333333333336,
+      "min_delta": 21361.0,
+      "max_delta": 42626.0
+    },
+    "v26_aggr": {
+      "games": 36,
+      "wins": 36,
+      "losses": 0,
+      "ties": 0,
+      "win_rate": 100.0,
+      "mean_delta": 34902.61111111111,
+      "min_delta": 21728.0,
+      "max_delta": 44922.0
+    }
+  }
+}
