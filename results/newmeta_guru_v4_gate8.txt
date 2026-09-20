@@ -1,0 +1,47 @@
+ENGINE_ASSERT kaggle_environments=1.32.7 (required 1.32.7) OK
+ENGINE_ASSERT hinge_shapes={'CARROT': 'hinge', 'TOMATO': 'hinge', 'EGG': 'hinge'} T={'CARROT': 450, 'TOMATO': 200, 'EGG': 332} OK
+ENGINE_ASSERT townCenterSellInterval=24 (hinge-era config)
+ENGINE_ASSERT module=C:\Users\xxshi\Desktop\farmmasterV2\WybeV2\rank_env\Lib\site-packages\kaggle_environments\envs\kaggriculture\kaggriculture.py
+ENGINE_ASSERT RESULT=PASS
+
+============================================================================
+DIAG BENCH SEED-LIST: pub_2945farm.py vs pub_guru_v4.py (interval=24)
+Seeds: 8 x 2 seats = 16 games | Ok: 16 | Errs: 0 | Time: 77.1s
+  pub_2945farm.py: 0 W (0.0%), 16 L, 0 T | seed-level: 0W/8L/0T
+  Mean Delta: -116 | Median: -88 | Min: -392 | Max: -50
+  pub_2945farm.py Avg: 87688 | pub_guru_v4.py Avg: 87804
+  -- per-game (seed, swap, a, b, delta) --
+    seed=1000000 swap=0  a=  81262  b=  81365  d=  -103
+    seed=1000000 swap=1  a=  81262  b=  81365  d=  -103
+    seed=2000000 swap=0  a=  74988  b=  75380  d=  -392
+    seed=2000000 swap=1  a=  74988  b=  75380  d=  -392
+    seed=3330000 swap=0  a=  80402  b=  80452  d=   -50
+    seed=3330000 swap=1  a=  80402  b=  80452  d=   -50
+    seed=5000000 swap=0  a=  74431  b=  74540  d=  -109
+    seed=5000000 swap=1  a=  74431  b=  74540  d=  -109
+    seed=6000000 swap=0  a=  85388  b=  85473  d=   -85
+    seed=6000000 swap=1  a=  85388  b=  85473  d=   -85
+    seed=7770000 swap=0  a= 118438  b= 118488  d=   -50
+    seed=7770000 swap=1  a= 118438  b= 118488  d=   -50
+    seed=8000000 swap=0  a= 112562  b= 112612  d=   -50
+    seed=8000000 swap=1  a= 112562  b= 112612  d=   -50
+    seed=9000000 swap=0  a=  74029  b=  74121  d=   -92
+    seed=9000000 swap=1  a=  74029  b=  74121  d=   -92
+  -- LOSES (a < b), most-negative first:
+    seed=2000000 swap=0  a=  74988  b=  75380  d=  -392
+    seed=2000000 swap=1  a=  74988  b=  75380  d=  -392
+    seed=5000000 swap=0  a=  74431  b=  74540  d=  -109
+    seed=5000000 swap=1  a=  74431  b=  74540  d=  -109
+    seed=1000000 swap=0  a=  81262  b=  81365  d=  -103
+    seed=1000000 swap=1  a=  81262  b=  81365  d=  -103
+    seed=9000000 swap=0  a=  74029  b=  74121  d=   -92
+    seed=9000000 swap=1  a=  74029  b=  74121  d=   -92
+    seed=6000000 swap=0  a=  85388  b=  85473  d=   -85
+    seed=6000000 swap=1  a=  85388  b=  85473  d=   -85
+    seed=3330000 swap=0  a=  80402  b=  80452  d=   -50
+    seed=3330000 swap=1  a=  80402  b=  80452  d=   -50
+    seed=7770000 swap=0  a= 118438  b= 118488  d=   -50
+    seed=7770000 swap=1  a= 118438  b= 118488  d=   -50
+    seed=8000000 swap=0  a= 112562  b= 112612  d=   -50
+    seed=8000000 swap=1  a= 112562  b= 112612  d=   -50
+============================================================================

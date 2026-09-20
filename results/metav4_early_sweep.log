@@ -1,0 +1,26 @@
+=== engine asserted 14:07:41 ===
+ENGINE_ASSERT RESULT=PASS
+=== composite_early SKIP(done)
+=== fleet_demand_timing START 14:07:41
+Seeds: 8 x 2 seats = 16 games | Ok: 16 | Errs: 0 | Time: 33.0s
+  pub_metav4.py: 16 W (100.0%), 0 L, 0 T | seed-level: 8W/0L/0T
+  Mean Delta: +862 | Median: +758 | Min: +338 | Max: +1677
+=== fleet_demand_timing END 14:08:14
+=== fleet_salem_2900 START 14:08:14
+Seeds: 8 x 2 seats = 16 games | Ok: 16 | Errs: 0 | Time: 29.5s
+  pub_metav4.py: 16 W (100.0%), 0 L, 0 T | seed-level: 8W/0L/0T
+  Mean Delta: +29986 | Median: +25671 | Min: +16997 | Max: +50141
+=== fleet_salem_2900 END 14:08:44
+=== fleet_moryield START 14:08:44
+Seeds: 8 x 2 seats = 16 games | Ok: 16 | Errs: 0 | Time: 31.4s
+  pub_metav4.py: 16 W (100.0%), 0 L, 0 T | seed-level: 8W/0L/0T
+  Mean Delta: +5652 | Median: +5301 | Min: +2804 | Max: +10671
+=== fleet_moryield END 14:09:16
+=== fleet_v48queue START 14:09:16
+Seeds: 8 x 2 seats = 16 games | Ok: 16 | Errs: 0 | Time: 32.0s
+  pub_metav4.py: 16 W (100.0%), 0 L, 0 T | seed-level: 8W/0L/0T
+  Mean Delta: +2610 | Median: +2210 | Min: +919 | Max: +4786
+=== fleet_v48queue END 14:09:48
+3023521175bf598965eed5759f756802 *agents/pub_metav4.py
+ca0132cad977506a39a1a850f26e53fe *agents/pub_2945farm.py
+DONE

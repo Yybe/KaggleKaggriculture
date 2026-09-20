@@ -1,0 +1,31 @@
+=== engine asserted ===
+ENGINE_ASSERT kaggle_environments=1.32.7 (required 1.32.7) OK
+ENGINE_ASSERT hinge_shapes={'CARROT': 'hinge', 'TOMATO': 'hinge', 'EGG': 'hinge'} T={'CARROT': 450, 'TOMATO': 200, 'EGG': 332} OK
+ENGINE_ASSERT townCenterSellInterval=24 (hinge-era config)
+ENGINE_ASSERT module=C:\Users\xxshi\Desktop\farmmasterV2\WybeV2\rank_env\Lib\site-packages\kaggle_environments\envs\kaggriculture\kaggriculture.py
+ENGINE_ASSERT RESULT=PASS
+=== 2950peak START 13:40:50
+  pub_2945farm.py: 0 W (0.0%), 16 L, 0 T | seed-level: 0W/8L/0T
+  Mean Delta: -50 | Median: -50 | Min: -50 | Max: -50
+=== 2950peak END 13:41:50
+=== metav4 START 13:41:51
+  pub_2945farm.py: 0 W (0.0%), 16 L, 0 T | seed-level: 0W/8L/0T
+  Mean Delta: -731 | Median: -370 | Min: -1640 | Max: -256
+=== metav4 END 13:42:45
+=== guru_v4 START 13:42:46
+  pub_2945farm.py: 0 W (0.0%), 16 L, 0 T | seed-level: 0W/8L/0T
+  Mean Delta: -116 | Median: -88 | Min: -392 | Max: -50
+=== guru_v4 END 13:44:04
+=== v50yarn START 13:44:05
+  pub_2945farm.py: 10 W (62.5%), 6 L, 0 T | seed-level: 5W/3L/0T
+  Mean Delta: +315 | Median: +471 | Min: -407 | Max: +1005
+=== v50yarn END 13:45:18
+=== melon2749 START 13:45:18
+  pub_2945farm.py: 16 W (100.0%), 0 L, 0 T | seed-level: 8W/0L/0T
+  Mean Delta: +2713 | Median: +1778 | Min: +961 | Max: +7246
+=== melon2749 END 13:46:24
+=== day6herd START 13:46:24
+  pub_2945farm.py: 16 W (100.0%), 0 L, 0 T | seed-level: 8W/0L/0T
+  Mean Delta: +2015 | Median: +1438 | Min: +864 | Max: +4009
+=== day6herd END 13:47:34
+DONE

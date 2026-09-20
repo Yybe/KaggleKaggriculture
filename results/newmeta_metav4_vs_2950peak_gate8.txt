@@ -1,0 +1,30 @@
+ENGINE_ASSERT kaggle_environments=1.32.7 (required 1.32.7) OK
+ENGINE_ASSERT hinge_shapes={'CARROT': 'hinge', 'TOMATO': 'hinge', 'EGG': 'hinge'} T={'CARROT': 450, 'TOMATO': 200, 'EGG': 332} OK
+ENGINE_ASSERT townCenterSellInterval=24 (hinge-era config)
+ENGINE_ASSERT module=C:\Users\xxshi\Desktop\farmmasterV2\WybeV2\rank_env\Lib\site-packages\kaggle_environments\envs\kaggriculture\kaggriculture.py
+ENGINE_ASSERT RESULT=PASS
+
+============================================================================
+DIAG BENCH SEED-LIST: pub_metav4.py vs pub_2950peak.py (interval=24)
+Seeds: 8 x 2 seats = 16 games | Ok: 16 | Errs: 0 | Time: 59.7s
+  pub_metav4.py: 16 W (100.0%), 0 L, 0 T | seed-level: 8W/0L/0T
+  Mean Delta: +684 | Median: +324 | Min: +205 | Max: +1592
+  pub_metav4.py Avg: 87810 | pub_2950peak.py Avg: 87126
+  -- per-game (seed, swap, a, b, delta) --
+    seed=1000000 swap=0  a=  81196  b=  80949  d=  +247
+    seed=1000000 swap=1  a=  81196  b=  80949  d=  +247
+    seed=2000000 swap=0  a=  74964  b=  73652  d= +1312
+    seed=2000000 swap=1  a=  74964  b=  73652  d= +1312
+    seed=3330000 swap=0  a=  80029  b=  79824  d=  +205
+    seed=3330000 swap=1  a=  80029  b=  79824  d=  +205
+    seed=5000000 swap=0  a=  74993  b=  73401  d= +1592
+    seed=5000000 swap=1  a=  74993  b=  73401  d= +1592
+    seed=6000000 swap=0  a=  85719  b=  85442  d=  +277
+    seed=6000000 swap=1  a=  85719  b=  85442  d=  +277
+    seed=7770000 swap=0  a= 119167  b= 117913  d= +1254
+    seed=7770000 swap=1  a= 119167  b= 117913  d= +1254
+    seed=8000000 swap=0  a= 112381  b= 112011  d=  +370
+    seed=8000000 swap=1  a= 112381  b= 112011  d=  +370
+    seed=9000000 swap=0  a=  74035  b=  73817  d=  +218
+    seed=9000000 swap=1  a=  74035  b=  73817  d=  +218
+============================================================================
