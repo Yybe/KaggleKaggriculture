@@ -44,6 +44,7 @@ CHALLENGERS = {
     "kagman": BASE / "agents" / "e93_kagman" / "main.py",
     "kagmanp": BASE / "agents" / "e93a_kagman_parent" / "parent_agent.py",
     "omwc": BASE / "agents" / "pub_e94_omw_clean.py",
+    "r78ub": BASE / "agents" / "friend_r78ub.py",
 }
 # omw: == sha256 of the pulled submission.tar.gz payload (LEDGER E80); pipe16: == the
 # kernel's own EXPECTED_SHA256 for the embedded gzip+base64 main.py.
@@ -55,6 +56,8 @@ CHAL_SHA256 = {
     "kagmanp": "d6d74997dc5b483db63d8e39cafa1afeec0f366824e75107e109123f111e866b",
     # e94: locally built (tools/build_e94_omw_clean.py), not a public payload — pinned at build.
     "omwc": "20b5cdbd1775dddf42f5e8ad2fc2e2969816607d0a72f51bf2a5645ed496a166",
+    # friend r78ub: E94 base with _ALT_MODE='EarlyCycle' (raw OMW opening surgery).
+    "r78ub": "0f62d6f57bbc7041e5904502aa412523a47146b86b049ae18fb8e49eeb665e15",
 }
 ERR_STATUS = ("ERROR", "INVALID", "TIMEOUT", "Error")
 
