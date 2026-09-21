@@ -150,6 +150,12 @@ The retune lifts V5's entire R2 profile by a constant ≈ +136.5: the same two w
 
 ## 5. Status
 
+**Cleanup (same day):** the 14 `agents/pub_e101t_*.py` sweep files, `pub_e101_apex_layers.py` and
+`pub_e102_v5_f90.py` were deleted — 15 MB of ~1 MB-each copies that all gate below or equal to V5.
+Regenerate any of them with `python tools/build_e101t_variants.py <tag>` / `build_e102_v5_tuned.py`.
+Only `agents/pub_e103_v5_full.py` is kept as a live artifact. Sweep ledgers remain in
+`results/e101t_{r1,r2,fresh}.txt`.
+
 - **Top local agent: `agents/pub_e103_v5_full.py`** (V5 spine + retuned floors + pasture fix).
   It is V5 weakly-dominant: 0 losses on R1/R2/R3, +138.1 on R2, +2,676 on the defect seed,
   −126 on one Fresh seed.

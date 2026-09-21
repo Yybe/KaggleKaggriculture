@@ -1,0 +1,7 @@
+=== pub_e103_v5_full.py vs pub_apex_v5.py (seats balanced per seed) ===
+r1     n=16  0W/0L/8T  mean      +0.0
+       per-seed deltas: +0, +0, +0, +0, +0, +0, +0, +0
+r2     n=16  2W/0L/6T  mean    +138.1
+       per-seed deltas: +0, +0, +0, +0, +0, +0, +382, +723
+fresh  n=32  0W/1L/15T  mean      -7.9
+       per-seed deltas: -126, +0, +0, +0, +0, +0, +0, +0, +0, +0, +0, +0, +0, +0, +0, +0

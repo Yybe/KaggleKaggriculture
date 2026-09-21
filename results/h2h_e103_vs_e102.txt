@@ -1,0 +1,7 @@
+=== pub_e103_v5_full.py vs pub_e102_v5_f90.py (seats balanced per seed) ===
+r1     n=16  0W/0L/8T  mean      +0.0
+       per-seed deltas: +0, +0, +0, +0, +0, +0, +0, +0
+r2     n=16  0W/0L/8T  mean      +0.0
+       per-seed deltas: +0, +0, +0, +0, +0, +0, +0, +0
+fresh  n=32  0W/0L/16T  mean      +0.0
+       per-seed deltas: +0, +0, +0, +0, +0, +0, +0, +0, +0, +0, +0, +0, +0, +0, +0, +0
