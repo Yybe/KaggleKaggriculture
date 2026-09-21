@@ -102,17 +102,20 @@ constant line, so every gate delta is a pure floor ablation.
 | :--- | :--- | :--- | :--- |
 | `crop_roi30_h20.py` (~2700 band) | 8W/0L/0T +608.0 | **16W/0L/0T +67.7** | 0 |
 | `pub_farmer_john_v56.py` | 8W/0L/0T +587.9 | 12W/4L/0T +137.8 | 0 |
-| `pub_v54_productive.py` | — | 12W/4L/0T +141.7 | 0 |
-| `pub_one_more_wheat.py` | 8W/0L/0T +587.9 | 12W/4L/0T +141.7 | 0 |
-| `pub_metav4_early.py` | 8W/0L/0T +632.9 | 15W/1L/0T +170.5 | 0 |
+| `pub_v54_productive.py` | 8W/0L/0T +597.1 | 12W/4L/0T +141.7 | 0 |
+| `pub_one_more_wheat.py` | 8W/0L/0T +597.1 | 12W/4L/0T +141.7 | 0 |
+| `pub_metav4_early.py` | 8W/0L/0T +648.1 | 15W/1L/0T +170.5 | 0 |
 | `friend_r78ub.py` (2722 live) | 7W/1L/0T +31.0 | 11W/5L/0T +39.4 | 0 |
-| `pub_e94_omw_clean.py` | 7W/1L/0T +21.8 | 11W/5L/0T +39.4 | 0 |
-| `pub_e99_pasture_fix.py` | 7W/1L/0T +21.8 | 11W/5L/0T +35.5 | 0 |
-| `pub_2945farm.py` (mid ladder) | 8W/0L/0T +1255.6 (as `f90`) | — | 0 |
-| `pub_e67_yamakawa.py` | 8W/0L/0T +40,029.8 (as `f90`) | — | 0 |
+| `pub_e94_omw_clean.py` | 7W/1L/0T +31.0 | 11W/5L/0T +39.4 | 0 |
+| `pub_e99_pasture_fix.py` | 7W/1L/0T +31.0 | 11W/5L/0T +35.5 | 0 |
+| `pub_2945farm.py` (mid ladder) | 8W/0L/0T +1264.9 | — | 0 |
+| `pub_e67_yamakawa.py` | 8W/0L/0T +40,029.8 | — | 0 |
+| `pub_apex_v1.py` | 7W/1L/0T +21.8 | 11W/5L/0T +35.5 | 0 |
 | `pub_apex_v5.py` (same lineage) | 0W/0L/8T +0.0 | 0W/1L/15T −7.9 | **23/24** |
 
-Mid-ladder: every non-relative opponent is beaten with **zero ties** on both banks.
+Mid-ladder: every non-relative opponent is beaten with **zero ties** on both banks (12 opponents,
+`results/fleet_pub_e102_v5_f90_r1.txt` / `_fresh.txt`). `pub_e103_v5_full.py` reproduces E102's
+R1 rows exactly on the 4 opponents re-gated (`results/fleet_pub_e103_v5_full_r1.txt`).
 Vs its own lineage (V5) it ties by construction — the market layer only diverges where a floor binds.
 
 ---
