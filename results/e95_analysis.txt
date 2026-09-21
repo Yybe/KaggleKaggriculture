@@ -1,0 +1,75 @@
+
+== A. band stats: e94 ==
+band                  n  W  L  D   win%      mean    median
+floor                 8  8  0  0   100%    155209    153304
+<2400                16 16  0  0   100%     82305     78512
+2400-2600            16 16  0  0   100%      2518      1805
+2600-2800            24 24  0  0   100%      1116       660
+2650-2750 cluster    40 38  0  2    95%      1744      1311
+strong               16 16  0  0   100%    134400    137031
+top                  16 16  0  0   100%    155209    153304
+
+== A. band stats: r78u ==
+band                  n  W  L  D   win%      mean    median
+floor                 8  8  0  0   100%    155183    153276
+<2400                16 16  0  0   100%     82286     78495
+2400-2600            16 16  0  0   100%      2493      1787
+2600-2800            24 18  0  6    75%      1092       631
+2650-2750 cluster    40 36  2  2    90%      1712      1283
+strong               16 16  0  0   100%    134372    137002
+top                  16 16  0  0   100%    155183    153276
+
+== B. outcome transitions r78u -> E94 (same world) ==
+  D->W: 8
+  L->D: 2
+  W->W: 126
+  (n pairs = 136)
+  transitions detail:
+    h20           2600-2800       seed7770000 swap0  D->W  +0 -> +27  (+27)
+    h20           2600-2800       seed7770000 swap1  D->W  +0 -> +27  (+27)
+    h20           2600-2800       seed9000000 swap0  D->W  +0 -> +28  (+28)
+    h20           2600-2800       seed9000000 swap1  D->W  +0 -> +28  (+28)
+    metav4_early  2600-2800       seed9000000 swap0  D->W  +0 -> +28  (+28)
+    metav4_early  2600-2800       seed9000000 swap1  D->W  +0 -> +28  (+28)
+    omw_old       2650-2750 clusterseed9000000 swap0  L->D  -28 -> +0  (+28)
+    omw_old       2650-2750 clusterseed9000000 swap1  L->D  -28 -> +0  (+28)
+    pipe16        2650-2750 clusterseed9000000 swap0  D->W  +0 -> +28  (+28)
+    pipe16        2650-2750 clusterseed9000000 swap1  D->W  +0 -> +28  (+28)
+
+== C. per-opponent mean margin, E94 - r78u ==
+opp             tier                n      r78u       E94      diff
+noop            floor               8    155183    155209       +26
+apexx           <2400               8    155183    155209       +26
+kagman_parent   <2400               8      9388      9402       +13
+farm2945        2400-2600           8      1445      1474       +28
+alperen         2400-2600           8      3541      3562       +22
+metav4          2600-2800           8      1142      1160       +18
+metav4_early    2600-2800           8      1082      1110       +28
+h20             2600-2800           8      1050      1079       +28
+pipe16          2650-2750 cluster   8      1082      1110       +28
+peak2950        2650-2750 cluster   8      1395      1424       +28
+farm2945v2      2650-2750 cluster   8      1142      1160       +18
+v44y4           2650-2750 cluster   8      3888      3943       +55
+omw_old         2650-2750 cluster   8      1054      1082       +28
+salem2900       strong              8    155183    155209       +26
+tamura          strong              8    113561    113592       +31
+boatlee29       top                 8    155183    155209       +26
+salem3094       top                 8    155183    155209       +26
+
+== C2. band-level mean margin diff ==
+  floor                n=  8  r78u   +155183  E94   +155209  diff       +26
+  <2400                n= 16  r78u    +82286  E94    +82305  diff       +20
+  2400-2600            n= 16  r78u     +2493  E94     +2518  diff       +25
+  2600-2800            n= 24  r78u     +1092  E94     +1116  diff       +25
+  2650-2750 cluster    n= 40  r78u     +1712  E94     +1744  diff       +31
+  strong               n= 16  r78u   +134372  E94   +134400  diff       +29
+  top                  n= 16  r78u   +155183  E94   +155209  diff       +26
+
+== D. first divergence step (E94 vs r78u action hash chain, same world) ==
+  step 0: 136 worlds
+
+== E. regressions (r78u W -> E94 L/D) ==
+  none
+
+== F. E94 losses in low bands (<2600) ==
+  none
