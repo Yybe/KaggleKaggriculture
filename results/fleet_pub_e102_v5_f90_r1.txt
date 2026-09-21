@@ -1,0 +1,12 @@
+FLEET pub_apex_v5.py               r1      0W/0L/8T mean      +0.0  +0, +0, +0, +0, +0, +0, +0, +0
+FLEET pub_apex_v1.py               r1      7W/1L/0T mean     +21.8  -6, +2, +4, +7, +11, +12, +16, +128
+FLEET friend_r78ub.py              r1      7W/1L/0T mean     +31.0  -6, +2, +4, +7, +11, +12, +16, +202
+FLEET crop_roi30_h20.py            r1      8W/0L/0T mean    +608.0  +21, +30, +38, +40, +50, +415, +1117, +3153
+FLEET pub_farmer_john_v56.py       r1      8W/0L/0T mean    +587.9  +11, +12, +16, +117, +128, +200, +1093, +3126
+FLEET pub_v54_productive.py        r1      8W/0L/0T mean    +597.1  +11, +12, +16, +117, +200, +202, +1093, +3126
+FLEET pub_one_more_wheat.py        r1      8W/0L/0T mean    +597.1  +11, +12, +16, +117, +200, +202, +1093, +3126
+FLEET pub_metav4_early.py          r1      8W/0L/0T mean    +648.1  +38, +40, +50, +145, +227, +415, +1117, +3153
+FLEET pub_e94_omw_clean.py         r1      7W/1L/0T mean     +31.0  -6, +2, +4, +7, +11, +12, +16, +202
+FLEET pub_e99_pasture_fix.py       r1      7W/1L/0T mean     +31.0  -6, +2, +4, +7, +11, +12, +16, +202
+FLEET pub_2945farm.py              r1      8W/0L/0T mean   +1264.9  +352, +413, +528, +1296, +1526, +1559, +1963, +2482
+FLEET pub_e67_yamakawa.py          r1      8W/0L/0T mean  +40029.8  +24590, +30490, +34584, +35339, +38647, +39551, +50696, +66342
