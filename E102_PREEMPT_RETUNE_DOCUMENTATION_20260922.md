@@ -120,7 +120,35 @@ Vs its own lineage (V5) it ties by construction — the market layer only diverg
 
 ---
 
-## 4. Status
+## 4. Paired R2 comparison — Apex V5 measured today, same bank, same harness
+
+`results/fleet_V5_r2_measured.txt` (reproduces the V5 doc exactly) vs
+`results/fleet_pub_e103_v5_full_r2.txt`:
+
+| R2 opponent (16 games) | `pub_apex_v5.py` | `pub_e103_v5_full.py` | delta |
+| :--- | :--- | :--- | :--- |
+| `pub_apex_v1.py` | 5W/3L/0T −54.2 | **7W/1L/0T +82.2** | +136.4 |
+| `friend_r78ub.py` | 5W/3L/0T −53.4 | **7W/1L/0T +83.1** | +136.5 |
+| `pub_e94_omw_clean.py` | 5W/3L/0T −53.4 | **7W/1L/0T +83.1** | +136.5 |
+| `crop_roi30_h20.py` | 6W/2L/0T −25.8 | **8W/0L/0T +110.7** | +136.5 |
+| `pub_farmer_john_v56.py` | 5W/3L/0T +43.9 | **7W/1L/0T +180.4** | +136.5 |
+
+The retune lifts V5's entire R2 profile by a constant ≈ +136.5: the same two worlds
+(−592, −265) flip to wins. V5 loses R2 against every 2700-band opponent; E103 loses R2 against none.
+
+### Direct `pub_e103_v5_full.py` vs `pub_apex_v5.py`, every bank
+
+| Bank | Record | mean |
+| :--- | :--- | :--- |
+| R1 (8 seeds) | 0W/0L/8T | +0.0 |
+| R2 (8 seeds) | 2W/0L/6T | +138.1 |
+| Fresh (16 seeds) | 0W/1L/15T | −7.9 |
+| R3 untuned (16 seeds, E102) | 0W/0L/16T | +0.0 |
+| R4 disjoint untuned (16 seeds) | 0W/0L/16T | +0.0 |
+| Defect seed 1898931754 | 1W/0L/0T | +2,675.5 |
+| **Total, 65 seeds** | **4W/1L/61T** | **+3,654 summed seed-delta** |
+
+## 5. Status
 
 - **Top local agent: `agents/pub_e103_v5_full.py`** (V5 spine + retuned floors + pasture fix).
   It is V5 weakly-dominant: 0 losses on R1/R2/R3, +138.1 on R2, +2,676 on the defect seed,
