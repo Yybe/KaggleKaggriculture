@@ -1,0 +1,39 @@
+episode 111594513 seed 109727367 names ['Ebi', 'Shivam_2212'] rewards [111857.0, 94460.0]
+
+=== seat 0 Ebi ===
+money curve day-end: [(0, 3000.0), (5, 2760.0), (6, 775.0), (7, 3071.0), (8, 809.0), (14, 12261.0), (15, 23760.0), (17, 31848.0), (18, 40025.0), (19, 48659.0), (20, 50670.0), (22, 58223.0), (24, 68541.0), (25, 74402.0), (26, 79366.0), (27, 87694.0), (28, 93439.0)]
+final money 111857.0
+approx SELL revenue total 403,112
+  WHEAT        qty    6718  revenue    284,541  avg px    42.4
+  MILK         qty     324  revenue     56,490  avg px   174.4
+  FERTILIZER   qty     257  revenue     12,333  avg px    48.0
+  MELON        qty      84  revenue     11,694  avg px   139.2
+  TOMATO       qty     144  revenue     11,400  avg px    79.2
+  STRAWBERRY   qty     158  revenue     11,297  avg px    71.5
+  CARROT       qty     155  revenue      6,636  avg px    42.8
+  EGG          qty     101  revenue      4,497  avg px    44.5
+  WOOL         qty      48  revenue      4,224  avg px    88.0
+buy spend: {'WHEAT': 297107, 'CARROT': 1984, 'MELON': 3495, 'STRAWBERRY': 3235, 'TOMATO': 1226, 'FERTILIZER': 547}
+  WOOL sell-day histogram: {7: 1, 10: 1, 13: 1, 15: 1, 18: 1, 19: 1, 21: 1, 22: 1, 25: 1, 28: 1}
+  MILK sell-day histogram: {8: 1, 10: 2, 13: 1, 15: 1, 16: 1, 17: 1, 18: 4, 19: 1, 20: 3, 21: 1, 22: 5, 23: 1, 24: 3, 25: 3, 26: 4, 27: 3, 28: 3, 29: 3}
+  STRAWBERRY sell-day histogram: {15: 1, 16: 1, 17: 3, 18: 2, 19: 1, 20: 2, 21: 2, 22: 2, 23: 2, 24: 2, 25: 1, 26: 1, 28: 1}
+  WHEAT sell-day histogram: {4: 4, 5: 1, 8: 1, 9: 1, 11: 1, 12: 5, 13: 5, 14: 5, 15: 5, 16: 5, 17: 1, 18: 5, 19: 6, 20: 5, 21: 5, 22: 5, 23: 6, 24: 5, 25: 7, 26: 7, 27: 8, 28: 6, 29: 8}
+
+=== seat 1 Shivam_2212 ===
+money curve day-end: [(0, 3000.0), (9, 1602.0), (15, 28551.0), (18, 44106.0), (22, 53267.0), (23, 57130.0), (28, 76795.0), (29, 84041.0)]
+final money 94460.0
+approx SELL revenue total 137,089
+  MILK         qty     281  revenue     47,670  avg px   169.6
+  WHEAT        qty     450  revenue     18,833  avg px    41.9
+  MELON        qty      72  revenue     17,112  avg px   237.7
+  FERTILIZER   qty     356  revenue     16,844  avg px    47.3
+  STRAWBERRY   qty     301  revenue     15,028  avg px    49.9
+  WOOL         qty     140  revenue      6,576  avg px    47.0
+  TOMATO       qty      80  revenue      6,338  avg px    79.2
+  CARROT       qty     106  revenue      4,724  avg px    44.6
+  EGG          qty      91  revenue      3,964  avg px    43.6
+buy spend: {'WHEAT': 11008, 'MELON': 3072, 'STRAWBERRY': 5311, 'CARROT': 1623, 'FERTILIZER': 3679, 'TOMATO': 740}
+  WOOL sell-day histogram: {6: 3, 7: 2, 9: 2, 12: 1, 14: 2, 15: 2, 16: 2, 17: 1, 18: 3, 19: 3, 20: 1, 21: 1, 22: 1, 23: 1, 24: 4, 25: 1, 26: 1, 27: 1, 28: 1, 29: 4}
+  MILK sell-day histogram: {8: 1, 10: 2, 11: 2, 12: 1, 13: 3, 14: 4, 15: 4, 16: 3, 17: 1, 18: 2, 19: 2, 20: 3, 21: 1, 22: 3, 23: 2, 24: 1, 25: 1, 26: 1, 27: 3, 28: 4, 29: 2}
+  STRAWBERRY sell-day histogram: {15: 1, 16: 3, 17: 3, 18: 2, 19: 3, 20: 4, 21: 5, 22: 4, 23: 9, 24: 5, 25: 5, 26: 1, 27: 1, 28: 2}
+  WHEAT sell-day histogram: {0: 1, 2: 1, 3: 5, 4: 1, 5: 1, 6: 1, 8: 2, 9: 2, 10: 2, 11: 2, 12: 2, 13: 2, 14: 1, 15: 2, 16: 1, 17: 1, 18: 3, 19: 2, 20: 1, 21: 2, 22: 3, 23: 3, 24: 2, 25: 3, 26: 2, 27: 4, 28: 4, 29: 10}
