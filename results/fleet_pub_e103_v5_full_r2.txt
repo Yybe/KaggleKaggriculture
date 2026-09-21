@@ -1,0 +1,6 @@
+FLEET pub_apex_v5.py               r2      2W/0L/6T mean    +138.1  +0, +0, +0, +0, +0, +0, +382, +723
+FLEET pub_apex_v1.py               r2      7W/1L/0T mean     +82.2  -2, +2, +2, +2, +5, +105, +130, +414
+FLEET friend_r78ub.py              r2      7W/1L/0T mean     +83.1  -2, +2, +2, +5, +9, +105, +130, +414
+FLEET crop_roi30_h20.py            r2      8W/0L/0T mean    +110.7  +25, +29, +31, +32, +36, +132, +159, +441
+FLEET pub_farmer_john_v56.py       r2      7W/1L/0T mean    +180.4  -2, +2, +50, +105, +130, +141, +187, +830
+FLEET pub_e94_omw_clean.py         r2      7W/1L/0T mean     +83.1  -2, +2, +2, +5, +9, +105, +130, +414
