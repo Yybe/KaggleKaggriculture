@@ -1,0 +1,33 @@
+ENGINE_ASSERT kaggle_environments=1.32.7 module=C:\Users\xxshi\Desktop\farmmasterV2\WybeV2\rank_env\Lib\site-packages\kaggle_environments\__init__.py
+ENGINE_ASSERT kaggriculture=C:\Users\xxshi\Desktop\farmmasterV2\WybeV2\rank_env\Lib\site-packages\kaggle_environments\envs\kaggriculture\kaggriculture.py HINGE_GAIN_in_source=True HINGE_GAIN=8.0
+ENGINE_ASSERT RESULT=PASS
+CHAMP_MD5 pre-import: 319aad8c48675c51432ccec8f35264b8 OK
+IMPORT pub_e94_omw_clean.py -> sys.modules['e80_chal_omwc'] (champion -> 'r78u_base_e80_omwc'), 0.2s
+CHAL_MD5 pub_e94_omw_clean.py: 398eadad5d61d54d6a2c5d6a30f93c18
+CHAMP_MD5 post-import: 319aad8c48675c51432ccec8f35264b8 OK
+ENGINE_ASSERT kaggle_environments=1.32.7 module=C:\Users\xxshi\Desktop\farmmasterV2\WybeV2\rank_env\Lib\site-packages\kaggle_environments\__init__.py
+ENGINE_ASSERT kaggriculture=C:\Users\xxshi\Desktop\farmmasterV2\WybeV2\rank_env\Lib\site-packages\kaggle_environments\envs\kaggriculture\kaggriculture.py HINGE_GAIN_in_source=True HINGE_GAIN=8.0
+ENGINE_ASSERT RESULT=PASS
+CHAMP_MD5 pre-import: 319aad8c48675c51432ccec8f35264b8 OK
+IMPORT pub_e94_omw_clean.py -> sys.modules['e80_chal_omwc'] (champion -> 'r78u_base_e80_omwc'), 0.1s
+CHAL_MD5 pub_e94_omw_clean.py: 398eadad5d61d54d6a2c5d6a30f93c18
+CHAMP_MD5 post-import: 319aad8c48675c51432ccec8f35264b8 OK
+# e80_gate8 challenger=omwc agent=pub_e94_omw_clean.py engine=1.32.7 interval=24 seeds=[1000000, 9000000, 3330000, 7770000, 5000000, 6000000, 8000000, 2000000]
+GAME seed=1000000 swap=0 chal=83997 base=83969 delta=+28 cstatus=DONE bstatus=DONE secs=8.9 
+GAME seed=1000000 swap=1 chal=83997 base=83969 delta=+28 cstatus=DONE bstatus=DONE secs=8.0 
+GAME seed=9000000 swap=0 chal=73838 base=73810 delta=+28 cstatus=DONE bstatus=DONE secs=7.9 
+GAME seed=9000000 swap=1 chal=73838 base=73810 delta=+28 cstatus=DONE bstatus=DONE secs=8.0 
+GAME seed=3330000 swap=0 chal=79107 base=79079 delta=+28 cstatus=DONE bstatus=DONE secs=8.3 
+GAME seed=3330000 swap=1 chal=79107 base=79079 delta=+28 cstatus=DONE bstatus=DONE secs=8.5 
+GAME seed=7770000 swap=0 chal=119362 base=119335 delta=+27 cstatus=DONE bstatus=DONE secs=8.1 
+GAME seed=7770000 swap=1 chal=119362 base=119335 delta=+27 cstatus=DONE bstatus=DONE secs=8.1 
+GAME seed=5000000 swap=0 chal=74263 base=74235 delta=+28 cstatus=DONE bstatus=DONE secs=7.8 
+GAME seed=5000000 swap=1 chal=74263 base=74235 delta=+28 cstatus=DONE bstatus=DONE secs=7.8 
+GAME seed=6000000 swap=0 chal=85710 base=85682 delta=+28 cstatus=DONE bstatus=DONE secs=8.1 
+GAME seed=6000000 swap=1 chal=85710 base=85682 delta=+28 cstatus=DONE bstatus=DONE secs=8.1 
+GAME seed=8000000 swap=0 chal=112665 base=112638 delta=+27 cstatus=DONE bstatus=DONE secs=8.4 
+GAME seed=8000000 swap=1 chal=112665 base=112638 delta=+27 cstatus=DONE bstatus=DONE secs=8.4 
+GAME seed=2000000 swap=0 chal=75220 base=75193 delta=+27 cstatus=DONE bstatus=DONE secs=7.9 
+GAME seed=2000000 swap=1 chal=75220 base=75193 delta=+27 cstatus=DONE bstatus=DONE secs=7.9 
+TOTAL e80_omwc vs r78u: W16/L0/T0 mean +28 games=16
+CHAMP_MD5 end: 319aad8c48675c51432ccec8f35264b8 OK
