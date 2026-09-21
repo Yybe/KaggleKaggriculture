@@ -1,0 +1,16 @@
+{"arm": "e94", "tag": "pub_e80_pipe16", "seed": 1000000, "swap": 0, "delta": 1117.0, "our": 82765.0, "opp": 81648.0, "crash": null}
+{"arm": "r78ub", "tag": "pub_e80_pipe16", "seed": 1000000, "swap": 0, "delta": 1117.0, "our": 82765.0, "opp": 81648.0, "crash": null}
+{"arm": "e94", "tag": "pub_e80_pipe16", "seed": 1000000, "swap": 1, "delta": 1117.0, "our": 82765.0, "opp": 81648.0, "crash": null}
+{"arm": "r78ub", "tag": "pub_e80_pipe16", "seed": 1000000, "swap": 1, "delta": 1117.0, "our": 82765.0, "opp": 81648.0, "crash": null}
+{"arm": "e94", "tag": "pub_e80_pipe16", "seed": 9000000, "swap": 0, "delta": 28.0, "our": 73838.0, "opp": 73810.0, "crash": null}
+{"arm": "r78ub", "tag": "pub_e80_pipe16", "seed": 9000000, "swap": 0, "delta": 28.0, "our": 73838.0, "opp": 73810.0, "crash": null}
+{"arm": "e94", "tag": "pub_e80_pipe16", "seed": 9000000, "swap": 1, "delta": 28.0, "our": 73838.0, "opp": 73810.0, "crash": null}
+{"arm": "r78ub", "tag": "pub_e80_pipe16", "seed": 9000000, "swap": 1, "delta": 28.0, "our": 73838.0, "opp": 73810.0, "crash": null}
+{"arm": "e94", "tag": "pub_e80_pipe16", "seed": 7770000, "swap": 0, "delta": 151.0, "our": 119495.0, "opp": 119344.0, "crash": null}
+{"arm": "r78ub", "tag": "pub_e80_pipe16", "seed": 7770000, "swap": 0, "delta": 151.0, "our": 119495.0, "opp": 119344.0, "crash": null}
+{"arm": "e94", "tag": "pub_e80_pipe16", "seed": 7770000, "swap": 1, "delta": 151.0, "our": 119495.0, "opp": 119344.0, "crash": null}
+{"arm": "r78ub", "tag": "pub_e80_pipe16", "seed": 7770000, "swap": 1, "delta": 151.0, "our": 119495.0, "opp": 119344.0, "crash": null}
+{"arm": "e94", "tag": "pub_e80_pipe16", "seed": 3330000, "swap": 0, "delta": 3143.0, "our": 83710.0, "opp": 80567.0, "crash": null}
+{"arm": "r78ub", "tag": "pub_e80_pipe16", "seed": 3330000, "swap": 0, "delta": 3143.0, "our": 83710.0, "opp": 80567.0, "crash": null}
+{"arm": "e94", "tag": "pub_e80_pipe16", "seed": 3330000, "swap": 1, "delta": 3143.0, "our": 83710.0, "opp": 80567.0, "crash": null}
+{"arm": "r78ub", "tag": "pub_e80_pipe16", "seed": 3330000, "swap": 1, "delta": 3143.0, "our": 83710.0, "opp": 80567.0, "crash": null}
