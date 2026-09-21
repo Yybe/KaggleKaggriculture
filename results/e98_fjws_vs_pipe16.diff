@@ -1,0 +1,231 @@
+0a1,2
+> # Strategy: Use the inspected Pipe-16 HybridOpening controller. Reassign idle workers during the first three days to plant, water and harvest one temporary wheat crop, then restore the planned pasture and deliver the wheat. Preserve the public Metav4 production and market controller. This is attributed reuse, and its stronger public source still needs live confirmation. Disable optional environment-dependent external library loading so the archive is self-contained.
+> # Local packaging modifications, 2026-09-20. Original attribution retained.
+3587c3589
+<         path = _v92_os.environ.get("V92_SELL_LIB")
+---
+>         path = None  # Frozen offline build: no environment-dependent external library.
+6590a6593,6815
+> 
+> kaggle_submission_agent = agent
+> 
+> 
+> # Apache-2.0. Dmitrii Gluzdov: mature the temporary wheat one extra day.
+> _CL_INSTALL = _alt_install
+> _CL_REPORT = dict(cl_harvested=0, cl_pasture=0, cl_delivered=0, cl_errors=0)
+> 
+> def _alt_install(mode):
+>     _CL_INSTALL(mode)
+>     if mode not in ('EarlyCycle','HybridOpening'):
+>         return
+>     tape = _IMPL.chassis.routes[0]
+>     # Day-two watering remains at52; wait one more day before harvesting.
+>     for step in range(53,58):
+>         tape[step]['hands'][0] = ['PASS']
+>     # Hand0 finishes its original day-three work at(0,4), then idles.
+>     commands = [['EAST'],['EAST'],['WATER'],['HARVEST'],['BUILD_PASTURE'],['EAST'],['EAST'],['DROP']]
+>     for step, command in zip(range(84,92), commands):
+>         assert tape[step]['hands'][0] == ['PASS']
+>         tape[step]['hands'][0] = command
+> 
+> _CL_PARENT = agent
+> def agent(observation, configuration=None):
+>     step = int(observation['step'])
+>     if step == 0:
+>         for key in _CL_REPORT: _CL_REPORT[key] = 0
+>     action = _CL_PARENT(observation, configuration)
+>     try:
+>         seat = int(observation['player'])
+>         farm, private = observation['farms'][seat], observation['private']
+>         if step == 88:
+>             _CL_REPORT['cl_harvested'] = int(private['inventories'][1].get('WHEAT',0))
+>         if step == 89:
+>             tile = farm['tiles'][4][2]
+>             _CL_REPORT['cl_pasture'] = int(isinstance(tile,dict) and tile.get('kind')=='PASTURE')
+>         if step == 91 and farm['hands'] and tuple(farm['hands'][0]) == (4,4) and action['hands'][0] == ['DROP']:
+>             amount = int(private['inventories'][1].get('WHEAT',0))
+>             action = _alt_sell_extra(action,'WHEAT',amount)
+>             _CL_REPORT['cl_delivered'] = amount
+>     except Exception:
+>         _CL_REPORT['cl_errors'] += 1
+>     return action
+> agent.telemetry = _CL_REPORT
+> agent = globals().pop('agent')
+> kaggle_submission_agent = agent
+> 
+> 
+> 
+> # Conservative completion layer for the delayed opening crop and market queue.
+> _OW_CASH = frozenset((
+>     "CARROT", "TOMATO", "STRAWBERRY", "MELON", "EGG", "MILK", "WOOL",
+> ))
+> _OW_STATE = {}
+> _OW_REPORT = {
+>     "opening_repairs": 0,
+>     "delayed_cycle_commits": 0,
+>     "delayed_cycle_skips": 0,
+>     "queue_changed_turns": 0,
+>     "zeroed_orders": 0,
+>     "pulled_orders": 0,
+>     "pulled_slots": 0,
+>     "errors": 0,
+> }
+> 
+> 
+> def _ow_standard(configuration):
+>     if configuration is None or not hasattr(configuration, "get"):
+>         return True
+>     return all(configuration.get(key, expected) == expected for key, expected in (
+>         ("boardSize", 10),
+>         ("turnsPerDay", 24),
+>         ("shedCapacity", 100),
+>         ("maxMarketOrdersPerTurn", 10),
+>     ))
+> 
+> 
+> def _ow_hand(action, index, command):
+>     hands = [list(value) for value in (action.get("hands") or [])]
+>     if index >= len(hands):
+>         return action
+>     hands[index] = list(command)
+>     return dict(action, hands=hands)
+> 
+> 
+> def _ow_guard_opening(observation, action):
+>     """Restore the original pasture when the temporary wheat never appeared."""
+>     if int(observation.get("step", -1)) != 29 or not isinstance(action, dict):
+>         return action
+>     seat = int(observation["player"])
+>     state = _ALT_STATE.get(seat)
+>     if not state or state.get("mode") not in ("EarlyCycle", "HybridOpening"):
+>         return action
+>     farm = observation["farms"][seat]
+>     site = farm["tiles"][4][2]
+>     valid = (
+>         isinstance(site, dict) and site.get("kind") == "PLANT" and
+>         site.get("crop") == "WHEAT" and int(site.get("planted_day", -1)) == 0
+>     )
+>     hands = action.get("hands") or []
+>     if valid or len(hands) <= 2 or hands[2] != ["WATER"]:
+>         return action
+>     _OW_REPORT["opening_repairs"] += 1
+>     return _ow_hand(action, 2, ["BUILD_PASTURE"])
+> 
+> 
+> def _ow_gate_delayed_cycle(observation, action):
+>     """Skip the delayed detour only when the pasture is already restored."""
+>     step = int(observation.get("step", -1))
+>     seat = int(observation["player"])
+>     state = _OW_STATE.setdefault(seat, {"step": -1, "late_cycle": None})
+>     if step <= state.get("step", -1):
+>         state.clear()
+>         state.update(step=-1, late_cycle=None)
+>     state["step"] = step
+>     opening = _ALT_STATE.get(seat)
+>     if not opening or opening.get("mode") not in ("EarlyCycle", "HybridOpening"):
+>         return action
+> 
+>     if step == 84:
+>         farm = observation["farms"][seat]
+>         site = farm["tiles"][4][2]
+>         hands = action.get("hands") or []
+>         ready = (
+>             len(farm.get("hands") or []) >= 1 and tuple(farm["hands"][0]) == (0, 4) and
+>             isinstance(site, dict) and site.get("kind") == "PLANT" and
+>             site.get("crop") == "WHEAT" and int(site.get("planted_day", -1)) == 0 and
+>             int(site.get("yield_units", 0)) >= 2 and
+>             len(hands) >= 1 and hands[0] == ["EAST"]
+>         )
+>         restored = isinstance(site, dict) and site.get("kind") == "PASTURE"
+>         if ready:
+>             state["late_cycle"] = True
+>             _OW_REPORT["delayed_cycle_commits"] += 1
+>         elif restored:
+>             state["late_cycle"] = False
+>             _OW_REPORT["delayed_cycle_skips"] += 1
+>         else:
+>             # Uncertain states remain under the parent safety controller.
+>             state["late_cycle"] = None
+> 
+>     if 84 <= step <= 91 and state.get("late_cycle") is False:
+>         return _ow_hand(action, 0, ["PASS"])
+>     return action
+> 
+> 
+> def _ow_close_queue(observation, action):
+>     """Remove zero-execution cash sales and stably pull later cash sales left."""
+>     if not isinstance(action, dict):
+>         return action
+>     market = action.get("market") or []
+>     if len(market) < 2:
+>         return action
+>     projected = dict(projected_shed(action, FarmView(observation)))
+>     remaining = {item: max(0, int(projected.get(item, 0))) for item in _OW_CASH}
+>     revised = []
+>     zeroed = 0
+>     for raw in market:
+>         order = list(raw) if isinstance(raw, (list, tuple)) else raw
+>         if (isinstance(order, list) and len(order) >= 3 and
+>                 order[0] == "SELL" and order[1] in _OW_CASH):
+>             requested = max(0, int(order[2]))
+>             executed = min(requested, remaining[order[1]])
+>             remaining[order[1]] -= executed
+>             if executed <= 0:
+>                 revised.append([])
+>                 zeroed += 1
+>             else:
+>                 revised.append(order)
+>         else:
+>             revised.append(order)
+> 
+>     holes = []
+>     pulled = 0
+>     distance = 0
+>     for index, order in enumerate(revised):
+>         if not order:
+>             holes.append(index)
+>             continue
+>         movable = (
+>             isinstance(order, list) and len(order) >= 3 and
+>             order[0] == "SELL" and order[1] in _OW_CASH and int(order[2]) > 0
+>         )
+>         if not movable or not holes:
+>             continue
+>         target = holes.pop(0)
+>         revised[target] = order
+>         revised[index] = []
+>         holes.append(index)
+>         pulled += 1
+>         distance += index - target
+> 
+>     if revised == market:
+>         return action
+>     _OW_REPORT["queue_changed_turns"] += 1
+>     _OW_REPORT["zeroed_orders"] += zeroed
+>     _OW_REPORT["pulled_orders"] += pulled
+>     _OW_REPORT["pulled_slots"] += distance
+>     return dict(action, market=revised)
+> 
+> 
+> _OW_PARENT = agent
+> del agent
+> 
+> 
+> def agent(observation, configuration=None):
+>     step = int(observation.get("step", 0))
+>     if step == 0:
+>         for key in _OW_REPORT:
+>             _OW_REPORT[key] = 0
+>     action = _OW_PARENT(observation, configuration)
+>     try:
+>         if _ow_standard(configuration):
+>             action = _ow_guard_opening(observation, action)
+>             action = _ow_gate_delayed_cycle(observation, action)
+>             action = _ow_close_queue(observation, action)
+>     except Exception:
+>         _OW_REPORT["errors"] += 1
+>     return action
+> 
+> 
+> agent.telemetry = _OW_REPORT
+> agent = globals().pop("agent")
