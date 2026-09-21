@@ -54,6 +54,11 @@ deltas — which reads as "the ported mechanism is inert". Detection required a 
 Post-fix the gate flipped to decisive wins. **Any future graft must assert marker uniqueness, symbol counts,
 file growth, and non-zero layer fires before it is gated.**
 
+**Defect-seed check** (the world that motivated the E99 pasture fix, seed 1898931754, both seats):
+E101 vs E99 = 1W/0L/0T (+94); E101 vs `pub_e94_omw_clean` = 1W/0L/0T (+2,715). E101 keeps E99's
+pasture fix and stays positive on the defect world; the pasture gain is smaller than E99's own +4,838
+because the preemption layer re-prices part of that harvest — a re-tune target, not a regression.
+
 ## 5. Deployment Status
 
 NOT deployed. `submission.py` remains Apex V5. E101 is the merge candidate that carries the E99
