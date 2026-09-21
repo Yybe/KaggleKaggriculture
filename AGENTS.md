@@ -35,7 +35,14 @@ Claiming an axis is "closed" without re-reading the current docs and tools is a 
    `tools/test_candidate_breakthrough.py` / `tools/run_h2h.py CAND OBS [r1|r2|fresh|all]`.
    Assert the engine version inside every gate log.
 7. **Deploy + document**: single-file `submission.py`, mirror to `agents/`, write `*_AGENT_DOCUMENTATION_YYYYMMDD.md`
-   (lineage, architecture stack table, benchmark matrix, deployment record) and update `processing.md`.
+   (lineage, architecture stack table, benchmark matrix, deployment record).
+
+## Rule 1b — Antigravity docs are READ-ONLY
+
+`processing.md`, `APEX_V*_AGENT_DOCUMENTATION_*.md`, `FRIEND_INSIGHTS_*.md`, `FRIEND_SPARRING_POOL_*.md` are
+reference material to follow, not to edit. Never append to or restructure them — my rules go here (`AGENTS.md`)
+and my findings go in a new file named after my own artifact. Before touching a file I did not create this
+session, check `git log --oneline -- <file>`; untracked or antigravity-authored means hands off.
 
 ## Rule 2 — Tie-breaking law (the actual ceiling)
 

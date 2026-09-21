@@ -44,7 +44,7 @@ layers was required. R2 holdout is negative (−54.2) for both V5 and E101 — t
 overfitted to R1/Fresh worlds and should be re-tuned, not assumed free money. Margins are small
 (±2 to ±600), so this is a tie-breaking + accumulation layer, not a blowout layer.
 
-## 4. Failure Mode Caught During This Build (recorded in `processing.md` §5.0)
+## 4. Failure Mode Caught During This Build (rule recorded in `AGENTS.md` Rule 5; `processing.md` left untouched)
 
 The first E101 artifact was **silently empty**: the builder used `v5.index("kaggle_submission_agent = agent")`
 as the slice end, but that EOF marker occurs twice in `pub_apex_v5.py` (lines 6814 and 6923), so the layer
