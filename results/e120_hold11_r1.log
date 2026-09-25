@@ -1,0 +1,4 @@
+
+=== pub_e120_hold11.py vs futurev1_forecast.py (seats balanced per seed) ===
+r1     n=16  0W/8L/0T  mean  -48503.4
+       per-seed deltas: -84725, -66925, -60403, -58926, -58618, -55198, -1739, -1493

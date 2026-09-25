@@ -1,0 +1,9 @@
+zerosumOpenSpiel exception: Unknown game 'repeated_poker'. Available games are:
+
+zerosumOpenSpiel exception: 
+Unknown game 'repeated_poker'. Available games are:
+
+=== pub_e121_swap_n20.py vs futurev1_forecast.py (seats balanced per seed) ===
+r1     n=16  0W/8L/0T  mean  -25121.2
+       per-seed deltas: -37720, -30464, -27945, -27317, -24923, -21670, -19957, -10974
+# engine pin: kaggle_environments 1.32.7, townCenterSellInterval=24, boardSize=10, episodeSteps=720 (asserted in tools/e125_feed_discipline.py; run_h2h.py does not echo it)

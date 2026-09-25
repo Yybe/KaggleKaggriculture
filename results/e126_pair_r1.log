@@ -1,0 +1,5 @@
+
+=== pub_e126_pair_pair.py vs futurev1_forecast.py (seats balanced per seed) ===
+r1     n=16  0W/8L/0T  mean   -3056.9
+       per-seed deltas: -5677, -3834, -3785, -3520, -2789, -2543, -1690, -617
+# engine pin: kaggle_environments 1.32.7, townCenterSellInterval=24, boardSize=10, episodeSteps=720 (asserted in tools/e125_feed_discipline.py; run_h2h.py does not echo it)

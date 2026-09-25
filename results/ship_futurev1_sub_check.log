@@ -1,0 +1,11 @@
+zerosumOpenSpiel exception: Unknown game 'universal_poker'. Available games are:
+
+
+=== submission.py vs pred_b_shop_oracle.py (seats balanced per seed) ===
+r1     n=16  2W/0L/6T  mean      +1.0
+       per-seed deltas: +0, +0, +0, +0, +0, +0, +1, +7
+
+=== submission.py vs pred_b_shop_oracle.py (seats balanced per seed) ===
+r2     n=16  1W/0L/7T  mean      +0.6
+       per-seed deltas: +0, +0, +0, +0, +0, +0, +0, +5
+# engine pin: kaggle_environments 1.32.7, townCenterSellInterval=24, boardSize=10, episodeSteps=720 (asserted in tools/e125_feed_discipline.py; run_h2h.py does not echo it)

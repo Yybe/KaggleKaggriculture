@@ -1,0 +1,48 @@
+done episode-107672153-replay.json
+done episode-107673304-replay.json
+done episode-107674284-replay.json
+done episode-109448247-replay.json
+done episode-109450463-replay.json
+done episode-109451512-replay.json
+done episode-109740332-replay.json
+done episode-109742633-replay.json
+done episode-109743675-replay.json
+done episode-110018364-replay.json
+done episode-110019595-replay.json
+done episode-110020646-replay.json
+done episode-110411722-replay.json
+done episode-110412976-replay.json
+done episode-110414045-replay.json
+done episode-110771570-replay.json
+done episode-110772841-replay.json
+done episode-110773945-replay.json
+done episode-110971013-replay.json
+done episode-110973317-replay.json
+done episode-110974418-replay.json
+done episode-111131284-replay.json
+done episode-111134783-replay.json
+done episode-111135897-replay.json
+done episode-111184179-replay.json
+done episode-111186562-replay.json
+done episode-111187666-replay.json
+done episode-111204093-replay.json
+done episode-111205415-replay.json
+done episode-111206491-replay.json
+done manifest.json
+seed 1000000 {'feed_ops': 366, 'care_ops': 404, 'animal_td': 9667, 'fed_td': 4770, 'unfed1_td': 720, 'unfed2_td': 0, 'pending_units': 7790, 'money': 154623.0, 'reward': 154623.0}
+seed 1000001 {'feed_ops': 345, 'care_ops': 404, 'animal_td': 9667, 'fed_td': 4507, 'unfed1_td': 1224, 'unfed2_td': 0, 'pending_units': 6652, 'money': 165851.0, 'reward': 165851.0}
+seed 1000002 {'feed_ops': 366, 'care_ops': 404, 'animal_td': 9667, 'fed_td': 4714, 'unfed1_td': 840, 'unfed2_td': 0, 'pending_units': 6543, 'money': 203512.0, 'reward': 203512.0}
+seed 1000003 {'feed_ops': 353, 'care_ops': 404, 'animal_td': 9643, 'fed_td': 4556, 'unfed1_td': 1128, 'unfed2_td': 0, 'pending_units': 6916, 'escapes': 1, 'money': 198006.0, 'reward': 198006.0}
+field                  winner_100k+      champion
+n                              22.0           4.0
+money                      141655.2      180498.0
+animal_td                   10155.1        9661.0
+fed_td                       5187.1        4636.8
+fed%                           51.1          48.0
+unfed1_td                    1147.6         978.0
+unfed2_td                       0.0           0.0
+escapes                         7.0           0.2
+feed_ops                      370.3         357.5
+care_ops                      360.9         404.0
+care_per_animal_td              0.0           0.0
+pending_units                8051.1        6975.2

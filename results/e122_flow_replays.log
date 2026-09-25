@@ -1,0 +1,51 @@
+done episode-107672153-replay.json
+done episode-107673304-replay.json
+done episode-107674284-replay.json
+done episode-109448247-replay.json
+done episode-109450463-replay.json
+done episode-109451512-replay.json
+done episode-109740332-replay.json
+done episode-109742633-replay.json
+done episode-109743675-replay.json
+done episode-110018364-replay.json
+done episode-110019595-replay.json
+done episode-110020646-replay.json
+done episode-110411722-replay.json
+done episode-110412976-replay.json
+done episode-110414045-replay.json
+done episode-110771570-replay.json
+done episode-110772841-replay.json
+done episode-110773945-replay.json
+done episode-110971013-replay.json
+done episode-110973317-replay.json
+done episode-110974418-replay.json
+done episode-111131284-replay.json
+field              cohort_all   winner100k+
+n                        44.0          15.0
+money                 90896.0      149829.8
+harvest_ops             418.4         483.7
+care                    282.5         372.1
+feed                    294.3         387.6
+water                  1119.0        1169.1
+fert_ops                113.8         152.4
+g_WHEAT                 709.1         732.5
+g_CARROT                117.2          76.4
+g_TOMATO                 37.2          67.1
+g_STRAWBERRY            122.6         153.5
+g_MELON                  41.0          28.1
+g_EGG                    63.8          50.7
+g_MILK                  107.7         130.7
+g_WOOL                   87.5         138.2
+g_FERTILIZER            216.2         262.6
+td_WHEAT                395.9         438.0
+td_CARROT               134.0          95.4
+td_TOMATO                79.1         133.4
+td_STRAWBERRY           382.7         429.0
+td_MELON                138.3         132.6
+td_EGG                    0.0           0.0
+td_MILK                   0.0           0.0
+td_WOOL                   0.0           0.0
+td_FERTILIZER             0.0           0.0
+g_ANIMAL                306.5         401.8
+  units/op 3.59  total_gain/game 1502  top gains [(709.1, 'WHEAT'), (216.2, 'FERTILIZER'), (122.6, 'STRAWBERRY'), (117.2, 'CARROT'), (107.7, 'MILK')]
+  units/op 3.39  total_gain/game 1640  top gains [(732.5, 'WHEAT'), (262.6, 'FERTILIZER'), (153.5, 'STRAWBERRY'), (138.2, 'WOOL'), (130.7, 'MILK')]
