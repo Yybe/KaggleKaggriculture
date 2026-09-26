@@ -1,0 +1,62 @@
+# P33 - crop weighting: route property or per-episode reaction?
+
+engine pin 1.32.7 | unique (ep,seat) cells with tile_days: 170 | teams with >=4 episodes: 16
+
+## half 1 - variance decomposition of each crop's tile-day SHARE
+
+| crop | cliff to $1 | ICC (between-team share of variance) | within-team sd | MSB/MSW | n cells | reading |
+|---|---|---:|---:|---:|---:|---|
+| WHEAT | log | **0.347** | 0.069 | 5.75 | 143 | REACTS within episode |
+| CARROT | 842 | **0.007** | 0.067 | 1.06 | 143 | REACTS within episode |
+| TOMATO | 529 | **0.562** | 0.052 | 12.45 | 143 | mixed |
+| STRAWBERRY | 62 | **0.130** | 0.090 | 2.34 | 143 | REACTS within episode |
+| MELON | 158 | **0.701** | 0.013 | 21.96 | 143 | ROUTE-fixed |
+
+ICC>0.6 means a team's carrot/tomato weighting is essentially a *trait* (route-generated);
+ICC<0.35 means the same team swings its mix episode to episode, i.e. it is reacting to something
+it can see - and that would be wrapper-expressible.
+
+## where our own spine sits on the axis (mean share of tile-days)
+
+| team | n eps | WHEAT | CARROT | TOMATO | STRAW | MELON | mean tile-days | mean money |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| 吃白饭的大肥鱼 | 9 | 0.34 | 0.08 | 0.08 | 0.38 | 0.11 | 1250 | 112806 |
+| THIRD FARM CLUB | 8 | 0.35 | 0.07 | 0.07 | 0.40 | 0.11 | 1315 | 112528 |
+| DSM | 11 | 0.37 | 0.10 | 0.15 | 0.32 | 0.06 | 1510 | 108367 |
+| TheEggman | 6 | 0.37 | 0.06 | 0.15 | 0.36 | 0.06 | 1551 | 104707 |
+| M & M & P & Q | 7 | 0.39 | 0.13 | 0.06 | 0.32 | 0.10 | 1457 | 104397 |
+| mtmr_s1 | 7 | 0.31 | 0.11 | 0.17 | 0.31 | 0.10 | 1512 | 101748 |
+| DECEM | 14 | 0.36 | 0.10 | 0.16 | 0.32 | 0.06 | 1562 | 101393 |
+| Unknown Mother-Goose | 11 | 0.36 | 0.14 | 0.14 | 0.29 | 0.08 | 1538 | 100752 |
+| Vadim Vasilenko | 13 | 0.36 | 0.09 | 0.15 | 0.34 | 0.06 | 1562 | 99739 |
+| Majkel1337 | 7 | 0.39 | 0.10 | 0.10 | 0.33 | 0.08 | 1333 | 98638 |
+| Fourth Quadrant | 10 | 0.49 | 0.14 | 0.00 | 0.29 | 0.08 | 1553 | 98432 |
+| Kaggledew Valley | 11 | 0.29 | 0.13 | 0.07 | 0.39 | 0.12 | 1271 | 97161 |
+| Boey | 10 | 0.49 | 0.13 | 0.00 | 0.28 | 0.09 | 1275 | 95174 |
+| cha22_champion **[REF]** | 6 | 0.37 | 0.10 | 0.02 | 0.42 | 0.10 | 1288 | 91366 |
+| cha22_e206_mw_h1q6 **[REF]** | 6 | 0.36 | 0.11 | 0.03 | 0.42 | 0.09 | 1283 | 89089 |
+| Shivam_2212 | 7 | 0.36 | 0.11 | 0.01 | 0.42 | 0.09 | 1262 | 85631 |
+## half 2 - does wide-cliff weighting pay, at matched volume?
+
+money ~ 1 + share(CARROT,TOMATO,MELON,STRAWBERRY) + log(tile-days) + n_animals
+n=170 seat-episodes, R-squared=0.351  (STRAWBERRY included; WHEAT is the absorbed category)
+
+| term | coefficient (coins per unit of share) | se | t |
+|---|---:|---:|---:|
+| intercept | -81316 | 115981 | -0.70 |
+| CARROT | -106751 | 22489 | -4.75 |
+| TOMATO | 23449 | 19676 | 1.19 |
+| MELON | 47072 | 69329 | 0.68 |
+| STRAWBERRY | 65492 | 15976 | 4.10 |
+| log tile-days | 23422 | 15664 | 1.50 |
+| n_animals | -363 | 315 | -1.15 |
+
+**This is associational, not causal**: teams differ in opponent composition, so a positive
+carrot coefficient can mark a rich team rather than a prize. Half 1 (ICC) is immune to that
+confound and is the part that answers the question asked.
+
+## VERDICT
+
+ICC by crop: WHEAT 0.347, CARROT 0.007, TOMATO 0.562, STRAWBERRY 0.130, MELON 0.701
+
+Route-fixed (ICC>0.6): ['MELON'] | Reactive (ICC<0.35): ['WHEAT', 'CARROT', 'STRAWBERRY'] | middle: ['TOMATO']
