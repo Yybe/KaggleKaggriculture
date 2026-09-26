@@ -83,3 +83,27 @@ choose a crop, because the crop is fixed by the generated route's slot geometry.
    ration/hold/preempt family, nine candidates deep.
 3. Across-team centroid spread is only **0.68 days** — so "the leaders sell at a better time of season" is
    refuted at team level, independently of p19's rate refutation and p17's shape refutation.
+
+## Verification — the positional claim is NOT a seat-priority artifact
+
+Ran this because the whole recommendation rests on it, and because engine `:612-620` commits seat 0 first,
+which could fake an "earlier wins" signal out of pure seat assignment. Over all 572 day-differing paired
+cells (from the 578):
+
+| test | value |
+|---|---|
+| P(richer == earlier) when **seat 0** is earlier | **81.4%** (n=279) |
+| P(richer == earlier) when **seat 1** is earlier | **76.5%** (n=293) |
+| P(richer == earlier), overall | **78.8%** (451/572), permutation p **<0.0001** |
+| who is the richer seat at all | seat 0 = 302, seat 1 = 276 → two-sided binomial **p = 0.298** |
+| mean \|px gap\| when seat 0 is earlier / seat 1 is earlier | 9.98 / 7.82 |
+
+**Reading.** The timing advantage accrues to whichever seat moved first, near-symmetrically (81.4% vs
+76.5%), and **being seat 0 confers no overall realisation advantage**. So `p32`'s zero-sum prediction is
+not an artifact of commit priority, and the mild asymmetry in gap magnitude (9.98 vs 7.82) is second-order.
+It also sharpens the prediction for `cha22_e222_throughput`: a level rule adopted by both seats races for a
+78.8%-of-the-way coin flip whose two sides cancel in the seat average — hence **|Δ| < +900/seat absolute**
+on the symmetric arm, with the residual expected in *variance*, not in mean money.
+
+Reproduce: `tools/p28c_leadtime_price.py` (paired cells) plus the seat-conditional counts above, computed
+from `results/p28_tape_divergence/p28_per_seat_item.csv`, seed 20260926, 20,000 permutation draws.
