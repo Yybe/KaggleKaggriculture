@@ -118,3 +118,47 @@ the direction is unanimous across 6 unrelated opponents and 8 mirror seeds.
 
 Final: the pre-registered rule is satisfied on BOTH absolute estimators. The market/price/crop axis is
 CLOSED. No twelfth variant.
+
+## APPENDED 18:53 UTC - E222 agent finished; this REPLACES my partial read above
+
+Full run, 232 + 18 games, 8 seeds, both seats, 0 errored rows, engine pin asserted in-script:
+
+| estimator | mean | W/L/T | seeds differing |
+|---|---:|---|---|
+| A mirror (cand-cand vs parent-parent) | **-640.8/seat** | 0W/8L/0T | 8/8 all negative |
+| B H2H vs parent inside one game | +294.2 | 8W/0L/0T | 8/8 |
+| C **absolute vs 6 unseen reactive opponents** | **-270.3/seat** | **5W/43L/0T** | 48/48, **0/8 seeds in favour** |
+
+**Correction to the -212/seat I read at 18:51:** that was 120 of 192 games; the completed figure is
+**-270.3/seat (5W/43L)**. My direction was right, my magnitude understated it - the same lesson as the
+next paragraph, learned twice in two turns.
+
+**Correction to my own withdrawal:** I retracted the control-leak alarm as a "transient state". It was NOT
+noise - the agent confirms the first build had a real defect (the spend-down branch fired even with
+`cap=0`, costing -228/seat on seed 1000000) and that it fixed it, after which the caps-off control is
+**byte-exact on 8/8 seeds including per-item flows**. So the original observation was correct and my
+withdrawal over-corrected it. The durable rule is unchanged: assert inertness as byte-equal rewards AND
+equal per-item committed flow AND fires==0, because an inert preset must never rebuild the keys the engine
+consumes.
+
+Additional evidence that hardens the null:
+- **theta sensitivity, 3 seeds, mirror, all live: theta=0.35 -1,065 | theta=0.50 -641 | theta=0.70 -873 |
+  keep=0.3/cap=16 -1,200.** Every arm negative and **the least aggressive is best** - so the result is not
+  a threshold artefact, it is the slope of the loss curve.
+- **Conservation is only approximate**, measured as committed flow per seat: MILK -0.74%, WOOL +0.06%,
+  STRAWBERRY **+1.57%**. The ledger bounds but does not perfectly conserve, so part of the loss is extra
+  volume rather than pure re-timing. Stated as a caveat, not hidden - it makes the loss, if anything, an
+  understatement of the re-timing penalty and an overstatement of nothing else.
+- MELON, excluded by design, differs on 0/8 seeds - a clean negative control on the item axis.
+- `agents/live_replay_20260926/**` was rejected as the common-opponent bank (HANDOFF_OPENCODE D-0927-1:
+  adaptive-market layer disabled, 0.27x live reward; screened tapes scored 472 and 57k), and
+  `salem3000`/`zakariajoudar-rules` were dropped after screening. The opponent bank was audited, not assumed.
+
+**FINAL VERDICT under the pre-registered rule: CLOSED.** Absolute -270.3/seat fails the +900 bar and 8/8
+differing seeds point the wrong way. Estimator B's +294 is a tie-break against a same-spine clone, not
+money - mirror and absolute both say no. Recommendation on record, from both parent and agent: ship
+`cha22_e199_lo96q8` / `cha22_e210_straw_h13q6` and stop the price offensive. No second variant was invented.
+
+Objective 29 is answered NEGATIVE: the previously unknown mechanism (intra-market lead-time) was discovered,
+reproduced, priced on four estimators, and demonstrated NOT to improve results against independent
+opponents. Remaining axis: production (herd/route co-design).
