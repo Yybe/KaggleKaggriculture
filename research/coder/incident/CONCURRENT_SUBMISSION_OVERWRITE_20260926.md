@@ -50,10 +50,50 @@ CODER called no submission mechanism this cycle. §23/§24 and the standing oper
 no submits, no deploys, no `submission.py` change without the operator's explicit per-action
 permission.
 
-## For the operator
+## CORRECTION, issued 2026-09-27 after verifying rather than inferring
 
-Two IDEs are editing `submission.py` in one working tree. It is the file that actually ships, and
-right now the worktree copy and the committed copy disagree, so **whatever is submitted from this
-directory is the v9/3 file, not `5b80e8c`'s FutureV1.** Recommend either (a) one IDE owns
-`submission.py` and the other writes candidates to `agents/` only, or (b) separate worktrees. CODER
-is not going to resolve it unilaterally.
+**The characterisation above is wrong in its central claim.** Direct comparison:
+
+```
+agents/cha22_e199_lo96q8.py  sha1 ec0f0edc2ce2740fc8ee01df792c3a9807b83337  508,860 B
+submission.py                sha1 ec0f0edc2ce2740fc8ee01df792c3a9807b83337  508,860 B
+BYTE-IDENTICAL: True
+```
+
+The worktree `submission.py` is **`cha22_e199_lo96q8`, our own preempt-only line** — the file
+`research/CHAMPION.md:27` records as `sha1 EC0F0EDC2CE2, 508,860 B, author: CODER`. The header text I read
+as identifying a foreign lineage ("submission v9/3", "RACEPX/RACE/COURIER/CARROT/HERD", "EXP-167
+candidate") is present **inside e199's own source** (13 matching lines), inherited from the donor stack. It
+identified nothing. **This was a promotion of our best-supported finals candidate into the shipping file,
+not a hostile or accidental overwrite by another lineage.** I should have hashed the two files before
+writing the incident; the size match was already in front of me.
+
+What is actually true and still needs the operator's decision:
+
+1. `HEAD:submission.py` is **FutureV1** (1,086,993 B, `5b80e8c`) while the worktree file is **e199**
+   (508,860 B). **Whatever is submitted from this directory today is e199, not the committed file.** That
+   is probably the *right* content — `CHAMPION.md` states e199 is "the best-supported line for a
+   win-rate-judged finals", with gate evidence 93.8% / 87.5% bands, +336.9 on 12/12, +559.0 (8W/0L), and
+   drain R1 8W/0L/0T +660.8 — but the promotion was not authorised by the operator and the git record and
+   the shipping file disagree.
+2. **`agents/cha22_e199_lo96q8.py` is UNTRACKED.** It is now, doubly, the file to protect: it is both the
+   recommended finals line and the actual shipping content, and a single `git clean -fd` deletes it. Same
+   status for `agents/cha22_champion.py`, `agents/cha22_e206_mw_h1q6.py`, `agents/sluice_topup7.py` and
+   `research/baselines/`. Only `cha22_e210_straw_h13q6.py` is tracked. The sibling repo has zero tracked
+   `cha22` files.
+3. Nothing in the original report's *safety* conclusions changes: no upload occurred, no submission
+   mechanism was called by CODER, `submission.py` was left untouched by me, and `HEAD` is intact. The
+   `agents/_e98f/cropsense` clobber (9,155 B + stray `main.py`/`submission.tar.gz`) remains a separate,
+   genuinely hostile event from earlier today; the two must not be conflated.
+
+Method law taken from this mistake: **hash before you narrate.** The incident report was written from a
+size/header comparison when a one-line `sha1` comparison against the candidate directory was available and
+would have settled it in two seconds.
+
+## Independent corroboration of the unobtainable control
+
+The CQ-6 subagent that had been dispatched to find the us-vs-top-13 episode died at its turn limit, and its
+last verified statement supports the blocker rather than contradicting it: **0 top-13 encounters in all 214
+of our episodes** (checked against both p17's 13-team list and the live top-13). So the control p17 called
+impossible is now measured across a larger sample than my own count, and the relocation of the question to
+leader-vs-leader within-market pairs (`tools/p28_tape_divergence.py`) stands as the only available route.
