@@ -207,3 +207,42 @@ Incident this cycle, disclosed separately:
 `research/coder/incident/CONCURRENT_SUBMISSION_OVERWRITE_20260926.md` — a parallel session overwrote the
 worktree `submission.py` (508,860 B, v9/3/V39 lineage) ~2 min before my commit; left unrestored, never
 committed, `HEAD:submission.py` still 1,086,993 B.
+
+---
+
+# CORRECTION TO §J AND §22, issued 40 minutes after that file was written
+
+Two claims in this document were **overturned by measurements I ran later the same session**. They are
+left above for the record of what was believed when written; this block is the current state.
+
+**§J was too strong.** It concluded the strategy is inexpressible because the lead-time edge must be
+route-resident. p29 (`results/p29_leadtime_split/REPORT.md`) and my own audit of it
+(`results/p28_tape_divergence/p28d_audit_of_p29.md`) refute that: in the bucket carrying **74.2% of the
+divergent dollars**, both seats' item **first appears in the shed on the same day** (79/81 pairs,
+dollar-weighted winner-earlier 1.5%, `L_impossible`=0), and the winner's edge is **same start, earlier
+finish** (`d_lastday` mean −4.59, perm p=0.0000) with a mid-season px gap once both are selling of
+**+21.28 median** (p=0.0000). P30 confirms the slack exists on our own tape: **+11,233/seat** of
+re-timing headroom under the prefix-availability constraint
+(`results/p28_tape_divergence/p30_reallocation_headroom.txt`). So the mechanism **is** wrapper-expressible
+and the shed is **not** in the way for the earlier direction (E220's cap objection applies only to holding
+volume *later*).
+
+**§22's prize was too large, and MELON is not a target.** p28c priced lead-time at +3,341/seat with 86%
+in WOOL+MELON. P30 shows **MELON's reallocation headroom is exactly +0 in all 12 of our seat-episodes and
+in the live game** — melon arrives in a single harvest burst, so there is no lead to take; the leaders'
+melon advantage is a production-calendar difference, i.e. the route-resident 13.8% branch we are **not**
+chasing. The collectable cross-team price is therefore **MILK + WOOL + STRAWBERRY ≈ +1,619/seat**
+(MILK +470, WOOL +1,121, STRAW +28) — against ±900 live noise. **WOOL is the only item with both slack
+(+5,380) and a measured price (+1,121).**
+
+**Revised recommendation.** Not an architecture rewrite: the price axis's remaining budget is ~+1.6k/seat,
+which justifies **one** candidate and forbids a family. `cha22_e222_throughput` (delegated: cross-day
+sell-through governor on MILK/WOOL/STRAWBERRY, debt-conserved, symmetric arms ≥6 seeds + ≥4 unseen
+common opponents, H2H *and* absolute) carries a **pre-registered stop rule** — <+900/seat absolute or not
+replicated on ≥4 independently differing seeds ⇒ axis declared CLOSED, ship `cha22_e199_lo96q8` /
+`cha22_e210_straw_h13q6` and stop. A null must not be answered with a second variant.
+
+**Unchanged and still the main result:** ~87% of the gap is production (herd scale E104 route-locked, COW
+XOR SHEEP across all 41 routes; route geometry E152), and the answer to §20 ("are we optimizing the wrong
+abstraction?") remains **yes** — the market/price abstraction has been measured nine ways this cycle and
+its collectable content is one item, WOOL.
