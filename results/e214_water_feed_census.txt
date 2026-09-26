@@ -1,0 +1,401 @@
+OpenSpiel exception: Unknown game 'universal_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+OpenSpiel exception: Unknown game 'repeated_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+== seed 1000000  rewards [81600.0, 81600.0]
+ seat 0: day | plants max | weed-risk max | WATER | FEED | animals max | escapes
+   d00 |  20 |   3 |  20 |   2 |   4 | 0
+   d01 |  20 |   0 |   8 |   4 |   4 | 0
+   d02 |  20 |  12 |  23 |   4 |   5 | 0
+   d03 |  20 |   2 |  24 |   3 |   5 | 0
+   d04 |  19 |   1 |  10 |   5 |   6 | 0
+   d05 |  19 |  12 |  24 |   6 |   6 | 0
+   d06 |  30 |   5 |  30 |   8 |   8 | 0
+   d07 |  36 |   4 |  31 |   7 |  10 | 0
+   d08 |  37 |   8 |  36 |  11 |  12 | 0
+   d09 |  37 |   7 |  40 |  13 |  13 | 0
+   d10 |  37 |   3 |  20 |  16 |  16 | 0
+   d11 |  54 |  25 |  56 |  13 |  17 | 0
+   d12 |  57 |   3 |  34 |  17 |  17 | 0
+   d13 |  57 |  27 |  51 |  17 |  17 | 0
+   d14 |  57 |  14 |  47 |  14 |  17 | 0
+   d15 |  58 |  18 |  40 |  15 |  17 | 0
+   d16 |  58 |  24 |  47 |  13 |  17 | 0
+   d17 |  58 |  19 |  38 |  15 |  17 | 0
+   d18 |  58 |  27 |  53 |  13 |  17 | 0
+   d19 |  58 |  14 |  38 |  15 |  17 | 0
+   d20 |  58 |  26 |  46 |  13 |  17 | 0
+   d21 |  58 |  18 |  40 |  15 |  17 | 0
+   d22 |  58 |  23 |  44 |  13 |  17 | 0
+   d23 |  58 |  21 |  41 |  17 |  17 | 0
+   d24 |  58 |  24 |  50 |  10 |  17 | 0
+   d25 |  58 |  18 |  42 |  14 |  17 | 0
+   d26 |  58 |  26 |  61 |  12 |  17 | 0
+   d27 |  58 |  12 |  43 |  17 |  17 | 0
+   d28 |  46 |  14 |  40 |   1 |  17 | 0
+   d29 |  21 |   2 |  21 |   0 |  17 | 0
+  TOTALS water=1098 feed=323 escapes=0
+ seat 1: day | plants max | weed-risk max | WATER | FEED | animals max | escapes
+   d00 |  20 |   3 |  20 |   2 |   4 | 0
+   d01 |  20 |   0 |   8 |   4 |   4 | 0
+   d02 |  20 |  12 |  23 |   4 |   5 | 0
+   d03 |  20 |   2 |  24 |   3 |   5 | 0
+   d04 |  19 |   1 |  10 |   5 |   6 | 0
+   d05 |  19 |  12 |  24 |   6 |   6 | 0
+   d06 |  30 |   5 |  30 |   8 |   8 | 0
+   d07 |  36 |   4 |  31 |   7 |  10 | 0
+   d08 |  37 |   8 |  36 |  11 |  12 | 0
+   d09 |  37 |   7 |  40 |  13 |  13 | 0
+   d10 |  37 |   3 |  20 |  16 |  16 | 0
+   d11 |  54 |  25 |  56 |  13 |  17 | 0
+   d12 |  57 |   3 |  34 |  17 |  17 | 0
+   d13 |  57 |  27 |  51 |  17 |  17 | 0
+   d14 |  57 |  14 |  47 |  14 |  17 | 0
+   d15 |  58 |  18 |  40 |  15 |  17 | 0
+   d16 |  58 |  24 |  47 |  13 |  17 | 0
+   d17 |  58 |  19 |  38 |  15 |  17 | 0
+   d18 |  58 |  27 |  53 |  13 |  17 | 0
+   d19 |  58 |  14 |  38 |  15 |  17 | 0
+   d20 |  58 |  26 |  46 |  13 |  17 | 0
+   d21 |  58 |  18 |  40 |  15 |  17 | 0
+   d22 |  58 |  23 |  44 |  13 |  17 | 0
+   d23 |  58 |  21 |  41 |  17 |  17 | 0
+   d24 |  58 |  24 |  50 |  10 |  17 | 0
+   d25 |  58 |  18 |  42 |  14 |  17 | 0
+   d26 |  58 |  26 |  61 |  12 |  17 | 0
+   d27 |  58 |  12 |  43 |  17 |  17 | 0
+   d28 |  46 |  14 |  40 |   1 |  17 | 0
+   d29 |  21 |   2 |  21 |   0 |  17 | 0
+  TOTALS water=1098 feed=323 escapes=0
