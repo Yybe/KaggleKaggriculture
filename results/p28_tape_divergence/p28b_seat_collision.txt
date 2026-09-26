@@ -1,0 +1,23 @@
+# P28b - seat-collision decomposition of the within-market realisation gap
+
+engine pin 1.32.7 | fidelity mismatches: 0 (0 required)
+
+Seat 0 commits before seat 1 within a unit tick (engine :612-620) and every SELL at px>1
+raises the shared inventory (:659-660), so a same-step same-item collision costs the LATER
+seat real money by construction. Below, the season gap per item is split into units sold in
+a step where the opponent sold the same item (COLLISION) vs units sold ALONE.
+
+| item | units s0/s1 | px s0/s1 | COLLIDED units s0/s1 | px collided s0/s1 | px alone s0/s1 | share units colliding |
+|---|---|---|---|---|---|---|
+| MILK | 14821/14772 | 107.8/106.4 | 5144/5426 | 110.4/105.0 | 106.4/107.3 | 35.7% |
+| WOOL | 9945/10093 | 140.8/135.7 | 3699/4195 | 145.5/130.6 | 138.1/139.4 | 39.4% |
+| STRAWBERRY | 15337/15510 | 135.1/132.8 | 5815/6498 | 131.7/130.7 | 137.2/134.3 | 39.9% |
+| MELON | 6009/6208 | 204.4/201.5 | 2557/2402 | 226.6/223.5 | 188.0/187.6 | 40.6% |
+| TOMATO | 8296/6693 | 67.4/68.3 | 1698/2110 | 65.0/67.7 | 68.0/68.6 | 25.4% |
+| CARROT | 13035/15815 | 38.6/38.0 | 3599/4334 | 37.4/38.0 | 39.0/38.0 | 27.5% |
+| EGG | 14084/15823 | 44.9/45.0 | 3526/3731 | 44.1/43.7 | 45.1/45.4 | 24.3% |
+| WHEAT | 48196/73512 | 32.7/33.5 | 16974/19239 | 30.3/30.8 | 34.0/34.4 | 29.8% |
+| FERTILIZER | 23145/30148 | 47.2/45.2 | 9168/9430 | 49.8/51.2 | 45.5/42.5 | 34.9% |
+
+TOTAL collided units / all units across FOCUS items: **109545 / 341442 = 32.1%**
+
