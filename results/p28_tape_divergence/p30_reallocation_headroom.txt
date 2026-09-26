@@ -1,0 +1,41 @@
+# P30 - reallocation headroom on our own tape
+
+engine pin 1.32.7 | our reference seat-episodes analysed: 12 | live game 113676899 seat 0
+
+Headroom = revenue achievable by re-timing THE SAME UNITS onto better-priced days, subject to
+prefix availability (a unit cannot be sold before it exists). Upper bound: it ignores that our
+own earlier sale would add to the shared pool and lower that price (`:659-660`).
+
+| item | n seat-eps | mean units | mean headroom /seat | median | max | total headroom |
+|---|---:|---:|---:|---:|---:|---:|
+| MILK [PREMIUM] | 12 | 269 | **+3193** | +2172 | +16348 | +38314 |
+| WOOL [PREMIUM] | 12 | 167 | **+5380** | +5450 | +11296 | +64560 |
+| STRAWBERRY [PREMIUM] | 12 | 246 | **+2660** | +1470 | +13528 | +31920 |
+| MELON [PREMIUM] | 12 | 74 | **+0** | +0 | +0 | +0 |
+| CARROT | 12 | 316 | **+120** | +0 | +519 | +1443 |
+| TOMATO | 3 | 82 | **+1** | +0 | +4 | +4 |
+| EGG | 9 | 121 | **+139** | +68 | +511 | +1251 |
+| WHEAT | 12 | 599 | **+856** | +817 | +1324 | +10268 |
+| FERTILIZER | 12 | 318 | **+501** | +506 | +606 | +6015 |
+
+**Mean premium-item headroom (MILK+WOOL+STRAWBERRY+MELON) = +11233 coins/seat**
+
+Compare with p28c's cross-team price of the same mechanism: **+3,341/seat at 100% capture,
+86% of it in WOOL+MELON**. If our own headroom is materially below that, the prize is not
+collectable by a schedule because our tape has no slack to move - the constraint is the
+shed/availability, not the decision.
+
+## live game 113676899 (cha22_champion vs Jules)
+
+| item | units | headroom |
+|---|---:|---:|
+| MILK | 202 | +2344 |
+| WOOL | 147 | +4137 |
+| STRAWBERRY | 249 | +978 |
+| MELON | 72 | +0 |
+| CARROT | 187 | +180 |
+| EGG | 86 | +8 |
+| WHEAT | 294 | +451 |
+| FERTILIZER | 329 | +505 |
+
+premium total headroom in the live game: +7459
