@@ -1,0 +1,450 @@
+OpenSpiel exception: Unknown game 'universal_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+OpenSpiel exception: Unknown game 'repeated_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+Loading environment ~abt failed: No module named 'kaggle_environments.envs.~abt.~abt'
+# P28 / CQ-6b - within-episode tape divergence attribution
+
+engine pin 1.32.7 | replays 85 | fidelity mismatches vs phase_p6 sell_units_exec: 0
+
+-> exec units reproduce phase_p6.jsonl sell_units_exec on every (ep,seat,item) cell,
+   so the per-unit price walk is applied to exactly the quantities the field report
+   publishes, priced by the pinned engine's own market_price().
+
+## paired leader-vs-leader (ep,item) cells, both seats >= 20 units
+pairs=578  median rel gap=0.054  >15%: 18.9% (n=109)
+
+
+### ALL pairs  (n=578 paired (ep,item) cells)
+
+| variable | median(winner-loser) | mean | win-share | perm p |
+|---|---:|---:|---:|---:|
+| px | 3.68 | 8.86 | 100% | 0.0000 |
+| mod23 | 0.00 | -1.65 | 37% | 0.0218 |
+| hour | 0.00 | -0.20 | 50% | 0.3075 |
+| day | -0.95 | -1.31 | 21% | 0.0000 |
+| inv | -9.62 | -17.11 | 11% | 0.0000 |
+| maxrun | -1.00 | -3.95 | 35% | 0.0000 |
+| nsell | 1.00 | 7.84 | 50% | 0.0021 |
+
+### DIVERGENT pairs (rel > 15%)  (n=109 paired (ep,item) cells)
+
+| variable | median(winner-loser) | mean | win-share | perm p |
+|---|---:|---:|---:|---:|
+| px | 22.41 | 27.89 | 100% | 0.0000 |
+| mod23 | 0.00 | -1.98 | 28% | 0.0725 |
+| hour | -0.82 | -0.49 | 42% | 0.2408 |
+| day | -3.06 | -3.42 | 6% | 0.0000 |
+| inv | -25.75 | -35.16 | 1% | 0.0000 |
+| maxrun | -3.00 | -8.00 | 29% | 0.0005 |
+| nsell | -2.00 | -1.58 | 41% | 0.8346 |
+
+### CONCORDANT pairs (rel <= 15%)  (n=469 paired (ep,item) cells)
+
+| variable | median(winner-loser) | mean | win-share | perm p |
+|---|---:|---:|---:|---:|
+| px | 2.44 | 4.44 | 100% | 0.0000 |
+| mod23 | 0.00 | -1.57 | 40% | 0.0671 |
+| hour | 0.08 | -0.13 | 52% | 0.5672 |
+| day | -0.66 | -0.82 | 25% | 0.0000 |
+| inv | -7.05 | -12.92 | 13% | 0.0000 |
+| maxrun | 0.00 | -3.01 | 36% | 0.0009 |
+| nsell | 2.00 | 10.03 | 52% | 0.0002 |
+
+### divergent pairs by item
+
+| item | n | median rel | median px hi/lo | mean $ gap |
+|---|---:|---:|---|---:|
+| MILK | 11 | 0.26 | 83.2 / 19.7 | 2594 |
+| WOOL | 23 | 0.26 | 114.1 / 30.4 | 2029 |
+| STRAWBERRY | 12 | 0.24 | 116.8 / 24.6 | 4039 |
+| MELON | 26 | 0.23 | 218.6 / 45.4 | 3573 |
+| TOMATO | 3 | 0.17 | 56.5 / 9.3 | 1205 |
+| CARROT | 6 | 0.22 | 37.5 / 7.8 | 1023 |
+| WHEAT | 6 | 0.17 | 31.8 / 5.4 | 5116 |
+| FERTILIZER | 22 | 0.20 | 52.5 / 9.8 | 2429 |
+
+### 15 most divergent pairs
+
+| ep | item | winner / loser | px h/l | rel | d_mod23 | d_hour | d_day | d_inv | d_maxrun |
+|---|---|---|---|---:|---:|---:|---:|---:|---:|
+| 113090725 | WOOL | Majkel1337 / marwar22 | 70.6/4.6 | 1.76 | 10 | 8.8 | -6.7 | -15 | -3 |
+| 113114264 | WOOL | Majkel1337 / RS Turley | 88.5/40.6 | 0.74 | 0 | 0.9 | -4.3 | -11 | -5 |
+| 113333426 | WOOL | Fourth Quadrant / Boey | 105.8/49.7 | 0.72 | 0 | 2.6 | -4.0 | -14 | 2 |
+| 113133680 | MELON | TheEggman / marwar22 | 228.1/113.6 | 0.67 | 0 | 10.9 | -10.8 | -76 | -6 |
+| 113308678 | WOOL | DECEM / Boey | 137.5/70.3 | 0.65 | 0 | -3.4 | -9.1 | -15 | -6 |
+| 113090725 | MELON | Majkel1337 / marwar22 | 208.8/107.0 | 0.65 | 0 | 0.9 | -8.4 | -60 | -4 |
+| 113325076 | FERTILIZER | M & M & P & Q / Fourth Quadrant | 49.4/26.7 | 0.59 | -3 | -6.0 | -6.0 | -111 | -16 |
+| 113140795 | WOOL | TheEggman / Densike | 123.1/70.1 | 0.55 | 0 | -3.4 | -6.9 | -15 | 0 |
+| 113113084 | STRAWBERRY | Majkel1337 / Sida Zuo | 152.2/91.7 | 0.50 | 13 | 8.3 | 2.0 | -38 | 3 |
+| 113367296 | MELON | THIRD FARM CLUB / We wanna be tomatos | 230.6/140.4 | 0.49 | 69 | 13.9 | -5.7 | -70 | 12 |
+| 113106935 | WOOL | akmr / Majkel1337 | 111.3/68.0 | 0.48 | -15 | -3.8 | -5.2 | -11 | 0 |
+| 113300583 | WOOL | M & M & P & Q / Boey | 119.1/75.2 | 0.45 | -1 | -1.7 | -5.7 | -12 | 6 |
+| 113352052 | MILK | Boey / Vadim Vasilenko | 66.9/43.4 | 0.43 | -4 | -1.0 | -3.1 | -12 | 4 |
+| 113270088 | STRAWBERRY | DECEM / Vadim Vasilenko | 64.6/42.5 | 0.41 | 0 | -2.7 | -3.0 | -11 | -7 |
+| 113093252 | MELON | Majkel1337 / Kaggledew Valley | 242.9/160.2 | 0.41 | 0 | -3.3 | -7.4 | -67 | 2 |
+
+### winner/loser tallies over divergent pairs (is high realisation stable?)
+
+| team | wins | losses |
+|---|---:|---:|
+| TheEggman | 10 | 0 |
+| Majkel1337 | 12 | 3 |
+| DECEM | 13 | 4 |
+| DSM | 5 | 0 |
+| M & M & P & Q | 9 | 4 |
+| Dieter | 3 | 1 |
+| Unknown Mother-Goose | 5 | 3 |
+| Smackaveli | 3 | 1 |
+| 🐚seek inspiration | 1 | 0 |
+| akmr | 1 | 0 |
+| ymg_aq | 1 | 0 |
+| Azat Akhtyamov | 1 | 0 |
+| Arda Ceylan | 1 | 0 |
+| mtmr_s1 | 8 | 7 |
+| Otter Vibe | 1 | 1 |
+| Densike | 0 | 1 |
+| Kaggledew Valley | 3 | 4 |
+| We wanna be tomatos | 1 | 2 |
+| Sida Zuo | 0 | 2 |
+| 吃白饭的大肥鱼 | 3 | 7 |
+| marwar22 | 0 | 5 |
+| Boey | 5 | 10 |
+| flg | 0 | 6 |
+| RS Turley | 0 | 6 |
+| Fourth Quadrant | 8 | 14 |
+| Vadim Vasilenko | 11 | 17 |
+| THIRD FARM CLUB | 4 | 11 |
+
