@@ -1,0 +1,63 @@
+# P28c - price the lead-time mechanism
+
+paired (ep,item) cells, both seats >= 20 units, both seats leaderboard: **578** over **69** episodes
+Weighted by units at risk; 95% CI from a 4000-draw cluster bootstrap over episodes (seed 20260926).
+
+| regressor | beta (coins/unit per unit of the regressor) | se | R^2 | 95% CI |
+|---|---:|---:|---:|---|
+| d_day  <-- the mechanism | -1.303 | 0.014 | 0.075 | [-1.94, -0.78] |
+| d_inv [MEDIATOR - tautological, never a prize] | -0.025 | 0.001 | 0.007 | [-0.06, -0.01] |
+| d_maxrun | 0.001 | 0.001 | 0.000 | [-0.02, 0.02] |
+| d_hour | 0.216 | 0.007 | 0.009 | [0.02, 0.43] |
+| d_mod23 | 0.029 | 0.002 | 0.002 | [-0.02, 0.09] |
+
+## the prize
+
+SIGN CONVENTION: d_px is >= 0 by construction (winner minus loser), and the winner's d_day is
+NEGATIVE (it sells earlier). So a NEGATIVE beta_day means **selling earlier earns**: the prize is
+-beta_day * days_earlier * units. Getting this sign backwards turns a gain into a loss; it was
+fixed in this file after a first draft printed the prize negative.
+
+pooled beta_day = **-1.303** coins/unit/day (se 0.014, R^2 0.075, CI [-1.94, -0.78]).
+Leader median lead in the divergent set = 3.06 days. Our premium units per seat-episode:
+  MELON 148, MILK 538, STRAWBERRY 492, WOOL 334 => **1513 units/seat**.
+
+The pooled beta is an AVERAGE OVER ITEMS whose leads and slopes differ by 15x, so it is an
+upper-bound sanity figure only; the defensible estimate is per-item.
+
+* POOLED, capture **25%** of a 3.06-day lead = **+1508 coins/seat/season** (upper bound)
+* POOLED, capture **50%** of a 3.06-day lead = **+3017 coins/seat/season** (upper bound)
+* POOLED, capture **100%** of a 3.06-day lead = **+6033 coins/seat/season** (upper bound)
+
+### per-item estimate (the one to use)
+
+| item | beta_day | our units/seat | median lead | prize at 100% capture | at 50% |
+|---|---:|---:|---:|---:|---:|
+| MILK | -2.211 | 538 | 0.40 d | +470 | +235 |
+| WOOL | -3.860 | 334 | 0.87 d | +1121 | +561 |
+| STRAWBERRY | -0.552 | 492 | 0.10 d | +28 | +14 |
+| MELON | -7.558 | 148 | 1.54 d | +1721 | +861 |
+
+**PER-ITEM PRIZE: +3341 coins/seat/season at 100% capture of the leaders' own median lead, +1671 at 50%.**
+
+Scale check - the deficit this must explain: p17 matched-volume `own_revenue` gap **26,813**, `price_realisation_own` **-34,682**.
+Live single-run rating noise is +-900, so a prize under ~2,000/seat is not an architecture change.
+
+## beta_day by item (coins/unit/day), units-weighted
+
+| item | n pairs | beta | median lead (days) | units at risk |
+|---|---:|---:|---:|---:|
+| CARROT | 67 | -0.328 | 1.00 | 10663 |
+| EGG | 54 | -0.247 | 0.71 | 10252 |
+| FERTILIZER | 69 | -2.967 | 1.50 | 16530 |
+| MELON | 69 | -7.558 | 1.54 | 4811 |
+| MILK | 69 | -2.211 | 0.40 | 12460 |
+| STRAWBERRY | 69 | -0.552 | 0.10 | 14006 |
+| TOMATO | 43 | -0.744 | 0.98 | 4288 |
+| WHEAT | 69 | -0.541 | 1.89 | 33330 |
+| WOOL | 69 | -3.860 | 0.87 | 8560 |
+
+## carrot: does a bigger carrot basket buy a better price inside one market?
+
+carrot paired cells n=67 - see the per-item table above for its lead-time beta. p27's 42.0->55.2 contest gain straddles two town-shop regimes (a noop opponent starves `unlocked_shops`), so it is directional evidence only, not a price.
+
