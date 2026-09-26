@@ -96,3 +96,25 @@ measured three independent ways with consistent signs — **and it was shown NOT
 because it is positional and zero-sum in a two-seat shared-pool game. That is a *negative* answer to §29,
 delivered by the pre-registered rule set up to catch exactly this. The ~87% of the gap that survives is
 production-side, and no local artifact reaches it without route generation.
+
+## APPENDED at 18:51 UTC - the independent-opponent estimator (was unread at write time)
+
+`results/p31_e222/abs.csv`, 120 games, 6 unrelated opponents, candidate vs parent against the SAME
+opponent (mean reward per seat, 10 games each):
+
+| opponent | parent | candidate | delta |
+|---|---:|---:|---:|
+| etsutani-demand-preserving-turn-sale-timing | 78,891 | 78,702 | **-189** |
+| ahmedberatozer-v34-observed-market-timing | 75,768 | 75,629 | **-139** |
+| yhay81-shop-router-0913 | 77,242 | 76,977 | **-265** |
+| aurax7-shop-router-reactive-v7 | 78,290 | 77,967 | **-323** |
+| thomastschinkel-2945-farm-96-top-10 | 78,737 | 78,426 | **-311** |
+| tschinkel-router-v55 | 85,493 | 85,349 | **-144** |
+
+**Mean -212/seat, 0W/6L by opponent.** So the loss is real against non-clones too, just ~3x smaller than
+the -641 mirror: the positional component shrinks when the opponent is not running our own lineage, which
+is exactly what the three-estimator table predicts. Gate incomplete (120/192), so treat as partial, but
+the direction is unanimous across 6 unrelated opponents and 8 mirror seeds.
+
+Final: the pre-registered rule is satisfied on BOTH absolute estimators. The market/price/crop axis is
+CLOSED. No twelfth variant.
