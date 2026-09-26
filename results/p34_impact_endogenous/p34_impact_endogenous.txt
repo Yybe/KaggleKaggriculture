@@ -1,0 +1,24 @@
+# P34 - own-price-impact test of the re-timing prize
+
+engine pin 1.32.7 | our reference seat-episodes: 12 | opponent + town curve held FIXED
+
+Policy: liquidate every unit on the earliest day it exists, priced through the pinned
+market_price() on the counterfactual inventory (each px>1 sale increments supply).
+
+| item | n | units/seat | actual rev/seat | forward-packed rev | DELTA | DELTA as % of p30 gross |
+|---|---:|---:|---:|---:|---:|---:|
+| MILK | 12 | 269 | 11759 | 11645 | **-113** | -4% |
+| WOOL | 12 | 167 | 20436 | 19635 | **-802** | -15% |
+| STRAWBERRY | 12 | 246 | 26763 | 26766 | **+2** | 0% |
+| MELON | 12 | 74 | 16016 | 16016 | **+0** | n/a (p30 gross was +0) |
+
+**Net premium delta from packing everything as early as it exists: -913 coins/seat**
+(p30 gross headroom, same items, actual prices: +11,233. Cross-team paired estimate: +1,619.)
+infeasible-schedule rows: 0
+
+## reading
+
+The spine already liquidates essentially as early as its own availability allows, and/or
+own-supply impact eats the apparent headroom. Either way the non-positional slice is small,
+so p30's +11,233 was **positional**, and p32's zero-sum reading stands. Prediction for the
+symmetric `e222_throughput` arm: |delta| < +900/seat absolute.
