@@ -1,0 +1,32 @@
+{
+  "_doc": "Global experiment seed registry. Every experiment gets a FRESH non-repeating seed set. Paired comparisons use the SAME seeds for both arms. Collision => regenerate. Bands already consumed elsewhere in the repo (do NOT reuse): R1 [1000000..9000000], R2 [1110000..1111111], Fresh [30000000+], T3/T4, profile_gate [7000000+1013i], summit [8100000+2027i], openseek [60000000+1000i], field_winrate [40000000+], which_binds [9200000+7919i], f2/px_fresh [40000000+1000i].",
+  "_bands_used": {
+    "R1": "1000000,2000000,3330000,5000000,6000000,7770000,8000000,9000000",
+    "R2": "1110000,2220000,4440000,5550000,6660000,8880000,9990000,1111111",
+    "profile_gate": "7000000 + 1013*i",
+    "summit": "8100000 + 2027*i",
+    "openseek": "60000000 + 1000*i",
+    "field_winrate": "40000000 + 1000*i",
+    "which_binds": "9200000 + 7919*i, i in [0,14)",
+    "px_fresh_gate": "40000000 + 1000*i, i in [0,16)"
+  },
+  "E001": {
+    "status": "SUPERSEDED_BEFORE_RUN",
+    "reason": "band 9200000+1013*i collides with SUMMIT_20260927/tools/which_binds.py (9200000+7919*i, 14 seeds, run 2026-09-27); E001 never executed",
+    "band": "9200000 + 1013*i"
+  },
+  "E224": {
+    "status": "COMPLETE_2026-09-28",
+    "result": "cha22_champion wins pre-registered rule (+173/seat vs sluice_topup7, 24/30, p=0.0007); e199 fails (-2,080, 4/5 lineages negative); pixelx_v2 near-tie (+47). Winner submitted ref 56618368. See results/E224_FIELD_RANK_20260928.md",
+    "date": "2026-09-28",
+    "purpose": "Absolute-field rank of the four candidate-of-record files (sluice_topup7, cha22_champion, cha22_e199_lo96q8, pixelx_v2) on identical fresh worlds, paired; decides the single submission",
+    "band": "15243000 + 1117*i, i in [0,3)",
+    "seeds": [15243000, 15244117, 15245234],
+    "unique": true,
+    "collision_check": "repo-wide grep for 15243000 returned 0 hits before registration; disjoint from every band in _bands_used",
+    "design": "per arm: 5 unrelated lineages x 3 seeds x both seat orders = 30 games (15 distinct worlds, seat-collapsed); all 4 arms on identical (opp,seed,swap) rows so between-arm deltas are paired",
+    "arms": ["agents/sluice_topup7.py", "agents/cha22_champion.py", "agents/cha22_e199_lo96q8.py", "agents/pixelx_v2.py"],
+    "opponents": ["agents/pub_dynroute85.py", "agents/pub_e69_soilrouter.py", "agents/salemali7_3094.py", "agents/pub_farmer_john_v56.py", "agents/friend_r78ub.py"],
+    "tool": "tools/e224_field_gate.py"
+  }
+}
