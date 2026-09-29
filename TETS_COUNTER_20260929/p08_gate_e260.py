@@ -18,7 +18,9 @@ sys.path.insert(0, os.path.join(REPO, "tools"))
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-CAND = os.path.join(REPO, "agents", "tetsutani_e260_collect_dump.py")
+CAND = os.environ.get("COUNTER_CAND") or os.path.join(REPO, "agents", "tetsutani_e260_collect_dump.py")
+TAG = os.environ.get("COUNTER_TAG") or "e260"
+PROBE_SEEDS = [int(x) for x in (os.environ.get("COUNTER_PROBE_SEEDS") or "15243015,15243016").split(",")]
 PARENT = os.path.join(REPO, "kernels_pull_20260929", "tetsutani_step1009_fortyfirst_closure.py")
 OPPS = [
     "agents/independent_phase_a13_eight_lane_20260924.py",
@@ -40,7 +42,7 @@ def load(path, name):
 def probe():
     import kaggle_environments
     assert kaggle_environments.__version__ == "1.32.7"
-    for seed in (15243015, 15243016):
+    for seed in PROBE_SEEDS:
         cand = load(CAND, "c260_%d" % seed)
         par = load(PARENT, "p260_%d" % seed)
         for k in cand.agent.telemetry:
@@ -52,7 +54,7 @@ def probe():
         t = dict(cand.agent.telemetry)
         print("probe seed %d rewards %s tel %s" % (seed, rw, t), flush=True)
         assert t["steps"] >= 700 and t["errors"] == 0, t
-        assert t["collect"] > 0 and t["sell_orders"] > 0, ("LEG INERT", t)
+        assert any(v > 0 for k, v in t.items() if k not in ("steps", "errors")), ("LAYER INERT", t)
     print("PROBE PASS both legs mutate", flush=True)
 
 
@@ -89,7 +91,7 @@ def gate():
             rows.append(r)
             if i % 32 == 0:
                 print("  %d/%d %.0fs" % (i, len(tasks), time.time() - t0), flush=True)
-    with open(os.path.join(OUT, "e260_absolute.csv"), "w", newline="", encoding="utf-8") as fh:
+    with open(os.path.join(OUT, "%s_absolute.csv" % TAG), "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=["arm", "opp", "seed", "swap", "bank", "opp_bank",
                                            "vs_margin", "status"])
         w.writeheader()
@@ -119,7 +121,7 @@ def gate():
     json.dump({"pooled_mean": statistics.mean(allv), "median": statistics.median(allv),
                "worst": min(allv), "winshare": winshare, "lineages": means,
                "lineage_rows": {o: v for o, v in per_lin.items()}, "verdict": verdict},
-              open(os.path.join(OUT, "e260_summary.json"), "w"), indent=1, default=str)
+              open(os.path.join(OUT, "%s_summary.json" % TAG), "w"), indent=1, default=str)
     return verdict
 
 

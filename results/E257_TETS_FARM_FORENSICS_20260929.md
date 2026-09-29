@@ -153,6 +153,14 @@ the same layer loses 5,959/seat. **Reopen condition:** a seed-gated, day-windowe
 when a wheat/strawberry seed is otherwise going unused for the rest of the episode, screened on ≥8 seeds with
 the per-row distribution printed, not the mean alone.
 
+**E261, the restricted replant, is inert and therefore untested.** `agents/tetsutani_e261_abandoned_replant.py`
+(1,199,560 B, sha256 `d7ff37c5e98c74e4`) planted only when three conditions co-held: the tile empty under our
+control for ≥96 steps, day in 12–27, and ≥5 surplus STRAWBERRY/WHEAT seeds. Probe: `converted = 0` and the
+reward ties the parent exactly (119,981 vs 119,981). On this spine a `PASS` hand is essentially never standing
+on a four-day-abandoned owned-empty tile while surplus seeds are in hand - which is itself the answer to why
+E259 loses: the idle hands and the idle land are **not in the same place at the same time**, so any arm that
+pairs them must either displace a committed op (the tape loses a planned action) or fire on nothing.
+
 ## 5. What this means for the deployed rows
 
 * The submitted `tetsutani_godview_v2.py` did not damage the farm plan - it never ran. Nothing regressed in

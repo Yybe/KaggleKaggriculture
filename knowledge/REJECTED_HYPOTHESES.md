@@ -1578,10 +1578,28 @@ the fertilizer-throughput idea is worth nothing. The spine does not monetise ext
 its tape does not schedule the applications that would consume it - and E258 proves the demand it does have is
 already met by market purchases (vetoing them costs 375/seat).
 
-**Axis verdict for the tetsutani spine (E257+E258+E259+E260).** The four farm-side mechanisms the replay
-anatomy named are all measurable and all wrapper-expressible, and none pays: the deficits are properties of the
-tape's herd size, shed release rate and water/labor budget, not free actions a wrapper can add. Do not build a
-fifth sell- or hand-side overlay on this spine; the remaining route is tape generation (as on cha22, H-060/H-071).
+### H-087 Restricted abandoned-land replant on the tetsutani spine (E261) - inert, plus the colocation law
+
+**Construction.** `TETS_COUNTER_20260929/build_e261_abandoned_replant.py` ->
+`agents/tetsutani_e261_abandoned_replant.py` (1,199,560 B, sha256 `d7ff37c5e98c74e4`). E259 restricted by the
+reason H-085 named: plant only a tile observed owned-empty for >= 96 consecutive steps (module state, reset at
+`step == 0`), only on days 12-27, only a crop with >= 5 surplus seeds, STRAWBERRY > WHEAT.
+**Result.** Probe `converted = 0`, reward ties the parent exactly (119,981 vs 119,981) - **inert**, so the arm
+was never tested and no gate was run (Rule 2: a tie is an untested candidate, not a safe one).
+**Law this establishes.** On the tetsutani tape, idle hands and idle land are **not in the same place at the
+same time**. Any arm that pairs them must either fire on nothing (E261) or displace a committed op - which is
+E259's -2,101/seat median and its -31,280 tail. This closes the idle-labor-to-land axis for wrapper layers.
+**Independent precedent, same law on a different spine.** V20 (cha22 era): 46/46 idle-`PASS` empty tiles were
+route-owned (a PLANT/DIG followed 1-22 steps later), 0 plants landed on 4 R1 seeds, reward byte-equal to the
+parent. Two unrelated spines now show that a wrapper cannot claim idle land, because the tape always reaches it.
+
+**Axis verdict for the tetsutani spine (E257+E258+E259+E260+E261).** The farm-side mechanisms the replay
+anatomy named are all measurable and none pays as a wrapper: two lose money (E257, E258), one is bimodal
+(E259), one is the zero control that localises the loss to the shed (E260), one cannot fire at all (E261).
+The deficits are properties of the tape's herd size, shed release rate, water/labor budget and route
+geometry. Do not build a sixth sell- or hand-side overlay on this spine; the remaining route is tape
+generation (as on cha22, H-060/H-071).
+
 
 
 
