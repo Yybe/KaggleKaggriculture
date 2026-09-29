@@ -1,0 +1,34 @@
+Loading environment ~abt failed: No module named 'kaggle_environments.envs.~abt.~abt'
+engine 1.32.7
+seed 15243003 rewards [62820.0, 62745.0] tel {'steps': 719, 'collect': 48, 'feed': 9, 'fert': 4, 'converted': 61, 'errors': 0}
+seed 15243004 rewards [110053.0, 110323.0] tel {'steps': 719, 'collect': 56, 'feed': 8, 'fert': 4, 'converted': 68, 'errors': 0}
+seed 15243005 rewards [93426.0, 93145.0] tel {'steps': 719, 'collect': 37, 'feed': 10, 'fert': 4, 'converted': 51, 'errors': 0}
+PROBE PASS: layer converts idle hands in live games
+=== STAGE A H2H vs parent (R1) ===
+Loading environment ~abt failed: No module named 'kaggle_environments.envs.~abt.~abt'
+Loading environment ~abt failed: No module named 'kaggle_environments.envs.~abt.~abt'
+
+=== tetsutani_e257_fertflow.py vs tetsutani_step1009_fortyfirst_closure.py (seats balanced per seed) ===
+r1     n=16  0W/8L/0T  mean    -366.9
+       per-seed deltas: -586, -586, -585, -468, -317, -257, -69, -67
+=== STAGE B absolute ===
+zerosum
+Loading environment ~abt failed: No module named 'kaggle_environments.envs.~abt.~abt'
+Loading environment ~abt failed: No module named 'kaggle_environments.envs.~abt.~abt'
+Loading environment ~abt failed: No module named 'kaggle_environments.envs.~abt.~abt'
+Loading environment ~abt failed: No module named 'kaggle_environments.envs.~abt.~abt'
+Loading environment ~abt failed: No module named 'kaggle_environments.envs.~abt.~abt'
+Loading environment ~abt failed: No module named 'kaggle_environments.envs.~abt.~abt'
+Loading environment ~abt failed: No module named 'kaggle_environments.envs.~abt.~abt'
+Loading environment ~abt failed: No module named 'kaggle_environments.envs.~abt.~abt'
+  64/64 238s
+OK rows 64/64
+
+### paired CAND-PARENT absolute bank per lineage (per seat-row)
+friend_r78ub.py                            n= 8 mean    -31.8 median     -6.0 worst    -337.0 pos 4/8
+independent_phase_a13_eight_lane_20260924.py n= 8 mean   -138.9 median    -40.5 worst    -458.0 pos 1/8
+independent_phase_a15_full_wheat_20260924.py n= 8 mean    -74.1 median    -24.5 worst    -267.0 pos 2/8
+oblate_orderbook_full.py                   n= 8 mean    -71.5 median    -36.0 worst    -403.0 pos 4/8
+
+POOLED n=32 mean -79.1 median -29.0 worst -458.0 best +358.0  win 11/32
+PRE-REGISTERED RULE (E224: per-lineage mean > -1,000 and worst >= -2,500): PASS

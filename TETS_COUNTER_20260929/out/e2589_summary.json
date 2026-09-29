@@ -1,0 +1,24 @@
+{
+ "C258": {
+  "pooled_mean": -374.8125,
+  "worst": -3075.0,
+  "lineages": {
+   "independent_phase_a13_eight_lane_20260924.py": -255.75,
+   "independent_phase_a15_full_wheat_20260924.py": 86.625,
+   "oblate_orderbook_full.py": -711.875,
+   "friend_r78ub.py": -618.25
+  },
+  "verdict": "REJECT"
+ },
+ "C259": {
+  "pooled_mean": 615.53125,
+  "worst": -31280.0,
+  "lineages": {
+   "independent_phase_a13_eight_lane_20260924.py": 1322.125,
+   "independent_phase_a15_full_wheat_20260924.py": -5958.875,
+   "oblate_orderbook_full.py": 3547.5,
+   "friend_r78ub.py": 3551.375
+  },
+  "verdict": "REJECT"
+ }
+}

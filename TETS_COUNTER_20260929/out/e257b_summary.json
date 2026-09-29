@@ -1,0 +1,193 @@
+{
+ "rows": 64,
+ "paired": [
+  [
+   "independent_phase_a13_eight_lane_20260924.py",
+   15255287,
+   -120.0
+  ],
+  [
+   "independent_phase_a13_eight_lane_20260924.py",
+   15255287,
+   -7.0
+  ],
+  [
+   "independent_phase_a13_eight_lane_20260924.py",
+   15256404,
+   -458.0
+  ],
+  [
+   "independent_phase_a13_eight_lane_20260924.py",
+   15256404,
+   -14.0
+  ],
+  [
+   "independent_phase_a13_eight_lane_20260924.py",
+   15257521,
+   -47.0
+  ],
+  [
+   "independent_phase_a13_eight_lane_20260924.py",
+   15257521,
+   1.0
+  ],
+  [
+   "independent_phase_a13_eight_lane_20260924.py",
+   15258638,
+   -432.0
+  ],
+  [
+   "independent_phase_a13_eight_lane_20260924.py",
+   15258638,
+   -34.0
+  ],
+  [
+   "independent_phase_a15_full_wheat_20260924.py",
+   15255287,
+   46.0
+  ],
+  [
+   "independent_phase_a15_full_wheat_20260924.py",
+   15255287,
+   -23.0
+  ],
+  [
+   "independent_phase_a15_full_wheat_20260924.py",
+   15256404,
+   -81.0
+  ],
+  [
+   "independent_phase_a15_full_wheat_20260924.py",
+   15256404,
+   -19.0
+  ],
+  [
+   "independent_phase_a15_full_wheat_20260924.py",
+   15257521,
+   -267.0
+  ],
+  [
+   "independent_phase_a15_full_wheat_20260924.py",
+   15257521,
+   1.0
+  ],
+  [
+   "independent_phase_a15_full_wheat_20260924.py",
+   15258638,
+   -224.0
+  ],
+  [
+   "independent_phase_a15_full_wheat_20260924.py",
+   15258638,
+   -26.0
+  ],
+  [
+   "oblate_orderbook_full.py",
+   15255287,
+   -133.0
+  ],
+  [
+   "oblate_orderbook_full.py",
+   15255287,
+   119.0
+  ],
+  [
+   "oblate_orderbook_full.py",
+   15256404,
+   -91.0
+  ],
+  [
+   "oblate_orderbook_full.py",
+   15256404,
+   200.0
+  ],
+  [
+   "oblate_orderbook_full.py",
+   15257521,
+   19.0
+  ],
+  [
+   "oblate_orderbook_full.py",
+   15257521,
+   70.0
+  ],
+  [
+   "oblate_orderbook_full.py",
+   15258638,
+   -403.0
+  ],
+  [
+   "oblate_orderbook_full.py",
+   15258638,
+   -353.0
+  ],
+  [
+   "friend_r78ub.py",
+   15255287,
+   -133.0
+  ],
+  [
+   "friend_r78ub.py",
+   15255287,
+   119.0
+  ],
+  [
+   "friend_r78ub.py",
+   15256404,
+   -32.0
+  ],
+  [
+   "friend_r78ub.py",
+   15256404,
+   358.0
+  ],
+  [
+   "friend_r78ub.py",
+   15257521,
+   20.0
+  ],
+  [
+   "friend_r78ub.py",
+   15257521,
+   70.0
+  ],
+  [
+   "friend_r78ub.py",
+   15258638,
+   -337.0
+  ],
+  [
+   "friend_r78ub.py",
+   15258638,
+   -319.0
+  ]
+ ],
+ "lineages": [
+  {
+   "opp": "friend_r78ub.py",
+   "n": 8,
+   "mean": -31.75,
+   "worst": -337.0
+  },
+  {
+   "opp": "independent_phase_a13_eight_lane_20260924.py",
+   "n": 8,
+   "mean": -138.875,
+   "worst": -458.0
+  },
+  {
+   "opp": "independent_phase_a15_full_wheat_20260924.py",
+   "n": 8,
+   "mean": -74.125,
+   "worst": -267.0
+  },
+  {
+   "opp": "oblate_orderbook_full.py",
+   "n": 8,
+   "mean": -71.5,
+   "worst": -403.0
+  }
+ ],
+ "pooled_mean": -79.0625,
+ "verdict": "PASS"
+}
