@@ -87,5 +87,115 @@
   "band": "15243000 + 1117*i, i in [15,23)",
   "used_for": "E260 collect-and-dump paired absolute gate",
   "probe": "15243015-15243016"
+ },
+ "E263": {
+  "status": "PRE_REGISTERED_2026-09-29",
+  "date": "2026-09-29",
+  "purpose": "Base + panel restoration track (NO games run, NO submit). Pre-registers the fresh seed band for the first V4 field gate run on the re-derived 6-lineage out-of-fleet base panel. Registered BEFORE any game so the band cannot be chosen after seeing results.",
+  "estimator": "absolute-field (Kaggriculture.md s24 disclosure block; s27 V4). This is a preparation record: zero games have been played on this band.",
+  "band": "12300000 + 6151*i, i in [0,8)",
+  "seeds": [
+   12300000,
+   12306151,
+   12312302,
+   12318453,
+   12324604,
+   12330755,
+   12336906,
+   12343057
+  ],
+  "unique": true,
+  "collision_check": "tools/seed_collision_check.py 12300000 6151 8 -> reserved-band check PASS, literal repo scan PASS (0 occurrences of any of the 8 seeds anywhere in the repo). Disjoint from the 15243000+1117*i family for ALL i (not just the consumed indices 0-3, 11-15, 15-23), from the operator-reserved 41700101-41700110, and from every band in _bands_used.",
+  "design": "s27 V4: 6 out-of-fleet lineages x 8 unseen seeds x both seat orders = 96 games per arm, collapsed to 48 distinct (opp, seed) worlds; paired within-world absolute bank delta. Metric is candidate bank - parent bank on the same world, plus the absolute level.",
+  "panel": "experiments/panel_base_v1/panel.txt (6 members, manifest.json carries sha256 + provenance)",
+  "arms": "supplied on the command line; pre-flight audited vs BOTH arms by tools/h081_lineage_audit.py",
+  "tool": "tools/e224_field_gate.py with E224_PANEL_FILE / E224_SEEDS_FILE override",
+  "not_yet_run": true
+ },
+ "E264": {
+  "status": "COMPLETE_2026-09-29",
+  "date": "2026-09-29",
+  "purpose": "Operator-requested round-robin dominance matrix across the SLUICE family, cha22_champion and the tetsutani line (screen, not a promotion gate)",
+  "band": "66100000 + 4409*i, i in [0,3)",
+  "seeds": [
+   66100000,
+   66104409,
+   66108818
+  ],
+  "unique": true,
+  "collision_check": "tools/seed_collision_check.py run in background; targeted grep of tools/ and experiments/ for all 3 literals = 0 hits; band outside every RESERVED range (60000000+1000*64=60064000 < 66100000)",
+  "design": "5 agents x 10 unordered pairs x 3 seeds x both seat orders = 60 games; engine 1.32.7 pin asserted per worker; per-game CSV at FLEET_MATRIX_20260929/e264_per_game.csv",
+  "arms": [
+   "agents/sluice_topup7.py",
+   "agents/sluice_v8_counterd.py",
+   "agents/cha22_champion.py",
+   "agents/tetsutani_godview_v2.py",
+   "kernels_pull_20260929/tetsutani_step1009_fortyfirst_closure.py"
+  ],
+  "tool": "FLEET_MATRIX_20260929/e264_round_robin.py",
+  "power_note": "3 seeds/pair = 20 games total per agent; ranking screen only, below the noise budget a promotion gate needs",
+  "result": "60/60 OK. Collapsed standings: tetsutani_step1009 (= what submission.py executes, its godview_v2 wrapper proven inert again: crop=0, effective preempt rewrites=0, 3/3 exact ties vs its own parent) 3W/0L +2178 sum-pair-mean > sluice_v8_counterd -1105 > sluice_topup7 -1540 > cha22_champion -1711 (0W/4L). H2H only - E224 absolute field rank still puts cha22 +173/seat over sluice_topup7, E253 absolute rejects the tetsutani line. Screen at 6 games/pair, no promotion. See results/E264_FLEET_MATRIX_20260929.md"
+ },
+ "E265": {
+  "status": "RUNNING_2026-09-29",
+  "date": "2026-09-29",
+  "purpose": "Operator-requested GLOBAL LOCAL LEADERBOARD: absolute-field rank of every strong candidate we have or pulled, on one common out-of-fleet panel",
+  "band": "78100000 + 8081*i, i in [0,3)",
+  "seeds": [
+   78100000,
+   78108081,
+   78116162
+  ],
+  "unique": true,
+  "collision_check": "PENDING tools/seed_collision_check.py 78100000 8081 3 (bg)",
+  "design": "21 arms x 6 panel lineages x 3 seeds x both seat orders = 756 games; every arm on the IDENTICAL (opp,seed,swap) grid so between-arm bank deltas are paired; metric = mean bank/seat + win% vs the common field + paired arm-minus-arm deltas with bootstrap CI. Run as 4 strided shards (arms[i::4]) in parallel.",
+  "arms_file": "LOCAL_LEADERBOARD_20260929/arms.txt",
+  "panel_file": "LOCAL_LEADERBOARD_20260929/panel.txt",
+  "tool": "LOCAL_LEADERBOARD_20260929/run_shard.py (wraps tools/e224_field_gate.run)",
+  "out": "results/e265_field/<arm>.csv",
+  "h081": "panel audited out-of-fleet vs all 21 arms before any number is quoted"
+ },
+ "E266": {
+  "status": "COMPLETE_2026-09-30",
+  "date": "2026-09-30",
+  "purpose": "H2H matrix: pulled external kernels leoprovorov/a-song-of-ice-and-fire-fixed-flexible + evgendvorkin/kaggriculture-version-31-26-09-bronze-going-up vs our tetsutani submission line (step1009, godview_v2==submission.py, cha22_e261_step1010) and the cha22_champion bar",
+  "band": "88230000 + 5309*i, i in [0,3)",
+  "seeds": [
+   88230000,
+   88235309,
+   88240618
+  ],
+  "unique": true,
+  "collision_check": "RESOLVED COLLISION-FREE at registration. Reserved-range check PASS (88230000 lies in none of the 12 RESERVED ranges); path-scoped literal scans of experiments/ tools/ agents/ knowledge/ results/ LOCAL_LEADERBOARD_20260929/ all clean. The repo-wide seed_collision_check.py walk had NOT finished when games launched, and when it later completed it printed COLLISION-FREE: NO - that verdict is self-referential: an untruncated re-scan put all 71 hit locations in the 5 files this experiment itself wrote after the scan started (per_game.csv 54, LEO_EVGEN_20260930_collision.log 14 = the checker reading its own stdout, seeds.json 6 = this E266 entry, matrix.log 3, results/E266 doc 1). No pre-existing file contains any of the three seeds. Tool defects recorded in results/E266_LEO_EVGEN_H2H_20260930.md section 5: the checker self-excludes only __file__, and truncates the hit list to 5 per seed so a 6th occurrence is invisible in the verdict.",
+  "design": "9 candidate-involving pairs x 3 seeds x both seat orders = 54 games; tetsutani-internal pairs skipped (on record in E264/E253); engine 1.32.7 + townCenterSellInterval=24 asserted per worker; per-game CSV + separate aggregator",
+  "arms": [
+   "kernels_pull/leoprovorov_ice_fire/extracted/main.py",
+   "kernels_pull_20260930/extracted/evgen_v31.py"
+  ],
+  "opponents": [
+   "kernels_pull_20260929/tetsutani_step1009_fortyfirst_closure.py",
+   "agents/tetsutani_godview_v2.py",
+   "agents/cha22_e261_step1010.py",
+   "agents/cha22_champion.py"
+  ],
+  "tool": "LEO_EVGEN_20260930/matrix.py",
+  "result": "both pulled externals lose every pair: leo -1,508.7..-2,375.3/seat 0W/12L, evgen -4,046.2..-5,020.5/seat 0W/15L vs all four of our files; leo beat evgen +4,372.5 3W/0L. 54/54 OK, 719 steps, pin 1.32.7, 472s. No counter, no port. Standings order is a sum-of-pair-means artifact (cha22 vs tetsutani not played here; E264 has cha22 -440.3). Absolute-field estimator NOT run. See results/E266_LEO_EVGEN_H2H_20260930.md"
+ },
+ "E267": {
+  "status": "RUNNING_2026-09-30",
+  "date": "2026-09-30",
+  "purpose": "H2H + absolute-field measurement of pulled external kernel ahmedberatozer/kaggriculture-v57-funding-order-invariant (V57 funding-order invariant, sha1 62368e86b2a9, 1,067,076 B) against our local fleet. Both entries measured: the Kaggle entry v57_agent and the file-s bare agent name, which is still the V56 parent _33_knock_agent.",
+  "band": "NO NEW BAND OPENED - deliberate REUSE of two already-registered bands so every row is comparable with an on-record row: panel leg 78100000+8081*i i in [0,3) (E265) and H2H leg 66100000+4409*i i in [0,3) (E264). Both were collision-checked at their own registration. A fresh band (91500000+6113*i) was proposed and its repo-wide collision walk was aborted at the operator s request, so no fresh-holdout claim is made here and this entry is a SCREEN, not a promotion gate.",
+  "seeds": [
+   78100000,
+   78108081,
+   78116162,
+   66100000,
+   66104409,
+   66108818
+  ],
+  "unique": false,
+  "collision_check": "Not re-run: no new band. See band field.",
+  "artifacts": "OZER_V57_20260930/{probe_v57.py,matrix.py,aggregate.py,panel.csv,h2h.csv}"
  }
 }

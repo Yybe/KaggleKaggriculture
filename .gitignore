@@ -39,3 +39,33 @@ notebook_full.txt
 results/v28b_loss_replays/
 results/v28b_contrast/
 results/live_v28b_episodes/
+
+# Sep-2026 episode/geo corpora - re-downloadable, never commit (1.2GB+)
+results/geo_episodes/
+results/geo_episodes_0920/
+results/destbreso/
+results/e134_live/
+results/donor_agents/
+results/p6_field_20260925/
+results/live_replays/
+results/*_replays/
+
+# Public-kernel pulls and extracted opponent bundles - re-downloadable via
+# `kaggle kernels pull`; the registry that indexes them is tracked instead
+# (knowledge/PUBLIC_AGENT_REGISTRY.md).
+kernels_pull/
+agents/donor/
+agents/_e98f/
+agents/_pulled_c22/
+agents/live_replay/
+agents/live_replay_20260926/
+agents/live_replay_tmp/
+agents/extracted_godsmode/
+agents/e93_kagman/
+agents/e93a_kagman_parent/
+
+# Donor / opponent .pyc + stray bytecode (agents/__pycache__ alone was 179MB)
+*.pyc
+agents/*.json
+agents/*.html
+

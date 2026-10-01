@@ -1,15 +1,43 @@
 # Kaggriculture Agent — KaggleKaggriculture
 
-Competition agent for **Kaggriculture** (Kaggle `kaggle-environments`). Current
-champion: **V18 "Thunder-Slayer"** (`WybeV2/v18_apex.py` + inline build in
-`submission.py`). Fully self-contained single-file agents, zero runtime
-dependencies.
+Competition agent for **Kaggriculture** (Kaggle `kaggle-environments`).
+**Final agent: `agents/decem_sovereign_v3.py`** (sha `5e871a00c547ab6f`), mirrored to
+`submission.py` and submitted as Kaggle ref **56719999**. Fully self-contained
+single-file agents, zero runtime dependencies.
+
+---
+
+## Start here if you are new
+
+The project ran three phases. Eras 1-9 are the historical reconstruction; Eras 10-11
+are the final act and the reason this README was last rewritten.
+
+| Era | window | what happened | outcome |
+|---|---|---|---|
+| **1-9** | → 2026-09-04 | **The clone war.** Reverse-engineered the public meta, beat it repeatedly, ended by promoting the top public kernel verbatim (`lynnsakurai/farming-score-v3-replay-revised`, 2680). | 2680 |
+| **10** | Sep 2026 | **Lean-tape reconstruction + absolute-field estimator.** Rebuilt the real winning spine (`lean_s336.py`) and built the field panel that made promotion decisions honest instead of mirror-driven. | spine + field rank |
+| **11** | Sep 29 – Oct 1 | **DECEM Sovereign.** Attempted to replicate the #2 team's "DECEM architecture" onto our chassis. Measured it, found it inert, fixed it, found the fix was worse, purged it, shipped the verified agent. | ref 56719999 |
+
+**The number that explains the ending**: the final agent's entire edge over its own
+parent is **+7 coins on a ~120,000-coin bank — 0.006 %**. That ceiling is *measured*,
+not assumed. Every sell-side, timing, dose, and terminal axis on this chassis is
+bracketed and closed (`knowledge/REJECTED_HYPOTHESES.md`, 113 entries). The one lever
+still open — a `tomato ≥ 8 AND crew ≥ 13` co-designed build — is a **regenerated tape
+measured at 3+ days**, not a patch, and both halves are structural: tomato without
+crew, or crew without a plan, each measure in the thousands negative.
 
 > **Why this README exists**: the git history on GitHub was replaced during the
 > V15.5 promotion (force-push), so the codebases of earlier versions are no
 > longer reachable from history. This README + the restored docs are the
 > **single source of truth for the project's exact history** — every agent,
 > experiment, failure, and result.
+
+> **Where the knowledge lives**: `knowledge/` is the authoritative, current state —
+> not this README. Read `knowledge/CURRENT_STATE.md` for what is true now, then
+> `knowledge/REJECTED_HYPOTHESES.md` for the 113 refuted hypotheses. Each entry
+> records the *construction that was tried*, not just its sign, so a future attempt
+> can differ materially instead of re-running a defeat. Docs quarantined on
+> 2026-09-28 are under `archive/stale_20260928/` and are **mechanism history, not a bar**.
 
 ---
 
@@ -283,6 +311,137 @@ preserved at `agents/submission_v16a_backup_20260810.py`.
 ### What changed repo-wise 2026-09-04 (both pushes)
 
 What we did to reach top 600: UVM-2's S/M/W pacing produced the 228-0 local and 2100.9 live records but — because the local fleet was alias-dominated — missed the live herd-capacity gap (see `UVM2_PROMOTION_20260904.md` + `.gitignore` + `LIVE_FORENSICS_20260904.md`). Earlier this session: live replays pulled (119 episodes, `kaggle competitions replay`, `fetch_episodes.py` + `LIVE_FORENSICS`), a one-lever pasture fix (`_place_repair_action`, `V27_FIX_PLAN_20260904.md`, `analyze_live_replays.py`/`extract_live_opponents.py`, `agents/v27_fix.py`), benches `benchmark_v27*`, and archiving of UVM-2 (`archive/submission_uvm2_20260904.py`). Later same session: `farming-score-v3-replay-revised` was gated at −33.9k (v4/v27 both 0W/8L). Since v3 is 9 SHEEP (WOOL +91 on the SELL tape) selected by `townShop[0]` at step 360 — a one-number capacity gap our 5-SHEEP tape cannot price-play around — we promoted **v3's own tape verbatim** (shas `d36ae…/5cde13…`, built from the notebook's `PAYLOAD` via `notebook_code_combined.py` in `WybeV2/kernels_pull/_new_top/lynnsakurai__farming-score-v3-replay-revised/`) as `submission.py`/`submission.tar.gz` and archived v27 at `archive/submission_v27_fix_20260904.py`. The v3→v28 hardening (WEED/Pasture/FEED, no SELL reorder) is pre-planned in `LYNNSAKURAI_V3_FORK_PLAN_20260904.md`. **Top-player mechanics kept in each promotion**: v27 kept `5f0ac2ab…` + `WEED_REPLAY_STEPS=8` + `_AM_CONFIG 0.66/tranche 4`; v3 is exactly the 2680 submitter — read both sources in that `WybeV2/kernels_pull/_new_top/*/main.py` + the notebook payload.
+
+---
+
+### Era 10 — Lean-tape reconstruction + the absolute-field estimator (September 2026)
+
+This era exists because Era 9's promotion was decided on a **mirror**: v3 was promoted for
+beating our own line, not the field. The fix was to build something that ranks agents against
+*fixed opponents* instead of against each other.
+
+| Step | Result |
+|---|---|
+| **Farm-side axes closed** (E256/E257/E261) | Idle-hand herd throughput, paid-fert veto, idle-hand replant, collect-and-dump fertilizer — **all rejected**. H-082…H-087. E261's abandoned-land replant was inert, closing the last tetsutani farm-side axis. |
+| **E222 — market/price/crop axis CLOSED** | Against **six unseen independent opponents**: −270.3/seat, 5W/43L, 0/8 seeds in favour. Mirror read −640.8. The pre-registered rule fired, so the price offensive stopped. |
+| **E224 — absolute-field rank** | `cha22_champion` **wins** the pre-registered rule: +173/seat vs `sluice_topup7`, 24/30, p=0.0007, all 5 lineages positive, worst −511. The `e199 q8-preempt` line **FAILS** the estimator (−2,080/seat, worst −9,784). |
+| **H-081 — a panel was contaminated** | The E262 panel shared a spine with the candidate. A clean panel **reverses** H-079. Panels must be lineage-clean or they invert the answer. |
+| **Lean-tape reconstruction** | `lean_s336.py` — "TET handoff-336 + dead ordering-search trim", paired gate **+598.7/seed, sem 193.6, t 3.09, n=72**. Submitted as ref 56687139. |
+| **H-110 — the handoff is at its optimum** | 144 → −1,971.4/seat, 240 → −849.0/seat, **336 (shipped) wins**, 432 flat. The axis is closed, and with it the whole plan-timing axis: *"beating the base requires a better plan than the tape, not a different moment to leave it."* |
+
+**The field is weaker than our lineage class.** E224's four field-strong agents beat every field
+opponent in every game. This is the single most important fact of Era 10, and it invalidates the
+obvious promotion rule: **beating a public kernel is not evidence of rank.** Win% vs a weak
+opponent is not a field estimator.
+
+**The 2026-09-28 quarantine.** 58 docs from the Apex V1/V5/V6/V11/V12/V28/V30, metav4/r78u,
+friend-r78ub, V23–V29 and the Sep-4→Sep-21 report eras were moved to
+`archive/stale_20260928/`. Their numbers are **mechanism history, not a bar**; their refuted
+mechanisms are restated as H-061…H-072. A second census finding: the public kernel pool is
+**spine monoculture** — the pool is clones of a few tapes, so base scans must not be re-run.
+
+### Era 11 — DECEM Sovereign: a replication, measured and refuted (Sep 29 – Oct 1)
+
+The #2 team on the leaderboard is literally named **DECEM** (~2951). This era attempted to
+replicate its "architecture" onto our chassis. Every claim was verified. The claims were accurate
+about *numbers* and wrong about *meaning*.
+
+**The three claimed pillars, and what each actually is:**
+
+| Claimed pillar | Reality |
+|---|---|
+| "Early Plot Commitment": `_CXTB_MIN_REVENUE` 8000 → 7000 | **Live.** A single integer, fires ~3×/game. It is the only production lever on the agent. |
+| "Phase Desynchronization": 1-unit `WHEAT` buys at steps 192 & 312 | **Live.** Worth exactly **+7.2** — proven by ablation (`agents/decem_nodesync.py` vs v12 = 0W/8L, −7.2). |
+| "DECEM Market Preemption": `step % 24 == 23` sell when `shed >= 4` | **Dead. Never executed once in 720-step games.** |
+
+**Why the preemption was dead — twice over.** The wrapper read `farms[player].get('shed', {})`, but
+the engine stores shed at `observation["private"]["shed"]` (`envs/kaggriculture/kaggriculture.py:269`).
+`farms[player]` has no `shed` key, so the dict was always `{}`. And even with the correct key the
+condition was unreachable: **0 of 23** preemption windows per seed held any premium crop at qty ≥ 4,
+because the parent has already liquidated them by hour 23. Measured action divergence from the
+parent: **5 of 720 steps**. No firing counter had been run, so a 0-fire overlay gated as a clean tie
+and was reported as an architecture — precisely the failure `AGENTS.md` Rule 1 phase 5(d)/(e) exists
+to catch, and the state-query bug class Rule 1 phase 1 names by name.
+
+**Every claimed benchmark number reproduced exactly** (engine 1.32.7, `interval=24`): 8W/0L/0T +7.2,
+8W/0L/0T +6.9, 14W/2L/0T −33.6 vs `lean_wflip_v9_standalone`; +1563.0 / +1952.6 / +902.0 vs
+`cha22_champion` / `pub_2945farm` / `tetsutani_godview_v2`. Nothing was fabricated. Two composition
+errors make them mean less than they appear to:
+
+- **`tetsutani_godview_v2` is not a pool lineage — it is our sibling** (def-Jaccard **1.000** vs the
+  parent, shared prefix 148,231 B). Only a constant differs. Citing it as "pool dominance" is
+  2 real out-of-fleet wins + 2 same-family results presented as one.
+- Per Era 10, **the field is weaker than our class**, so "+1952 vs `pub_2945farm`" is a mirror-class
+  result and carries no rank information.
+
+**The fix made it worse.** v11 corrected the state query and loosened the threshold to `qty >= 1`
+across seven items. The mechanism went live (15–18 fires/game, divergence 40–43 steps) and the agent
+regressed:
+
+| bank | v3 | **v11** |
+|---|---|---|
+| R1 | 8W/0L/0T **+7.2** | 3W/5L/0T **−164.2** |
+| R2 | 8W/0L/0T **+6.9** | 1W/7L/0T **−236.1** |
+| Fresh | 14W/2L/0T **−33.6** | 3W/13L/0T **−454.0** |
+
+Three measured causes: **100 % of fires were double-sells** (the parent already queued that item this
+turn — its own code subtracts pending volume; the wrapper did not, which is H-067's volume-inflation
+shape); **WHEAT was sold on farms holding animals** (10/10, 12/12, 10/10 — feed, and two missed days
+loses animals permanently); and **preempt prices min = 1**, i.e. dumping into the $1 floor, the exact
+V15 failure. **The bug was the only thing protecting v3.**
+
+**v12** purged the preemption and kept the corrected state query, the guarded desync and
+`CXTB = 7000`. Verified **0W/0L/8T, mean +0.0, every seed ±0 vs v3** — byte-behaviourally identical.
+
+**Both surviving levers were then measured to exhaustion:**
+
+| Lever | Measurement |
+|---|---|
+| `_CXTB_MIN_REVENUE` dial | 8,000 = **8/8 exact ties** vs 7,000; 9,000 = **0W/1L, −435.5** (worst seed −3,484). H-109's "9,000 is the optimum" **does not transfer** to this chassis. |
+| Phase desync | Ablation = **+7.2**, 32W/0L/0T over 64 games. Live, and capped at H-071's ±0.35–0.6 %. |
+
+**The base-swap trap.** Our own submission list read `lean_s336.py` = **1833.7** vs the wflip line =
+**1688.1**, which looked like a free +125. The candidate was built and was the cleanest agent of the
+campaign against its own parent (**32W/0L/0T**, including 16W/0L on Fresh where v3 had two losses).
+The E224 field panel rejected it — **v12 won 4/4 by 433–557, mean +476**:
+
+| opponent | s336 candidate | **v12** |
+|---|---|---|
+| `cha22_champion` | +1130.4 | **+1563.0** |
+| `sluice_topup7` | +1373.4 | **+1823.6** |
+| `cha22_e199_lo96q8` | +486.0 | **+1043.1** |
+| `pub_2945farm` | +1488.6 | **+1952.6** |
+| **panel mean** | **+1119.6** | **+1595.6** |
+
+The publicScore gap was submission-age and opponent-draw variance, not agent quality. Rule recorded
+as **H-113**: *a `publicScore` read across submissions of different ages is not a quality estimator.*
+The candidate's perfect 32W/0L/0T was the sibling-mirror signature of Rule 2 — a candidate that only
+beats its own lineage has not been tested.
+
+**Final live state and what shipped:**
+
+| submission | id | publicScore |
+|---|---|---|
+| `lean_s336.py` (Era 10 spine) | 56687139 | 1833.7 |
+| `lean_wflip_v9_standalone.py` | 56712190 | 1708.7 |
+| **`decem_sovereign_v3.py`** | **56719999** | resubmitted, exact original |
+| `decem_sovereign_v12.py` (≡ v3) | 56719090 | 1303.8 |
+| `decem_sovereign_v11.py` (regressed) | 56718778 | 1274.8 |
+| tetsutani Step1009 | 56672630 | 1625.8 |
+
+`submission.py` = `agents/decem_sovereign_v3.py` (sha `5e871a00c547ab6f`), submitted as ref
+**56719999**. v11 and v12 scoring ~1300 while v3 scored 1688.1 is **not** a regression: v12 is
+proven behaviourally identical to v3 (16/16 ties), so the spread is episode accumulation and
+opponent draw. A fresh submission starts at the 600 baseline and climbs.
+
+**What the next session should know:** the levers that remain are not levers. Sell-side overlays are
+capped at ±0.35–0.6 % and refuted (H-067/H-071); the tomato lane's two dials are bracketed on both
+sides (H-105/H-108/H-109); handoff timing is at its optimum and closes the plan-timing axis (H-110);
+terminal has no residue to convert (H-033/H-035); fert is logistics-bound not turn-bound (H-063). The
+`tomato ≥ 8 AND crew ≥ 13` block named in E224 is **not a set of constants in the agent** — those are
+census numbers from `LIVE_ELO_AUTOPSY`. The smallest real build is a **regenerated tape (3+ days)**
+that assigns work to extra hand indices *and* carries tomato tiles together, because they are one
+lever. Do not spend a submission slot on a half-mechanism.
 
 ---
 

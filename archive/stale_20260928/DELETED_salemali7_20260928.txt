@@ -1,0 +1,25 @@
+78e8db8969a0  30578  agents/salemali7_3094.py
+78e8db8969a0  30578  agents/salemali7_3094_extracted.py
+1a889e75200a  18749  agents/pub_salem_2900.py
+ce3177a12c3b  18747  agents/donor/salem3000.py
+ce3177a12c3b  18747  agents/donor/salemali7-3000-score.py
+ce3177a12c3b  18747  results/donor_agents/agents/salemali7-3000-score.py
+1757e9053783  27730  reference_bundle_20260920/agents/salemali7_3000score.py
+90d24cc7ba4b  44349  agents/__pycache__/salemali7_3094.cpython-311.pyc
+e32a864cb168  27350  agents/donor/__pycache__/salemali7-3000-score.cpython-311.pyc
+1a889e75200a  18749  WybeV2/kernels_pull/_extract_0919b/out/salem_2900_main.py
+b98756583749  5711  tools/benchmark_vs_3094.py
+aacddf0d2e6a  763  results/_smoke_salem3000.txt
+0171e5d08141  712  results/benchmark_salemali7_3094_vs_champ.json
+1ca9a8039cc7  4860  results/benchmark_salemali7_3094_vs_champ.jsonl
+e3dea5f5e78f  1446  results/diag_v28_vs_salemali7_2900.txt
+876638586ba4  763  results/donor_screen_salem3000.txt
+8a0ab83d2523  65369  results/e61_salemali7_2900.txt
+c012104ce7be  65369  results/e61_salemali7_3094.txt
+787524227139  1454  results/h20_pub_salem_2900_gate8.txt
+afd6feb21f32  1454  results/h20_top_salemali7_2900_gate8.txt
+5823c46bccb8  1448  results/recentmeta_salem_2900_gate8.txt
+5dd9fc435f3f  1448  results/v40_vs_salem_gate8.txt
+f09c29ad40dd  1936  results/v41_vs_salem_gate8.txt
+2e08edbd22e0  1443  results/v42_vs_salem_gate8.txt
+DIR  WybeV2/kernels_pull/_extract_0919b/cells/salem_2900

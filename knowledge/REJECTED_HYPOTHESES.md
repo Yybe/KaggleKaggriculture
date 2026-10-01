@@ -1605,3 +1605,686 @@ generation (as on cha22, H-060/H-071).
 
 
 
+
+## Addendum 2026-09-30 — high-yield / farm-only crop programs on the `lean_s336` base (H-088…H-090)
+
+### H-088 DECEM's crop program, transplanted onto the tetsutani tape, loses money
+**Construction.** `HY_FARM_20260930/build_hy.py` -> `agents/hy_decem.py` (outermost layer on
+`Z_BASE_20260929/agents/lean_s336.py`, sha1-12 `8d59f4919c10`, +6,034 B): PLANT steered to the
+largest-deficit crop against DECEM season targets (WHEAT 181 / CARROT 56 / STRAWBERRY 33 /
+TOMATO 23 / MELON 10), days 0-9 bridge-restricted to wheat+carrot, BUY_SEED re-pointed with the
+coin outlay conserved. `hy_ctrl` (all crops, quota 99999) verified `applied = 0` with a
+byte-identical bank.
+**Observed result.** `hy_decem` **−40,779** on seed 90100000 (one game, telemetry
+`plant_steered 28 / plant_kept 204 / plant_blocked 7 / applied 39`). The additive gen-2 form
+(`hy2_tom23`, tomato leg only, nothing else restricted) gated at **−13,120/seat, sem 2,674,
+t −4.91, 0W/16L/0T** on 16 paired tape worlds. Dose-response: 12 tomato plants −2,731,
+23 −13,120, 46 −27,990 = ~−570 coins per plant added.
+**Reason for rejection.** The base's own census is already DECEM's mix (WHEAT 140 / CARROT 54 /
+STRAWBERRY 33 / MELON 12 / TOMATO 0). The tomato line is DECEM's *only* structural difference, and
+an ongoing crop inserted on a scheduled wheat slot removes the wheat stream the tape's water,
+harvest and sell legs were built around. Restricting existing plants (day-phase + caps) is a
+removal, not an addition, and costs 3x more.
+**Reopenable.** no as a whitelist/caps/dose knob. Only a whole-tape regeneration that carries the
+herd+fert+4-quadrant cash plan DECEM's tomato leg is funded by (H-060's law, restated for crops).
+(results/E268_HIGHYIELD_FARM_ARMS_20260930.md §1-4.)
+
+### H-089 Melon as the high-yield mainline: land-lock plus self-glut
+**Construction.** `agents/hy_melon_only.py` (crop whitelist {MELON}, farm_only, no wheat bridge) and
+`hy_melon_farm.py` (MELON 40 / WHEAT 200 / CARROT 40).
+**Observed result.** `hy_melon_only` **bank 0** (−182,377 vs the base on the same world),
+telemetry `plant_blocked 60 / unit_dropped 269 / market_dropped 74 / applied 293`.
+**Reason for rejection.** Engine arithmetic (`hy_census.py`): melon is 6 units per 13-day tile
+= 224 coins/tile-day at the band's realised 210.78, i.e. **fourth** behind carrot 320.6, wheat
+256.8 (and its own below-I0 curve); `MARKET_PARAMS` melon is `sq` with `above_target 3.60` on
+`T = 300`, so our own supply halves the price at 112 units and hits `PRICE_FLOOR = 1` by ~200.
+Monoculture = no cash bridge for the first 10 days + self-glut. Combination arms that kept melon
+(`hy2_highyield`, melon 8 tiles) were the *worst* gated arms (−35,552/seat, t −8.11).
+**Reopenable.** no. Melon's viable volume on one shelf is ~10 plantings, which the base already
+does (`plants_by_crop MELON 12`). (results/E268_..._20260930.md §1-3.)
+
+### H-090 "Only buy farm" (delete the herd leg)
+**Construction.** `hy_decem_fo`, `hy_melon_farm`: drop `BUY_ANIMAL`, `BUY_PRODUCT`,
+`BUILD_COOP/PASTURE`, `FEED`, `CARE`, `PLACE`-animal, `COLLECT_FERTILIZER`.
+**Observed result.** both lose (H-088/H-089 rows); the drop counters prove the leg fired
+(269 unit ops, 74 market orders deleted in one game).
+**Reason for rejection.** DECEM's own revenue table: MILK 26,526 + EGG 10,679 + WOOL 10,369 +
+FERTILIZER 10,714 = **58,288 of 141,848 gross revenue (41 %)**. A farm-only agent is not a
+concentration of the profitable line, it is the deletion of two-fifths of it. Fertilizer is also
+the yield multiplier for every ongoing crop (water+fert accrues +2/day vs +1).
+**Reopenable.** no. The untried farm-side line is herd *routing* (geese 4 days late, no coop
+re-visit), not herd removal. (results/E268_HIGHYIELD_FARM_ARMS_20260930.md §5.)
+
+### H-088 Pulled external kernel `ahmedberatozer/kaggriculture-v57-funding-order-invariant` (E267) - inert layer, and a loader trap that hid it
+
+**Construction.** `kernels_pull_20260930/ozer_v57/kaggriculture-v57-funding-order-invariant.ipynb`
+(789,635 B, sha1 `f7bad1320df3`) → cell 2 `zlib.decompress(base64.b85decode(SOURCE_BLOB))` →
+`kernels_pull_20260930/extracted/ozer_v57.py` (1,067,076 B, sha1 `62368e86b2a9`, sha256
+`2ee689fd…5106f`, matches the notebook's own `EXPECTED_MAIN_SHA256`). The advertised mechanism rebinds
+`_cxd_candidates` so a fixed-price market order may keep its slot or move **later**, never earlier than the
+parent queue, protecting funding-dependent HIRE/BUY_SEED/BUY_ANIMAL/BUY_LAND actions. It is appended at EOF
+over `_33_knock_agent`, and the file sets `agent = _33_knock_agent` **before** defining `v57_agent`.
+**Result.** The layer contributes **exactly $0**:
+(a) action-level - one real game per world, the identical observation stream re-fed to a fresh V57 and a
+fresh parent: **0 divergences in 719 steps on each of 3 worlds** (78100000, 78108081, 66100000), with the
+replay-fidelity control at 0/719 and the layer's own counters at `blocked` 782 / 1,353 / 3,022;
+(b) money-level - **24/24 paired H2H games byte-identical** between the two entries across 4 local files.
+As a whole file it is a **near-sibling of our own deployed spine** (190,126 B literal prefix with
+`tetsutani_step1009_fortyfirst_closure`, def-Jaccard 0.550), and on the paired absolute-field estimator
+(6 out-of-fleet lineages × 3 seeds × both seats, joined row-for-row to `results/e265_field/`) it loses to
+all seven strong arms: −1,946 … −3,810/seat vs `step1009`/`cha22_champion`/`sluice_v8_counterd`, with a
+**positive median** (+118 … +526) and 10-11W/7-8L over 18 distinct worlds. Its H2H rows are a trap: +12.0
+vs `submission.py` and −11.0 vs `step1010` (near-siblings → mirror denial) while the same file is −3,810
+behind them absolutely.
+**Law this establishes (the durable part).** For a pulled kernel, `tools/agent_loader.load_agent` resolves by
+**name preference** (`agent` first), not by what the platform executes (last top-level def /
+`kaggle_submission_agent`). When a kernel's EOF layer is *appended after* `agent = <parent>`, our harness
+silently evaluates the parent while Kaggle runs the child - and a **high firing counter is not evidence the
+layer changed anything**: V57 reports `blocked=3,022` on one world while emitting byte-identical actions.
+So: (1) assert `load_agent(path).__name__` equals the def the platform would run, for every pulled file,
+before gating it; (2) prove a layer's effect by **action divergence against its own parent on identical
+observations**, not by its internal counters. A wrapper whose divergences are 0 gates as a tie and is
+untested, whatever its counters say.
+**Axis verdict.** External-kernel screening on this spine class is finished for now: V57 is neither a
+counter nor a port candidate, and its tail worlds are already-owned mechanisms (carrot displacing wheat at
+−355/−331 per plot, inside the closed 300-400/plot band; and the 249-tile/10-tomato farmer-john build, which
+is worth −28.7 k on one world and **+18.5 k** on another, i.e. a world-dependent bet, not an exploitable
+weakness). Do not build on or against this file. The one open observation, explicitly *not* promoted: at
+byte-identical profiles V57 realised +10,856 and +8,799 over `step1009` on two worlds and −23,270 on a
+third, a ±10 % of bank swing far outside the H-071 ceiling - which makes realisation **bimodal by world**,
+not directional by agent, and cannot be adjudicated on a 3-seed band.
+
+### H-091 Early-bird (egg) injection on the `lean_s336` base: inert, and the cash proof of why
+**Construction.** `HY_FARM_20260930/build_hy3.py` -> `agents/hy3_goose{2,4,8}.py`: append
+`["BUY_ANIMAL","GOOSE"]` market orders in a day window (4-7 / 4-9) when farm cash >= reserve+300,
+nothing else changed. DECEM runs 5 geese + 5 coops by step 150-159 (day 6) and sells 209 eggs at
+51.0; the base's own census is 3 geese on days 10-11 and 0 eggs realised (Z_BASE PLAN.md s9).
+**Build 1 was silently inert** for the reason H-082 names: the layer read `obs["farm"]` and
+`obs["money"]`, while the 1.32.7 observation exposes
+`['day','farms','hour','market','player','private','step','town']` - money lives INSIDE
+`farms[player]`. Fixing the path made the mechanism live, and the census then showed the real wall:
+**Observed result.** seed 90100000, both seats, engine pin asserted: `hy3_ctrl` (dose 0),
+`hy3_goose4` (reserve 1500) and `hy3_goose8` all bank **112,656 - byte-identical**, while
+`hy3_goose8` reports `orders_injected = 8 / applied = 8`. The live census over all 719 steps reads
+**geese max 0, coops max 1**, and `farm money at step 120 (day 5) = 672`.
+**Reason for rejection.** A 300-coin goose plus a coop cannot be bought out of 672 coins that are
+already committed to the tape's wheat/hire schedule; the orders are emitted, priced out, and the
+engine drops them. The egg deficit is not a timing knob - it is unfunded capital in the same block
+that the crop-program arms (H-088) tried to spend differently and lost 13-35 k/seat doing.
+**Law to keep.** A fire counter of *orders emitted* is not an effect counter. Gate the census
+(animal tiles, coop tiles, realised eggs), not the intent. Every arm here has applied > 0 and
+delta == 0.0.
+**Reopenable.** only with an arm that raises cash before day 5 as its first leg; a goose-buy alone
+is refuted by the 672-coin measurement.
+
+
+## Addendum 2026-09-30 (2) — farm-capacity arms on the lean_s336 base (H-092…H-095)
+
+### H-092 Buying farm seed out of idle surplus wastes the coins to the coin
+**Construction.** `HY_FARM_20260930/build_hy5.py` -> `agents/hy5_seed{200,600,1500}.py`: append
+`["BUY_SEED","WHEAT",q]` from day 12-22 whenever `farms[player].money` exceeds a 20-25k reserve.
+**Observed result.** added 200/600 seeds, `plants_wheat` unchanged at **149** in every world, bank
+−2,000 against 2,000 spent and −5,860/−5,920 against 6,000 spent. Base census: seeds bought 150 /
+planted 149, so the spine already plants essentially every seed it owns.
+**Reason for rejection.** seeds are not the limiting input; there is no additional plantable tile or
+working leg to receive them. A purchase that cannot be executed by the tape is a donation.
+**Reopenable.** only together with tile availability (see H-094), not as a seed arm.
+(results/E269_FARM_CAPACITY_ARMS_20260930.md §2.)
+
+### H-093 More hands (crew) on this tape is not spare capacity - it is a defect
+**Construction.** `build_hy8.py` -> `agents/hy8_crew{10,12,14}.py` and `hy8_crew10_seed.py`: at the
+start of each day top `hires_today` up to TARGET while cash above 5,000 allows. Engine hire price is
+`fib(hires_today)` with mult 1, i.e. 1,1,2,3,5,8,13,21,34,55,89, so 10 hires/day costs 143 coins.
+**Observed result.** base already hires **12-13/day** (DECEM runs 299/season = 10/day). Paired gate,
+16 worlds (tape 113365856_1, 8 seeds x both seats, control `hy8_ctrl` byte-identical to the base):
+crew-10 **−16,119.8/seat, sem 2,863.7, t −5.63, 0W/16L**; crew-12 −25,746.2, t −7.82, 0W/16L;
+crew-14 −31,458.3, t −9.57, 0W/16L; crew+600seed −20,300.4, t −7.48, 0W/16L. Plants unchanged
+(238 vs control 239) while coins spent were only 1,038-4,725 - so the loss is **3-30x the outlay**.
+**Reason for rejection.** the spine's planner is hand-count-critical (its own routing carries a
+hand-count equality guard, Z_BASE PLAN.md §9); adding hands invalidates the plan rather than adding
+labour. This closes the crew lever on this chassis from the opposite side to E104/V13: not too few
+hands, but a tape that cannot use more.
+**Reopenable.** no as a wrapper; only a regenerated tape that assigns work to hand indices.
+(results/E269_..._20260930.md §2.)
+
+### H-094 Mid-season BUY_LAND from idle surplus buys land the tape cannot work
+**Construction.** `build_hy9.py` -> `agents/hy9_land2.py` (+2 quadrants wanted, days 10-16, reserve
+8,000, engine `LAND_PRICES = [1000, 2000, 4000]`, `LAND_ORDER = [NE, SW, SE]`).
+**Observed result.** one `BUY_LAND` fires, 4,000 coins, quadrants 3->4 in the worlds that could buy;
+`plants_total` 239 vs control 239 (unchanged), `tiles_owned_max` 77/79 vs control 75. Paired gate
+16 worlds: **−7,451.8/seat, sem 1,567.5, t −4.75, 1W/15L**, worst −19,254; single-world losses ranged
+−4,000 (exactly the price) to −28,106 (7x the price).
+**Reason for rejection.** the base already owns 3-4 of the four quadrants the engine permits, so the
+buyable land is the SE anchor - the same tile H-060/H-059 measured and closed: ownership without the
+tape's walk+plant+water legs is dead land, and here the diverted 4,000 also breaks the block's own
+schedule (7x cascade). `hy9_land1`/`hy9_land1_early` returned exactly +0.0 over 16 worlds: a
+first-observation `base_quads` anchor of 1 made the target unreachable, so **those two arms were
+never tested** (Rule 2) and the land question is answered by `hy9_land2`, not by them.
+**Reopenable.** no as a wrapper. (results/E269_..._20260930.md §2, §4.)
+
+### H-095 Retaining fertilizer instead of selling it cuts applications
+**Construction.** `build_hy7.py` -> `agents/hy7_keep{120,240,480}(_e).py`: drop
+`["SELL","FERTILIZER",q]` orders while `private.shed.FERTILIZER < RETAIN`.
+**Observed result.** 4,397-16,314 fert units retained over a season (far above the target, because
+collection keeps filling the shed), `FERTILIZE` ops **fell** 119 -> 99 -> 77 -> 71 with rising
+retention, `shed_fert_max` only 75-97 (cap 100), banks −23,861 / −46,285 / −110,500 per world.
+**Reason for rejection.** the floor fertilizer sales are the shed's relief valve; blocking them
+displaces produce (H-083's law) so the crop line loses more than the applications could gain. The
+101-vs-239 FERTILIZE gap versus DECEM is therefore a shed-throughput property, not a shortage.
+**Reopenable.** only with a leg that also raises the shed release rate (H-086's control).
+(results/E269_..._20260930.md §2.)
+
+### Handoff-step sweep on the same base (not a rejection - a plateau measurement)
+16 worlds then 32 worlds, paired against the byte-identical `hy6_h336_ctrl`: step 240 −925.9
+(t −2.50, 0W/32L), 288 −119.1 (t −5.04), **336 = the shipped base**, 408 +4.3 (sem 32.6, t 0.13,
+14W/18L), 480 −295.9 (t −5.60). The estimator resolves 30-60 coins, so the flat region is real: no
+further gain is available at the handoff knob, and 408 is a tie, not a candidate.
+
+### Fleet matrix, fresh band 90100000+7717i, both seats
+`lean_s336` vs `cha22_champion` **+1,835.0/seat, 4W/0L**; vs `sluice_v8_counterd` **+1,665.5/seat,
+4W/0L**; `hy6_h408` vs the same two +1,605 and +1,484 (both 4W/0L); `cha22_champion` vs
+`sluice_v8_counterd` −876.5, 0W/4L. The base is the strongest file we hold; every farm-only and
+high-yield arm built this session sits below it. Head-to-head is reported beside, never instead of,
+the tape-paired absolute margins (E222/H-067 law).
+
+
+### H-096 Fewer hands loses plants - the tape's hand count is the production plan, both ways
+**Construction.** `HY_FARM_20260930/build_hy10.py` -> `agents/hya_cap{12,10,8}.py`: veto the spine's
+own `["HIRE"]` market orders once `farms[player].hires_today` reaches the cap (never the first
+4-5 of the day), days 1-26. Motivated by H-093: adding hands lost monotonically, and the base
+hires 12-13/day against DECEM's 10.
+**Observed result.** control `hya_ctrl` fires 0 vetoes and banks byte-identical to the base.
+`hya_cap12` vetoed 0-1 orders and plants fell 239 -> 238/239 (seed 90100000 unchanged at 112,656).
+`hya_cap10` vetoed 21-34 orders (1,869-3,026 coins of wages saved) and **plants fell 239 -> 226,
+249 -> 232, 248 -> 231**; `hya_cap8` vetoed 37-41 and **plants fell to 204-207**, banks 46k-76k
+against 84k-171k for the base in the same worlds.
+**Reason for rejection.** the tape is hand-count-exact in the other direction too: every plant the
+spine makes is scheduled against a specific unit, so vetoing hires removes plants, not idle labour.
+Combined with H-093 (extra hands: plants unchanged, -16k..-31k/seat at 0W/16L) the two-sided bracket
+is closed - the base's 12-13 hires/day is the plan, and both 14+ and 10- are measurably worse.
+This is a local-optimum proof for the labour leg, not a tuning miss.
+**Reopenable.** no by hire dosing. Only a regenerated tape that re-indexes its work per hand count.
+
+
+### H-097 Price-threshold release for milk/wool (and strawberry) - holding loses, dose-monotone
+**Construction.** `HY_FARM_20260930/build_hy11.py` -> `agents/hy11_k{90,105,120}.py`: hold a
+`SELL` order for the gated item while `obs.market.prices[item] < K * base`, but always release when
+the shed reaches SHED_SAFE (85-88 of the 100 cap) or farm cash drops under MIN_CASH, and always
+release by day 27. Motivated by our own realised px/base spread measured in-play: MILK 0.35 to 1.48
+and WOOL 0.51 to 1.17 across three worlds - a 4x range that looked like capturable margin.
+**Observed result.** mechanism is live and safe: orders held 127-566, units banked 868-4,855,
+every held unit re-released later (`held_released_later == units_held`), safety legs fired
+(shed 4-18 times, cash 0-4 times), `shed_max` pinned at the 100 cap, `errors = 0`,
+`hy11_ctrl` fired 0 holds and banked byte-identical to the base.
+Banks per world: k90 -5,909 / -3,713; k105 -3,190 / -3,661; k120 **-12,769 / -10,334** -
+loss grows with the dose.
+**Reason for rejection.** the price we are refused is not recovered later: the town's drain is a
+fixed daily quantity, so withholding shifts our own volume into the *next* window where the other
+players' supply is still sitting in the inventory, and while we hold, the 100-slot shed displaces
+produce (the H-083 law, now measured on the sell side too). The px/base spread is a property of the
+world (opponent supply), not a lever - it appears in the same direction whether we hold or not.
+**Reopenable.** no as a threshold rule. The only sell-side construction left is endgame
+dump-sizing under the shelf (E89b's scope-limited note), not withholding.
+
+
+### H-098 Idle-hand -> idle-land router: fires, still loses, and the loss scales with reach
+**Construction.** `HY_FARM_20260930/build_hy12.py` -> `agents/hy12_r{2,4_seed,6_seed}.py`: each step,
+for a hand whose committed op is exactly `["PASS"]`, scan owned-empty tiles (`tile is None`) and
+weeds inside a Manhattan radius; emit PLANT when already on the tile, DIG on a weed, otherwise one
+MOVE step toward it. Stateless (no persistent target), optional funded WHEAT seed leg. This is the
+corrective construction H-087 asked for: E259/E261 only converted a PASS when the hand ALREADY stood
+on empty ground and were therefore inert.
+**Observed result.** the arm is genuinely live: control `hy12_ctrl` fires 0 ops and banks
+byte-identical; routers planted 9-23 extra tiles and moved 63-189 hand-steps, with
+`empty_tiles_max` 26-33 owned-empty tiles present in every world (the land really is there).
+Banks: r2 −6,650 / **−51,511**; r4+600 seed −8,002 / −55,391; r6+1,200 seed −13,114 / −57,092.
+Total plants FELL with the arm attached (218/196/197 vs control 219/229) even though the router
+added plants - the moved steps were scheduled work.
+**Reason for rejection.** a hand is idle on this tape because its committed work has a gap, not
+because it has no work; spending the gap on distant empty ground removes a later WATER/HARVEST/DROP
+leg, and the crop it forgoes is worth more than the crop added. Loss grows monotonically with radius
+and with the seed dose, so this is displacement, not a tuning miss.
+**Reopenable.** only by regenerating the tape so that the empty tiles have their own scheduled legs
+(the standing conclusion since H-060/E268), or by a from-scratch farm-only planner - not by another
+wrapper dose on this spine. (results/E269_FARM_CAPACITY_ARMS_20260930.md.)
+
+
+### H-099 Tomato on the strawberry cadence (last untried placement site) - loses 32-56 k
+Construction: HY_FARM_20260930/build_hy13.py -> agents/hy13_{half,full}.py rewrites a share of the spine's PLANT STRAWBERRY into PLANT TOMATO and re-points the matching BUY_SEED:STRAWBERRY at TOMATO with the coin outlay conserved. Motivated by E271: the only structural live loss (-14,340, ep 115432425) went to an opponent with 18 tomato plantings vs our 10, 127 tomato units vs 80, and realised TOMATO 23,816 on d25 plus 25,949 on d27.
+Result: hy13_ctrl (share 0) applied=0, byte-identical bank. hy13_half (16 of 33 converted, seeds_flipped 66, applied 35) -56,199 and -41,110 per world. hy13_full (33 converted) -46,434 and -32,222.
+Reason: strawberry is this spine's dominant late line (realised 3,518-7,899 coins/day on d19-d24, px/base 1.56-1.85) while tomato realises about 174/unit, so the swap trades the better earner even where the cadence machinery fits. With gen-2 (wheat slots, -13,120/seat at DECEM's dose, 0W/16L) and gen-5 (bought seed goes unplanted) all three placement sites are measured negative.
+Reopenable: no as a plant or seed rule; the winner's tomato program is a property of its whole tape. (results/E271_LIVE_LOSS_FORENSICS_20260930.md)
+
+### H-100 The live losses of lean_s336 are mirror noise and resale phantoms, not code loopholes
+24 scored episodes: 18W/6L, mean margin +13,494.6, wins +19,002.8, losses -3,030.2, rating 728.3 -> 1,777.2. Three losses (-655, -170, -32) have an opponent crop census identical to ours plant-for-plant (239 plants, tile-days within 10, quads 3=3) - the same spine in the pool; a -32 margin on 73,519 is 0.04 %. Two more (-2,377, -607) are declared-revenue challengers: 8,969 and 1,258 WHEAT units sold with 339,135 and 56,233 of spend, the BUY_PRODUCT:WHEAT round-trip P6 priced at net -52,684 for rank 2. Only ep 115432425 (-14,340) is structural, and it is a production-volume loss (H-099).
+Operational note: resolve seats from info.TeamNames - args[0].__id__ in a replay is the AGENT id, not the submission id, and matching it to a submission inverts the two seats (caught on this pass's first run). Do not build a fix for a mirror tie. (results/E271_LIVE_LOSS_FORENSICS_20260930.md)
+
+
+### H-101 The kernel's own decision thresholds are at a local optimum - 26 settings, 19 inert, 7 all negative
+**Construction.** `HY_FARM_20260930/build_hy16.py` and `build_hy17.py`: single-constant patches on
+`lean_s336` (V9_RACE_MARGIN / GAP / WINDOW, _OR2_SLOT_MARGIN, _SR_MARGIN, _HP_WINDOW,
+_CXTB_MIN_REVENUE, _RACE_HORIZON_ESCALATED / MIRROR, _HD2_RATIO, _HD2_MIN_GAIN,
+_R51_INPUT_MAX_WORKERS, _CA_FEED_DAYS), each with an import-time assertion that the module's effective
+value moved. Effective values came from IMPORTING the shipped file, because V9_RACE_DEFAULT and
+_RACE_HORIZON_CLONE are each assigned twice and only the last line is live.
+**Observed result.** 19 of 26 settings bank byte-identical to the control on both probe worlds - the gate
+never fires in play. The 7 that bind: `_OR2_SLOT_MARGIN` 8->4 (-26) and 8->2 (-28); `_CA_FEED_DAYS`
+1->2 (-653, -27); `_CXTB_MIN_REVENUE` 9000->1000 (**-5,059, -2,149**); `V9_RACE_MARGIN` 12->40
+(-48, -28); `V9_RACE_WINDOW` 30->60 (-28). All downward. `_HD2_RATIO` 1.3->0.5 is inert, confirming the
+herd EV knob is live but not binding - the egg deficit is hand routing, not a threshold (Z_BASE PLAN.md 9).
+**Reason for rejection.** no internal constant pays for adjusting. The largest single mover is the
+terminal-cargo gate, and it pays in the direction of NOT committing endgame volume early - the same
+physics as H-097 seen from the other side.
+**Reopenable.** no by knob. With E268/E269 (44 crop and capacity layers) and the E272 handoff-dose
+sweep, the code-level search on this chassis is exhausted.
+(results/E273_KNOB_SWEEP_20260930.md.)
+
+### H-102 Closure trim (7 reorder passes -> 1): dollars tie, tail unchanged - not promotable
+**Construction.** `HY_FARM_20260930/build_hy15.py` -> `agents/lean_trim1.py` (+549 B, sha1 a2d883bf4cc8):
+append a def whose body calls `step1003_step1002_...`, i.e. keep one `_s793_reorder` pass and delete six.
+**Observed result.** banks identical to the shipped file on 8/8 seeds; paired vs byte-identical control
+over 32 tape worlds +19.9/seat, sem 13.7, t 1.46, **30 of 32 worlds exact ties**, boot90 [+0.0, +39.9] -
+below the >2 sem bar. Episode CPU -13.7 % (4.82 -> 4.16 s, faster 8/8) and worst-act CPU -90 ms (8/8).
+Timeout tail over 12 worlds (`tail_test.py`): acts > 1.00 s CPU = **1 for the shipped file and 1 for the
+trim** (abs worst 1,125 -> 1,094 ms, mean act 5.9 -> 5.6 ms), so the one expensive act per ~12 games is
+not caused by the redundant passes and the trim buys no live protection.
+**Reason for rejection.** equal dollars plus an unchanged tail is parity, and parity is not progress.
+Submitting it would also evict `lean_s336`'s maturing row (1,749.7 -> 1,777.2 over 24 episodes) and
+restart a fresh row near the ~700 prior with one daily submission left and the deadline today, which the
+rating-mechanics law says cannot converge in the window.
+**Live defect worth keeping.** The ~1.1 s act exists and this kernel never reads `remainingOverageTime`
+(count 0); the cost sits outside the closure passes - the ~30-deep wrapper nest / handoff-step search
+(Z_BASE PLAN.md 5) is the suspect, and a fix must be bank-neutral and re-measured with `tail_test.py`.
+(results/E272_CLOSURE_TRIM_20260930.md, results/E273_KNOB_SWEEP_20260930.md 3.)
+
+
+### H-103 The route tape has no slack: 7,951 crop cycles, 0 movable without deleting scheduled work
+**Construction.** `HY_FARM_20260930/build_hy19.py` -> `agents/tp_*.py`: transform `_ROUTES` BEFORE
+`make_agent` (line 986), i.e. inside the 40-layer chain rather than after it - the one intervention
+position unused by the previous 76 arms. For each unit slot, find a PLANT step plus that unit's later
+WATER/HARVEST steps, and shift the group earlier only where every destination step of the same unit is
+`["PASS"]`, so per-unit op counts are preserved and nothing scheduled is removed.
+**Observed result.** 1,272 carrot groups (40-step and 60-step windows) and 7,951 carrot+wheat groups:
+**groups_moved = 0, steps_moved = 0** in every configuration; plant totals across the 41 tapes
+unchanged (MELON 492 / WHEAT 6679 / STRAWBERRY 1353 / CARROT 1272). Control `tp_ctrl` inserts the
+transform with max_groups 0 and is behaviour-identical.
+**Meaning.** no non-displacing retime exists in this plan: every unit step is committed. So the crop and
+capacity arms did not fail for want of a better dose - extra farm volume on this chassis can only be
+bought by deleting work that is worth more, which is what H-092/H-093/H-096/H-098 measured at -570 to
+-31,458 per unit of input added.
+**Reopenable.** no by editing this tape. A different plan (generated tapes with their own mid-game
+legs) is the only construction left that the evidence does not already refute.
+(results/E275_TAPE_SLACK_20260930.md.)
+
+
+### H-105 Enlarging the chassis' own V219 tomato lane (dose 15 cells, then 15 planted) - wins the promotion band, loses the field
+> **AMENDED 2026-09-30 after powering to 200 worlds (E277 section 17): the live-pool reading that made
+> this look promotable (`+570.0/seat, t 2.36, 5W/0L`) was eight worlds per tape - five firing worlds. At
+> forty fresh seeds on the same five thin-tomato recordings it reads `-486.6/seat, t -2.84, 9W/21L/170T`,
+> worst -13,638. The arm loses to the base on every population now measured. Do not re-test a dose of this
+> lane on a band whose fire count is under ~25.**
+**Construction.** `HY_FARM_20260930/build_hy20_tomlane.py` on `Z_BASE_20260929/agents/lean_s336.py`: the
+lane's cell set (`lean_s336.py:1418`) becomes one constant `_V219_ROWS`, and seven dependent sites are
+derived from it - SE-locked eligibility (:1273), seed quantity (:1329), the land+seed reserve
+(`4000 + 50 * cells`, :1337), the target list, the worker partition (`_v219_split`, with the hand-tuned
+10-cell 3-worker snake preserved), the R53 tour groups (:2387), and the planting-day worker count.
+`lean_tom10c` = the edited code at the shipped dose; `lean_tom15` = rows (5,6,7); `lean_tom15w`
+(`build_hy24_plantdose.py`) = dose 15 plus a third worker on day 18 so all 15 cells get planted.
+**Why it was built.** `LOSSFORENSIC_20260930/crop_tile_audit.py` measured the one non-mirror live loss
+(ep 115432425, -14,340): both seats ran this lane, ours at 10 seed units / 2,770 tile-days / 27,934
+realised and the winner at 18 / 4,943 / 49,765, i.e. ~400 coins of extra seed returning ~21,800 at a
+higher unit price. Tomato is also the best crop per labour op in our own games (200-240 coins/op,
+against strawberry 120, melon 121, carrot 61, wheat 33).
+**Observed result.** Dose 15 planted 12 of 15 cells and gained on the pre-registered 64-world band:
++219.1/seat, sem 94.5, t 2.32, 6W/0L/58T, worst exactly 0, and +2,336.7/seat (t 5.35) on the six firing
+worlds, with the dose-10 control tying the base on 64/64 worlds. Dose 15-with-3-workers planted 15/15 and
+lost: -73.3/seat, 0W/6L/58T, -781.7 per firing world - an interior optimum bracketed from both sides.
+Then the field: against four DIFFERENT recorded elite seats on a fresh collision-scanned band the same
+arm read **-496.4/seat, 2W/10L**, -2,647.7 per firing world, worst -9,847.
+**Reason for rejection (mechanism, and it is a screen not a sign).** The per-fire margin is monotone in
+the OPPONENT's own tomato flow and unrelated to its strength: +3,705 against a tape selling 16 tomato
+units, +1,652 at 101, then -2,150 at 198, -2,558 at 130, -2,874 at 183, 0 on a world where the lane never
+fired. TOMATO's 139-unit half-price point governs the SHARED supply curve, so extra cells pay only while
+the opponent's own tomato keeps the combined stream under the knee - which is also why the live winner's
+18-unit block beat our 10 (it met a mirror) and why every additive-tomato arm on this chassis family has
+lost broadly (H-088, H-099).
+**Exact conditions.** Band A `77880000+9173*i`, i in [0,16), tapes `113105895_0`/`113365856_1`, both
+seats, paired vs persisted `hs_ctrl_336_gate_pow16.csv`; band B `66440000+4093*i`, i in [0,8), tapes
+`113359154_0`/`113357899_0`/`113118872_0`/`113133680_0`, both seats, paired vs `base_s336_copy`. CSVs in
+`HY_FARM_20260929/HY_FARM_20260930/agents/*_gate_pow16.csv` and `*_gate_field.csv`; full readout in
+`results/E277_TOMATO_LANE_AUDIT_20260930.md` sections 7, 10a, 10c.
+**Reopenable.** yes, but only with the opponent's crop volume in the screen: a tomato enlargement is
+worth testing ONLY against seats whose own tomato flow keeps the summed stream under ~139 units. Do not
+re-run it on a band chosen for strength, and do not report a two-tape band as a promotion.
+
+### H-106 Opening the lane's tomato price floor - inert, because the worlds that fail price also fail the town-shop test
+**Construction.** `HY_FARM_20260930/build_hy22_pricefloor.py`: the E277 `build_hy20_tomlane` parameterisation
+with `CROP_MIN_PRICE` 70 -> 62, at both the shipped 10-cell dose and 15 cells.
+**Why it was built.** `probe_hy21_gate.py`'s eligibility histogram on the promotion band: nine of sixteen
+worlds were declined because the day-18 tomato price was under 70, and the failing prices were 62, 62,
+62, 62, 64, 66, 62, 62, 69 - a 1.4 % gap. At +2,337 per fire, a tripled fire rate looked like +700/seat.
+**Observed result.** `lean_tom10_p62` tied the base on 64/64 worlds (mean +0.0, sem 0.0) and
+`lean_tom15_p62` reproduced `lean_tom15` exactly (+219.1, 6W/0L/58T). Opening the floor admitted no new
+fire at all.
+**SUPERSEDED by H-109 / E277 section 14: the census below describes a shadowed reference
+function, not the live decision.** The live gate is `_cxtb_qualifies` and the floor is not in it.
+
+**Reason for rejection - CORRECTED, the first attribution was invented, not measured.** The original
+entry blamed `_v219_request`'s liquidity reserve. `probe_hy26_requests.py` then `probe_hy27_allfail.py`
+say otherwise: the budget guard fired **zero times in 16 worlds** (money at step 432 is 39,641-58,921
+against a reserve of ~7,500), and evaluating all seven eligibility tests independently gives the census
+`{shops_3: 13, price_floor: 9, quads_tiles: 2, se_locked: 2}` at floor 70 versus
+`{shops_3: 13, quads_tiles: 2, se_locked: 2}` at floor 62. The nine price-failing worlds **also** fail
+the town-shop test, so opening the floor cannot fire a single one of them: the binder is
+`sum(shop in ('PIZZA_SHOP','FARMERS_MARKET')) >= 3` on the town's unlocked shops, observed at 0, 1 or 2
+on 13 of 16 band worlds, and it is exogenous to the lane. The floor arms are still inert and still
+rejected, but for a reason that is now measured. Instrument note: hy27's per-world `commit/plants`
+columns are cumulative module counters read without a diff, so they must not be read per world - the
+per-world diffs in `probe_hy21_gate.py` are the valid fire evidence, and they give the same two fires.
+**Exact conditions.** band A as in H-105, both doses. `HY_FARM_20260930/agents/lean_tom*_p62*` and
+`logs/gate_tom*_p62.log`.
+**Meaning for the campaign.** A lane whose gate is liquidity cannot be scaled by relaxing a price
+threshold: it needs either a cheaper first hire or a block that pays before the land purchase. Both are
+plan-level, not dose-level. Instrument note kept from the same session: the first probe read
+`agent.telemetry` and reported zero fires on 16/16 worlds because a later appended layer rebinds that
+attribute - the counters must be read from the module-level dict (`mod._V219_REPORT`). "Telemetry all
+zero" is an unverified measurement until a money difference confirms it.
+
+
+### H-107 Conditional or re-timed tomato realisation cannot rescue the lane - the signal arrives after the commitment
+**Construction.** `HY_FARM_20260930/build_hy25_sellclip.py` on the E277 dose-15 arm: a per-tick clip
+`_V219_SELL_CLIP = 25` on the lane's `['SELL','TOMATO',<projected shed>]` order (volume-conserving - the
+remainder is re-issued on the next step and the terminal path still places everything), plus a
+clip=1e9 control, gated on both the pow16 promotion band and the four-tape field band. Preceded by an
+observability probe of `observation['market']['inventory']['TOMATO']` at step 432.
+**Observed result.** The clip is inert: every statistic byte-equal to the unclipped arm (FIELD -496.4/seat
+sem 269.0, 2W/10L/52T, worst -9,847; POW16 +219.1/seat sem 94.5, 6W/0L/58T, best +3,705). And the
+commit-time observable cannot separate the cases it would need to: market TOMATO inventory at step 432
+reads 9,820-9,964 across opponents whose season tomato flow is 16, 101, 130, 183 and 198 units.
+**Reason for rejection.** Two independent facts. The pooled curve is at its refill level (~10,000) at the
+only step where the block can be committed, because an opponent's tomato lands on days 25-29, after the
+land purchase and the seed spend; so no conditional enlargement is expressible in-agent. And the lane's
+own per-step cargo is already smaller than 25 units, so order sizing never binds - the realised-price loss
+is the opponent's supply, not our release schedule, which is H-071's sell-overlay ceiling arriving a third
+time from a different direction.
+**Exact conditions.** `agents/lean_tom15_clip*`, `agents/lean_tom15_noclip*`, CSVs
+`lean_tom15_clip_gate_{field,pow16}.csv` vs `base_s336_copy_gate_field.csv` / `hs_ctrl_336_gate_pow16.csv`;
+readout `results/E277_TOMATO_LANE_AUDIT_20260930.md` section 12.
+**Meaning.** The V219 tomato lane's dose is at an interior optimum on this chassis (10 cells < 12 planted
+> 15 planted) and the axis is closed: do not build another tomato-volume or tomato-realisation variant.
+A lane whose gate is liquidity and whose price is set by the opponent cannot be fixed by dose or timing.
+
+
+### H-108 The tomato lane's dose is at its shipped optimum: 12-cell block loses on both bands
+**Construction.** `HY_FARM_20260930/build_hy28_cells12.py`: the cell set named explicitly instead of by
+rows - the shipped ten plus (5,7) and (6,7), i.e. the intermediate dose that E277's three points
+nominated. Seed quantity, land-plus-seed reserve (4,600), eligibility (exactly those twelve tiles LOCKED)
+and the worker partition (6+6) all derive from the cell list; worker counts stay at the shipped values.
+**Observed result.** Same six firing worlds as the dose-15 arm, opposite sign, and tight:
+POW16 -172.6/seat sem 67.4 t -2.56, 0W/6L/58T, -1,841.3 per firing world (sem 73.9, t -24.9).
+FIELD (four unrelated elite seats, fresh band) -475.8/seat sem 131.7 t -3.61, 0W/12L/52T, -2,537.7 per
+firing world, worst -3,962.
+**Reason for rejection.** It loses on the promotion band AND the field band, so no opponent set rescues
+it. And it kills the interpretation it was built to test: dose 15 planted 12 of its 15 cells and read
++2,337 per firing world on the pow16 band, while a block that also ends at ~12 plants reads -1,841 on the
+SAME six worlds. The gain therefore never came from the number of plants. What differs is the geometry -
+three contiguous 5-cell rows with a 5/5/5 worker split versus two 6-cell tours that leave the shed
+access tiles and cross row 7 - so the pow16 reading was an interaction between one tour shape and two
+particular opponents, which is exactly what the field band was added to catch.
+**Exact conditions.** `agents/lean_tom12.py` sha1-12 821d3264592e; CSVs `lean_tom12_gate_pow16.csv` vs
+`hs_ctrl_336_gate_pow16.csv` and `lean_tom12_gate_field.csv` vs `base_s336_copy_gate_field.csv`; bands as
+in H-105. Readout `results/E277_TOMATO_LANE_AUDIT_20260930.md` section 13.
+**Meaning.** Four dose points around the shipped block are now measured (10 shipped, 12 explicit, 15 rows,
+15 rows with a third planting worker) and none beats the base across both bands. The tomato lane, which is
+the only self-financing high-yield block this chassis contains and the line the live losses actually cost,
+is at its optimum. Crop-volume explanations of our live gap are closed with it.
+
+
+### H-109 The tomato lane's own value dial is at its shipped setting: 7k / 9k / 11k on the mixed bank
+**Construction.** `HY_FARM_20260930/build_hy30_cxtb.py` on `lean_s336.py`, one constant
+`_CXTB_MIN_REVENUE` (shipped 9,000) - the live fire gate found after H-106 was written. The spine captures
+the seven-condition `_v219_qualifies` as `_CXTB_BASE_QUALIFIES` at :6719 and rebinds the name at :6788 to a
+layer calling `_cxtb_qualifies` (:6764), which replaces the shop-count and price-floor tests with an
+expected-revenue model using `_CXTB_THEIR_UNITS = 0.75` units/day per rival tomato tile,
+`_CXTB_DRAIN_SLACK = 2.4`, `_CXTB_OUR_UNITS = 20`. Crossed with the H-105 cell dose on the mixed ten-tape
+bank (six recordings of the seats lean_s336 actually drew plus four recorded elites), 8 worlds each,
+paired against the same base control rows.
+**Observed result.**
+| revenue gate | dose 10 | dose 15 |
+|---|---|---|
+| 7,000 | +127.6/seat t 0.96 (2 fires, best +10,673) | +270.4/seat t 1.06 (13 fires) |
+| 9,000 (shipped) | base | +143.4/seat t 0.66 (11 fires) |
+| 11,000 | -77.9/seat t -1.37 (2 fires) | not run |
+**Reason for rejection.** No cell of the 2x2 reaches the bar: every variant sits within +270/seat (~0.2 %
+of a 130 k bank) at t <= 1.06, tightening the gate goes negative, and the -9,847 tail from the heavy-
+tomato elites survives even in the best variant. The kernel already prices rival tomato flow inside the
+lane, so the fire-rate lever this campaign kept looking for is implemented and at its optimum: the shipped
+9,000 beats both directions of the dial on the pool-like populations.
+**Exact conditions.** `agents/lean_rev7k.py`, `lean_rev7k_t15.py`, `lean_rev11k.py`; CSVs
+`logs/mixed_lean_rev*.csv`, band `66440000+4093*i` i in [0,8), tapes under `live_tapes/` (6 live + 4 elite).
+Readout `results/E277_TOMATO_LANE_AUDIT_20260930.md` sections 14-15.
+**Meaning.** Both dials of the only self-financing high-yield lane on this chassis are measured and
+bracketed - cell count (H-105, H-108) and expected-revenue gate (this entry). A conditional version was
+built and retired unread because its hook sat on the shadowed reference function (E277 section 14).
+
+
+### H-110 Moving the planner handoff earlier than the shipped step 336 loses, monotonically
+**Construction.** `HY_FARM_20260930/build_hy31_handoff.py` on `Z_BASE_20260929/agents/lean_s336.py`, one
+constant inside `_router` (:977): `if step>=336 and not state.get('day27')` -> 240 (day 10) and 144 (day 6).
+Nothing else touched. This is the highest-value line on the base: the file exists because moving it
+648 -> 336 gained +598.7/seed, sem 193.6, t 3.09 on 72 paired games, and the earlier dose sweep only
+walked away from that gain (336 -> 432 read flat), so the direction with a measured gradient had no data.
+**Observed result.** Paired against the same base on the live-pool + elite mixed bank (ten opponent
+recordings, eight worlds each), the arm-minus-control margin:
+```
+handoff 144 (day 6)   n=80  -1,971.4/seat  sem 1,116.9  t -1.77   5W/75L/0T   worst -84,788
+handoff 240 (day 10)  n=80    -849.0/seat  sem   343.1  t -2.47   8W/71L/1T   worst  -9,690
+handoff 336 (shipped)  control                                            (and 432 measured flat)
+```
+Both arms differ from the base on 79-80 of 80 worlds, so this is a whole-plan change, not a tail effect.
+Per-tape, day-10 loses on 9 of 10 opponents and day-6 on 8 of 10.
+**Reason for rejection.** It loses in dollars against the base on the representative population, and the
+loss grows the earlier the handoff moves - the tape's own days 6-14 block carries roughly 850-2,000
+coins/seat that route 2 cannot reproduce. The leaderboard-shaped schedule (stay on the recorded route
+longer, hand the live planner over later) is the direction that wins, and it is already the shipped
+setting; 648 -> 336 was the whole of that gain.
+**Exact conditions.** `agents/lean_ho240.py` sha1-12 6a1c20b4e57f, `agents/lean_ho144.py` a306fd638605;
+CSVs `logs/live_lean_ho240.csv`, `logs/live_lean_ho144.csv` (written by `run_live_gate.py`, control rows
+from `agents/base_s336_copy.py`, byte-identical to the base - verified by a base-vs-itself run that tied
+8/8 worlds). Band `66440000+4093*i`, i in [0,8); one seat order (E047: 1.32.7 has no first-seat
+advantage, so the swap is a duplicate).
+**Meaning.** The handoff constant is now measured at four neighbours - 144, 240, 336 (shipped), 432 - and
+is at its optimum. This closes the last line on this chassis with a previously-proven large effect, and
+with it the plan-timing axis: the tape's early plan is the source of the base's strength, so beating the
+base requires a better plan than the tape, not a different moment to leave it.
+
+### H-111 External "reverse-engineered counter to step1009" (`created_agent.py`, Downloads, 2026-09-30 20:44): loses to the champion on all three banks
+**Construction.** `QODER_REAGENT_20260930/re_counter_v1.py` (sha256 5780dca9…, 1,045,504 B, 7,401 lines),
+from an external session's `Downloads/created_agent.py` + its `KAGGRICULTURE_REVERSE_ENGINEERED_AGENT_AND_
+BATTLE_REPORT.md`. It is a **shallower sibling vintage of our own spine family**, not a new lineage: 116 of
+the champion's 268 top-level defs are absent from its 169 (shared = 152; 17 unique to it) — `_cxtb_agent`, `_cxtb_expected_revenue`, `_cxd_agent`, `_hp_quantity`,
+`_s809_apply/_s809_future`, the `_s834/_s836/_s837/_s839` family), and it carries four counter-doses aimed
+at the *ancestor* constants — `_S809_LOOK` 4 -> 12, `MODELPX` widened with `MELON` and chunk 6 -> 10,
+`V9_OPENING_STEP0` 8/3 -> 10/5 (line 6762; the earlier 20/15 at :3360 is dead), plus two new layers
+`_re_overflow_reclaim` / `_re_atomic_plant_guard` at `step % 24 == 23`.
+**Observed result.** `tools/run_h2h.py re_counter_v1.py lean_s336.py all`, engine 1.32.7,
+`townCenterSellInterval=24`, both seats per seed, log `QODER_REAGENT_20260930/re_vs_lean_s336.log`:
+| bank | n | W/L/T | mean |
+|---|---|---|---|
+| R1 | 16 | 2W/6L/0T | −1,069.8 |
+| R2 | 16 | 0W/8L/0T | −1,170.0 |
+| Fresh | 32 | 3W/13L/0T | −1,159.2 |
+| **all** | **32 seeds** | **5W/27L/0T (15.6 %)** | **−1,139.6**, median −1,205.0, sem 193.5, **t −5.89** |
+19 of 32 seeds are worse than −1,000; its best seed is +1,004. No liveness or engine-pin errors.
+**Reason for rejection.** The file loses 27 of 32 seeds to the champion at t −5.89 — it is not a candidate
+and needs no field estimator. Its own report's promotion case is also structurally void: the 24-game
+"12 seeds x both seats" suite prints **identical score pairs for both seats on all 12 seeds**, which E047
+already established is a duplicate, not a control (1.32.7 has no first-seat advantage), so the independent
+n is 12; and its `--episodes 5` blocks print `[97363.0, 97074.0]` five times, i.e. one world repeated, so
+"5-0-0" twice is two worlds. The benchmarked target is `step1009`, which `lean_s336` beats by ~+940/seat
+(E264 fleet matrix) — the additive prior was ~−490/seat and the measured −1,140 is worse still, so the
+counter-doses do not transfer onto the live spine at all. Consistent with H-061…H-072 (spine-specific
+historical doses) and the god-mode port FAIL of E225.
+**Exact conditions.** `QODER_REAGENT_20260930/re_counter_v1.py` sha256 5780dca99c547e4bd414c736530ab674
+c74b7d4e7fcef1c20e10de565596d9b1 vs `lean_s336.py` sha256 bad988901cad5185d7af87844771533fe1d047feace50b
+708abdb6ac13ce387a; canonical banks (`SEEDS_R1`/`R2`/`FRESH` of `tools/test_candidate_breakthrough.py`).
+Entry binding checked: `load_agent` resolves to `reverse_engineered_counter_step1009_agent`, matching the
+file's last top-level def, and the file has no pip/subprocess/network side effects at import.
+**Reopenable.** No as a base or a submission. Only two doses are separable enough to test individually on
+the live spine, and both are already-covered ground: `_S809_LOOK` widening (sell-side overlay, ceiling
+±0.35–0.6 %, H-071) and adding `MELON` to `MODELPX` (melon arms refuted E268-E273, 75 constructions, zero
+money wins). Re-open only if the live spine still reads `_S809_LOOK = 4` at the same call site.
+
+
+### H-112 Turn-23 shed preemption on the DECEM/wflip chassis: dead by wrong key, harmful once live, purged in v12
+**Construction.** Three successive builds on `agents/lean_wflip_v9_standalone.py` (sha1-12 6ec5e6a5af426730),
+all append-only layers at EOF, all with the shape *"at `step % 24 == 23`, sell shed inventory to get ahead of
+the opponent's sell window"* — i.e. the H-001…H-009 hour-23 family re-derived on a new chassis rather than
+copied as a dose (AGENTS.md Rule 2).
+
+- **v3** `agents/decem_sovereign_v3.py` sha1-12 5e871a00c547ab6f, layer at :10171-10177. Read
+  `shed = farms[player].get('shed', {})` (:10164). Threshold `qty >= 4` over `['TOMATO','CARROT','MILK','WOOL']`,
+  `market.insert(0, ['SELL', crop, min(qty, 8)])`.
+- **v11** `agents/decem_sovereign_v11.py` sha1-12 c10792a072638d69, layer at :10171-10177. Two changes:
+  state query corrected to `observation.get('private', {}).get('shed', {})` (:10162-10163), and threshold
+  loosened to `qty >= 1` over seven items — `['TOMATO','CARROT','MILK','WOOL','STRAWBERRY','FERTILIZER','WHEAT']`
+  — described as a reachability fix. Also added `len(market) < 10` guards (:10166, :10168) to the two
+  step-192/312 desync `append`s.
+- **v12** `agents/decem_sovereign_v12.py` sha1-12 7c855dfead021279, layer at :10161-10165. Preemption block
+  deleted entirely; guarded desync and `_CXTB_MIN_REVENUE = 7000` retained.
+
+**Observed result.** Engine 1.32.7, `townCenterSellInterval=24`, both seats per seed, canonical
+`SEEDS_R1`/`R2`/`FRESH` of `tools/test_candidate_breakthrough.py`.
+
+1. **v3 never fired — twice over.** A firing-counter probe over real observation streams (seeds 1M, 9M)
+   found 23 preemption windows per seed (`120 <= step <= 672 and step % 24 == 23`), **0 fires**, and **0 of
+   those 23 windows** held any of the four crops at `qty >= 4` *even when read from the correct key*. The
+   engine stores shed at `observation["private"]["shed"]` (`envs/kaggriculture/kaggriculture.py:269`,
+   `envs/kaggriculture/README.md` observation format); `farms[player]` carries only
+   `money/tiles/farmer/hands/unlocked_quadrants/hires_today`. So `shed` was always `{}`, and the condition
+   was separately unreachable because the parent liquidates those crops before hour 23. Measured action
+   divergence from the parent: **5 of 720 steps** (2 desync buys + ~3 CXTB threshold flips). This is the
+   exact failure AGENTS.md Rule 1 phase 1 names — `observation["private"]["shed"]`, never `farm["inventory"]` —
+   and the exact failure Rule 1 phase 5(d)/(e) exists to catch: no counter was run before gating, so a
+   0-fire overlay gated as a clean tie and was reported as an architecture.
+2. **v11 fixed the bug and regressed.** Fires became live at 15-18/game, action divergence 40-43 steps — the
+   fix worked. Three measured mechanisms sank it:
+   - **100 % of fires were double-sells** (15/15, 18/18, 15/15 across seeds 1M/9M/3.33M): every preemption
+     duplicated an item the parent had *already queued to sell that same turn*. The parent's own sell code
+     deliberately subtracts pending volume (`selling = sum(... o[:2] == ["SELL", item])`, e.g. :3117, :5467);
+     the wrapper ignored that accounting and added `min(qty, 8)` on top — H-067's volume-inflation shape.
+   - **WHEAT was sold on farms holding animals** (10/10, 12/12, 10/10). WHEAT is animal feed; two
+     consecutive missed feed days and animals escape permanently. `FERTILIZER` and `WHEAT` are farm inputs,
+     not revenue, and have no place in a high-margin preemption list.
+   - **Preempt prices min = 1** (max 44-45): unconditional `qty >= 1` dumping ignores price and sells into the
+     $1 floor — the documented V15 failure (`results/V15_LOSS_FORENSICS.md`, "sold 8 MORE strawberries but
+     earned 2,223 LESS").
+   Gate vs its own parent `lean_wflip_v9_standalone.py`:
+
+   | bank | v3 | **v11** |
+   |---|---|---|
+   | R1 | 8W/0L/0T **+7.2** | 3W/5L/0T **−164.2** |
+   | R2 | 8W/0L/0T **+6.9** | 1W/7L/0T **−236.1** |
+   | Fresh | 14W/2L/0T **−33.6** | 3W/13L/0T **−454.0** |
+
+   `v11 vs v3` R1 = 3W/5L/0T **−169.1**. Pool R1 degraded in step with the mechanism's reach: cha22
+   +1563.0 → **+1328.2**, pub_2945farm +1952.6 → **+1785.9**, tetsutani_godview_v2 +902.0 → **+556.5**.
+3. **v12 purge verified.** `v12 vs v3` R1 = **0W/0L/8T, mean +0.0, every seed ±0** — the dead branch never
+   fired, so removing it changed nothing, and the `len(market) < 10` guard never binds (parent is not at 10
+   orders at steps 192/312). v12 is byte-behaviourally identical to v3.
+
+**Side results worth keeping (both on the wflip chassis, both new).**
+- **The `_CXTB_MIN_REVENUE` dial does not transfer from s336.** H-109 bracketed 7k/9k/11k on `lean_s336`
+  (shipped 9,000 optimum; 7k +270.4/seat at t 1.06, i.e. noise). Head-to-head on the wflip spine
+  (`tools/build_decem_cxtb_dose.py`, one asserted line each): **9,000 = 0W/1L/7T, mean −435.5** (one seed
+  −3,484), **8,000 = 0W/0L/8T, mean +0.0**. So on wflip the constant is *inert* at 7k-vs-8k and *harmful*
+  at 9k — the opposite direction from H-109. The dial is closed on this chassis; do not port H-109's 9,000.
+- **The desync buys are worth exactly +7.2 and are the whole of v12's edge.** Ablation
+  (`tools/build_decem_nodesync_ablation.py`, v12 minus the DS12 layer == parent + CXTB 7000):
+  `decem_nodesync vs v12` R1 = **0W/8L/0T, mean −7.2** (per-seed −6…−9), the exact mirror of v12 vs parent
+  +7.2. Confirms the desync is live; confirms the ~0.006 % ceiling (H-071) on this chassis.
+
+**Reason for rejection.** The preemption is not a missing edge, it is an early dump into a shared curve,
+and this repo has refuted that shape repeatedly (H-067 `v18_clip` −106,821; H-010 −63,988; H-097 k120
+−12,769). Making it live moved the score from +7.2 to −164.2 against the same parent on the same seeds.
+**The bug was the only thing protecting v3.**
+
+**Exact conditions.** `agents/decem_sovereign_v3.py` sha1-12 5e871a00c547ab6f,
+`agents/decem_sovereign_v11.py` sha1-12 c10792a072638d69, `agents/decem_sovereign_v12.py` sha1-12 7c855dfead021279,
+`agents/decem_nodesync.py` sha1-12 298fb391aed449eb, `agents/decem_cxtb9k.py` sha1-12 f38969390b647ab9,
+`agents/decem_cxtb8k.py` sha1-12 d55241601cb16752; builders `tools/build_decem_cxtb_dose.py`,
+`tools/build_decem_nodesync_ablation.py`; runner `tools/run_h2h.py`. Firing/divergence probe written
+outside the repo; engine asserted 1.32.7 in every gate log. Entry binding checked: `load_agent` resolves
+v12 to `decem_sovereign_v12_agent`, matching the file's last top-level def.
+**Reopenable.** No on this chassis in any hour-23 form. The refuted constructions are, specifically:
+(i) reading shed off `farms[player]`; (ii) `qty >= 4` on the four premium items at hour 23 (unreachable —
+the parent has already sold); (iii) `qty >= 1` across seven items including `WHEAT`/`FERTILIZER`;
+(iv) `market.insert(0, …)` without subtracting the parent's already-queued `SELL` volume for that item;
+(v) selling with no price gate. Any future hour-23 attempt must clear all five, and must still respect
+H-071's ±0.35-0.6 % ceiling — which is the reason none of them are worth building. Note also that the
+**asymmetric guard is a live latent bug pattern**: v11 guarded the two desync `append`s but left the
+preemption `insert(0)` unguarded at :10176, so a >10-order turn would silently drop the *parent's* last
+order. It never triggered in 3 probe seeds, but `insert(0)` at the front of a capped queue is the
+dangerous direction — front insertion pushes the tail off the end.
+
+
+### H-113 Re-basing the DECEM line onto the live-higher-scoring `lean_s336.py` (1833.7) is field-NEGATIVE: v12 wins the panel 4/4 by +476
+**Construction.** Live submissions on this account, read 2026-10-01 via `kaggle competitions submissions`:
+
+| submission | id | date | publicScore |
+|---|---|---|---|
+| `lean_s336.py` — "TET handoff-336 + dead ordering-search trim" | 56687139 | 2026-09-29 | **1833.7** |
+| `lean_wflip_v9_standalone.py` — "lean_wflip_v9 promotion" | 56712190 | 2026-09-30 | 1708.7 |
+| `decem_sovereign_v3.py` | 56718104 | 2026-09-30 | 1688.1 |
+| tetsutani Step1009 | 56672630 | 2026-09-29 | 1625.8 |
+
+That ordering is the trap. `lean_s336.py` looks ~125-145 points better than the wflip chassis the whole
+DECEM line was built on, so the obvious final move was to re-base onto it and keep the one verified lever
+(the guarded phase desync, worth exactly +7.2 — see H-112's side results). Built
+`agents/decem_final_s336_desync.py` (sha1-12 9bf3103420c5b89b, 1,197,289 B) = `lean_s336.py` at repo root
+(sha1-12 bad988901cad5185, `_CXTB_MIN_REVENUE = 9000` i.e. the H-109 shipped optimum, which the wflip line
+had wrongly set to 7000) plus one appended EOF layer adding `len(market) < 10`-guarded 1-unit `WHEAT`
+buys at steps 192/312. Entry binding checked: `load_agent` resolves to `decem_final_s336_desync_agent`,
+matching the file's last top-level def.
+**Observed result.** Against its OWN parent it is the best-behaved agent of the whole campaign — no losses
+on any bank:
+| bank | n | W/L/T | mean |
+|---|---|---|---|
+| R1 | 16 | 8W/0L/0T | +7.5 |
+| R2 | 16 | 8W/0L/0T | +6.9 |
+| Fresh | 32 | **16W/0L/0T** | **+7.2** |
+(32W/0L/0T over 64 games; the wflip line's identical desync scored 14W/2L/0T −33.6 on Fresh.)
+Against the deployed incumbent, same seeds, both seats:
+| bank | n | W/L/T | mean |
+|---|---|---|---|
+| R1 | 16 | 0W/8L/0T | −444.9 |
+| R2 | 16 | 0W/7L/1T | −12.4 |
+| Fresh | 32 | 3W/13L/0T | −81.3 |
+And the arbitration that settles it — the E224 field panel, both arms, R1, both seats (64 paired games):
+| opponent | `decem_final_s336_desync` | `decem_sovereign_v12` | v12 edge |
+|---|---|---|---|
+| `cha22_champion.py` | +1130.4 | **+1563.0** | +432.6 |
+| `sluice_topup7.py` | +1373.4 | **+1823.6** | +450.2 |
+| `cha22_e199_lo96q8.py` | +486.0 | **+1043.1** | +557.1 |
+| `pub_2945farm.py` | +1488.6 | **+1952.6** | +464.0 |
+| **panel mean** | **+1119.6** | **+1595.6** | **+476.0** |
+**Reason for rejection.** v12 wins 4 of 4 field-strong opponents by 433-557, mean +476. The candidate is
+field-negative on every panel member, so the publicScore ordering (1833.7 vs 1688.1) is opponent-draw and
+submission-age variance, not agent quality — `lean_s336.py` was submitted 19 h before the wflip line and
+has had correspondingly more episodes against a different draw. **A `publicScore` read across submissions
+of different ages is not a quality estimator.** The paired same-seed panel is, and it says the incumbent
+wins decisively. This is E224's own law (`results/E224_FIELD_RANK_20260928.md:17-25`) applied to our own
+history instead of to the public pool: rank is decided on a fixed panel, never on a single noisy score.
+Note also that the candidate's clean 16W/0L/0T is not a merit — it is the *sibling-mirror* signature
+(Rule 2: a candidate that only beats its own lineage has not been tested), and it is exactly the shape of
+result that H-112 records as having been mis-read as an architecture.
+**Exact conditions.** `agents/decem_final_s336_desync.py` sha1-12 9bf3103420c5b89b vs
+`agents/decem_sovereign_v12.py` sha1-12 7c855dfead021279, base `lean_s336.py` sha1-12 bad988901cad5185;
+builder `tools/build_decem_final_s336.py`; runner `tools/run_h2h.py`, canonical
+`SEEDS_R1`/`SEEDS_R2`/`SEEDS_FRESH` of `tools/test_candidate_breakthrough.py`, engine 1.32.7,
+`townCenterSellInterval=24`, both seats per seed. Panel per E224 profile rows.
+**Reopenable.** No as a base swap. The s336 chassis is not worse — it is *differently* tuned, and the two
+live publicScores are not separable by a local panel. If `lean_s336.py` and the wflip line are ever
+re-measured on the *same* panel at the *same* episode count, that comparison is worth having; on today's
+evidence it does not justify a submission slot. Do not re-run a base swap on the strength of
+`kaggle competitions submissions` output alone.
